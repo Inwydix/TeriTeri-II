@@ -1,8 +1,53 @@
-# TeriTeri-II
+# :blush: TeriTeri II :cucumber:
+TeriTeri II is a Theresa Apocalypse (Honkai Impact 3rd) Discord fan-bot. She was created using the Bot Designer For Discord (BDFD) app, which works with premade functions. This makes coding her easier, but also pretty inefficient and with limitations (like not being able to make loops or always needing a trigger for the commands)
 
-TeriTeri is a Theresa Apocalypse (Honkai Impact 3rd) Discord fan-bot created with the Bot Designer For Discord (BDFD) app
-This app works with premade functions, which makes it easier to code, but also pretty inefficient and with limitations (like being unable to loop stuff)
+She is a fun oriented bot, so most (if not all) of her commands were made for playing and have fun! :smile:
 
-The very first version of this bot was made by The Zermiste. The second version was made by both of us, The Zermiste and I, and now I'm the only one keeping the bot alive and updated, so I decided to save and share all her commands in here
+# :book: A little bit of her history :book:
+> The very first version of this bot was made by The Zermiste for the TeriTeriCult server. It was a pretty basic bot with an economy system based on the Honkai Impact 3rd game
 
-She has changed a lot since she is on my hands, and I will continue to evolve her into the beautiful butterfly she is destined to be
+> The second version was made by both of us, The Zermiste and I. This was a big update that made her feel like a complete new bot. We added a whole gacha system and stigmas that gave boosts and benefits to who equipped them.
+
+> On summer 2022, the TeriTeriCult server was nuked. We created a new one, but The Zermiste refused to come with us. Since then, I'm the one and only bot dev, who keeps the bot alive and updated.
+> She has changed a lot since she is on my hands, and I will continue to evolve her into the beautiful :butterfly: butterfly :butterfly: she is destined to be
+
+# 🌙 Credits 🌙
+
+TeriTeri 1.0 (original)
+> • Code : The_Zermiste#1809
+
+> • Documentation : The_Zermiste#1809
+
+> • Explanations : The_Zermiste#1809 and PGA#9269
+
+> • Testing and help : The_Zermiste#1809, Se̴i̴s̸h̷i̷-̷s̴a̸n̸#3080, The One Without Purpose#3565, Snowdrift#0504 and PGA#9269
+
+TeriTeri 2.0 (TeriTeri II)
+> • Code : The_Zermiste#1809 and PGA#9269
+
+> • Documentation update : The_Zermiste#1809
+
+> • Explanations : PGA#9269
+
+> • Testing : The_Zermiste#1809, Sacchi#7777, _IcyPaws_#0916, ShadowCorvus#8550 and PGA#9269
+
+> • Bot pfp : The One Without Purpose#3565
+
+TeriTeri II 3.0 
+> • Code : PGA#9269
+
+> • Explanations : PGA#9269
+
+> • Testing : PGA#9269
+
+Emotes and pic edits
+> • Tericoin : PGA#9269
+
+> • Teristal : The_Zermiste#1809
+
+> • Supply cards : The_Zermiste#1809
+
+> • Stigma sets images : The_Zermiste#1809
+
+Others
+> • Wallet : https://www.flaticon.com/free-icon/wallet_214362
