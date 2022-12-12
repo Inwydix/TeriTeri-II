@@ -3,7 +3,7 @@ TeriTeri II is a Theresa Apocalypse (Honkai Impact 3rd) Discord fan-bot. She was
 
 She is a fun oriented bot, so most (if not all) of her commands were made for playing and have fun! 😄
 
-# A little bit of her history 📖
+# 📖 A little bit of her history 
 > The very first version of this bot was made by The Zermiste for the TeriTeriCult server. It was a pretty basic bot with an economy system based on the Honkai Impact 3rd game
 
 > The second version was made by both of us, The Zermiste and I. This was a big update that made her feel like a complete new bot. We added a whole gacha system and stigmas that gave boosts and benefits to who equipped them.
@@ -11,19 +11,21 @@ She is a fun oriented bot, so most (if not all) of her commands were made for pl
 > On summer 2022, the TeriTeriCult server was nuked. We created a new one, but The Zermiste refused to come with us. Since then, I'm the one and only bot dev, who keeps the bot alive and updated.
 > She has changed a lot since she is on my hands, and I will continue to evolve her into the beautiful 🦋 butterfly 🦋 she is destined to be
 
-# TeriCoins 💰
+# 💰 TeriCoins
 The tericoins are the bot's economy system main currency. It's easy to get and you can spend it in different ways: to improve your income, to play with the 🎰 casino 🎰 command or to unlock more features reaching the bank milestones 
-
-# Server Bank 🏦
+ 
+# 🏦 Server Bank
 The server has a communitary bank where everyone can add tericoins and try reach determined milestones. Each one of these milestones unlocks boosts and/or new features to play with
 
 The milestones are:
 > 1M, 5M, 10M, 15M, 20M, 30M, 40M, 50M, 75M, 100M (150M, 300M, 500M, 750M, 1B)
 
-# Gacha System 💎
+# 💎 Gacha System
+Use your teristals (special and weird currency) to pull in the gacha supplies and get stigmata!
 
-# Credits 🌙
+> Stigmata can be equipped to obtain some boosts 😃
 
+# 🌙 Credits
 TeriTeri 1.0 (original)
 > • Code : The_Zermiste#1809
 
