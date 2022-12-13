@@ -1,0 +1,18 @@
+$c[Sacrify the mentioned user in the name of Teri]
+
+$nomention $allowMention $reply $ignoreTriggerCase
+$onlyIf[$isBot[$mentioned[1;yes]]==false;❌ Choose an user to sacrifice :drop_of_blood:]
+$onlyIf[$mentioned[1;yes]!=;❌ Choose an user to sacrifice :drop_of_blood:]
+$onlyIf[$mentioned[1;yes]!=$authorID;❌ Who will praise Teri if you sacrify yourself?]
+$serverCooldown[1m;🔪 Teri is cleaning the knife, come back later | Cooldown ends %time%]
+$title[:knife: FOR THE GLORY OF TERI! :drop_of_blood:]
+$description[<@$mentioned[1;no]> was sacrified]
+$color[ff1a1a]
+
+$try
+$changeUsername[✞ $nickname[$mentioned[1;no]] ✞]
+$catch
+$title[:knife: FOR THE GLORY OF TERI! :drop_of_blood:]
+$description[<@$mentioned[1;no]> was sacrified]
+$color[ff1a1a]
+$endtry

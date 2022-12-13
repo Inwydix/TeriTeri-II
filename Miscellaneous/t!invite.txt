@@ -1,0 +1,8 @@
+$[Shares the bot's discord invite link]
+
+$nomention $ignoreTriggerCase $reply
+$title[📨 INVITE LINK 📬]
+$description[TeriTeri is happy you like her~ have her invite link!
+https://discord.com/oauth2/authorize?client_id=1000123818930622546&scope=bot%20applications.commands&permissions=2145910143]
+$footer[Dev-sama hopes you make a good use of her <3]
+$color[ffffff]

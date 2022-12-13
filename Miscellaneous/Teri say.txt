@@ -1,0 +1,5 @@
+$c[Make Teri repeat what you just said]
+
+$nomention $ignoreTriggerCase
+
+📣 | $message
