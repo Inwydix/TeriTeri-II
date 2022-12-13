@@ -5,7 +5,7 @@ TeriTeri II is a Theresa Apocalypse (Honkai Impact 3rd) Discord fan-bot. She was
 
 She is a fun oriented bot, so most (if not all) of her commands were made for playing and have fun! 😄
 
-<Invite her to your server: [Bot invite](https://discord.com/oauth2/authorize?client_id=1000123818930622546&scope=bot%20applications.commands&permissions=2145910143)>
+<!--Invite her to your server: [Bot invite](https://discord.com/oauth2/authorize?client_id=1000123818930622546&scope=bot%20applications.commands&permissions=2145910143)-->
 # 📖 A little bit of her history 
 > The very first version of this bot was made by The Zermiste for the TeriTeriCult server. It was a pretty basic bot with an economy system based on the Honkai Impact 3rd game
 
