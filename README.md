@@ -1,3 +1,5 @@
+> still adding and correcting the code
+
 # 😊 TeriTeri II 🥒
 TeriTeri II is a Theresa Apocalypse (Honkai Impact 3rd) Discord fan-bot. She was created using the Bot Designer For Discord (BDFD) app, which works with premade functions. This makes coding her easier, but also pretty inefficient and with limitations (like not being able to make loops or always needing a trigger for the commands)
 
