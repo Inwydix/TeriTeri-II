@@ -60,6 +60,11 @@ TeriTeri 2.0 (TeriTeri II)
 TeriTeri II 3.0 
 > • Code : PGA#9269
 
+> • Testing : Se̴i̴s̸h̷i̷-̷s̴a̸n̸#3080 and PGA#9269
+
+TeriTeri II 4.0
+> • Code : PGA#9269
+
 > • Explanations : PGA#9269
 
 > • Testing : PGA#9269
