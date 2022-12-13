@@ -1,0 +1,13 @@
+$c[Sends an embed message to the bot's suggestions channel]
+
+$nomention $reply $ignoreTriggerCase
+
+$title[💡 Suggestion Sent 💡]
+$description["$message"]
+$footer[$username[$authorID]]
+$addTimestamp
+$thumbnail[$userServerAvatar[$authorID]]
+
+$color[#$getRoleColor[$highestRole[$authorID]]]
+
+$sendEmbedMessage[1029462960927670402;TeriTeri received a new suggestion!;;;$message;ffffff;$username[$authorID] SUGGESTED;$authorAvatar;$serverName[$guildID];$serverIcon;;;yes;no]

@@ -1,0 +1,26 @@
+$c[Send an embed to the bot's bug report channel with your message]
+
+$nomention $reply $ignoreTriggerCase
+
+$c[Badge vars]
+$textSplit[$getUserVar[badges];/]
+$var[unchanged;tc/$splitText[$sum[$getTextSplitIndex[tc];1]]/$splitText[$sum[$getTextSplitIndex[tc];2]]/ts/$splitText[$sum[$getTextSplitIndex[ts];1]]/$splitText[$sum[$getTextSplitIndex[ts];2]]/errand/$splitText[$sum[$getTextSplitIndex[errand];1]]/$splitText[$sum[$getTextSplitIndex[errand];2]]/casino/$splitText[$sum[$getTextSplitIndex[casino];1]]/$splitText[$sum[$getTextSplitIndex[casino];2]]/streak/$splitText[$sum[$getTextSplitIndex[streak];1]]/$splitText[$sum[$getTextSplitIndex[streak];2]]/rank/$splitText[$sum[$getTextSplitIndex[rank];1]]/$splitText[$sum[$getTextSplitIndex[rank];2]]/badge/$splitText[$sum[$getTextSplitIndex[badge];1]]/$splitText[$sum[$getTextSplitIndex[badge];2]]/bank/$splitText[$sum[$getTextSplitIndex[bank];1]]/$splitText[$sum[$getTextSplitIndex[bank];2]]]
+$var[bug.total;$splitText[$sum[$getTextSplitIndex[bug];1]]]
+$var[bug.badge;$splitText[$sum[$getTextSplitIndex[bug];2]]]
+$c[End badge vars]
+
+$var[bug.total;$sum[$var[bug.total];1]]
+
+$title[🐛 Bug reported 🐛]
+$description["$message"]
+$footer[$username[$authorID]]
+$addTimestamp
+$thumbnail[$userServerAvatar[$authorID]]
+
+$color[#$getRoleColor[$highestRole[$authorID]]]
+
+
+$setUserVar[badges;$var[unchanged]/bug/$var[bug.total]/$var[bug.badge]]
+
+
+$sendEmbedMessage[1029462928107253920;TeriTeri received a new bug report!;;;$message;ffffff;$username[$authorID] reported;$authorAvatar;$serverName[$guildID];$serverIcon;;;yes;no]

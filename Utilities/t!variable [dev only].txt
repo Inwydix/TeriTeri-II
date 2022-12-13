@@ -1,0 +1,70 @@
+$c[Shows your variables, or the mentioned person's variables]
+
+$nomention $reply $ignoreTriggerCase
+$enableDecimals[yes]
+
+$if[$authorID==481475725598261258]
+
+$color[#ffffff]
+$title[VARIABLES]
+$description[
+🌀 welcome $getServerVar[welcome] (<#$getServerVar[welcome]>)
+money $getUserVar[money;$findUser[$message;yes]]
+streak $getUserVar[streak;$findUser[$message;yes]]
+last.day $getUserVar[last.day;$findUser[$message;yes]]
+
+🌀 bank $getServerVar[bank]
+errand.time $getUserVar[errand.time;$findUser[$message;yes]]
+errand.start $getUserVar[errand.start;$findUser[$message;yes]]
+claimed $getUserVar[claimed;$findUser[$message;yes]]
+
+lv1 $getUserVar[lv1;$findUser[$message;yes]]
+lv2 $getUserVar[lv2;$findUser[$message;yes]]
+lv3 $getUserVar[lv3;$findUser[$message;yes]]
+last.claim $getUserVar[last.claim;$findUser[$message;yes]]
+
+up1 $getUserVar[up1;$findUser[$message;yes]]
+up2 $getUserVar[up2;$findUser[$message;yes]]
+up3 $getUserVar[up3;$findUser[$message;yes]]
+up4 $getUserVar[up4;$findUser[$message;yes]]
+
+point $getUserVar[point;$findUser[$message;yes]]
+level $getUserVar[level;$findUser[$message;yes]]
+🌀 level.channel $getServerVar[level.channel] (<#$getServerVar[level.channel]>)
+
+pts.cooldown $getUserVar[pts.cooldown] ($sub[$getTimestamp;$getUserVar[pts.cooldown]]s elapsed)
+🌀 lvl.boost $getServerVar[lvl.boost]
+
+🌀 hours.c $getServerVar[hours.c]
+🌀 min.c $getServerVar[min.c]
+
+dis.money $getUserVar[dis.money]
+
+🌀 bank.prog $getServerVar[bank.prog]
+🌀 bank.worker $getServerVar[bank.worker]
+
+🌀 w3.boost $getServerVar[w3.boost]
+
+card1 $getUserVar[card1]
+card2 $getUserVar[card2]
+card3 $getUserVar[card3]
+
+stigma $getUserVar[stigma]
+
+crystal $getUserVar[crystal]
+
+🌀 rotation.c $getServerVar[rotation.c] (<t:$getServerVar[rotation.c]>)
+🌀 rotation $getServerVar[rotation]
+
+stigma.equip $getUserVar[stigma.equip]
+]
+$footer[*🌀 = server value ]
+
+$else
+
+$title[You can't use that!]
+$description[❌ TeriTeri can't let you use this command, it's only for the dev!]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1040692874062344382/TeriMad.png]
+$color[ff1a1a]
+
+$endif

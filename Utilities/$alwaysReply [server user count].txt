@@ -1,0 +1,6 @@
+$c[Uses a vc to show how many users there is in the server and updates it every 10 minutes, when someone talks]
+
+$nomention
+$onlyIf[$getServerVar[members.channel]!=null;]
+$serverCooldown[10m;]
+$modifyChannel[$getServerVar[members.channel];Members : $getServerVar[members.count];!unchanged;!unchanged;!unchanged;!unchanged]

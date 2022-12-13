@@ -1,0 +1,11 @@
+$c[Executes code you write within the trigger]
+
+$nomention $reply $ignoreTriggerCase
+$if[$isAdmin[$authorID]]
+eval: $eval[$message]
+$else
+$title[You can't use that!]
+$description[❌ TeriTeri can't let you use this command, it's only for admins!]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1040692874062344382/TeriMad.png]
+$color[ff1a1a]
+$endif

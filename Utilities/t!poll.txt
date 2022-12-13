@@ -1,0 +1,138 @@
+$c[Builds a poll in an embed]
+
+$nomention $allowMention $ignoreTriggerCase 
+
+$if[$isSlash]
+
+$try
+
+$title[$message[title]]
+$description[$message[description]
+
+__**OPTIONS**__
+>>> $message[emote1] $message[option1] $message[emote2] $message[option2] $message[emote3] $message[option3] $message[emote4] $message[option4]]
+
+$if[$message[image]!=]
+$image[$message[image]]
+$endif
+
+$thumbnail[$userServerAvatar[$authorID]]
+
+$color[#$getRoleColor[$highestRole[$authorID]]]
+
+$catch
+$title[Something went wrong]
+$description[❌ TeriTeri couldn't make a poll. Please, check everything is okay and try again
+
+**COMMAND**
+```t!poll Title | Description | Image Link | Reaction 1 | Option 1 | Reaction 2 | Option 2.....```]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1040692874062344382/TeriMad.png]
+$color[ff1a1a]
+$endtry
+
+
+$else
+
+$textSplit[$message;|]
+
+$if[$charCount[$splitText[1]]<=256]
+
+$title[$splitText[1]]
+$description[$splitText[2]
+** **
+__**OPTIONS**__
+>>> $splitText[4] $splitText[5] 
+$splitText[6] $splitText[7]
+$splitText[8] $splitText[9] 
+$splitText[10] $splitText[11] 
+$splitText[12] $splitText[13] 
+$splitText[14] $splitText[15] 
+$splitText[16] $splitText[17]]
+
+$try
+
+$if[$splitText[3]!=]
+$image[$splitText[3]]
+$endif
+
+$thumbnail[$userServerAvatar[$authorID]]
+
+$if[$splitText[4]!=]
+$addReactions[$splitText[4]]
+$endif
+$if[$splitText[6]!=]
+$addReactions[$splitText[6]]
+$endif
+$if[$splitText[8]!=]
+$addReactions[$splitText[8]]
+$endif
+$if[$splitText[10]!=]
+$addReactions[$splitText[10]]
+$endif
+$if[$splitText[12]!=]
+$addReactions[$splitText[12]]
+$endif
+$if[$splitText[14]!=]
+$addReactions[$splitText[14]]
+$endif
+$if[$splitText[16]!=]
+$addReactions[$splitText[16]]
+$endif
+
+$color[#$getRoleColor[$highestRole[$authorID]]]
+$deletecommand
+
+$catch
+$title[Something went wrong]
+$description[❌ TeriTeri couldn't make a poll. Please, check everything is okay and try again
+
+**COMMAND**
+```t!poll Title | Description | Image Link | Reaction 1 | Option 1 | Reaction 2 | Option 2.....```]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1040692874062344382/TeriMad.png]
+$color[ff1a1a]
+$endtry
+
+
+$else
+
+$title[Your title is too long!]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1040692874062344382/TeriMad.png]
+$color[ff1a1a]
+
+$endif
+
+
+$c[Poll help - sends embed with instructions]
+
+
+$if[$or[$toLowercase[$message]==help;$message==]]
+
+$title[POLL HELP]
+$description[TeriTeri will teach you how to make a poll!
+
+__**COMMAND**__
+
+`t!poll Title | Description | Image Link | Reaction 1 | Option 1 | Reaction 2 | Option 2.....`
+
+__**EXTRA INFO**__
+
+• You can add up to 7 options in your polls!
+• You can skip every field you don't want to add, as long as you keep the "|" (doesn't apply for the last field of the poll)
+
+__**EXAMPLES**__
+
+Some examples you can play with to see how it works:
+
+• `t!poll Do you love me? | | | 💘 | Yes | 💔 | No`
+
+• `t!poll | I like Halloween, do you? | | 🎃 | yes`
+
+• `t!poll Do you like Halloween? | I love it very much, so I want to know if you to so too!!| https://media.discordapp.net/attachments/872520783686172745/903602903380549652/original-10.jpg | 🎃 | Yes | 😇 | Nope`
+]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1020078823896797285/0de490e58a3dbed37e9a17f66c8173e8.jpg]
+$color[#ffffff]
+
+$endif
+
+
+$endif

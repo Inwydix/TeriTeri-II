@@ -1,0 +1,7 @@
+$c[Returns the bot ping]
+
+$nomention $reply $ignoreTriggerCase 
+$author[Bot Ping]
+$title[Pong **($ping ms)** !]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1020290648995266590/TeriPing.png]
+$color[33cc33]
