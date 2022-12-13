@@ -1,0 +1,14 @@
+$nomention $reply $ignoreTriggerCase
+
+$onlyIf[$checkUserPerms[$authorID;managechannels]==true;❌ You need to have the Mannage Channels permition to do that !]
+
+$if[$isNumber[$message]==false]
+ $color[#FF0000]
+ $title[You need to add the channel ID !]
+ 
+$else
+ $setServerVar[level.channel;$message]
+ $color[#00FF00]
+ $description[Level up announcements will be sent in <#$message>]
+ 
+$endif

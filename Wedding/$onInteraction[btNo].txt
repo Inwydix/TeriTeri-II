@@ -1,0 +1,22 @@
+$nomention $allowMention
+
+$textSplit[$getUserVar[wedding;$authorID];/]
+$var[askingAsker;$splitText[$sum[$getTextSplitIndex[asker];1]]]
+$var[askingAsking;$splitText[$sum[$getTextSplitIndex[asking];1]]]
+$var[askingCouple;$splitText[$sum[$getTextSplitIndex[couple];1]]]
+
+$textSplit[$getUserVar[wedding;$var[askingAsker]];/]
+$var[askerAsker;$optOff[$splitText[$sum[$getTextSplitIndex[asker];1]]]]
+$var[askerAsking;$optOff[$splitText[$sum[$getTextSplitIndex[asking];1]]]]
+$var[askerCouple;$optOff[$splitText[$sum[$getTextSplitIndex[couple];1]]]]
+
+
+$onlyIf[$and[$authorID==$var[askerAsking];$var[askingAsker]!=null]==true;<@$authorID> you aren't the one supposed to answer this!]
+
+$title[💔  Sorry, $nickname[$authorID] said no...  💔]
+$description[$randomText[TeriTeri thinks it wouldn't have worked anyway... <:TeriShrug:1000113782904852542>;TeriTeri gave you a pat to scare the sad! <:TeriPat:1000068843806400512>;TeriTeri is sure you will do great alone because you are awesome for who you are <:TeriCute:999834523816689814>;...but worry not! TeriTeri will always love you 🤍]]
+$color[ffffff]
+
+$setUserVar[wedding;asker/null/asking/$authorID/couple/$var[askerCouple];$var[askingAsker]]
+$setUserVar[wedding;asker/$var[askingAsker]/asking/null/couple/$var[askingCouple];$authorID]
+$removeButtons

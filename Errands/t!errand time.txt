@@ -1,0 +1,49 @@
+$nomention $ignoreTriggerCase
+$reply
+
+$var[coin.emote;<:Tericoin:1001510021907099750>]
+$var[teristals.emote;<:Teristal:1001507292648308817>]
+
+$if[$isSlash]
+
+$if[$getUserVar[errand.start]==0]
+ $title[❌ start an errand with t!errand start]
+$endif
+
+$if[$sum[$getUserVar[errand.start];$multi[3600;$getUserVar[errand.time]]]<=$getTimestamp]
+$c[if (old time + wait) < current time]
+$c[or if errand finished]
+
+ $title[You can claim your reward !]
+ $color[#A0FFA0]
+ 
+$else
+ 
+ $title[You can claim your errand <t:$sum[$multi[$getUserVar[errand.time];3600];$getUserVar[errand.start]]:R>]
+ $color[#A0A0A0]
+
+$endif
+
+
+$else
+
+$if[$getUserVar[errand.start]==0]
+ $title[❌ start an errand with t!errand start]
+$endif
+
+$if[$sum[$getUserVar[errand.start];$multi[3600;$getUserVar[errand.time]]]<=$getTimestamp]
+$c[if (old time + wait) < current time]
+$c[or if errand finished]
+
+ $title[You can claim your reward !]
+ $color[#A0FFA0]
+ 
+$else
+ 
+ $title[Errand completed <t:$sum[$multi[$getUserVar[errand.time];3600];$getUserVar[errand.start]]:R>]
+ $color[#A0A0A0]
+
+$endif
+
+
+$endif

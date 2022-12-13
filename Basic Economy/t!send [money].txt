@@ -1,0 +1,72 @@
+$nomention $reply
+ $allowMention
+$enableDecimals[yes]
+$ignoreTriggerCase
+$onlyIf[$and[$toLowercase[$message[1]]!=blue;$toLowercase[$message[1]]!=red;$toLowercase[$message[1]]!=yellow]==true;]
+$var[coin.emote;<:Tericoin:1001510021907099750>]
+
+$textSplit[$getUserVar[wedding;$authorID];/]
+$var[asker;$splitText[$sum[$getTextSplitIndex[asker];1]]]
+$var[asking;$splitText[$sum[$getTextSplitIndex[asking];1]]]
+$var[couple;$splitText[$sum[$getTextSplitIndex[couple];1]]]
+
+
+$if[$mentioned[1;no]==$var[couple]]
+
+$var[lp;$random[50;100]]
+$setUserVar[lovePoints;$sum[$getUserVar[lovePoints];$var[lp]]]
+$setUserVar[lovePoints;$getUserVar[lovePoints];$var[couple]]
+
+$endif
+
+$if[$getUserVar[money]==0]
+
+$color[#FF0000]
+$title[❌ You don't have any $var[coin.emote] !]
+$description[You can get some by playing with the bot]
+
+$elseif[$isNumber[$noMentionMessage]==false]
+ 
+$color[FF0000]
+$title[❌ Invalid format]
+$description[Command : `t!send <money> <@user>` or `t!send <@user> <money>`]
+
+$elseif[$noMentionMessage<=0]
+ 
+$color[FF0000]
+$title[❌ Invalid value]
+$description[You must send more than 0 $var[coin.emote]]
+ 
+$elseif[$and[$mentioned[1;no]!=$authorID;$mentioned[1;no]==]==true]
+
+$color[ff0000]
+$title[❌ Choose an user]
+$description[Chose an user to send the money to (yourself doesn't count)!]
+
+$elseif[$round[$noMentionMessage;0]<$round[$getUserVar[money];0]]
+
+
+$setUserVar[money;$sub[$getUserVar[money];$round[$noMentionMessage;0]]]
+
+
+$var[Rmoney;0]
+$var[Rmoney;$getUserVar[money;$mentioned[1;yes]]]
+
+$setUserVar[money;$sum[$var[Rmoney];$round[$noMentionMessage;0]];$mentioned[1;yes]]
+$allowMention
+$color[#00FF00]
+$title[✅ SUCCESS ✅]
+$description[You sent **$numberSeparator[$round[$noMentionMessage;0];,]**  $var[coin.emote]  to <@$mentioned[1;yes]> successfully!]
+
+$elseif[$round[$message[1];0]==$round[$getUserVar[money];0]]
+
+$color[#FF0000]
+$title[❌ You can't send all your money ! (Keep at least 1 $var[coin.emote])]
+
+$else
+
+$color[#FF0000]
+$title[❌ You don't have enough $var[coin.emote] !]
+
+
+$endif

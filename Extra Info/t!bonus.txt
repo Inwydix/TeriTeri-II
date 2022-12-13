@@ -1,0 +1,29 @@
+$if[$isSlash]
+
+$nomention $reply $ephemeral
+$enableDecimals[yes]
+$var[coin.emote;<:Tericoin:1001510021907099750>]
+
+$title[YOUR CURRENT BONUSES]
+$description[
+• Level 1 Worker : +$round[$multi[$getUserVar[lv1];0.01;150];2] $var[coin.emote] per second
+• Level 2 Worker : -$getUserVar[lv2] seconds per minute
+• Level 3 Worker : x$round[$multi[$getUserVar[lv3];1.1];2] $var[coin.emote] per errand
+• Level boost : x$getServerVar[lvl.boost]] 
+$color[ffcc00]
+
+$else
+
+$nomention $reply
+$enableDecimals[yes]
+$var[coin.emote;<:Tericoin:1001510021907099750>]
+
+$title[YOUR CURRENT BONUSES]
+$description[
+• Level 1 Worker : +$round[$multi[$getUserVar[lv1];0.01;150];2] $var[coin.emote] per second
+• Level 2 Worker : -$getUserVar[lv2] seconds per minute
+• Level 3 Worker : x$round[$multi[$getUserVar[lv3];1.1];2] $var[coin.emote] per errand
+• Level boost : x$getServerVar[lvl.boost]] 
+$color[ffcc00]
+
+$endif

@@ -1,0 +1,116 @@
+$nomention $ignoreTriggerCase
+$reply
+
+$var[coin.emote;<:Tericoin:1001510021907099750>]
+$var[teristals.emote;<:Teristal:1001507292648308817>]
+
+$if[$isSlash]
+
+$if[$sum[$getUserVar[errand.start];$multi[3600;$getUserVar[errand.time]]]<$getTimestamp]
+$c[if (old time + wait) < current time]
+ 
+ $if[$getUserVar[claimed]==yes]
+  
+  
+  
+  $setUserVar[errand.time;$randomText[1;3;3;6;6;6;6;9;9;12]]
+  $setUserVar[errand.start;$getTimestamp]
+  $setUserVar[claimed;no]
+  
+  $if[$getUserVar[lv2]!=0]
+   Your $getUserVar[lv2] lv.2 workers lower the $getUserVar[errand.time]h errand by $divide[$multi[$multi[$getUserVar[errand.time];60];$getUserVar[lv2]];3600]h, $divide[$modulo[$sub[$multi[$getUserVar[errand.time];3600];$sub[$multi[$getUserVar[errand.time];3600];$multi[15;$multi[$getUserVar[errand.time];60]]]];3600];60]m and $sub[$multi[$multi[$getUserVar[errand.time];60];$getUserVar[lv2]];$multi[$divide[$multi[$multi[$getUserVar[errand.time];60];$getUserVar[lv2]];3600];3600];$multi[$divide[$sub[$multi[$multi[$getUserVar[errand.time];60];$getUserVar[lv2]];$multi[$divide[$multi[$multi[$getUserVar[errand.time];60];$getUserVar[lv2]];3600];3600]];60];60]]s !
+  $endif
+  
+  $setUserVar[errand.start;$sub[$getUserVar[errand.start];$multi[$multi[$getUserVar[errand.time];60];$getUserVar[lv2]]]]
+  
+  $enableDecimals[yes]
+  $title[You got a $getUserVar[errand.time]h errand !]
+  $color[#FFFF00]
+  
+  $if[$getUserVar[errand.time]==1]
+   $description[Come back later to claim $round[$multi[$calculate[1.1**$getUserVar[lv3]];200;$calculate[1.1**$getServerVar[w3.boost]]];0] $var[coin.emote] !]
+  $elseif[$getUserVar[errand.time]==3]
+   $description[Come back later to claim $round[$multi[$calculate[1.1**$getUserVar[lv3]];500;$calculate[1.1**$getServerVar[w3.boost]]];0] $var[coin.emote] !]
+  $elseif[$getUserVar[errand.time]==6]
+   $description[Come back later to claim $round[$multi[$calculate[1.1**$getUserVar[lv3]];700;$calculate[1.1**$getServerVar[w3.boost]]];0] $var[coin.emote] !]
+  $elseif[$getUserVar[errand.time]==9]
+   $description[Come back later to claim $round[$multi[$calculate[1.1**$getUserVar[lv3]];800;$calculate[1.1**$getServerVar[w3.boost]]];0] $var[coin.emote] !]
+  $elseif[$getUserVar[errand.time]==12]
+   $description[Come back later to claim $round[$multi[$calculate[1.1**$getUserVar[lv3]];1000;$calculate[1.1**$getServerVar[w3.boost]]];0] $var[coin.emote] !]
+   
+   
+   $stop
+   
+  $endif
+
+
+ 
+ $elseif[$getUserVar[claimed]==no]
+  $title[Use `t!errand claim` to claim your previous errand !]
+  $color[#00FF00]
+ $endif
+ 
+$else
+
+$title[❌ Your previous errand isn't finished!]
+$description[Current errand completed <t:$sum[$multi[$getUserVar[errand.time];3600];$getUserVar[errand.start]]:R>]
+$color[#FF0000]
+
+$endif
+
+
+$else
+
+$if[$sum[$getUserVar[errand.start];$multi[3600;$getUserVar[errand.time]]]<$getTimestamp]
+$c[if (old time + wait) < current time]
+ 
+ $if[$getUserVar[claimed]==yes]
+  
+  
+  
+  $setUserVar[errand.time;$randomText[1;3;3;6;6;6;6;9;9;12]]
+  $setUserVar[errand.start;$getTimestamp]
+  $setUserVar[claimed;no]
+  
+  $if[$getUserVar[lv2]!=0]
+   Your $getUserVar[lv2] lv.2 workers lower the $getUserVar[errand.time]h errand by $divide[$multi[$multi[$getUserVar[errand.time];60];$getUserVar[lv2]];3600]h, $divide[$modulo[$sub[$multi[$getUserVar[errand.time];3600];$sub[$multi[$getUserVar[errand.time];3600];$multi[15;$multi[$getUserVar[errand.time];60]]]];3600];60]m and $sub[$multi[$multi[$getUserVar[errand.time];60];$getUserVar[lv2]];$multi[$divide[$multi[$multi[$getUserVar[errand.time];60];$getUserVar[lv2]];3600];3600];$multi[$divide[$sub[$multi[$multi[$getUserVar[errand.time];60];$getUserVar[lv2]];$multi[$divide[$multi[$multi[$getUserVar[errand.time];60];$getUserVar[lv2]];3600];3600]];60];60]]s !
+  $endif
+  
+  $setUserVar[errand.start;$sub[$getUserVar[errand.start];$multi[$multi[$getUserVar[errand.time];60];$getUserVar[lv2]]]]
+  
+  $enableDecimals[yes]
+  $title[You got a $getUserVar[errand.time]h errand !]
+  $color[#FFFF00]
+  
+  $if[$getUserVar[errand.time]==1]
+   $description[Come back later to claim $round[$multi[$calculate[1.1**$getUserVar[lv3]];200;$calculate[1.1**$getServerVar[w3.boost]]];0] $var[coin.emote] !]
+  $elseif[$getUserVar[errand.time]==3]
+   $description[Come back later to claim $round[$multi[$calculate[1.1**$getUserVar[lv3]];500;$calculate[1.1**$getServerVar[w3.boost]]];0] $var[coin.emote] !]
+  $elseif[$getUserVar[errand.time]==6]
+   $description[Come back later to claim $round[$multi[$calculate[1.1**$getUserVar[lv3]];700;$calculate[1.1**$getServerVar[w3.boost]]];0] $var[coin.emote] !]
+  $elseif[$getUserVar[errand.time]==9]
+   $description[Come back later to claim $round[$multi[$calculate[1.1**$getUserVar[lv3]];800;$calculate[1.1**$getServerVar[w3.boost]]];0] $var[coin.emote] !]
+  $elseif[$getUserVar[errand.time]==12]
+   $description[Come back later to claim $round[$multi[$calculate[1.1**$getUserVar[lv3]];1000;$calculate[1.1**$getServerVar[w3.boost]]];0] $var[coin.emote] !]
+   
+   
+   $stop
+   
+  $endif
+
+
+ 
+ $elseif[$getUserVar[claimed]==no]
+  $title[Use `t!errand claim` to claim your previous errand !]
+  $color[#00FF00]
+ $endif
+ 
+$else
+
+$title[❌ Your previous errand isn't finished!]
+$description[Current errand completed <t:$sum[$multi[$getUserVar[errand.time];3600];$getUserVar[errand.start]]:R>]
+$color[#FF0000]
+
+$endif
+
+$endif

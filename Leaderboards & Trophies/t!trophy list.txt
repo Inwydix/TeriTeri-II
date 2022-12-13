@@ -1,0 +1,49 @@
+$reply $ignoreTriggerCase
+
+$color[#00FF00]
+$title[Welcome to the trophy shop ! Will you get them all ?]
+$description[** **
+__Money Trophies (do t!money to get them):__
+
+> <@&$roleID[50M]>
+> <@&$roleID[1M]>   \[ changes color everytime someone sends a message %ESCAPED%
+> <@&$roleID[500k]>
+> <@&$roleID[100k]>
+> <@&$roleID[50k]>
+> <@&$roleID[10k]>
+> <@&$roleID[5k]>
+> <@&$roleID[1k]>
+
+__Level Trophies :__
+
+> <@&$roleID[Lv.50]>
+> <@&$roleID[Lv.40]>
+> <@&$roleID[Lv.30]>
+> <@&$roleID[Lv.20]>
+> <@&$roleID[Lv.10]>
+> <@&$roleID[Lv.1]>
+
+__Worker Trophies :__
+
+> <@&$roleID[60 workers]>
+> <@&$roleID[45 workers]>
+> <@&$roleID[30 workers]>
+> <@&$roleID[20 workers]>
+> <@&$roleID[10 workers]>
+> <@&$roleID[5 workers]>
+> <@&$roleID[1 worker]>
+
+__Casino Trophies :__
+
+> <@&$roleID[x20 lucky~]>   \[ get a x20 multiplier (1%) %ESCAPED%
+> <@&$roleID[x10 luck]>        \[ get a x10 multiplier (1%) %ESCAPED%
+> <@&$roleID[x5 luck]>          \[ get a x5 multiplier (3%) %ESCAPED%
+
+__Stigma Trophies :__
+
+> <@&$roleID[All 5 stars]>   \[ get all 5 stars stigmas %ESCAPED%
+> <@&$roleID[All 4 stars]>   \[ get all 4 stars stigmas %ESCAPED%
+> <@&$roleID[All 3 stars]>   \[ get all 3 stars stigmas %ESCAPED%
+** **]
+$footer[If you don't get the roles, do `t!role update`]
+

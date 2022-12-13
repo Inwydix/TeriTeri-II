@@ -1,0 +1,73 @@
+$var[coin.emote;<:Tericoin:1001510021907099750>]
+
+$reply $ignoreTriggerCase
+
+$if[$isSlash]
+
+
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1020252795292626964/20220916_104004.png]
+$author[Market Square]
+$color[FA8072]
+$title[Welcome to the worker shop!]
+$description[
+What kind of worker would you like to hire?
+
+__**Worker Lv.1**__
+> • Price : $numberSeparator[$round[$calculate[1000*1.2**$getUserVar[lv1]];0];,] $var[coin.emote]
+> • Owned : $getUserVar[lv1]/$sum[10;$getServerVar[bank.worker];$multi[$getUserVar[up1];5]] $if[$getUserVar[lv1]==$sum[10;$getServerVar[bank.worker];$multi[$getUserVar[up1];5]]](MAXED)$endif
+> • Effect : +0.01 $var[coin.emote] / minute
+
+__**Worker Lv.2**__
+> • Price : $numberSeparator[$round[$calculate[10000*1.2**$getUserVar[lv2]];0];,] $var[coin.emote]
+> • Owned : $getUserVar[lv2]/$sum[10;$getServerVar[bank.worker];$multi[$getUserVar[up2];5]] $if[$getUserVar[lv2]==$sum[10;$getServerVar[bank.worker];$multi[$getUserVar[up2];5]]](MAXED)$endif
+> • Effect : -1 second / minute (errand)
+
+__**Worker Lv.3**__
+> • Price : $numberSeparator[$round[$calculate[50000*1.2**$getUserVar[lv3]];0];,] $var[coin.emote]
+> • Owned : $getUserVar[lv3]/$sum[10;$getServerVar[bank.worker];$multi[$getUserVar[up3];5]] $if[$getUserVar[lv3]==$sum[10;$getServerVar[bank.worker];$multi[$getUserVar[up3];5]]](MAXED)$endif
+> • Effect : x1.1 $var[coin.emote] / errand
+
+Use `t!buy worker <level>` to hire a new worker!
+
+**YOUR MONEY**
+> $numberSeparator[$round[$getUserVar[money];0];,] $var[coin.emote]
+** **]
+
+$footer[Note : The price of the workers is multiplied by x1.2 everytime you buy one]
+
+
+$else
+
+
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1020252795292626964/20220916_104004.png]
+$author[Market Square]
+$color[FA8072]
+$title[Welcome to the worker shop!]
+$description[
+What kind of worker would you like to hire?
+
+__**Worker Lv.1**__
+> • Price : $numberSeparator[$round[$calculate[1000*1.2**$getUserVar[lv1]];0];,] $var[coin.emote]
+> • Owned : $getUserVar[lv1]/$sum[10;$getServerVar[bank.worker];$multi[$getUserVar[up1];5]] $if[$getUserVar[lv1]==$sum[10;$getServerVar[bank.worker];$multi[$getUserVar[up1];5]]](MAXED)$endif
+> • Effect : +0.01 $var[coin.emote] / minute
+
+__**Worker Lv.2**__
+> • Price : $numberSeparator[$round[$calculate[10000*1.2**$getUserVar[lv2]];0];,] $var[coin.emote]
+> • Owned : $getUserVar[lv2]/$sum[10;$getServerVar[bank.worker];$multi[$getUserVar[up2];5]] $if[$getUserVar[lv2]==$sum[10;$getServerVar[bank.worker];$multi[$getUserVar[up2];5]]](MAXED)$endif
+> • Effect : -1 second / minute (errand)
+
+__**Worker Lv.3**__
+> • Price : $numberSeparator[$round[$calculate[50000*1.2**$getUserVar[lv3]];0];,] $var[coin.emote]
+> • Owned : $getUserVar[lv3]/$sum[10;$getServerVar[bank.worker];$multi[$getUserVar[up3];5]] $if[$getUserVar[lv3]==$sum[10;$getServerVar[bank.worker];$multi[$getUserVar[up3];5]]](MAXED)$endif
+> • Effect : x1.1 $var[coin.emote] / errand
+
+Use `t!buy worker <level>` to hire a new worker!
+
+**YOUR MONEY**
+> $numberSeparator[$round[$getUserVar[money];0];,] $var[coin.emote]
+** **]
+
+$footer[Note : The price of the workers is multiplied by x1.2 everytime you buy one]
+
+
+$endif

@@ -1,0 +1,26 @@
+$nomention 
+$onlyAdmin[❌ Only admins can use this command!]
+
+$if[$isNumber[$message]]
+
+$setServerVar[welcome;$message]
+$color[33cc33]
+
+$if[$message==0]
+
+$description[✅ Welcome messages deactivated]
+
+$else
+
+$description[✅ <#$message> set as welcome channel! Now TeriTeri will send welcome messages there when a new member joins~]
+
+$endif
+
+$else
+
+$title[❌ Wrong command!]
+$description[You have to use : `t!welcome <channelID>`]
+$color[ff1a1a]
+
+$endif
+

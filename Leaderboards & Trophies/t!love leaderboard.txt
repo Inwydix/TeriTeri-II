@@ -1,0 +1,18 @@
+$nomention $reply $ignoreTriggerCase
+$onlyIf[$getServerVar[bank.prog]>=7;❌ You need to reach the 7th milestone (40M) to use this]
+
+$title[💘 TOP 3 LOVELY DOVEY COUPLES 💘]
+$description[$addField[Nickname;
+1. $nickname[$getLeaderboardValue[user;lovePoints;asc;1;id]] & $nickname[$getLeaderboardValue[user;lovePoints;asc;2;id]]
+2. $nickname[$getLeaderboardValue[user;lovePoints;asc;3;id]] & $nickname[$getLeaderboardValue[user;lovePoints;asc;4;id]]
+3. $nickname[$getLeaderboardValue[user;lovePoints;asc;5;id]] & $nickname[$getLeaderboardValue[user;lovePoints;asc;6;id]] 
+ ;yes;1] 
+ 
+$addField[Points; 
+ $numberSeparator[$getLeaderboardValue[user;lovePoints;asc;1;value];,]
+ $numberSeparator[$getLeaderboardValue[user;lovePoints;asc;3;value];,]
+ $numberSeparator[$getLeaderboardValue[user;lovePoints;asc;5;value];,]
+ ;yes;1]
+
+] 
+$color[ffffff]

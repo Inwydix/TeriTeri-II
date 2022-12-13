@@ -1,0 +1,7 @@
+$nomention
+$onlyIf[$getServerVar[welcome]!=0;]
+<@$authorID> $randomText[Welcome to ~~hell~~ this beautiful place <:TeriCute:999834523816689814>; Welcome to a non-painful discord server! <:TeriNom:1000067749076271224>;Beware of the Terinnosaurus Rex, fellow Tericeratops <:HYPERTERIIIIII:1000071616937611315>;What's your favourite shape? Ours is the TeriAngle! <:TeriTeeHee:1000068570341982368>]
+
+$if[$isBot[$authorID]==false]
+$setServerVar[members.count;$sum[$getServerVar[members.count];1]]
+$endif

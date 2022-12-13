@@ -1,0 +1,264 @@
+$nomention $reply $ignoreTriggerCase
+$enableDecimals[yes]
+$cooldown[20h;❌ The command is on cooldown ! (20h cooldown) | Next claim : <t:$sum[$sub[$getTimestamp;$sub[72000;$getCooldown[normal]]];$multi[20;3600]]:R>]
+
+$var[coin.emote;<:Tericoin:1001510021907099750>]
+$var[teristal.emote;<:Teristal:1001507292648308817>]
+
+$textSplit[$getUserVar[badges];/]
+$var[tc.total;$splitText[$sum[$getTextSplitIndex[tc];1]]]
+$var[tc.badge;$splitText[$sum[$getTextSplitIndex[tc];2]]]
+$var[ts.total;$splitText[$sum[$getTextSplitIndex[ts];1]]]
+$var[ts.badge;$splitText[$sum[$getTextSplitIndex[ts];2]]]
+$var[streak.total;$splitText[$sum[$getTextSplitIndex[streak];1]]]
+$var[streak.badge;$splitText[$sum[$getTextSplitIndex[streak];2]]]
+$var[unchanged;errand/$splitText[$sum[$getTextSplitIndex[errand];1]]/$splitText[$sum[$getTextSplitIndex[errand];2]]/casino/$splitText[$sum[$getTextSplitIndex[casino];1]]/$splitText[$sum[$getTextSplitIndex[casino];2]]/bug/$splitText[$sum[$getTextSplitIndex[bug];1]]/$splitText[$sum[$getTextSplitIndex[bug];2]]/rank/$splitText[$sum[$getTextSplitIndex[rank];1]]/$splitText[$sum[$getTextSplitIndex[rank];2]]/badge/$splitText[$sum[$getTextSplitIndex[badge];1]]/$splitText[$sum[$getTextSplitIndex[badge];2]]/bank/$splitText[$sum[$getTextSplitIndex[bank];1]]/$splitText[$sum[$getTextSplitIndex[bank];2]]]
+
+$if[$isSlash]
+
+$c[checks if your streak is bigger than your total streak]
+
+$if[$getUserVar[streak]>$var[streak.total]]
+  $var[streak.total;$getUserVar[streak]]
+$endif
+  
+$c[172800 is 2days in seconds]
+$if[$calculate[$getTimestamp-$getUserVar[last.day]]>=172800]
+ $setUserVar[streak;0]
+ $setUserVar[last.day;$getTimestamp]
+ $var[streak.total;0]
+ 
+$else
+ $setUserVar[streak;$sum[$getUserVar[streak];1]]
+ $setUserVar[last.day;$getTimestamp]
+ $var[streak.total;$sum[$var[streak.total];1]]
+ 
+$endif
+
+
+$if[$getUserVar[streak]>6]
+ $setUserVar[streak;6]
+ 
+$endif
+
+
+
+
+
+$setUserVar[daily.multi;$calculate[1.122**$getUserVar[streak]]]
+
+
+$c[bank milestone]
+
+$if[$getServerVar[bank.prog]<1]
+ $var[Rmoney;$round[$multi[$random[50;100];$getUserVar[daily.multi]];0]]
+ 
+$elseif[$getUserVar[up4]==0]
+ $var[Rmoney;$round[$multi[10;$random[50;100];$getUserVar[daily.multi]];0]]
+ 
+$else
+ $var[Rmoney;$round[$multi[100;$random[50;100];$getUserVar[daily.multi]];0]]
+ 
+$endif
+
+
+$c[crystals calculation]
+
+$var[Rcrystal;$round[$multi[$random[5;10];$getUserVar[daily.multi]];0]]
+
+
+
+$c[stigma effects]
+
+$textSplit[$getUserVar[stigma.equip];/]
+$var[stigT.equip;$splitText[$sum[$getTextSplitIndex[stigT];1]]]
+$var[stigM.equip;$splitText[$sum[$getTextSplitIndex[stigM];1]]]
+$var[stigB.equip;$splitText[$sum[$getTextSplitIndex[stigB];1]]]
+
+$if[$var[stigT.equip]==stig1T]
+  $setUserVar[errand.start;$sub[$getUserVar[errand.start];1800]]
+$endif
+$if[$var[stigM.equip]==stig1M]
+  $setUserVar[errand.start;$sub[$getUserVar[errand.start];1800]]
+$endif
+$if[$var[stigB.equip]==stig1B]
+  $setUserVar[errand.start;$sub[$getUserVar[errand.start];1800]]
+$endif
+
+$if[$var[stigT.equip]==stig6T]
+  $setUserVar[errand.start;1]
+$endif
+$if[$var[stigM.equip]==stig6M]
+  $setUserVar[last.claim;$sub[$getUserVar[last.claim];43200]]
+$endif
+$if[$var[stigB.equip]==stig6B]
+  $var[Rcrystal;$round[$multi[$var[Rcrystal];1.5];0]]
+$endif
+
+
+
+
+
+$setUserVar[money;$round[$sum[$var[Rmoney];$getUserVar[money]];0]]
+$setUserVar[crystal;$sum[$var[Rcrystal];$getUserVar[crystal]]]
+
+$var[tc.total;$sum[$var[tc.total];$var[Rmoney]]]
+$var[ts.total;$sum[$var[ts.total];$var[Rcrystal]]]
+
+$color[#00FF00]
+$author[Daily Rewards!]
+$thumbnail[$authorAvatar]
+$title[You got **$numberSeparator[$var[Rmoney];,]** $var[coin.emote] and **$var[Rcrystal]**  $var[teristal.emote] !]
+$description[Now you have :
+• **$numberSeparator[$round[$getUserVar[money];0];,]**  $var[coin.emote]
+• **$numberSeparator[$round[$getUserVar[crystal];0];,]**  $var[teristal.emote] 
+
+Your current streak is **$var[streak.total]** days ! Streak Multiplier : **$round[$getUserVar[daily.multi];2]**]
+
+$c[bank milestone]
+
+$if[$getServerVar[bank.prog]<1]
+ $footer[You can get from $numberSeparator[$round[$multi[$getUserVar[daily.multi];50];0];,] to $numberSeparator[$round[$multi[$getUserVar[daily.multi];100];0];,] Tericoins and $round[$multi[$getUserVar[daily.multi];5];0] to $round[$multi[$getUserVar[daily.multi];10];0] Teristals per day with this streak !]
+$elseif[$getUserVar[up4]==0]
+ $footer[You can get from $numberSeparator[$round[$multi[$getUserVar[daily.multi];500];0];,] to $numberSeparator[$round[$multi[$getUserVar[daily.multi];1000];0];,] Tericoins and $round[$multi[$getUserVar[daily.multi];5];0] to $round[$multi[$getUserVar[daily.multi];10];0] Teristals per day with this streak and the milestone 1!]
+$else
+ $footer[You can get from $numberSeparator[$round[$multi[$getUserVar[daily.multi];5000];0];,] to $numberSeparator[$round[$multi[$getUserVar[daily.multi];10000];0];,] Tericoins and $round[$multi[$getUserVar[daily.multi];5];0] to $round[$multi[$getUserVar[daily.multi];10];0] Teristals per day with this streak, the milestone 1 and the upgrade 4!]
+$endif
+
+$if[$and[$var[streak.total]>=7;$var[streak.total]<25]]
+$var[streak.badge;1]
+$elseif[$and[$var[streak.total]>=25;$var[streak.total]<50]]
+$var[streak.badge;2]
+$elseif[$var[streak.total]>=50]
+$var[streak.badge;3]
+$else
+$var[streak.badge;null]
+$endif
+
+$setUserVar[badges;$var[unchanged]/tc/$var[tc.total]/$var[tc.badge]/ts/$var[ts.total]/$var[ts.badge]/streak/$var[streak.total]/$var[streak.badge]]
+
+$else
+
+$c[checks if your streak is bigger than your total streak]
+
+$if[$getUserVar[streak]>$var[streak.total]]
+  $var[streak.total;$getUserVar[streak]]
+$endif
+  
+$c[172800 is 2days in seconds]
+$if[$calculate[$getTimestamp-$getUserVar[last.day]]>=172800]
+ $setUserVar[streak;0]
+ $setUserVar[last.day;$getTimestamp]
+ $var[streak.total;0]
+ 
+$else
+ $setUserVar[streak;$sum[$getUserVar[streak];1]]
+ $setUserVar[last.day;$getTimestamp]
+ $var[streak.total;$sum[$var[streak.total];1]]
+ 
+$endif
+
+
+$if[$getUserVar[streak]>6]
+ $setUserVar[streak;6]
+ 
+$endif
+
+
+
+
+
+$setUserVar[daily.multi;$calculate[1.122**$getUserVar[streak]]]
+
+
+$c[bank milestone]
+
+$if[$getServerVar[bank.prog]<1]
+ $var[Rmoney;$round[$multi[$random[50;100];$getUserVar[daily.multi]];0]]
+ 
+$elseif[$getUserVar[up4]==0]
+ $var[Rmoney;$round[$multi[10;$random[50;100];$getUserVar[daily.multi]];0]]
+ 
+$else
+ $var[Rmoney;$round[$multi[100;$random[50;100];$getUserVar[daily.multi]];0]]
+ 
+$endif
+
+
+$c[crystals calculation]
+
+$var[Rcrystal;$round[$multi[$random[5;10];$getUserVar[daily.multi]];0]]
+
+
+
+$c[stigma effects]
+
+$textSplit[$getUserVar[stigma.equip];/]
+$var[stigT.equip;$splitText[$sum[$getTextSplitIndex[stigT];1]]]
+$var[stigM.equip;$splitText[$sum[$getTextSplitIndex[stigM];1]]]
+$var[stigB.equip;$splitText[$sum[$getTextSplitIndex[stigB];1]]]
+
+$if[$var[stigT.equip]==stig1T]
+  $setUserVar[errand.start;$sub[$getUserVar[errand.start];1800]]
+$endif
+$if[$var[stigM.equip]==stig1M]
+  $setUserVar[errand.start;$sub[$getUserVar[errand.start];1800]]
+$endif
+$if[$var[stigB.equip]==stig1B]
+  $setUserVar[errand.start;$sub[$getUserVar[errand.start];1800]]
+$endif
+
+$if[$var[stigT.equip]==stig6T]
+  $setUserVar[errand.start;1]
+$endif
+$if[$var[stigM.equip]==stig6M]
+  $setUserVar[last.claim;$sub[$getUserVar[last.claim];43200]]
+$endif
+$if[$var[stigB.equip]==stig6B]
+  $var[Rcrystal;$round[$multi[$var[Rcrystal];1.5];0]]
+$endif
+
+
+
+
+
+$setUserVar[money;$round[$sum[$var[Rmoney];$getUserVar[money]];0]]
+$setUserVar[crystal;$sum[$var[Rcrystal];$getUserVar[crystal]]]
+
+$var[tc.total;$sum[$var[tc.total];$var[Rmoney]]]
+$var[ts.total;$sum[$var[ts.total];$var[Rcrystal]]]
+
+$color[#00FF00]
+$author[Daily Rewards!]
+$thumbnail[$authorAvatar]
+$title[You got **$numberSeparator[$var[Rmoney];,]** $var[coin.emote] and **$var[Rcrystal]**  $var[teristal.emote] !]
+$description[Now you have :
+• **$numberSeparator[$round[$getUserVar[money];0];,]**  $var[coin.emote]
+• **$numberSeparator[$round[$getUserVar[crystal];0];,]**  $var[teristal.emote] 
+
+Your current streak is **$var[streak.total]** days ! Streak Multiplier : **$round[$getUserVar[daily.multi];2]**]
+
+$c[bank milestone]
+
+$if[$getServerVar[bank.prog]<1]
+ $footer[You can get from $numberSeparator[$round[$multi[$getUserVar[daily.multi];50];0];,] to $numberSeparator[$round[$multi[$getUserVar[daily.multi];100];0];,] Tericoins and $round[$multi[$getUserVar[daily.multi];5];0] to $round[$multi[$getUserVar[daily.multi];10];0] Teristals per day with this streak !]
+$elseif[$getUserVar[up4]==0]
+ $footer[You can get from $numberSeparator[$round[$multi[$getUserVar[daily.multi];500];0];,] to $numberSeparator[$round[$multi[$getUserVar[daily.multi];1000];0];,] Tericoins and $round[$multi[$getUserVar[daily.multi];5];0] to $round[$multi[$getUserVar[daily.multi];10];0] Teristals per day with this streak and the milestone 1!]
+$else
+ $footer[You can get from $numberSeparator[$round[$multi[$getUserVar[daily.multi];5000];0];,] to $numberSeparator[$round[$multi[$getUserVar[daily.multi];10000];0];,] Tericoins and $round[$multi[$getUserVar[daily.multi];5];0] to $round[$multi[$getUserVar[daily.multi];10];0] Teristals per day with this streak, the milestone 1 and the upgrade 4!]
+$endif
+
+$if[$and[$var[streak.total]>=7;$var[streak.total]<25]]
+$var[streak.badge;1]
+$elseif[$and[$var[streak.total]>=25;$var[streak.total]<50]]
+$var[streak.badge;2]
+$elseif[$var[streak.total]>=50]
+$var[streak.badge;3]
+$else
+$var[streak.badge;null]
+$endif
+
+$setUserVar[badges;$var[unchanged]/tc/$var[tc.total]/$var[tc.badge]/ts/$var[ts.total]/$var[ts.badge]/streak/$var[streak.total]/$var[streak.badge]]
+
+
+$endif

@@ -1,0 +1,252 @@
+$nomention $reply $ignoreTriggerCase 
+$enableDecimals[yes]
+
+$var[coin.emote;<:Tericoin:1001510021907099750>]
+
+
+$textSplit[$getUserVar[badges];/]
+$var[unchanged;ts/$splitText[$sum[$getTextSplitIndex[ts];1]]/$splitText[$sum[$getTextSplitIndex[ts];2]]/errand/$splitText[$sum[$getTextSplitIndex[errand];1]]/$splitText[$sum[$getTextSplitIndex[errand];2]]/streak/$splitText[$sum[$getTextSplitIndex[streak];1]]/$splitText[$sum[$getTextSplitIndex[streak];2]]/bug/$splitText[$sum[$getTextSplitIndex[bug];1]]/$splitText[$sum[$getTextSplitIndex[bug];2]]/rank/$splitText[$sum[$getTextSplitIndex[rank];1]]/$splitText[$sum[$getTextSplitIndex[rank];2]]/badge/$splitText[$sum[$getTextSplitIndex[badge];1]]/$splitText[$sum[$getTextSplitIndex[badge];2]]/bank/$splitText[$sum[$getTextSplitIndex[bank];1]]/$splitText[$sum[$getTextSplitIndex[bank];2]]]
+$var[tc.total;$splitText[$sum[$getTextSplitIndex[tc];1]]]
+$var[tc.badge;$splitText[$sum[$getTextSplitIndex[tc];2]]]
+$var[casino.total;$splitText[$sum[$getTextSplitIndex[casino];1]]]
+$var[casino.badge;$splitText[$sum[$getTextSplitIndex[casino];2]]]
+
+
+$if[$isSlash]
+
+$color[#FF0000]
+$author[The House of Teri, Casino]
+
+$embedSuppressErrors[❌ You are on cooldown !;;ff1a1a;House of Teri, Casino;;]
+$cooldown[5m;TeriTeri is preparing the next game! You have to wait **%time%** until you can play again $randomText[(⁠ノ⁠｀⁠⌒⁠´⁠)⁠ノ⁠┫⁠：⁠・⁠┻⁠┻;ʕ⁠ノ⁠•⁠ᴥ⁠•⁠ʔ⁠ノ⁠ ⁠︵⁠ ⁠┻⁠━⁠┻;(⁠╯⁠ರ⁠ ⁠~⁠ ⁠ರ⁠)⁠╯⁠︵⁠ ⁠┻⁠━⁠┻;(⁠ヘ⁠･⁠_⁠･⁠)⁠ヘ⁠┳⁠━⁠┳;┬⁠─⁠┬⁠ノ⁠(⁠ ⁠º⁠ ⁠_⁠ ⁠º⁠ノ⁠);(⁠/⁠¯⁠◡⁠ ⁠‿⁠ ⁠◡⁠)⁠/⁠¯⁠ ⁠~⁠ ⁠┻⁠━⁠┻;(⁠ﾉ⁠°⁠_⁠o⁠)⁠ﾉ⁠⌒⁠┫⁠ ⁠┻⁠ ⁠┣⁠ ⁠┳;┻⁠┻⁠︵⁠¯⁠\⁠(⁠ツ⁠)⁠/⁠¯⁠︵⁠┻⁠┻;(⁠ﾉ⁠≧⁠∇⁠≦⁠)⁠ﾉ⁠ ⁠ﾐ⁠ ⁠┻⁠━⁠┻;(⁠ノ⁠｀⁠Д⁠´⁠)⁠ノ⁠彡⁠┻⁠━⁠┻]]
+
+ 
+ $setUserVar[money;$sub[$getUserVar[money];$message[bet]]]
+ $var[temp;$modulo[$getTimestamp;100]]
+ 
+ $var[casino.total;$sum[$var[casino.total];1]]
+ 
+ $if[$and[$var[temp]>=0;$var[temp]<30]]
+ $c[0.1]
+ $var[casino;0.1]
+ 
+ $elseif[$and[$var[temp]>=30;$var[temp]<60]]
+ $c[0.5]
+ $var[casino;0.5]
+  
+ $elseif[$and[$var[temp]>=60;$var[temp]<80]]
+ $c[1]
+ $var[casino;1]
+ 
+ $elseif[$and[$var[temp]>=80;$var[temp]<90]]
+ $c[2]
+ $var[casino;2]
+ 
+ $elseif[$and[$var[temp]>=90;$var[temp]<95]]
+ $c[3]
+ $var[casino;3]
+ 
+ $elseif[$and[$var[temp]>=95;$var[temp]<98]]
+ $c[5]
+ $var[casino;5]
+ 
+ $elseif[$and[$var[temp]>=98;$var[temp]<99]]
+ $c[10] 
+ $var[casino;10]
+ 
+ $elseif[$and[$var[temp]>=99;$var[temp]<100]]
+ $c[20]
+ $var[casino;20]
+ 
+ $endif
+ 
+ 
+ 
+ $footerIcon[$authorAvatar]
+ $title[__You got **x$var[casino]**__]
+
+ $if[$var[casino]==0.1]
+  $color[#FF0000]
+ $elseif[$var[casino]==0.5]
+  $color[#FF8000]
+ $elseif[$var[casino]==1]
+  $color[#000000]
+ $elseif[$var[casino]==2]
+  $color[#90A000]
+ $elseif[$var[casino]==3]
+
+  $color[#107000]
+ $elseif[$var[casino]==5]
+  $color[#009070]
+  $if[$hasRole[$authorID;$findRole[x5 luck]]==false]
+   $giveRole[$authorID;$findRole[x5 luck]]
+   role $roleName[$findRole[x5 luck]] added to <@$authorID>
+  $endif
+ $elseif[$var[casino]==10]
+  $color[#0000FF]
+  $if[$hasRole[$authorID;$findRole[x10 luck]]==false]
+   $giveRole[$authorID;$findRole[x10 luck]]
+   role $roleName[$findRole[x10 luck]] added to <@$authorID>
+  $endif
+ $elseif[$var[casino]==20]
+  $color[#FF00FF]
+  $if[$hasRole[$authorID;$findRole[x20 lucky~]]==false]
+   $giveRole[$authorID;$findRole[x20 lucky~]]
+   role $roleName[$findRole[x20 lucky~]] added to <@$authorID>
+  $endif
+ $endif
+ 
+
+ $var[casino;$round[$multi[$var[casino];$message[bet]];0]]
+$enableDecimals[no] 
+ $thumbnail[https://media.discordapp.net/attachments/940057982660644905/1015258765894877284/Screenshot_20220902-1554392.png]
+ $description[So your **$numberSeparator[$message[bet];,]**  $var[coin.emote]  become **$numberSeparator[$var[casino];,]**  $var[coin.emote] !]
+
+ $setUserVar[money;$sum[$getUserVar[money];$var[casino]]]
+
+ $footer[Now you have $numberSeparator[$round[$getUserVar[money];0];,] Tericoins ! ]
+
+ $if[$var[casino]>$message[bet]]
+   $var[tc.total;$sum[$var[tc.total];$sub[$var[casino];$message[bet]]]]
+ $endif
+ 
+ $setUserVar[badges;$var[unchanged]/tc/$var[tc.total]/$var[tc.badge]/casino/$var[casino.total]/$var[casino.badge]]
+
+
+$else
+
+
+$color[#FF0000]
+$author[The House of Teri, Casino]
+
+
+$if[$message==]
+ $title[❌ Enter a value]
+ $description[Command : `t!casino <amount>`]
+ $stop
+ 
+$elseif[$isNumber[$message]==false]
+ $color[#FF0000]
+ $title[❌ You need to enter a number]
+ $description[For example : `t!casino 42069`]
+ $stop
+ 
+$elseif[$round[$message;0]<=0]
+ $title[❌ Don't bet 0 $var[coin.emote] baka]
+ $description[You have to gamble with, at least, 1 $var[coin.emote]] 
+ $stop
+
+$elseif[$round[$message;0]>$round[$getUserVar[money];0]]
+ $title[❌ You don't have enough $var[coin.emote]]
+ $description[Owned money : $numberSeparator[$round[$getUserVar[money];0];,] $var[coin.emote]
+Introduced number : $numberSeparator[$message;,] $var[coin.emote] ]
+ $stop
+
+$elseif[$round[$message;0]==$round[$getUserVar[money];0]]
+ $title[❌ You can't bet everything !]
+ $description[Keep at least 1 $var[coin.emote], baka]
+ $stop 
+ 
+$else
+
+ $embedSuppressErrors[❌ You are on cooldown !;;ff1a1a;House of Teri, Casino;;]
+ $cooldown[5m;TeriTeri is preparing the next game! You have to wait **%time%** until you can play again $randomText[(⁠ノ⁠｀⁠⌒⁠´⁠)⁠ノ⁠┫⁠：⁠・⁠┻⁠┻;ʕ⁠ノ⁠•⁠ᴥ⁠•⁠ʔ⁠ノ⁠ ⁠︵⁠ ⁠┻⁠━⁠┻;(⁠╯⁠ರ⁠ ⁠~⁠ ⁠ರ⁠)⁠╯⁠︵⁠ ⁠┻⁠━⁠┻;(⁠ヘ⁠･⁠_⁠･⁠)⁠ヘ⁠┳⁠━⁠┳;┬⁠─⁠┬⁠ノ⁠(⁠ ⁠º⁠ ⁠_⁠ ⁠º⁠ノ⁠);(⁠/⁠¯⁠◡⁠ ⁠‿⁠ ⁠◡⁠)⁠/⁠¯⁠ ⁠~⁠ ⁠┻⁠━⁠┻;(⁠ﾉ⁠°⁠_⁠o⁠)⁠ﾉ⁠⌒⁠┫⁠ ⁠┻⁠ ⁠┣⁠ ⁠┳;┻⁠┻⁠︵⁠¯⁠\⁠(⁠ツ⁠)⁠/⁠¯⁠︵⁠┻⁠┻;(⁠ﾉ⁠≧⁠∇⁠≦⁠)⁠ﾉ⁠ ⁠ﾐ⁠ ⁠┻⁠━⁠┻;(⁠ノ⁠｀⁠Д⁠´⁠)⁠ノ⁠彡⁠┻⁠━⁠┻]]
+ 
+
+ 
+ $setUserVar[money;$sub[$getUserVar[money];$round[$message;0]]]
+ $var[temp;$modulo[$messageID;100]]
+ 
+ $var[casino.total;$sum[$var[casino.total];1]]
+ 
+ $if[$and[$var[temp]>=0;$var[temp]<30]]
+ $c[0.1]
+ $var[casino;0.1]
+ 
+ $elseif[$and[$var[temp]>=30;$var[temp]<60]]
+ $c[0.5]
+ $var[casino;0.5]
+  
+ $elseif[$and[$var[temp]>=60;$var[temp]<80]]
+ $c[1]
+ $var[casino;1]
+ 
+ $elseif[$and[$var[temp]>=80;$var[temp]<90]]
+ $c[2]
+ $var[casino;2]
+ 
+ $elseif[$and[$var[temp]>=90;$var[temp]<95]]
+ $c[3]
+ $var[casino;3]
+ 
+ $elseif[$and[$var[temp]>=95;$var[temp]<98]]
+ $c[5]
+ $var[casino;5]
+ 
+ $elseif[$and[$var[temp]>=98;$var[temp]<99]]
+ $c[10] 
+ $var[casino;10]
+ 
+ $elseif[$and[$var[temp]>=99;$var[temp]<100]]
+ $c[20]
+ $var[casino;20]
+ 
+ $endif
+ 
+ 
+ 
+ 
+ 
+
+ $footerIcon[$authorAvatar]
+ $title[__You got **x$var[casino]**__]
+
+ $if[$var[casino]==0.1]
+  $color[#FF0000]
+ $elseif[$var[casino]==0.5]
+  $color[#FF8000]
+ $elseif[$var[casino]==1]
+  $color[#000000]
+ $elseif[$var[casino]==2]
+  $color[#90A000]
+ $elseif[$var[casino]==3]
+  $color[#107000]
+ $elseif[$var[casino]==5]
+  $color[#009070]
+  $if[$hasRole[$authorID;$findRole[x5 luck]]==false]
+   $giveRole[$authorID;$findRole[x5 luck]]
+   role $roleName[$findRole[x5 luck]] added to <@$authorID>
+  $endif
+ $elseif[$var[casino]==10]
+  $color[#0000FF]
+  $if[$hasRole[$authorID;$findRole[x10 luck]]==false]
+   $giveRole[$authorID;$findRole[x10 luck]]
+   role $roleName[$findRole[x10 luck]] added to <@$authorID>
+  $endif
+ $elseif[$var[casino]==20]
+  $color[#FF00FF]
+  $if[$hasRole[$authorID;$findRole[x20 lucky~]]==false]
+   $giveRole[$authorID;$findRole[x20 lucky~]]
+   role $roleName[$findRole[x20 lucky~]] added to <@$authorID>
+  $endif
+ $endif
+
+
+
+
+ $var[casino;$round[$multi[$var[casino];$message];0]]
+ 
+ $thumbnail[https://media.discordapp.net/attachments/940057982660644905/1015258765894877284/Screenshot_20220902-1554392.png]
+ $description[So your **$numberSeparator[$round[$message;0];,]**  $var[coin.emote]  become **$numberSeparator[$var[casino];,]**  $var[coin.emote] !]
+
+ $setUserVar[money;$sum[$getUserVar[money];$var[casino]]]
+
+ $footer[Now you have $numberSeparator[$round[$getUserVar[money];0];,] Tericoins ! ]
+
+ $if[$var[casino]>$message]
+   $var[tc.total;$sum[$var[tc.total];$sub[$var[casino];$message]]]
+ $endif
+ 
+ $setUserVar[badges;$var[unchanged]/tc/$var[tc.total]/$var[tc.badge]/casino/$var[casino.total]/$var[casino.badge]]
+ 
+$endif

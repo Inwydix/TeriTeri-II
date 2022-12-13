@@ -1,0 +1,32 @@
+$reply $ignoreTriggerCase
+$onlyIf[$getServerVar[bank.prog]>=8;❌ You need to reach the 8th milestone (50M) to use this]
+
+$if[$isSlash]
+
+$cooldown[20h;❌ The command is on cooldown ! (20h cooldown) | Next claim : <t:$sum[$sub[$getTimestamp;$sub[72000;$getCooldown[normal]]];$multi[20;3600]]:R>]
+
+$setUserVar[miniGameVar;game/crate/first/0/second/0]
+
+$title[<:crate:1011688337683259492>  **DAILY CRATE**  <:crate:1011688337683259492>]
+$description[Chose 1 crate everyday and get rewards!!]
+$color[ffffff]
+
+$addButton[yes;btA;Left;success;false;<:crate:1011688337683259492>]
+$addButton[no;btB;Middle;primary;false;<:crate:1011688337683259492>]
+$addButton[no;btC;Right;danger;false;<:crate:1011688337683259492>]
+
+$else
+
+$cooldown[20h;❌ The command is on cooldown ! (20h cooldown) | Next claim : <t:$sum[$sub[$getTimestamp;$sub[72000;$getCooldown[normal]]];$multi[20;3600]]:R>]
+
+$setUserVar[miniGameVar;game/crate/first/0/second/0]
+
+$title[<:crate:1011688337683259492>  **DAILY CRATE**  <:crate:1011688337683259492>]
+$description[Chose 1 crate everyday and get rewards!!]
+$color[ffffff]
+
+$addButton[yes;btA;Left;success;false;<:crate:1011688337683259492>]
+$addButton[no;btB;Middle;primary;false;<:crate:1011688337683259492>]
+$addButton[no;btC;Right;danger;false;<:crate:1011688337683259492>]
+
+$endif 

@@ -1,0 +1,98 @@
+$onlyIf[$or[1==1;$authorID==490201258859167748]==true;❌ This command has been turned off for development purposes (please wait for next update)]
+
+$if[$authorID!=490201258859167748]$onlyIf[$getVar[pause]==off;The bot is currently paused, please wait a bit or ask The_Zermiste#1809]$endif
+$setUserVar[dis.money;True]
+$var[coin.emote;<:Tericoin:1001510021907099750>]
+
+$nomention $reply
+
+
+$c[Bank cooldown vars]
+
+$textSplit[$getServerVar[bank.cd];/]
+$var[timestamp;$splitText[1]]
+$var[cd;$splitText[2]]
+
+$c[End bank cooldown vars]
+
+$c[Badge vars]
+
+$textSplit[$getUserVar[badges];/]
+$var[unchanged;$optOff[tc/$splitText[$sum[$getTextSplitIndex[tc];1]]/$splitText[$sum[$getTextSplitIndex[tc];2]]/ts/$splitText[$sum[$getTextSplitIndex[ts];1]]/$splitText[$sum[$getTextSplitIndex[ts];2]]/errand/$splitText[$sum[$getTextSplitIndex[errand];1]]/$splitText[$sum[$getTextSplitIndex[errand];2]]/casino/$splitText[$sum[$getTextSplitIndex[casino];1]]/$splitText[$sum[$getTextSplitIndex[casino];2]]/streak/$splitText[$sum[$getTextSplitIndex[streak];1]]/$splitText[$sum[$getTextSplitIndex[streak];2]]/bug/$splitText[$sum[$getTextSplitIndex[bug];1]]/$splitText[$sum[$getTextSplitIndex[bug];2]]/rank/$splitText[$sum[$getTextSplitIndex[rank];1]]/$splitText[$sum[$getTextSplitIndex[rank];2]]/badge/$splitText[$sum[$getTextSplitIndex[badge];1]]/$splitText[$sum[$getTextSplitIndex[badge];2]]]]
+$var[bank.total;$optOff[$splitText[$sum[$getTextSplitIndex[bank];1]]]]
+$var[bank.badge;$optOff[$splitText[$sum[$getTextSplitIndex[bank];2]]]]
+
+$c[End badge vars]
+
+$if[$isNumber[$message]==true]
+
+  $if[$message>=1]
+  
+    $if[$round[$message;0]<=$round[$getUserVar[money];0]]
+  
+      $if[$getTimestamp>=$sum[$var[timestamp];$var[cd]]]
+
+        $modifyChannel[$getServerVar[bankID];Bank : $numberSeparator[$round[$sum[$getServerVar[bank];$message];0];,];!unchanged;!unchanged;!unchanged;!unchanged]
+       
+        The previous bank amount was $numberSeparator[$getServerVar[bank];,] $var[coin.emote]
+        
+        $c[Badge code]
+        $var[bank.total;$sum[$var[bank.total];$message]]
+        $setUserVar[badges;$var[unchanged]/bank/$var[bank.total]/$var[bank.badge]]
+        $c[End badge code]
+        
+        $setUserVar[money;$sub[$getUserVar[money];$round[$message;0]]]
+        $setServerVar[bank;$sum[$getServerVar[bank];$round[$message;0]]]
+  
+        $color[#B09000]
+        $title[You sent $numberSeparator[$message;,] $var[coin.emote] to the bank !]
+        $description[The new bank amount is now $numberSeparator[$getServerVar[bank];,] $var[coin.emote]]
+        $footer[$username]
+        $footerIcon[$authorAvatar]
+  
+        $c[Saving the new cooldown values]
+  
+        $var[timestamp;$getTimestamp]
+
+        $if[$round[$divide[$message;10];0]<=600]
+          
+          $var[cd;600]
+          
+        $else
+        
+          $var[cd;$round[$divide[$message;10];0]]
+        
+        $endif
+  
+        $setServerVar[bank.cd;$var[timestamp]/$var[cd]]
+
+     $else
+
+       $title[❌ The server needs to wait between transactions !]
+       $description[Last transaction : <t:$sub[$getTimestamp;$sub[$var[cd];$sub[$sum[$var[timestamp];$var[cd]];$getTimestamp]]]:R>
+1 second cooldown for every 10 $var[coin.emote] sent (min. 10 minutes)
+Left: **$divide[$divide[$sub[$sum[$var[cd];$var[timestamp]];$getTimestamp];3600];24]d $modulo[$divide[$sub[$sum[$var[cd];$var[timestamp]];$getTimestamp];3600];24]h $divide[$modulo[$sub[$sum[$var[cd];$var[timestamp]];$getTimestamp];3600];60]m $modulo[$modulo[$sub[$sum[$var[cd];$var[timestamp]];$getTimestamp];3600];60]s** ($sub[$sum[$var[cd];$var[timestamp]];$getTimestamp]s)]       $color[#FF0000]
+ 
+     $endif
+ 
+   $else
+
+     $color[#FF0000]
+     $title[❌ you don't have enough $var[coin.emote] !]
+
+   $endif
+ 
+  $else
+
+    $color[#FF0000]
+    $title[❌ you have to add at least 1 $var[coin.emote] !]
+
+  $endif
+
+$elseif[$isNumber[$message]==false]
+ 
+ $color[#FF0000]
+ $title[you need to enter a number to send to the bank !]
+ 
+$endif
+

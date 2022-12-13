@@ -1,0 +1,5 @@
+$nomention $reply
+
+$var[coin;$randomText[heads;tails]]
+🪙 | Flipping a coin...
+$editIn[1s;🪙 | $var[coin]]

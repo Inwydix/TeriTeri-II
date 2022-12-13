@@ -1,0 +1,43 @@
+$nomention $reply
+$onlyIf[$getUserStatus[857763025476780052]==offline;]
+
+$if[$isSlash]
+
+
+$var[option;$toLowercase[$message[option]]]
+$httpGet[https://api.waifu.pics/sfw/$var[option]]
+$textSplit[$httpResult;"]
+$title[📷  $toUppercase[$var[option]]  🖼️]
+$color[$getRoleColor[$highestRole[$authorID]]]
+$footer[Link: $splitText[4]]
+$image[$splitText[4]]
+$color[ffffff]
+
+
+$else
+
+$var[option;$toLowercase[$message[1]]]
+
+$if[$or[$var[option]==waifu;$var[option]==neko;$var[option]==shinobu;$var[option]==megumin;$var[option]==bully;$var[option]==cuddle;$var[option]==cry;$var[option]==hug;$var[option]==awoo;$var[option]==kiss;$var[option]==lick;$var[option]==pat;$var[option]==smug;$var[option]==bonk;$var[option]==yeet;$var[option]==blush;$var[option]==smile;$var[option]==wave;$var[option]==highfive;$var[option]==handhold;$var[option]==nom;$var[option]==bite;$var[option]==glomp;$var[option]==slap;$var[option]==kill;$var[option]==kick;$var[option]==happy;$var[option]==wink;$var[option]==poke;$var[option]==dance;$var[option]==cringe]==true]
+
+$httpGet[https://api.waifu.pics/sfw/$var[option]]
+$textSplit[$httpResult;"]
+$title[YOUR $toUppercase[$message[1]] PIC!]
+$description[Link: $splitText[4]]
+$image[$splitText[4]]
+$color[ffffff]
+
+$else
+
+$title[IMAGE HELP]
+$description[
+This is a list of all the image options available (all sfw) :
+
+```waifu / neko / shinobu / megumin / bully / cuddle / cry / hug / awoo / kiss / lick / pat / smug / bonk / yeet / blush / smile / wave / highfive / handhold / nom / bite / glomp / slap / kill / kick / happy / wink / poke / dance / cringe```
+]
+$footer[You can use 't!image <option>' or 't!<option>' to see some pics !]
+$color[ff1a1a]
+
+$endif
+
+$endif

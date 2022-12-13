@@ -1,0 +1,114 @@
+$nomention
+$if[$authorID!=490201258859167748]$onlyIf[$getVar[pause]==off;The bot is currently paused, please wait a bit or ask The_Zermiste#1809]$endif
+
+
+$c[Var list]
+
+
+$textSplit[$getServerVar[rotation];/]
+$var[supply1;$splitText[$sum[$getTextSplitIndex[supply1];1]]]
+$var[supply2;$splitText[$sum[$getTextSplitIndex[supply2];1]]]
+$var[supply3;$splitText[$sum[$getTextSplitIndex[supply3];1]]]
+
+$textSplit[$getServerVar[stigma.name];/]
+$var[set1.name;$optOff[$splitText[$sum[$getTextSplitIndex[set1];1]]]]
+$var[set2.name;$optOff[$splitText[$sum[$getTextSplitIndex[set2];1]]]]
+$var[set3.name;$optOff[$splitText[$sum[$getTextSplitIndex[set3];1]]]]
+$var[set4.name;$optOff[$splitText[$sum[$getTextSplitIndex[set4];1]]]]
+$var[set5.name;$optOff[$splitText[$sum[$getTextSplitIndex[set5];1]]]]
+$var[set6.name;$optOff[$splitText[$sum[$getTextSplitIndex[set6];1]]]]
+$var[set7.name;$optOff[$splitText[$sum[$getTextSplitIndex[set7];1]]]]
+$var[set8.name;$optOff[$splitText[$sum[$getTextSplitIndex[set8];1]]]]
+$var[set9.name;$optOff[$splitText[$sum[$getTextSplitIndex[set9];1]]]]
+
+
+
+
+
+
+
+
+$c[Code]
+
+
+$if[$sum[$getServerVar[rotation.c];604800]<=$getTimestamp] 
+
+
+  $c[Supply 1]
+  
+  
+  $c[Gets a random number between 1-3 to select the set]
+  
+  
+  $var[random;$random[1;4]]
+  
+  
+  $if[$var[random]==1]
+  
+    $var[supply1;set1]
+  
+  $elseif[$var[random]==2]
+  
+    $var[supply1;set2]
+  
+  $elseif[$var[random]==3]
+  
+    $var[supply1;set3]
+  
+  $endif
+  
+  
+  $c[Supply 2]
+  
+  
+  $var[random;$random[1;4]]
+  
+  $if[$var[random]==1]
+  
+    $var[supply2;set4]
+  
+  $elseif[$var[random]==2]
+  
+    $var[supply2;set5]
+  
+  $elseif[$var[random]==3]
+  
+    $var[supply2;set6]
+  
+  $endif
+  
+  
+  $c[Supply 3]
+  
+  
+  $var[random;$random[1;4]]
+  
+  $if[$var[random]==1]
+  
+    $var[supply3;set7]
+  
+  $elseif[$var[random]==2]
+  
+    $var[supply3;set8]
+  
+  $elseif[$var[random]==3]
+  
+    $var[supply3;set9]
+  
+  $endif
+ 
+  $if[$getServerVar[bank.prog]>=3]
+
+  $title[NEW RATE UP STIGMA SETS :]
+  $description[
+3 stars supply : $var[$var[supply1].name]
+4 stars supply : $var[$var[supply2].name]
+5 stars supply : $var[$var[supply3].name]]
+  $color[00cc00]
+  
+  $endif
+  
+  $setServerVar[rotation;supply1/$var[supply1]/supply2/$var[supply2]/supply3/$var[supply3]]  
+  $setServerVar[rotation.c;$sum[$getServerVar[rotation.c];604800]]
+
+$endif

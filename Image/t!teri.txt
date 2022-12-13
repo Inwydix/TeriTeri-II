@@ -1,0 +1,65 @@
+$nomention $reply $ignoreTriggerCase
+$onlyIf[$toLowercase[$message[1]]!=gochi;]
+
+$var[random;$random[1;6]]
+
+$title[Here's your random TeriTeri's picture !]
+$color[$getRoleColor[$highestRole[$authorID]]]
+$addReactions[<:TeriWow:1000073782720995338>;<:TeriFast:1000060760040419470>;<:TeriLaik:1000071888556539945>;<:TeriCute:999834523816689814>;<:TeriCatEyes:1000073829235834890>;<:TeriTea:1000067705841389618>]
+
+$if[$var[random]==1]
+
+$image[https://media.discordapp.net/attachments/1015665304346570813/1015666135384981584/theresa_apocalypse_homu_and_theresa_apocalypse_honkai_and_1_more_drawn_by_yu_xiu__4e081dee7af03e99fa677ae47a86153e.jpg]
+$description[Link: https://www.pixiv.net/artworks/80986050]
+
+$elseif[$var[random]==2]
+
+$image[https://media.discordapp.net/attachments/1015665304346570813/1015668278858891345/theresa_apocalypse_and_theresa_apocalypse_honkai_and_1_more__dfb2730146a298ffd6c667a5521f9181.png]
+$description[Link: https://hijiribe.donmai.us/posts/5412503?q=theresa_apocalypse+]
+
+$elseif[$var[random]==3]
+
+$image[https://media.discordapp.net/attachments/1015665304346570813/1015669091257819146/theresa_apocalypse_homu_and_theresa_apocalypse_honkai_and_1_more_drawn_by_yajuu__d1e83023021e49af86633f5b6e56b615.jpg]
+$description[Link: https://m.bbs.mihoyo.com/bh3/#/article/19628767]
+
+$elseif[$var[random]==4]
+
+$image[https://media.discordapp.net/attachments/1015665304346570813/1015670397502488646/theresa_apocalypse_homu_and_theresa_apocalypse_honkai_and_1_more_drawn_by_csyday__50586dcc2ee54b88cd40423862c9f200.jpg]
+$description[Link: https://twitter.com/houkai3rd/status/1508338100942090244]
+
+$elseif[$var[random]==5]
+
+$image[https://media.discordapp.net/attachments/1015665304346570813/1015670583666679861/theresa_apocalypse_murata_himeko_homu_theresa_apocalypse_and_murata_himeko_honkai_and_1_more_drawn_by_afish__9bb397ecf57037cf4161e7c314af6422.jpg]
+$description[Link: https://www.pixiv.net/artworks/69689779]
+
+$elseif[$var[random]==6]
+
+$image[]
+$description[Link: ]
+
+$elseif[$var[random]==]
+
+$image[]
+$description[Link:]
+
+$elseif[$var[random]==]
+
+$image[]
+$description[Link:]
+
+$elseif[$var[random]==]
+
+$image[]
+$description[Link:]
+
+$elseif[$var[random]==]
+
+$image[]
+$description[Link:]
+
+$elseif[$var[random]==]
+
+$image[]
+$description[Link:]
+
+$endif

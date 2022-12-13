@@ -1,0 +1,44 @@
+$nomention $reply $ignoreTriggerCase
+$onlyIf[$getServerVar[bank.prog]>=8;❌ You need to reach the 8th milestone (50M) to use this]
+
+$if[$isSlash]
+
+$var[first;$random[1;10]]
+$var[second;$optOff[$random[1;10]]]
+
+$title[📈  **HIGHER OR LOWER?**  📉]
+$description[Is the second number higher or lower than the first one?
+
+> First number : $if[$var[first]==1]1️⃣$elseif[$var[first]==2]2️⃣$elseif[$var[first]==3]3️⃣$elseif[$var[first]==4]4️⃣$elseif[$var[first]==5]5️⃣$elseif[$var[first]==6]6️⃣$elseif[$var[first]==7]7️⃣$elseif[$var[first]==8]8️⃣$elseif[$var[first]==9]9️⃣$endif
+> Second number : ❔
+** **]
+$footer[If you answer correctly, you will win between 100 and 10.000 tericoins!!]
+$color[ffffff]
+$setUserVar[miniGameVar;game/hol/first/$var[first]/second/$var[second]]
+
+$addButton[yes;btA;Higher!;danger;false;📈]
+$addButton[no;btC;Equal;success;false;🏳️]
+$addButton[no;btB;Lower!;primary;false;📉]
+
+
+$else
+
+
+$var[first;$random[1;10]]
+$var[second;$optOff[$random[1;10]]]
+
+$title[📈  **HIGHER OR LOWER?**  📉]
+$description[Is the second number higher or lower than the first one?
+
+> First number : $if[$var[first]==1]1️⃣$elseif[$var[first]==2]2️⃣$elseif[$var[first]==3]3️⃣$elseif[$var[first]==4]4️⃣$elseif[$var[first]==5]5️⃣$elseif[$var[first]==6]6️⃣$elseif[$var[first]==7]7️⃣$elseif[$var[first]==8]8️⃣$elseif[$var[first]==9]9️⃣$endif
+> Second number : ❔
+** **]
+$footer[If you answer correctly, you will win between 100 and 10.000 tericoins!!]
+$color[ffffff]
+$setUserVar[miniGameVar;game/hol/first/$var[first]/second/$var[second]]
+
+$addButton[yes;btA;Higher!;danger;false;📈]
+$addButton[no;btC;Equal;success;false;🏳️]
+$addButton[no;btB;Lower!;primary;false;📉]
+
+$endif

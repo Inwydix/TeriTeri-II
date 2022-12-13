@@ -1,0 +1,39 @@
+$nomention $ignoreTriggerCase
+$onlyIf[$getUserVar[playing]==false;:x: You Already Have a Game Playing Right Now]
+$onlyIf[$getServerVar[bank.prog]>=8;❌ You need to reach the 8th milestone (50M) to use this]
+
+$c[//SLOTS//]
+
+$textSplit[$getUserVar[slot1]$getUserVar[slot2]$getUserVar[slot3]
+$getUserVar[slot4]$getUserVar[slot5]$getUserVar[slot6]
+$getUserVar[slot7]$getUserVar[slot8]$getUserVar[slot9];/]
+
+$c[//GAME//]
+
+$title[:snake: __SNAKE GAME__]
+$description[$splitText[1]$splitText[2]$splitText[3]$splitText[4]$splitText[5]$splitText[6]$splitText[7]$splitText[8]$splitText[9]]
+$color[447f4]
+
+$c[//BUTTONS//]
+
+$addButton[no;nothing1;ㅤ;secondary;true;]
+$addButton[no;uparrow;⏫;primary;false;]
+$addButton[no;nothing2;ㅤ;secondary;true;]
+$addButton[no;end;END;danger;false;]
+$addButton[yes;leftarrow;⏪;primary;false;]
+$addButton[no;downarrow;⏬;primary;false;]
+$addButton[no;rightarrow;⏩;primary;false;]
+
+$c[//VARS//]
+$setUserVar[slot1;:black_large_square:/]
+$setUserVar[slot2;$getVar[apple]]
+$setUserVar[slot3;:black_large_square:/]
+$setUserVar[slot4;:black_large_square:/]
+$setUserVar[slot5;$getVar[snake]/]
+$setUserVar[slot6;:black_large_square:/]
+$setUserVar[slot7;:black_large_square:/]
+$setUserVar[slot8;:black_large_square:/]
+$setUserVar[slot9;:black_large_square:/]
+$setUserVar[playing;true]
+
+

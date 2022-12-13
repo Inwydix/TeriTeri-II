@@ -1,0 +1,31 @@
+$nomention $reply $allowMention $ignoreTriggerCase
+$onlyIf[$getServerVar[bank.prog]>=7;❌ Ypu need to reach the 7th milestone (40M) to use this]
+
+$onlyIf[$mentioned[1;no]!=;You have to mention someone! Command: `t!marry <@user>`]
+$onlyIf[$mentioned[1;yes]!=$authorID;You can't marry yourself!]
+$onlyIf[$isBot[$mentioned[1;no]]==false;You can't marry a bot!]
+
+$textSplit[$getUserVar[wedding;$authorID];/]
+$var[askerAsker;$splitText[$sum[$getTextSplitIndex[asker];1]]]
+$var[askerAsking;$splitText[$sum[$getTextSplitIndex[asking];1]]]
+$var[askerCouple;$splitText[$sum[$getTextSplitIndex[couple];1]]]
+
+$textSplit[$getUserVar[wedding;$mentioned[1;no]];/]
+$var[askingAsker;$optOff[$splitText[$sum[$getTextSplitIndex[asker];1]]]]
+$var[askingAsking;$optOff[$splitText[$sum[$getTextSplitIndex[asking];1]]]]
+$var[askingCouple;$optOff[$splitText[$sum[$getTextSplitIndex[couple];1]]]]
+
+$onlyIf[$var[askerCouple]!=$mentioned[1;no];You two are already married!]
+$onlyIf[$var[askerCouple]==null;You already have a partner, don't be bad!]
+$onlyIf[$var[askingCouple]==null;<@$mentioned[1;no]> already has a partner, don't be bad!]
+
+<@$mentioned[1;no]>, <@$authorID> wants to ask you something...
+$title[💕  Would you marry me?  💕]
+$description[Let's be a couple until Teri's death pull us appart. I promise it will fun as long as we are together!]
+$color[ffffff]
+
+$setUserVar[wedding;asker/null/asking/$mentioned[1;no]/couple/$var[askerCouple];$authorID]
+$setUserVar[wedding;asker/$authorID/asking/null/couple/$var[askingCouple];$mentioned[1;no]]
+
+$addButton[yes;btyes;Yes!;secondary;no;💘;]
+$addButton[no;btno;No...;secondary;no;❤️‍🩹;]

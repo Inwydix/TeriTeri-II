@@ -1,0 +1,694 @@
+$nomention
+$reply
+$enableDecimals[yes]
+$var[coin.emote;<:Tericoin:1001510021907099750>]
+$var[teristal.emote;<:Teristal:1001507292648308817>]
+
+$textSplit[$replaceText[$message; ;/;-1];/]
+
+$var[userID;$splitText[2]]
+
+$if[$splitText[1]==level]
+
+
+$var[max;$round[$multi[10;$calculate[1.2**$getUserVar[level;$var[userID]]]];0]]
+
+$c[ifs for rank---------------------------------------------------------------------------------]
+$var[pos;>50]
+$var[count;1]
+
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$var[count;$sum[1;$var[count]]]
+$if[$getLeaderboardValue[user;level;asc;$var[count];id]==$var[userID]]
+$var[pos;$var[count]]
+$endif
+
+$c[endifs for rank-------------------------------------------------------------------------------]
+
+$title[$nickname[$var[userID]]'s Profile]
+$thumbnail[$userAvatar[$var[userID]]]
+$description[```
+• Level : $getUserVar[level;$var[userID]]
+• Activity points : $getUserVar[point;$var[userID]] / $var[max]
+• Rank #$var[pos]
+• Current server boost : x$getServerVar[lvl.boost]
+```]
+$footer[$serverName[$guildID]]
+$color[$getRoleColor[$highestRole[$var[userID]]]]
+$var[xpos;$sum[-100;$multi[100;$divide[$getUserVar[point;$var[userID]];$var[max]]]]]
+$var[bar;https://ptirollo.sirv.com/progress%20bar.png]
+$var[bar.arg;?watermark.0.image=%2Fbar.png&watermark.0.position.x=$round[$var[xpos];0]%25&watermark.0.opacity=75&watermark.0.scale.width=1040&watermark.1.image=%2Fbar%20overlay.png&watermark.1.position.gravity=west]
+$image[$var[bar]$var[bar.arg]]
+
+
+
+$elseif[$splitText[1]==workup]
+
+
+
+$addField[$nickname[$var[userID]]'s Workers;```
+• Lv.1 workers : $getUserVar[lv1;$var[userID]]
+• Lv.2 workers : $getUserVar[lv2;$var[userID]]
+• Lv.3 workers : $getUserVar[lv3;$var[userID]]
+• Total : $sum[$getUserVar[lv1;$var[userID]];$getUserVar[lv2;$var[userID]];$getUserVar[lv3;$var[userID]]]
+```;yes]
+$addField[$nickname[$var[userID]]'s Updates;```
+• Upgrade 1 : $getUserVar[up1;$var[userID]]
+• Upgrade 2 : $getUserVar[up2;$var[userID]]
+• Upgrade 3 : $getUserVar[up3;$var[userID]]
+• Upgrade 4 : $getUserVar[up4;$var[userID]]
+```;yes]
+$color[$getRoleColor[$highestRole[$var[userID]]]]
+
+
+
+$elseif[$splitText[1]==stigma]
+
+
+
+$textSplit[$getUserVar[stigma;$var[userID]];/]
+$var[stig1T;$splitText[$sum[$getTextSplitIndex[stig1T];1]]]
+$var[stig1M;$splitText[$sum[$getTextSplitIndex[stig1M];1]]]
+$var[stig1B;$splitText[$sum[$getTextSplitIndex[stig1B];1]]]
+$var[stig2T;$splitText[$sum[$getTextSplitIndex[stig2T];1]]]
+$var[stig2M;$splitText[$sum[$getTextSplitIndex[stig2M];1]]]
+$var[stig2B;$splitText[$sum[$getTextSplitIndex[stig2B];1]]]
+$var[stig3T;$splitText[$sum[$getTextSplitIndex[stig3T];1]]]
+$var[stig3M;$splitText[$sum[$getTextSplitIndex[stig3M];1]]]
+$var[stig3B;$splitText[$sum[$getTextSplitIndex[stig3B];1]]]
+$var[stig4T;$splitText[$sum[$getTextSplitIndex[stig4T];1]]]
+$var[stig4M;$splitText[$sum[$getTextSplitIndex[stig4M];1]]]
+$var[stig4B;$splitText[$sum[$getTextSplitIndex[stig4B];1]]]
+$var[stig5T;$splitText[$sum[$getTextSplitIndex[stig5T];1]]]
+$var[stig5M;$splitText[$sum[$getTextSplitIndex[stig5M];1]]]
+$var[stig5B;$splitText[$sum[$getTextSplitIndex[stig5B];1]]]
+$var[stig6T;$splitText[$sum[$getTextSplitIndex[stig6T];1]]]
+$var[stig6M;$splitText[$sum[$getTextSplitIndex[stig6M];1]]]
+$var[stig6B;$splitText[$sum[$getTextSplitIndex[stig6B];1]]]
+$var[stig7T;$splitText[$sum[$getTextSplitIndex[stig7T];1]]]
+$var[stig7M;$splitText[$sum[$getTextSplitIndex[stig7M];1]]]
+$var[stig7B;$splitText[$sum[$getTextSplitIndex[stig7B];1]]]
+$var[stig8T;$splitText[$sum[$getTextSplitIndex[stig8T];1]]]
+$var[stig8M;$splitText[$sum[$getTextSplitIndex[stig8M];1]]]
+$var[stig8B;$splitText[$sum[$getTextSplitIndex[stig8B];1]]]
+$var[stig9T;$splitText[$sum[$getTextSplitIndex[stig9T];1]]]
+$var[stig9M;$splitText[$sum[$getTextSplitIndex[stig9M];1]]]
+$var[stig9B;$splitText[$sum[$getTextSplitIndex[stig9B];1]]]
+
+$c[Set names var list]
+$textSplit[$getServerVar[stigma.name];/]
+$var[set1.name;$optOff[$splitText[$sum[$getTextSplitIndex[set1];1]]]]
+$var[set2.name;$optOff[$splitText[$sum[$getTextSplitIndex[set2];1]]]]
+$var[set3.name;$optOff[$splitText[$sum[$getTextSplitIndex[set3];1]]]]
+$var[set4.name;$optOff[$splitText[$sum[$getTextSplitIndex[set4];1]]]]
+$var[set5.name;$optOff[$splitText[$sum[$getTextSplitIndex[set5];1]]]]
+$var[set6.name;$optOff[$splitText[$sum[$getTextSplitIndex[set6];1]]]]
+$var[set7.name;$optOff[$splitText[$sum[$getTextSplitIndex[set7];1]]]]
+$var[set8.name;$optOff[$splitText[$sum[$getTextSplitIndex[set8];1]]]]
+$var[set9.name;$optOff[$splitText[$sum[$getTextSplitIndex[set9];1]]]]
+
+$addField[$nickname[$var[userID]]'s 3⭐ stigmatas;
+Set 1 : $var[set1.name]
+```
+• T : $if[$var[stig1T]==false]🔒$elseun$endiflocked
+• M : $if[$var[stig1M]==false]🔒$elseun$endiflocked
+• B : $if[$var[stig1B]==false]🔒$elseun$endiflocked
+```
+Set 2 : $var[set2.name]
+```
+• T : $if[$var[stig2T]==false]🔒$elseun$endiflocked
+• M : $if[$var[stig2M]==false]🔒$elseun$endiflocked
+• B : $if[$var[stig2B]==false]🔒$elseun$endiflocked
+```
+Set 3 : $var[set3.name]
+```
+• T : $if[$var[stig3T]==false]🔒$elseun$endiflocked
+• M : $if[$var[stig3M]==false]🔒$elseun$endiflocked
+• B : $if[$var[stig3B]==false]🔒$elseun$endiflocked
+```
+;yes]
+
+$addField[$nickname[$var[userID]]'s 4⭐ stigmatas;
+Set 4 : $var[set1.name]
+```
+• T : $if[$var[stig4T]==false]🔒$elseun$endiflocked
+• M : $if[$var[stig4M]==false]🔒$elseun$endiflocked
+• B : $if[$var[stig4B]==false]🔒$elseun$endiflocked
+```
+Set 5 : $var[set5.name]
+```
+• T : $if[$var[stig5T]==false]🔒$elseun$endiflocked
+• M : $if[$var[stig5M]==false]🔒$elseun$endiflocked
+• B : $if[$var[stig5B]==false]🔒$elseun$endiflocked
+```
+Set 6 : $var[set6.name]
+```
+• T : $if[$var[stig6T]==false]🔒$elseun$endiflocked
+• M : $if[$var[stig6M]==false]🔒$elseun$endiflocked
+• B : $if[$var[stig6B]==false]🔒$elseun$endiflocked
+```
+;yes]
+
+$addField[$nickname[$var[userID]]'s 5⭐ stigmatas;
+Set 7 : $var[set7.name]
+```
+• T : $if[$var[stig7T]==false]🔒$elseun$endiflocked
+• M : $if[$var[stig7M]==false]🔒$elseun$endiflocked
+• B : $if[$var[stig7B]==false]🔒$elseun$endiflocked
+```
+Set 8 : $var[set8.name]
+```
+• T : $if[$var[stig8T]==false]🔒$elseun$endiflocked
+• M : $if[$var[stig8M]==false]🔒$elseun$endiflocked
+• B : $if[$var[stig8B]==false]🔒$elseun$endiflocked
+```
+Set 9 : $var[set9.name]
+```
+• T : $if[$var[stig9T]==false]🔒$elseun$endiflocked
+• M : $if[$var[stig9M]==false]🔒$elseun$endiflocked
+• B : $if[$var[stig9B]==false]🔒$elseun$endiflocked
+```
+;yes]
+$color[$getRoleColor[$highestRole[$var[userID]]]]
+
+
+
+$elseif[$splitText[1]==equipped]
+
+
+
+$textSplit[$getUserVar[stigma.equip;$var[userID]];/]
+$var[stigT.equip;$splitText[$sum[$getTextSplitIndex[stigT];1]]]
+$var[stigM.equip;$splitText[$sum[$getTextSplitIndex[stigM];1]]]
+$var[stigB.equip;$splitText[$sum[$getTextSplitIndex[stigB];1]]]
+
+$textSplit[$getServerVar[stigma.name];/]
+$var[stig1T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig1T];1]]]]
+$var[stig1M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig1M];1]]]]
+$var[stig1B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig1B];1]]]]
+$var[stig2T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig2T];1]]]]
+$var[stig2M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig2M];1]]]]
+$var[stig2B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig2B];1]]]]
+$var[stig3T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig3T];1]]]]
+$var[stig3M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig3M];1]]]]
+$var[stig3B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig3B];1]]]]
+$var[stig4T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig4T];1]]]]
+$var[stig4M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig4M];1]]]]
+$var[stig4B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig4B];1]]]]
+$var[stig5T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig5T];1]]]]
+$var[stig5M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig5M];1]]]]
+$var[stig5B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig5B];1]]]]
+$var[stig6T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig6T];1]]]]
+$var[stig6M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig6M];1]]]]
+$var[stig6B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig6B];1]]]]
+$var[stig7T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig7T];1]]]]
+$var[stig7M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig7M];1]]]]
+$var[stig7B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig7B];1]]]]
+$var[stig8T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig8T];1]]]]
+$var[stig8M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig8M];1]]]]
+$var[stig8B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig8B];1]]]]
+$var[stig9T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig9T];1]]]]
+$var[stig9M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig9M];1]]]]
+$var[stig9B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig9B];1]]]]
+$var[set1.name;$optOff[$splitText[$sum[$getTextSplitIndex[set1];1]]]]
+$var[set2.name;$optOff[$splitText[$sum[$getTextSplitIndex[set2];1]]]]
+$var[set3.name;$optOff[$splitText[$sum[$getTextSplitIndex[set3];1]]]]
+$var[set4.name;$optOff[$splitText[$sum[$getTextSplitIndex[set4];1]]]]
+$var[set5.name;$optOff[$splitText[$sum[$getTextSplitIndex[set5];1]]]]
+$var[set6.name;$optOff[$splitText[$sum[$getTextSplitIndex[set6];1]]]]
+$var[set7.name;$optOff[$splitText[$sum[$getTextSplitIndex[set7];1]]]]
+$var[set8.name;$optOff[$splitText[$sum[$getTextSplitIndex[set8];1]]]]
+$var[set9.name;$optOff[$splitText[$sum[$getTextSplitIndex[set9];1]]]]
+
+$var[pic1;https://ptirollo.sirv.com/Banners/set1.png]
+$var[pic2;https://ptirollo.sirv.com/Banners/set2.png]
+$var[pic3;https://ptirollo.sirv.com/Banners/set3.png]
+$var[pic4;https://ptirollo.sirv.com/Banners/set4.png]
+$var[pic5;https://ptirollo.sirv.com/Banners/set5.png]
+$var[pic6;https://ptirollo.sirv.com/Banners/set6.png]
+$var[pic7;https://ptirollo.sirv.com/Banners/set7.png]
+$var[pic8;https://ptirollo.sirv.com/Banners/set8.png]
+$var[pic9;https://ptirollo.sirv.com/Banners/set9.png]
+
+$var[T;?text.0.text=T&text.0.position.gravity=center&text.0.position.x=-36%25&text.0.color=000000&text.0.font.family=Courgette]
+$var[M;?text.0.text=M&text.0.position.gravity=center&text.0.position.x=-36%25&text.0.color=000000&text.0.font.family=Courgette]
+$var[B;?text.0.text=B&text.0.position.gravity=center&text.0.position.x=-36%25&text.0.color=000000&text.0.font.family=Courgette]
+
+$var[stigT;none]
+$var[stigM;none]
+$var[stigB;none]
+
+$var[count;1]
+$if[$var[stigT.equip]==stig$var[count]T]
+  $var[stigT;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigT.equip]==stig$var[count]T]
+  $var[stigT;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigT.equip]==stig$var[count]T]
+  $var[stigT;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigT.equip]==stig$var[count]T]
+  $var[stigT;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigT.equip]==stig$var[count]T]
+  $var[stigT;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigT.equip]==stig$var[count]T]
+  $var[stigT;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigT.equip]==stig$var[count]T]
+  $var[stigT;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigT.equip]==stig$var[count]T]
+  $var[stigT;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigT.equip]==stig$var[count]T]
+  $var[stigT;$var[count]]
+$endif
+
+$var[count;1]
+$if[$var[stigM.equip]==stig$var[count]M]
+  $var[stigM;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigM.equip]==stig$var[count]M]
+  $var[stigM;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigM.equip]==stig$var[count]M]
+  $var[stigM;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigM.equip]==stig$var[count]M]
+  $var[stigM;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigM.equip]==stig$var[count]M]
+  $var[stigM;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigM.equip]==stig$var[count]M]
+  $var[stigM;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigM.equip]==stig$var[count]M]
+  $var[stigM;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigM.equip]==stig$var[count]M]
+  $var[stigM;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigM.equip]==stig$var[count]M]
+  $var[stigM;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+
+$var[count;1]
+$if[$var[stigB.equip]==stig$var[count]B]
+  $var[stigB;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigB.equip]==stig$var[count]B]
+  $var[stigB;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigB.equip]==stig$var[count]B]
+  $var[stigB;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigB.equip]==stig$var[count]B]
+  $var[stigB;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigB.equip]==stig$var[count]B]
+  $var[stigB;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigB.equip]==stig$var[count]B]
+  $var[stigB;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigB.equip]==stig$var[count]B]
+  $var[stigB;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigB.equip]==stig$var[count]B]
+  $var[stigB;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigB.equip]==stig$var[count]B]
+  $var[stigB;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+
+
+$if[$var[stigT]!=none]
+$title[Top slot :;1]
+$description[$var[stig$var[stigT]T.name];1]
+$footer[Set $var[stigT] : $var[set$var[stigT].name];1]
+$image[$var[pic$var[stigT]]$var[T];1]
+$color[#00FF00;1]
+$else
+$description[**<@$var[userID]> didn't equip any stigma in the top slot !**;1]
+$color[#000000;1]
+$endif
+
+$if[$var[stigM]!=none]
+$title[Middle slot :;2]
+$description[$var[stig$var[stigT]M.name];2]
+$footer[Set $var[stigM] : $var[set$var[stigM].name];2]
+$image[$var[pic$var[stigM]]$var[M];2]
+$color[#0000FF;2]
+$else
+$description[**<@$var[userID]> didn't equip any stigma in the middle slot !**;2]
+$color[#000000;2]
+$endif
+
+$if[$var[stigB]!=none]
+$title[Bottom slot :;3]
+$description[$var[stig$var[stigT]B.name];3]
+$footer[Set $var[stigB] : $var[set$var[stigB].name];3]
+$image[$var[pic$var[stigB]]$var[B];3]
+$color[#FF0000;3]
+$else
+$description[**<@$var[userID]> didn't equip any stigma in the bottom slot !**;3]
+$color[#000000;3]
+$endif
+
+$elseif[$splitText[1]==totals]
+
+$textSplit[$getUserVar[badges;$var[userID]];/]
+$var[tc.total;$optOff[$splitText[$sum[$getTextSplitIndex[tc];1]]]]
+$var[tc.badge;$optOff[$splitText[$sum[$getTextSplitIndex[tc];2]]]]
+$var[ts.total;$optOff[$splitText[$sum[$getTextSplitIndex[ts];1]]]]
+$var[ts.badge;$optOff[$splitText[$sum[$getTextSplitIndex[ts];2]]]]
+$var[errand.total;$optOff[$splitText[$sum[$getTextSplitIndex[errand];1]]]]
+$var[errand.badge;$optOff[$splitText[$sum[$getTextSplitIndex[errand];2]]]]
+$var[casino.total;$optOff[$splitText[$sum[$getTextSplitIndex[casino];1]]]]
+$var[casino.badge;$optOff[$splitText[$sum[$getTextSplitIndex[casino];2]]]]
+$var[streak.total;$optOff[$splitText[$sum[$getTextSplitIndex[streak];1]]]]
+$var[streak.badge;$optOff[$splitText[$sum[$getTextSplitIndex[streak];2]]]]
+$var[bug.total;$optOff[$splitText[$sum[$getTextSplitIndex[bug];1]]]]
+$var[bug.badge;$optOff[$splitText[$sum[$getTextSplitIndex[bug];2]]]]
+$var[rank.total;$optOff[$splitText[$sum[$getTextSplitIndex[rank];1]]]]
+$var[rank.badge;$optOff[$splitText[$sum[$getTextSplitIndex[rank];2]]]]
+$var[badge.total;$optOff[$splitText[$sum[$getTextSplitIndex[badge];1]]]]
+$var[badge.badge;$optOff[$splitText[$sum[$getTextSplitIndex[badge];2]]]]
+$var[bank.total;$optOff[$splitText[$sum[$getTextSplitIndex[bank];1]]]]
+$var[bank.badge;$optOff[$splitText[$sum[$getTextSplitIndex[bank];2]]]]
+
+$addField[$nickname[$var[userID]]'s Totals;
+Tericoins obtained : $numberSeparator[$round[$var[tc.total];0];,] $var[coin.emote]
+Teristals obtained : $numberSeparator[$round[$var[ts.total];0];,] $var[teristal.emote]
+
+Rank : $var[rank.total] 🏅
+Daily streak : $numberSeparator[$var[streak.total];,] 🔥
+
+Errands completed : $numberSeparator[$var[errand.total];,] 🛠️
+Casino plays : $numberSeparator[$var[casino.total];,] 🎰
+Bugs reported : $numberSeparator[$var[bug.total];,] ❗
+
+Festive points : $numberSeparator[$getUserVar[festivePoints;$var[userID]];,] 🎉
+
+Tericoins added to bank : $numberSeparator[$var[bank.total];,] $var[coin.emote]
+;yes]
+$color[$getRoleColor[$highestRole[$var[userID]]]]
+
+$elseif[$splitText[1]==badge]
+
+$textSplit[$getUserVar[badges;$var[userID]];/]
+$var[tc.badge;$splitText[$sum[$getTextSplitIndex[tc];2]]]
+$var[ts.badge;$splitText[$sum[$getTextSplitIndex[ts];2]]]
+$var[errand.badge;$splitText[$sum[$getTextSplitIndex[errand];2]]]
+$var[casino.badge;$splitText[$sum[$getTextSplitIndex[casino];2]]]
+$var[streak.badge;$splitText[$sum[$getTextSplitIndex[streak];2]]]
+$var[bug.badge;$splitText[$sum[$getTextSplitIndex[bug];2]]]
+$var[rank.badge;$splitText[$sum[$getTextSplitIndex[rank];2]]]
+$var[badge.badge;$splitText[$sum[$getTextSplitIndex[badge];2]]]
+$var[bank.badge;$splitText[$sum[$getTextSplitIndex[bank];2]]]
+
+$addField[Badges;
+$if[$var[streak.badge]>=1]<:7DaysStreak:1046450671832018984>$endif$if[$var[streak.badge]>=2]<:StreakLikeAPro_25DaysStreak:1046450748470329434>$endif$if[$var[streak.badge]==3]<:ThisTeriIsOnFire_50DaysStreak:1046450851524382731>$endif$if[$var[streak.badge]==0]<:NoStreak:1046457808339611668>$endif
+$if[$var[errand.badge]>=1]<:ErrandRunner_50Errands:1046461665526435981>$endif$if[$var[errand.badge]>=2]<:HardWorker_150Errands:1046461697747058698>$endif$if[$var[errand.badge]==3]<:YesBoss_300Errands:1046461734535315477>$endif$if[$var[errand.badge]==0]<:NoErrands:1046461627001741372>$endif
+$if[$var[casino.badge]>=1]<:CasinoEnjoyer_50Plays:1046450718468485250>$endif$if[$var[casino.badge]>=2]<:KnightOfCasino_200Plays:1046450811892408350>$endif$if[$var[casino.badge]==3]<:MonarcOfCasino_500Plays:1046450886030938142>$endif$if[$var[casino.badge]==0]<:CasualPlayer:1046461469576937483>$endif
+$if[$var[rank.badge]>=1]<:TOP25:1046449686430621827>$endif$if[$var[rank.badge]>=2]<:TOP10:1046449648916779148>$endif$if[$var[rank.badge]==3]<:TOP3:1046449612866732132>$endif$if[$var[rank.badge]==0]<:NoRank:1046461566578601984>$endif
+** **;yes]
+$addField[Event Badges;
+$if[$getUserVar[feelsLikeHome.badge;$var[userID]]==true]<:FeelsLikeHome:1045718394353238096>$endif
+** **;yes]
+$color[$getRoleColor[$highestRole[$var[userID]]]]
+
+$endif

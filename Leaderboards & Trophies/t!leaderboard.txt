@@ -1,0 +1,79 @@
+$nomention $reply $ignoreTriggerCase
+$author[Leaderboards]
+$var[coin.emote;<:Tericoin:1001510021907099750>]
+
+$if[$message==money]
+$embedSuppressErrors[lol no;This isnt fixed yet;ff1a1a;;;]
+
+ $color[#80FFFF]
+ $title[**TOP 10 RICHEST PEOPLE**]
+ $description[1.  $nickname[$getLeaderboardValue[user;money;asc;1;id]]  -  $numberSeparator[$getLeaderboardValue[user;money;asc;1;value];,] $var[coin.emote]
+ 2. $nickname[$getLeaderboardValue[user;money;asc;2;id]]  -  $numberSeparator[$getLeaderboardValue[user;money;asc;2;value];,] $var[coin.emote]
+ 3. $nickname[$getLeaderboardValue[user;money;asc;3;id]]  -  $numberSeparator[$getLeaderboardValue[user;money;asc;3;value];,] $var[coin.emote]
+ 4. $nickname[$getLeaderboardValue[user;money;asc;4;id]]  -  $numberSeparator[$getLeaderboardValue[user;money;asc;4;value];,] $var[coin.emote]
+ 5. $nickname[$getLeaderboardValue[user;money;asc;5;id]]  -  $numberSeparator[$getLeaderboardValue[user;money;asc;5;value];,] $var[coin.emote]
+ 6. $nickname[$getLeaderboardValue[user;money;asc;6;id]]  -  $numberSeparator[$getLeaderboardValue[user;money;asc;6;value];,] $var[coin.emote]
+ 7. $nickname[$getLeaderboardValue[user;money;asc;7;id]]  -  $numberSeparator[$getLeaderboardValue[user;money;asc;7;value];,] $var[coin.emote]
+ 8. $nickname[$getLeaderboardValue[user;money;asc;8;id]]  -  $numberSeparator[$getLeaderboardValue[user;money;asc;8;value];,] $var[coin.emote]
+ 9. $nickname[$getLeaderboardValue[user;money;asc;9;id]]  -  $numberSeparator[$getLeaderboardValue[user;money;asc;9;value];,] $var[coin.emote]
+ 10. $nickname[$getLeaderboardValue[user;money;asc;10;id]]  -  $numberSeparator[$getLeaderboardValue[user;money;asc;10;value];,] $var[coin.emote]
+ ]
+ $footer[$serverName[$guildID]'s Money leaderboard]
+ $footerIcon[$serverIcon]
+
+$elseif[$message==level]
+
+ $color[#80FFFF]
+ $title[🏅 **TOP 10 MORE ACTIVE PEOPLE IN THE SERVER** 🏅]
+ $description[
+$addField[Nickname;
+1. $nickname[$getLeaderboardValue[user;level;asc;1;id]]
+2. $nickname[$getLeaderboardValue[user;level;asc;2;id]]
+3. $nickname[$getLeaderboardValue[user;level;asc;3;id]]
+4. $nickname[$getLeaderboardValue[user;level;asc;4;id]]
+5. $nickname[$getLeaderboardValue[user;level;asc;5;id]]
+6. $nickname[$getLeaderboardValue[user;level;asc;6;id]] 
+7. $nickname[$getLeaderboardValue[user;level;asc;7;id]]
+8. $nickname[$getLeaderboardValue[user;level;asc;8;id]]
+9. $nickname[$getLeaderboardValue[user;level;asc;9;id]]
+10. $nickname[$getLeaderboardValue[user;level;asc;10;id]]
+ ;yes;1] 
+$addField[Level; 
+ $getLeaderboardValue[user;level;asc;1;value]
+ $getLeaderboardValue[user;level;asc;2;value]
+ $getLeaderboardValue[user;level;asc;3;value]
+ $getLeaderboardValue[user;level;asc;4;value]
+ $getLeaderboardValue[user;level;asc;5;value]
+ $getLeaderboardValue[user;level;asc;6;value]
+ $getLeaderboardValue[user;level;asc;7;value]
+ $getLeaderboardValue[user;level;asc;8;value]
+ $getLeaderboardValue[user;level;asc;9;value]
+ $getLeaderboardValue[user;level;asc;10;value]
+ ;yes;1]
+$addField[Points;
+$numberSeparator[$getLeaderboardValue[user;point;asc;1;value];,]
+$numberSeparator[$getLeaderboardValue[user;point;asc;2;value];,]
+$numberSeparator[$getLeaderboardValue[user;point;asc;3;value];,]
+$numberSeparator[$getLeaderboardValue[user;point;asc;4;value];,]
+$numberSeparator[$getLeaderboardValue[user;point;asc;5;value];,]
+$numberSeparator[$getLeaderboardValue[user;point;asc;6;value];,]
+$numberSeparator[$getLeaderboardValue[user;point;asc;7;value];,]
+$numberSeparator[$getLeaderboardValue[user;point;asc;8;value];,]
+$numberSeparator[$getLeaderboardValue[user;point;asc;9;value];,]
+$numberSeparator[$getLeaderboardValue[user;point;asc;10;value];,]
+;yes;1]
+ ]
+ $footer[$serverName[$guildID]'s level leaderboard]
+ $footerIcon[$serverIcon]
+
+$elseif[$message!=love]
+
+$color[#FF0000]
+$title[❌ Choose a leaderboard after the command !]
+$description[__**leaderboard type :**__
+- money
+- level
+- love
+]
+
+$endif

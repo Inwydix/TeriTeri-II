@@ -1,0 +1,90 @@
+$reply $ignoreTriggerCase
+$var[coin.emote;<:Tericoin:1001510021907099750>]
+
+$if[$isSlash]
+
+$reply $ignoreTriggerCase
+$var[coin.emote;<:Tericoin:1001510021907099750>]
+
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1020295528736628826/export202209161329074920.png?width=469&height=473]
+$color[99c2ff]
+$author[Market Square]
+$title[Welcome to the upgrade shop!]
+$description[
+Can I help you with something?
+
+**__Upgrade 1__**
+> • Price : 250,000 $var[coin.emote]
+> • Owned : $getUserVar[up1]/1 $if[$getUserVar[up1]==1](MAXED)$endif
+> • Effect : worker lv.1 limit +5
+
+**__Upgrade 2__**
+> • Price : 500,000 $var[coin.emote]
+> • Owned : $getUserVar[up2]/1 $if[$getUserVar[up2]==1](MAXED)$endif
+> • Effect : worker lv.2 limit +5
+
+**__Upgrade 3__**
+> • Price : 750,000 $var[coin.emote]
+> • Owned : $getUserVar[up3]/$if[$getServerVar[bank.prog]>=6]2$else1$endif $if[$or[$and[$getServerVar[bank.prog]>=6;$getUserVar[up3]==2]==true;$and[$getServerVar[bank.prog]<6;$getUserVar[up3]==1]==true]](MAXED)$endif
+> • Effect : worker lv.3 limit +5
+$if[$getServerVar[bank.prog]>=4]
+**__Upgrade 4__**
+> • Price : 1,000,000 $var[coin.emote]
+> • Owned : $getUserVar[up4]/1 $if[$getUserVar[up4]==1](MAXED)$endif
+> • Effect : daily reward x10    
+$else
+**__Upgrade 4__**
+> • Unlocked when the 4th bank milestone (15M) is reached
+$endif
+
+Use `t!buy upgrade <number>` to buy an upgrade
+
+**YOUR MONEY**
+> $numberSeparator[$round[$getUserVar[money];0];,] $var[coin.emote]]
+
+$footer[You are limited to 1 of each, but some extra upgrades will be unlocked with the bank milestones]
+
+
+$else
+
+
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1020295528736628826/export202209161329074920.png?width=469&height=473]
+$color[99c2ff]
+$author[Market Square]
+$title[Welcome to the upgrade shop!]
+$description[
+Can I help you with something?
+
+**__Upgrade 1__**
+> • Price : 250,000 $var[coin.emote]
+> • Owned : $getUserVar[up1]/1 $if[$getUserVar[up1]==1](MAXED)$endif
+> • Effect : worker lv.1 limit +5
+
+**__Upgrade 2__**
+> • Price : 500,000 $var[coin.emote]
+> • Owned : $getUserVar[up2]/1 $if[$getUserVar[up2]==1](MAXED)$endif
+> • Effect : worker lv.2 limit +5
+
+**__Upgrade 3__**
+> • Price : 750,000 $var[coin.emote]
+> • Owned : $getUserVar[up3]/$if[$getServerVar[bank.prog]>=6]2$else1$endif $if[$or[$and[$getServerVar[bank.prog]>=6;$getUserVar[up3]==2]==true;$and[$getServerVar[bank.prog]<6;$getUserVar[up3]==1]==true]](MAXED)$endif
+> • Effect : worker lv.3 limit +5
+$if[$getServerVar[bank.prog]>=4]
+**__Upgrade 4__**
+> • Price : 1,000,000 $var[coin.emote]
+> • Owned : $getUserVar[up4]/1 $if[$getUserVar[up4]==1](MAXED)$endif
+> • Effect : daily reward x10    
+$else
+**__Upgrade 4__**
+> • Unlocked when the 4th bank milestone (15M) is reached
+$endif
+
+Use `t!buy upgrade <number>` to buy an upgrade
+
+**YOUR MONEY**
+> $numberSeparator[$round[$getUserVar[money];0];,] $var[coin.emote]]
+
+$footer[You are limited to 1 of each, but some extra upgrades will be unlocked with the bank milestones]
+
+
+$endif

@@ -1,0 +1,4 @@
+$nomention $ignoreTriggerCase
+$var[emote;$randomText[<:TeriNom:1000067749076271224>;<:TeriBeam:1000060715798888608>;<:TeriFast:1000060760040419470>;<:TeriEhe:1000063159488483529>;<:TeriCute:999834523816689814>]]
+
+$addCmdReactions[🇹;🇪;🇷;🇮;$var[emote]]

@@ -1,0 +1,206 @@
+$nomention $ignoreTriggerCase
+$reply
+
+$var[coin.emote;<:Tericoin:1001510021907099750>]
+$var[teristal.emote;<:Teristal:1001507292648308817>]
+
+$enableDecimals[yes]
+
+$c[Badge vars]
+
+$textSplit[$getUserVar[badges];/]
+$var[badges.var;casino/$splitText[$sum[$getTextSplitIndex[casino];1]]/$splitText[$sum[$getTextSplitIndex[casino];2]]/streak/$splitText[$sum[$getTextSplitIndex[streak];1]]/$splitText[$sum[$getTextSplitIndex[streak];2]]/bug/$splitText[$sum[$getTextSplitIndex[bug];1]]/$splitText[$sum[$getTextSplitIndex[bug];2]]/rank/$splitText[$sum[$getTextSplitIndex[rank];1]]/$splitText[$sum[$getTextSplitIndex[rank];2]]/badge/$splitText[$sum[$getTextSplitIndex[badge];1]]/$splitText[$sum[$getTextSplitIndex[badge];2]]/bank/$splitText[$sum[$getTextSplitIndex[bank];1]]/$splitText[$sum[$getTextSplitIndex[bank];2]]]
+$var[tc.total;$splitText[$sum[$getTextSplitIndex[tc];1]]]
+$var[tc.badge;$splitText[$sum[$getTextSplitIndex[tc];2]]]
+$var[ts.total;$splitText[$sum[$getTextSplitIndex[ts];1]]]
+$var[ts.badge;$splitText[$sum[$getTextSplitIndex[ts];2]]]
+$var[errand.total;$splitText[$sum[$getTextSplitIndex[errand];1]]]
+$var[errand.badge;$splitText[$sum[$getTextSplitIndex[errand];2]]]
+
+$c[End badge vars]
+
+
+$if[$isSlash]
+
+$if[$getUserVar[errand.start]==0]
+ $title[❌ start an errand with t!errand start]
+$endif
+
+$if[$sum[$getUserVar[errand.start];$multi[3600;$getUserVar[errand.time]]]<=$getTimestamp]
+$c[if (old time + wait) < current time]
+$c[= if errand finished]
+
+ $if[$getUserVar[claimed]==no] 
+  
+  $var[errand.total;$sum[$var[errand.total];1]]
+  $setUserVar[claimed;yes]
+  $color[00FF00]   
+  
+  $enableDecimals[yes]
+  $if[$getUserVar[errand.time]==1]
+   $title[You claimed $numberSeparator[$round[$multi[$calculate[1.1**$getUserVar[lv3]];200;$calculate[1.1**$getServerVar[w3.boost]]];0];,] $var[coin.emote] !]
+   $setUserVar[money;$sum[$getUserVar[money];$round[$multi[$calculate[1.1**$getUserVar[lv3]];200];0]]]
+   $var[tc.total;$sum[$var[tc.total];$round[$multi[$calculate[1.1**$getUserVar[lv3]];200];0]]]
+   $setUserVar[claimed;yes]
+  $elseif[$getUserVar[errand.time]==3]
+   $title[You claimed $numberSeparator[$round[$multi[$calculate[1.1**$getUserVar[lv3]];500;$calculate[1.1**$getServerVar[w3.boost]]];0];,] $var[coin.emote] !]
+   $setUserVar[money;$sum[$getUserVar[money];$round[$multi[$calculate[1.1**$getUserVar[lv3]];500];0]]]
+   $var[tc.total;$sum[$var[tc.total];$round[$multi[$calculate[1.1**$getUserVar[lv3]];500];0]]]
+   $setUserVar[claimed;yes]
+  $elseif[$getUserVar[errand.time]==6]
+   $title[You claimed $numberSeparator[$round[$multi[$calculate[1.1**$getUserVar[lv3]];700;$calculate[1.1**$getServerVar[w3.boost]]];0];,] $var[coin.emote] !]
+   $setUserVar[money;$sum[$getUserVar[money];$round[$multi[$calculate[1.1**$getUserVar[lv3]];700];0]]]
+   $var[tc.total;$sum[$var[tc.total];$round[$multi[$calculate[1.1**$getUserVar[lv3]];700];0]]]
+   $setUserVar[claimed;yes]
+  $elseif[$getUserVar[errand.time]==9]
+   $title[You claimed $numberSeparator[$round[$multi[$calculate[1.1**$getUserVar[lv3]];800;$calculate[1.1**$getServerVar[w3.boost]]];0];,] $var[coin.emote] !]
+   $setUserVar[money;$sum[$getUserVar[money];$round[$multi[$calculate[1.1**$getUserVar[lv3]];800];0]]]
+   $var[tc.total;$sum[$var[tc.total];$round[$multi[$calculate[1.1**$getUserVar[lv3]];800];0]]]
+   $setUserVar[claimed;yes]
+  $elseif[$getUserVar[errand.time]==12]
+   $title[You claimed $numberSeparator[$round[$multi[$calculate[1.1**$getUserVar[lv3]];1000;$calculate[1.1**$getServerVar[w3.boost]]];0];,] $var[coin.emote] !]
+   $setUserVar[money;$sum[$getUserVar[money];$round[$multi[$calculate[1.1**$getUserVar[lv3]];1000];0]]]
+   $var[tc.total;$sum[$var[tc.total];$round[$multi[$calculate[1.1**$getUserVar[lv3]];1000];0]]]
+   $setUserVar[claimed;yes]
+  $endif
+  
+  $description[Now you have : $numberSeparator[$round[$getUserVar[money];0];,] $var[coin.emote] !]
+  
+   $if[$modulo[$getTimestamp;10]==3]
+    $description[
+    You got 3 $var[teristal.emote] ! 
+    ]
+    $setUserVar[crystal;$sum[$getUserVar[crystal];3]]
+    $var[ts.total;$sum[$var[ts.total];3]]
+    
+   $elseif[$modulo[$getTimestamp;10]==2]
+    $description[
+    You got 2 $var[teristal.emote] ! 
+    ]
+    $setUserVar[crystal;$sum[$getUserVar[crystal];2]]
+    $var[ts.total;$sum[$var[ts.total];2]]
+    
+   $elseif[$modulo[$getTimestamp;10]==1]
+    $description[
+    You got 1 $var[teristal.emote] ! 
+    ]
+    $setUserVar[crystal;$sum[$getUserVar[crystal];1]]
+    $var[ts.total;$sum[$var[ts.total];1]]
+   $else
+  
+   
+   
+   $endif
+
+  
+  
+ $else 
+  $title[❌ You already claimed your last finished errand !]
+  $color[FF0000]
+
+ $endif
+ 
+ $else
+ 
+  $title[❌ You need to wait longer!]
+  $description[Current errand completed <t:$sum[$multi[$getUserVar[errand.time];3600];$getUserVar[errand.start]]:R>]
+  $color[FF0000]
+
+$endif
+
+
+$setUserVar[badges;$var[badges.var]/tc/$var[tc.total]/$var[tc.badge]/ts/$var[ts.total]/$var[ts.badge]/errand/$var[errand.total]/$var[errand.badge]]
+
+$else
+
+$if[$getUserVar[errand.start]==0]
+ $title[❌ start an errand with t!errand start]
+$endif
+
+$if[$sum[$getUserVar[errand.start];$multi[3600;$getUserVar[errand.time]]]<=$getTimestamp]
+$c[if (old time + wait) < current time]
+$c[= if errand finished]
+
+ $if[$getUserVar[claimed]==no] 
+  
+  $var[errand.total;$sum[$var[errand.total];1]]
+  $setUserVar[claimed;yes]
+  $color[00FF00]   
+  
+  $enableDecimals[yes]
+  $if[$getUserVar[errand.time]==1]
+   $title[You claimed $numberSeparator[$round[$multi[$calculate[1.1**$getUserVar[lv3]];200;$calculate[1.1**$getServerVar[w3.boost]]];0];,] $var[coin.emote] !]
+   $setUserVar[money;$sum[$getUserVar[money];$round[$multi[$calculate[1.1**$getUserVar[lv3]];200];0]]]
+   $var[tc.total;$sum[$var[tc.total];$round[$multi[$calculate[1.1**$getUserVar[lv3]];200];0]]]
+   $setUserVar[claimed;yes]
+  $elseif[$getUserVar[errand.time]==3]
+   $title[You claimed $numberSeparator[$round[$multi[$calculate[1.1**$getUserVar[lv3]];500;$calculate[1.1**$getServerVar[w3.boost]]];0];,] $var[coin.emote] !]
+   $setUserVar[money;$sum[$getUserVar[money];$round[$multi[$calculate[1.1**$getUserVar[lv3]];500];0]]]
+   $var[tc.total;$sum[$var[tc.total];$round[$multi[$calculate[1.1**$getUserVar[lv3]];500];0]]]
+   $setUserVar[claimed;yes]
+  $elseif[$getUserVar[errand.time]==6]
+   $title[You claimed $numberSeparator[$round[$multi[$calculate[1.1**$getUserVar[lv3]];700;$calculate[1.1**$getServerVar[w3.boost]]];0];,] $var[coin.emote] !]
+   $setUserVar[money;$sum[$getUserVar[money];$round[$multi[$calculate[1.1**$getUserVar[lv3]];700];0]]]
+   $var[tc.total;$sum[$var[tc.total];$round[$multi[$calculate[1.1**$getUserVar[lv3]];700];0]]]
+   $setUserVar[claimed;yes]
+  $elseif[$getUserVar[errand.time]==9]
+   $title[You claimed $numberSeparator[$round[$multi[$calculate[1.1**$getUserVar[lv3]];800;$calculate[1.1**$getServerVar[w3.boost]]];0];,] $var[coin.emote] !]
+   $setUserVar[money;$sum[$getUserVar[money];$round[$multi[$calculate[1.1**$getUserVar[lv3]];800];0]]]
+   $var[tc.total;$sum[$var[tc.total];$round[$multi[$calculate[1.1**$getUserVar[lv3]];800];0]]]
+   $setUserVar[claimed;yes]
+  $elseif[$getUserVar[errand.time]==12]
+   $title[You claimed $numberSeparator[$round[$multi[$calculate[1.1**$getUserVar[lv3]];1000;$calculate[1.1**$getServerVar[w3.boost]]];0];,] $var[coin.emote] !]
+   $setUserVar[money;$sum[$getUserVar[money];$round[$multi[$calculate[1.1**$getUserVar[lv3]];1000];0]]]
+   $var[tc.total;$sum[$var[tc.total];$round[$multi[$calculate[1.1**$getUserVar[lv3]];1000];0]]]
+   $setUserVar[claimed;yes]
+  $endif
+  
+  $description[Now you have : $numberSeparator[$round[$getUserVar[money];0];,] $var[coin.emote] !]
+  
+   $if[$modulo[$getTimestamp;10]==3]
+    $description[
+    You got 3 $var[teristal.emote] ! 
+    ]
+    $setUserVar[crystal;$sum[$getUserVar[crystal];3]]
+    $var[ts.total;$sum[$var[ts.total];3]]
+    
+   $elseif[$modulo[$getTimestamp;10]==2]
+    $description[
+    You got 2 $var[teristal.emote] ! 
+    ]
+    $setUserVar[crystal;$sum[$getUserVar[crystal];2]]
+    $var[ts.total;$sum[$var[ts.total];2]]
+    
+   $elseif[$modulo[$getTimestamp;10]==1]
+    $description[
+    You got 1 $var[teristal.emote] ! 
+    ]
+    $setUserVar[crystal;$sum[$getUserVar[crystal];1]]
+    $var[ts.total;$sum[$var[ts.total];1]]
+   $else
+  
+   
+   
+   $endif
+
+  
+  
+ $else 
+  $title[❌ You already claimed your last finished errand !]
+  $color[FF0000]
+
+ $endif
+ 
+ $else
+ 
+  $title[❌ You need to wait longer!]
+  $description[Current errand completed <t:$sum[$multi[$getUserVar[errand.time];3600];$getUserVar[errand.start]]:R>]
+  $color[FF0000]
+
+$endif
+
+
+$setUserVar[badges;$var[badges.var]/tc/$var[tc.total]/$var[tc.badge]/ts/$var[ts.total]/$var[ts.badge]/errand/$var[errand.total]/$var[errand.badge]]
+
+
+$endif

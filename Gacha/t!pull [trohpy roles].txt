@@ -1,0 +1,98 @@
+$nomention $ignoreTriggerCase
+$replyIn[1s]
+
+$c[Big stigma locked/unlocked var list]
+
+
+$textSplit[$getUserVar[stigma];/]
+$var[stig1T;$splitText[$sum[$getTextSplitIndex[stig1T];1]]]
+$var[stig1M;$splitText[$sum[$getTextSplitIndex[stig1M];1]]]
+$var[stig1B;$splitText[$sum[$getTextSplitIndex[stig1B];1]]]
+$var[stig2T;$splitText[$sum[$getTextSplitIndex[stig2T];1]]]
+$var[stig2M;$splitText[$sum[$getTextSplitIndex[stig2M];1]]]
+$var[stig2B;$splitText[$sum[$getTextSplitIndex[stig2B];1]]]
+$var[stig3T;$splitText[$sum[$getTextSplitIndex[stig3T];1]]]
+$var[stig3M;$splitText[$sum[$getTextSplitIndex[stig3M];1]]]
+$var[stig3B;$splitText[$sum[$getTextSplitIndex[stig3B];1]]]
+$var[stig4T;$splitText[$sum[$getTextSplitIndex[stig4T];1]]]
+$var[stig4M;$splitText[$sum[$getTextSplitIndex[stig4M];1]]]
+$var[stig4B;$splitText[$sum[$getTextSplitIndex[stig4B];1]]]
+$var[stig5T;$splitText[$sum[$getTextSplitIndex[stig5T];1]]]
+$var[stig5M;$splitText[$sum[$getTextSplitIndex[stig5M];1]]]
+$var[stig5B;$splitText[$sum[$getTextSplitIndex[stig5B];1]]]
+$var[stig6T;$splitText[$sum[$getTextSplitIndex[stig6T];1]]]
+$var[stig6M;$splitText[$sum[$getTextSplitIndex[stig6M];1]]]
+$var[stig6B;$splitText[$sum[$getTextSplitIndex[stig6B];1]]]
+$var[stig7T;$splitText[$sum[$getTextSplitIndex[stig7T];1]]]
+$var[stig7M;$splitText[$sum[$getTextSplitIndex[stig7M];1]]]
+$var[stig7B;$splitText[$sum[$getTextSplitIndex[stig7B];1]]]
+$var[stig8T;$splitText[$sum[$getTextSplitIndex[stig8T];1]]]
+$var[stig8M;$splitText[$sum[$getTextSplitIndex[stig8M];1]]]
+$var[stig8B;$splitText[$sum[$getTextSplitIndex[stig8B];1]]]
+$var[stig9T;$splitText[$sum[$getTextSplitIndex[stig9T];1]]]
+$var[stig9M;$splitText[$sum[$getTextSplitIndex[stig9M];1]]]
+$var[stig9B;$splitText[$sum[$getTextSplitIndex[stig9B];1]]]
+
+
+
+$c[Code]
+
+
+
+$c[All 3 stars role]
+
+
+
+$if[$and[$var[stig1T]==true;$var[stig1M]==true;$var[stig1B]==true;$var[stig2T]==true;$var[stig2M]==true;$var[stig2B]==true;$var[stig3T]==true;$var[stig3M]==true;$var[stig3B]==true]]
+
+  $if[$hasRole[$authorID;$roleID[All 3 stars]]==false]
+
+  $giveRole[$authorID;$roleID[All 3 stars]]
+  
+  $title[you unlocked all the 3 star stigmas, waw]
+  $description[role <@&$roleID[All 3 stars]> added to <@$authorID>]
+  $color[ffffff]
+  
+  $endif
+
+$endif
+
+
+
+$c[All 4 stars role]
+
+
+
+$if[$and[$var[stig4T]==true;$var[stig4M]==true;$var[stig4B]==true;$var[stig5T]==true;$var[stig5M]==true;$var[stig5B]==true;$var[stig6T]==true;$var[stig6M]==true;$var[stig6B]==true]]
+
+  $if[$hasRole[$authorID;$roleID[All 4 stars]]==false]
+  
+  $giveRole[$authorID;$roleID[All 4 stars]]
+  
+  $title[you unlocked all the 4 star stigmas, waw]
+  $description[role <@&$roleID[All 4 stars]> added to <@$authorID>]
+  $color[ffffff]
+  
+  $endif
+
+$endif
+
+
+
+$c[All 5 stars role]
+
+
+
+$if[$and[$var[stig7T]==true;$var[stig7M]==true;$var[stig7B]==true;$var[stig8T]==true;$var[stig8M]==true;$var[stig8B]==true;$var[stig9T]==true;$var[stig9M]==true;$var[stig9B]==true]]
+
+  $if[$hasRole[$authorID;$roleID[All 5 stars]]==false]
+
+  $giveRole[$authorID;$roleID[All 5 stars]]
+ 
+  $title[you unlocked all the 5 star stigmas, waw]
+  $description[role <@&$roleID[All 5 stars]> added to <@$authorID>]
+  $color[ffffff]
+  
+  $endif
+
+$endif

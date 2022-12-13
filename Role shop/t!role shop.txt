@@ -1,0 +1,33 @@
+$nomention
+$if[$authorID!=490201258859167748]$onlyIf[$getVar[pause]==off;The bot is currently paused, please wait a bit or ask The_Zermiste#1809]$endif
+$reply
+
+$onlyIf[$getServerVar[bank.prog]>=5;You need to reach the 5th milestone ! (20M)]
+
+$title[**ROLE SHOP**]
+$description[Here you can buy some roles using your <:Teristal:917240263993331742> !
+
+**Role 1 :** <@&$roleID[Tuna Lord]>
+>  Price : 100  <:Teristal:917240263993331742>
+>  (Buying this will take away your <@&$roleID[Goose Appreciator]> role)
+
+**Role 2 :** <@&$roleID[Goose Appreciator]>
+>  Price : 100  <:Teristal:917240263993331742>
+>  (Buying this will take away your <@&$roleID[Tuna Lord]> role)
+ 
+**Role 3 :** <@&$roleID[Vodka Pink]>
+>  Price : 200  <:Teristal:917240263993331742>
+>  (Buying this will take away your <@&$roleID[Vodka Blue]> role)
+    
+**Role 4 :** <@&$roleID[Vodka Blue]>
+>  Price : 200  <:Teristal:917240263993331742>
+>  (Buying this will take away your <@&$roleID[Vodka Pink]> role)
+  
+**Role 5 :** <@&$roleID[Mobius' Pet]>
+>  Price : 500  <:Teristal:917240263993331742>
+     
+**Role 6 : ** <@&$roleID[I had 1k]>
+>  Price : 1000  <:Teristal:917240263993331742>
+** **]
+$footer[Use 't!buy role <number>' to buy a role]
+$color[ffffff]

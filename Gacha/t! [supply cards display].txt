@@ -1,0 +1,34 @@
+$nomention
+
+$replyIn[1s]
+$var[coin.emote;<:Tericoin:1001510021907099750>]
+$var[teristals.emote;<:Teristal:1001507292648308817>]
+
+
+$c[supply card emotes var list]
+
+$textSplit[$getVar[emotes];/]
+$var[card1.pic;$optOff[$splitText[$sum[$getTextSplitIndex[card1];1]]]]
+$var[card2.pic;$optOff[$splitText[$sum[$getTextSplitIndex[card2];1]]]]
+$var[card3.pic;$optOff[$splitText[$sum[$getTextSplitIndex[card3];1]]]]
+
+$c[end supply card emotes var list]
+
+
+$c[Teristal display]
+
+
+$c[Supply cards display]
+
+
+$if[$message[1]==pull]
+
+$title[Cards :]
+$description[• 3 stars supply cards : **$numberSeparator[$getUserVar[card1];,]**  $var[card1.pic]
+• 4 stars supply cards : **$numberSeparator[$getUserVar[card2];,]**  $var[card2.pic]
+• 5 stars supply cards : **$numberSeparator[$getUserVar[card3];,]**  $var[card3.pic]]
+$footer[$nickname[$authorID]]
+$footerIcon[$userAvatar[$authorID]]
+$color[ffffff]
+ 
+$endif

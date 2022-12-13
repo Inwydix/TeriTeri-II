@@ -1,0 +1,7 @@
+$nomention $reply $ignoreTriggerCase
+$if[$message[1]!=]
+🎱 | Shaking Teri's ball...
+$editIn[1s;🎱 | $randomText[My reply is no;Don't count on it;My sources say no;Very doubful;Outlook not so good;Cannot predit right now;Better not to tell you now;Ask again later;Reply hazy try again;Concentrate and ask again;Outlook good;Most likely;Sings point yes;As I see it, yes;Yes;You may rely on it;Without a doubt;Yes, definitively;It is decidedly so;It is certain]]
+$else
+❌ Ask Teri something!
+$endif

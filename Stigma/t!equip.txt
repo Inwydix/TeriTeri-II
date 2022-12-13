@@ -1,0 +1,371 @@
+$nomention $ignoreTriggerCase
+$reply
+$onlyIf[$message[1]!=ped;]
+$onlyIf[$and[$getServerVar[bank.prog]>=3;$message[1]!=ped]==true;You need to reach the 3rd milestone ! (10M)]
+
+
+$c[Locked/unlocked stigma var list]
+
+
+$textSplit[$getUserVar[stigma];/]
+$var[stig1T;$splitText[$sum[$getTextSplitIndex[stig1T];1]]]
+$var[stig1M;$splitText[$sum[$getTextSplitIndex[stig1M];1]]]
+$var[stig1B;$splitText[$sum[$getTextSplitIndex[stig1B];1]]]
+$var[stig2T;$splitText[$sum[$getTextSplitIndex[stig2T];1]]]
+$var[stig2M;$splitText[$sum[$getTextSplitIndex[stig2M];1]]]
+$var[stig2B;$splitText[$sum[$getTextSplitIndex[stig2B];1]]]
+$var[stig3T;$splitText[$sum[$getTextSplitIndex[stig3T];1]]]
+$var[stig3M;$splitText[$sum[$getTextSplitIndex[stig3M];1]]]
+$var[stig3B;$splitText[$sum[$getTextSplitIndex[stig3B];1]]]
+$var[stig4T;$splitText[$sum[$getTextSplitIndex[stig4T];1]]]
+$var[stig4M;$splitText[$sum[$getTextSplitIndex[stig4M];1]]]
+$var[stig4B;$splitText[$sum[$getTextSplitIndex[stig4B];1]]]
+$var[stig5T;$splitText[$sum[$getTextSplitIndex[stig5T];1]]]
+$var[stig5M;$splitText[$sum[$getTextSplitIndex[stig5M];1]]]
+$var[stig5B;$splitText[$sum[$getTextSplitIndex[stig5B];1]]]
+$var[stig6T;$splitText[$sum[$getTextSplitIndex[stig6T];1]]]
+$var[stig6M;$splitText[$sum[$getTextSplitIndex[stig6M];1]]]
+$var[stig6B;$splitText[$sum[$getTextSplitIndex[stig6B];1]]]
+$var[stig7T;$splitText[$sum[$getTextSplitIndex[stig7T];1]]]
+$var[stig7M;$splitText[$sum[$getTextSplitIndex[stig7M];1]]]
+$var[stig7B;$splitText[$sum[$getTextSplitIndex[stig7B];1]]]
+$var[stig8T;$splitText[$sum[$getTextSplitIndex[stig8T];1]]]
+$var[stig8M;$splitText[$sum[$getTextSplitIndex[stig8M];1]]]
+$var[stig8B;$splitText[$sum[$getTextSplitIndex[stig8B];1]]]
+$var[stig9T;$splitText[$sum[$getTextSplitIndex[stig9T];1]]]
+$var[stig9M;$splitText[$sum[$getTextSplitIndex[stig9M];1]]]
+$var[stig9B;$splitText[$sum[$getTextSplitIndex[stig9B];1]]]
+
+
+$c[Equiped stigma var list]
+
+$textSplit[$getUserVar[stigma.equip];/]
+$var[stigT.equip;$optOff[$splitText[$sum[$getTextSplitIndex[stigT];1]]]]
+$var[stigM.equip;$optOff[$splitText[$sum[$getTextSplitIndex[stigM];1]]]]
+$var[stigB.equip;$optOff[$splitText[$sum[$getTextSplitIndex[stigB];1]]]]
+
+
+$c[Stimga names var list]
+
+
+$textSplit[$getServerVar[stigma.name];/]
+$var[stig1T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig1T];1]]]]
+$var[stig1M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig1M];1]]]]
+$var[stig1B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig1B];1]]]]
+$var[stig2T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig2T];1]]]]
+$var[stig2M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig2M];1]]]]
+$var[stig2B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig2B];1]]]]
+$var[stig3T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig3T];1]]]]
+$var[stig3M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig3M];1]]]]
+$var[stig3B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig3B];1]]]]
+$var[stig4T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig4T];1]]]]
+$var[stig4M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig4M];1]]]]
+$var[stig4B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig4B];1]]]]
+$var[stig5T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig5T];1]]]]
+$var[stig5M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig5M];1]]]]
+$var[stig5B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig5B];1]]]]
+$var[stig6T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig6T];1]]]]
+$var[stig6M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig6M];1]]]]
+$var[stig6B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig6B];1]]]]
+$var[stig7T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig7T];1]]]]
+$var[stig7M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig7M];1]]]]
+$var[stig7B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig7B];1]]]]
+$var[stig8T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig8T];1]]]]
+$var[stig8M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig8M];1]]]]
+$var[stig8B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig8B];1]]]]
+$var[stig9T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig9T];1]]]]
+$var[stig9M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig9M];1]]]]
+$var[stig9B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig9B];1]]]]
+
+
+
+$c[Code]
+
+
+$if[$toUppercase[$message[2]]==T]
+
+  $if[$message[1]==1]
+
+    $onlyIf[$var[stig1T]==true;❌ You didn't unlock this stigma yet!]
+    $onlyIf[$var[stigT.equip]!=stig1T;❌ You already have this stigma equiped!]
+    $var[stigT.equip;stig1T]
+    $description[You equiped $var[stig1T.name] !]
+    $setUserVar[stigma.equip;stigT/$var[stigT.equip]/stigM/$var[stigM.equip]/stigB/$var[stigB.equip]]
+
+  $elseif[$message[1]==2]
+
+    $onlyIf[$var[stig2T]==true;❌ You didn't unlock this stigma yet!]
+    $onlyIf[$var[stigT.equip]!=stig2T;❌ You already have this stigma equiped!]
+    $var[stigT.equip;stig2T]
+    $description[You equiped $var[stig2T.name] !]
+    $setUserVar[stigma.equip;stigT/$var[stigT.equip]/stigM/$var[stigM.equip]/stigB/$var[stigB.equip]]
+
+  $elseif[$message[1]==3]
+
+    $onlyIf[$var[stig3T]==true;❌ You didn't unlock this stigma yet!]
+    $onlyIf[$var[stigT.equip]!=stig3T;❌ You already have this stigma equiped!]
+    $var[stigT.equip;stig3T]
+    $description[You equiped $var[stig3T.name] !]
+    $setUserVar[stigma.equip;stigT/$var[stigT.equip]/stigM/$var[stigM.equip]/stigB/$var[stigB.equip]]
+
+  $elseif[$message[1]==4]
+
+    $onlyIf[$var[stig4T]==true;❌ You didn't unlock this stigma yet!]
+    $onlyIf[$var[stigT.equip]!=stig4T;❌ You already have this stigma equiped!]
+    $var[stigT.equip;stig4T]
+    $description[You equiped $var[stig4T.name] !]
+    $setUserVar[stigma.equip;stigT/$var[stigT.equip]/stigM/$var[stigM.equip]/stigB/$var[stigB.equip]]
+
+  $elseif[$message[1]==5]
+
+    $onlyIf[$var[stig5T]==true;❌ You didn't unlock this stigma yet!]
+    $onlyIf[$var[stigT.equip]!=stig5T;❌ You already have this stigma equiped!]
+    $var[stigT.equip;stig5T]
+    $description[You equiped $var[stig5T.name] !]
+    $setUserVar[stigma.equip;stigT/$var[stigT.equip]/stigM/$var[stigM.equip]/stigB/$var[stigB.equip]]
+
+  $elseif[$message[1]==6]
+
+    $onlyIf[$var[stig6T]==true;❌ You didn't unlock this stigma yet!]
+    $onlyIf[$var[stigT.equip]!=stig6T;❌ You already have this stigma equiped!]
+    $var[stigT.equip;stig6T]
+    $description[You equiped $var[stig6T.name] !]
+    $setUserVar[stigma.equip;stigT/$var[stigT.equip]/stigM/$var[stigM.equip]/stigB/$var[stigB.equip]]
+
+  $elseif[$message[1]==7]
+
+    $onlyIf[$var[stig7T]==true;❌ You didn't unlock this stigma yet!]
+    $onlyIf[$var[stigT.equip]!=stig7T;❌ You already have this stigma equiped!]
+    $var[stigT.equip;stig7T]
+    $description[You equiped $var[stig7T.name] !]
+    $setUserVar[stigma.equip;stigT/$var[stigT.equip]/stigM/$var[stigM.equip]/stigB/$var[stigB.equip]]
+
+  $elseif[$message[1]==8]
+
+    $onlyIf[$var[stig8T]==true;❌ You didn't unlock this stigma yet!]
+    $onlyIf[$var[stigT.equip]!=stig8T;❌ You already have this stigma equiped!]
+    $var[stigT.equip;stig8T]
+    $description[You equiped $var[stig8T.name] !]
+    $setUserVar[stigma.equip;stigT/$var[stigT.equip]/stigM/$var[stigM.equip]/stigB/$var[stigB.equip]]
+
+  $elseif[$message[1]==9]
+  
+    $onlyIf[$var[stig9T]==true;❌ You didn't unlock this stigma yet!]
+    $onlyIf[$var[stigT.equip]!=stig9T;❌ You already have this stigma equiped!]
+    $var[stigT.equip;stig9T]
+    $description[You equiped $var[stig9T.name] !]
+    $setUserVar[stigma.equip;stigT/$var[stigT.equip]/stigM/$var[stigM.equip]/stigB/$var[stigB.equip]]
+
+  $elseif[$message[1]==0]
+  
+    $onlyIf[$var[stigT.equip]!=none;❌ You don't have any T stigma equipped!]
+    $var[stigT.equip;none]
+    $description[You unequipped your T stigma (now it's empty)]
+    $setUserVar[stigma.equip;stigT/$var[stigT.equip]/stigM/$var[stigM.equip]/stigB/$var[stigB.equip]]
+
+  $elseif[$and[$message[1]!=0;$var[stig1T]==false;$var[stig2T]==false;$var[stig3T]==false;$var[stig4T]==false;$var[stig5T]==false;$var[stig6T]==false;$var[stig7T]==false;$var[stig8T]==false;$var[stig9T]==false]]]
+
+    ❌ You don't have any T stigma to equip!
+
+  $else
+
+    ❌ TeriTeri couldn't find that stigma... check you wrote everything right and try again!
+
+  $endif
+
+$elseif[$toUppercase[$message[2]]==M]
+
+
+  $if[$message[1]==1]
+
+    $onlyIf[$var[stig1M]==true;❌ You didn't unlock this stigma yet!]
+    $onlyIf[$var[stigM.equip]!=stig1M;❌ You already have this stigma equiped!]
+    $var[stigM.equip;stig1M]
+    $description[You equiped $var[stig1M.name] !]
+    $setUserVar[stigma.equip;stigT/$var[stigT.equip]/stigM/$var[stigM.equip]/stigB/$var[stigB.equip]]
+
+  $elseif[$message[1]==2]
+
+    $onlyIf[$var[stig2M]==true;❌ You didn't unlock this stigma yet!]
+    $onlyIf[$var[stigM.equip]!=stig2M;❌ You already have this stigma equiped!]
+    $var[stigM.equip;stig2M]
+    $description[You equiped $var[stig2M.name] !]
+    $setUserVar[stigma.equip;stigT/$var[stigT.equip]/stigM/$var[stigM.equip]/stigB/$var[stigB.equip]]
+
+  $elseif[$message[1]==3]
+
+    $onlyIf[$var[stig3M]==true;❌ You didn't unlock this stigma yet!]
+    $onlyIf[$var[stigM.equip]!=stig3M;❌ You already have this stigma equiped!]
+    $var[stigM.equip;stig3M]
+    $description[You equiped $var[stig3M.name] !]
+    $setUserVar[stigma.equip;stigT/$var[stigT.equip]/stigM/$var[stigM.equip]/stigB/$var[stigB.equip]]
+
+  $elseif[$message[1]==4]
+
+    $onlyIf[$var[stig4M]==true;❌ You didn't unlock this stigma yet!]
+    $onlyIf[$var[stigM.equip]!=stig4M;❌ You already have this stigma equiped!]
+    $var[stigM.equip;stig4M]
+    $description[You equiped $var[stig4M.name] !]
+    $setUserVar[stigma.equip;stigT/$var[stigT.equip]/stigM/$var[stigM.equip]/stigB/$var[stigB.equip]]
+
+  $elseif[$message[1]==5]
+
+    $onlyIf[$var[stig5M]==true;❌ You didn't unlock this stigma yet!]
+    $onlyIf[$var[stigM.equip]!=stig5M;❌ You already have this stigma equiped!]
+    $var[stigM.equip;stig5M]
+    $description[You equiped $var[stig5M.name] !]
+    $setUserVar[stigma.equip;stigT/$var[stigT.equip]/stigM/$var[stigM.equip]/stigB/$var[stigB.equip]]
+
+  $elseif[$message[1]==6]
+
+    $onlyIf[$var[stig6M]==true;❌ You didn't unlock this stigma yet!]
+    $onlyIf[$var[stigM.equip]!=stig6M;❌ You already have this stigma equiped!]
+    $var[stigM.equip;stig6M]
+    $description[You equiped $var[stig6M.name] !]
+    $setUserVar[stigma.equip;stigT/$var[stigT.equip]/stigM/$var[stigM.equip]/stigB/$var[stigB.equip]]
+
+  $elseif[$message[1]==7]
+
+    $onlyIf[$var[stig7M]==true;❌ You didn't unlock this stigma yet!]
+    $onlyIf[$var[stigM.equip]!=stig7M;❌ You already have this stigma equiped!]
+    $var[stigM.equip;stig7M]
+    $description[You equiped $var[stig7M.name] !]
+    $setUserVar[stigma.equip;stigT/$var[stigT.equip]/stigM/$var[stigM.equip]/stigB/$var[stigB.equip]]
+
+  $elseif[$message[1]==8]
+
+    $onlyIf[$var[stig8M]==true;❌ You didn't unlock this stigma yet!]
+    $onlyIf[$var[stigM.equip]!=stig8M;❌ You already have this stigma equiped!]
+    $var[stigM.equip;stig8M]
+    $description[You equiped $var[stig8M.name] !]
+    $setUserVar[stigma.equip;stigT/$var[stigT.equip]/stigM/$var[stigM.equip]/stigB/$var[stigB.equip]]
+
+  $elseif[$message[1]==9]
+  
+    $onlyIf[$var[stig9M]==true;❌ You didn't unlock this stigma yet!]
+    $onlyIf[$var[stigM.equip]!=stig9M;❌ You already have this stigma equiped!]
+    $var[stigM.equip;stig9M]
+    $description[You equiped $var[stig9M.name] !]
+    $setUserVar[stigma.equip;stigT/$var[stigT.equip]/stigM/$var[stigM.equip]/stigB/$var[stigB.equip]]
+
+  $elseif[$message[1]==0]
+  
+    $onlyIf[$var[stigM.equip]!=none;❌ You don't have any M stigma equipped!]
+    $var[stigM.equip;none]
+    $description[You unequipped your M stigma (now it's empty)]
+    $setUserVar[stigma.equip;stigT/$var[stigT.equip]/stigM/$var[stigM.equip]/stigB/$var[stigB.equip]]
+  
+  $elseif[$and[$message[1]!=0;$var[stig1M]==false;$var[stig2M]==false;$var[stig3M]==false;$var[stig4M]==false;$var[stig5M]==false;$var[stig6M]==false;$var[stig7M]==false;$var[stig8M]==false;$var[stig9M]==false]]]
+
+    ❌ You don't have any M stigma to equip!
+
+  $else
+
+    ❌ TeriTeri couldn't find that stigma... check you wrote everything right and try again!
+
+  $endif
+
+$elseif[$toUppercase[$message[2]]==B]
+
+
+  $if[$message[1]==1]
+
+    $onlyIf[$var[stig1B]==true;❌ You didn't unlock this stigma yet!]
+    $onlyIf[$var[stigB.equip]!=stig1B;❌ You already have this stigma equiped!]
+    $var[stigB.equip;stig1B]
+    $description[You equiped $var[stig1B.name] !]
+    $setUserVar[stigma.equip;stigT/$var[stigT.equip]/stigM/$var[stigM.equip]/stigB/$var[stigB.equip]]
+
+  $elseif[$message[1]==2]
+
+    $onlyIf[$var[stig2B]==true;❌ You didn't unlock this stigma yet!]
+    $onlyIf[$var[stigB.equip]!=stig2B;❌ You already have this stigma equiped!]
+    $var[stigB.equip;stig2B]
+    $description[You equiped $var[stig2B.name] !]
+    $setUserVar[stigma.equip;stigT/$var[stigT.equip]/stigM/$var[stigM.equip]/stigB/$var[stigB.equip]]
+
+  $elseif[$message[1]==3]
+
+    $onlyIf[$var[stig3B]==true;❌ You didn't unlock this stigma yet!]
+    $onlyIf[$var[stigB.equip]!=stig3B;❌ You already have this stigma equiped!]
+    $var[stigB.equip;stig3B]
+    $description[You equiped $var[stig3B.name] !]
+    $setUserVar[stigma.equip;stigT/$var[stigT.equip]/stigM/$var[stigM.equip]/stigB/$var[stigB.equip]]
+
+  $elseif[$message[1]==4]
+
+    $onlyIf[$var[stig4B]==true;❌ You didn't unlock this stigma yet!]
+    $onlyIf[$var[stigB.equip]!=stig4B;❌ You already have this stigma equiped!]
+    $var[stigB.equip;stig4B]
+    $description[You equiped $var[stig4B.name] !]
+    $setUserVar[stigma.equip;stigT/$var[stigT.equip]/stigM/$var[stigM.equip]/stigB/$var[stigB.equip]]
+
+  $elseif[$message[1]==5]
+
+    $onlyIf[$var[stig5B]==true;❌ You didn't unlock this stigma yet!]
+    $onlyIf[$var[stigB.equip]!=stig5B;❌ You already have this stigma equiped!]
+    $var[stigB.equip;stig5B]
+    $description[You equiped $var[stig5B.name] !]
+    $setUserVar[stigma.equip;stigT/$var[stigT.equip]/stigM/$var[stigM.equip]/stigB/$var[stigB.equip]]
+
+  $elseif[$message[1]==6]
+
+    $onlyIf[$var[stig6B]==true;❌ You didn't unlock this stigma yet!]
+    $onlyIf[$var[stigB.equip]!=stig6B;❌ You already have this stigma equiped!]
+    $var[stigB.equip;stig6B]
+    $description[You equiped $var[stig6B.name] !]
+    $setUserVar[stigma.equip;stigT/$var[stigT.equip]/stigM/$var[stigM.equip]/stigB/$var[stigB.equip]]
+
+  $elseif[$message[1]==7]
+
+    $onlyIf[$var[stig7B]==true;❌ You didn't unlock this stigma yet!]
+    $onlyIf[$var[stigB.equip]!=stig7B;❌ You already have this stigma equiped!]
+    $var[stigB.equip;stig7B]
+    $description[You equiped $var[stig7B.name] !]
+    $setUserVar[stigma.equip;stigT/$var[stigT.equip]/stigM/$var[stigM.equip]/stigB/$var[stigB.equip]]
+
+  $elseif[$message[1]==8]
+
+    $onlyIf[$var[stig8B]==true;❌ You didn't unlock this stigma yet!]
+    $onlyIf[$var[stigB.equip]!=stig8B;❌ You already have this stigma equiped!]
+    $var[stigB.equip;stig8B]
+    $description[You equiped $var[stig8B.name] !]
+    $setUserVar[stigma.equip;stigT/$var[stigT.equip]/stigM/$var[stigM.equip]/stigB/$var[stigB.equip]]
+
+  $elseif[$message[1]==9]
+  
+    $onlyIf[$var[stig9B]==true;❌ You didn't unlock this stigma yet!]
+    $onlyIf[$var[stigB.equip]!=stig9B;❌ You already have this stigma equiped!]
+    $var[stigB.equip;stig9B]
+    $description[You equiped $var[stig9B.name] !]
+    $setUserVar[stigma.equip;stigT/$var[stigT.equip]/stigM/$var[stigM.equip]/stigB/$var[stigB.equip]]
+
+  $elseif[$message[1]==0]
+  
+    $onlyIf[$var[stigB.equip]!=none;❌ You don't have any B stigma equipped!]
+    $var[stigB.equip;none]
+    $description[You unequipped your B stigma (now it's empty)]
+    $setUserVar[stigma.equip;stigT/$var[stigT.equip]/stigM/$var[stigM.equip]/stigB/$var[stigB.equip]]
+
+  $elseif[$and[$message[1]!=0;$var[stig1B]==false;$var[stig2B]==false;$var[stig3B]==false;$var[stig4B]==false;$var[stig5B]==false;$var[stig6B]==false;$var[stig7B]==false;$var[stig8B]==false;$var[stig9B]==false]]]
+
+    ❌ You don't have any B stigma to equip!
+
+  $else
+
+    ❌ TeriTeri couldn't find that stigma... check you wrote everything right and try again!
+
+  $endif
+
+$else
+
+  $title[❌ TeRiRi couldn't understand you]
+  $description[
+• Command for seeing your current equipped stigmas:
+```t!equipped```
+  
+• Command for equipping an stigma:
+```t!equip <set_number> <T/M/B>```]
+  $color[ff1a1a]
+  
+$endif

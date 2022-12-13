@@ -1,0 +1,17 @@
+$nomention $ignoreTriggerCase
+$reply
+
+$onlyIf[$and[$toLowercase[$message[1]]!=start;$toLowercase[$message[1]]!=time;$toLowercase[$message[1]]!=claim;$toLowercase[$message[1]]!=stop;$toLowercase[$message[1]]!=cancel]==true;]
+
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1020078823896797285/0de490e58a3dbed37e9a17f66c8173e8.jpg]
+$title[Errand Commands]
+$description[
+• `t!errand`: display the errand commands
+• `t!errand start`: start an errand
+• `t!errand claim`: claim a finished errand rewards
+• `t!errand time`: see how much is left until an errand finishes
+• `t!errand stop`: cancel an ongoing errand
+• `t!errand cancel`: cancel an ongoing errand
+]
+$footer[TeriTip: cancelling an errand doesn't give you rewards]
+$color[ffffff]

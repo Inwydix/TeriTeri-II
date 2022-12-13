@@ -1,0 +1,58 @@
+$ignoreTriggerCase
+$onlyIf[$getServerVar[backup.user]!=null;]
+
+$dm[$getServerVar[backup.user]]
+
+
+$enableDecimals[yes]
+$suppressErrors
+
+** **$username
+
+$color[$modulo[$authorID;16777215]]
+$title[$serverName[$guildID]]
+$description[```
+welcome/$getServerVar[welcome]/
+money/$getUserVar[money]/
+streak/$getUserVar[streak]/
+last.day/$getUserVar[last.day]/
+bank/$getServerVar[bank]/
+errand.time/$getUserVar[errand.time]/
+errand.start/$getUserVar[errand.start]/
+claimed/$getUserVar[claimed]/
+lv1/$getUserVar[lv1]/lv2/$getUserVar[lv2]/lv3/$getUserVar[lv3]/
+last.claim/$getUserVar[last.claim]/
+up1/$getUserVar[up1]/up2/$getUserVar[up2]/up3/$getUserVar[up3]/up4/$getUserVar[up4]/
+point/$getUserVar[point]/
+level/$getUserVar[level]/
+level.channel/$getServerVar[level.channel]/
+pts.cooldown/$getUserVar[pts.cooldown]/
+lvl.boost/$getServerVar[lvl.boost]/
+hours.c/$getServerVar[hours.c]/
+min.c/$getServerVar[min.c]/
+pause/$getVar[pause]/
+dis.money/$getUserVar[dis.money]/
+bank.prog/$getServerVar[bank.prog]/
+bank.worker/$getServerVar[bank.worker]/
+w3.boost/$getServerVar[w3.boost]/
+card1/$getUserVar[card1]/card2/$getUserVar[card2]/card3/$getUserVar[card3]/
+crystal/$getUserVar[crystal]/
+rotation.c/$getServerVar[rotation.c]/
+lv.ping/$getUserVar[lv.ping]
+```;1]
+
+$addField[rotation;`execute %{DOL}%setServerVar[rotation%{-SEMICOL-}%$getServerVar[rotation]%ESCAPED%`;no;1]
+$addField[stigma.name;`execute %{DOL}%setServerVar[stigma.name%{-SEMICOL-}%$getServerVar[stigma.name]%ESCAPED%`;no;1]
+$addField[stigmata;`execute %{DOL}%setUserVar[stigma%{-SEMICOL-}%$getUserVar[stigma]%ESCAPED%`;no;1]
+$addField[stigma.equip;`execute %{DOL}%setUserVar[stigma.equip%{-SEMICOL-}%$getUserVar[stigma.equip]%ESCAPED%`;no;1]
+$addField[emotes;`execute %{DOL}%setServerVar[emotes%{-SEMICOL-}%$getServerVar[emotes]%ESCAPED%`;no;1]
+$addField[ratings;`execute %{DOL}%setServerVar[ratings%{-SEMICOL-}%$getServerVar[ratings;934475434480009217]%ESCAPED%`;no;1]
+$addField[bank.cd;`execute %{DOL}%setServerVar[bank.cd%{-SEMICOL-}%$getServerVar[bank.cd]%ESCAPED%`;no;1]
+$addField[badges;`execute %{DOL}%setUserVar[badges%{-SEMICOL-}%$getUserVar[badges]%ESCAPED%`;no;1]
+
+
+
+
+
+
+

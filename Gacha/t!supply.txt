@@ -1,0 +1,182 @@
+$nomention $ignoreTriggerCase
+$onlyIf[$getServerVar[bank.prog]>=3;You need to reach the 3rd milestone ! (10M)]
+
+
+$c[Big user ver list]
+
+
+$textSplit[$getUserVar[stigma];/]
+$var[stig1T;$splitText[$sum[$getTextSplitIndex[stig1T];1]]]
+$var[stig1M;$splitText[$sum[$getTextSplitIndex[stig1M];1]]]
+$var[stig1B;$splitText[$sum[$getTextSplitIndex[stig1B];1]]]
+$var[stig2T;$splitText[$sum[$getTextSplitIndex[stig2T];1]]]
+$var[stig2M;$splitText[$sum[$getTextSplitIndex[stig2M];1]]]
+$var[stig2B;$splitText[$sum[$getTextSplitIndex[stig2B];1]]]
+$var[stig3T;$splitText[$sum[$getTextSplitIndex[stig3T];1]]]
+$var[stig3M;$splitText[$sum[$getTextSplitIndex[stig3M];1]]]
+$var[stig3B;$splitText[$sum[$getTextSplitIndex[stig3B];1]]]
+$var[stig4T;$splitText[$sum[$getTextSplitIndex[stig4T];1]]]
+$var[stig4M;$splitText[$sum[$getTextSplitIndex[stig4M];1]]]
+$var[stig4B;$splitText[$sum[$getTextSplitIndex[stig4B];1]]]
+$var[stig5T;$splitText[$sum[$getTextSplitIndex[stig5T];1]]]
+$var[stig5M;$splitText[$sum[$getTextSplitIndex[stig5M];1]]]
+$var[stig5B;$splitText[$sum[$getTextSplitIndex[stig5B];1]]]
+$var[stig6T;$splitText[$sum[$getTextSplitIndex[stig6T];1]]]
+$var[stig6M;$splitText[$sum[$getTextSplitIndex[stig6M];1]]]
+$var[stig6B;$splitText[$sum[$getTextSplitIndex[stig6B];1]]]
+$var[stig7T;$splitText[$sum[$getTextSplitIndex[stig7T];1]]]
+$var[stig7M;$splitText[$sum[$getTextSplitIndex[stig7M];1]]]
+$var[stig7B;$splitText[$sum[$getTextSplitIndex[stig7B];1]]]
+$var[stig8T;$splitText[$sum[$getTextSplitIndex[stig8T];1]]]
+$var[stig8M;$splitText[$sum[$getTextSplitIndex[stig8M];1]]]
+$var[stig8B;$splitText[$sum[$getTextSplitIndex[stig8B];1]]]
+$var[stig9T;$splitText[$sum[$getTextSplitIndex[stig9T];1]]]
+$var[stig9M;$splitText[$sum[$getTextSplitIndex[stig9M];1]]]
+$var[stig9B;$splitText[$sum[$getTextSplitIndex[stig9B];1]]]
+$var[nothing;<:nothing:917259687014055957>]
+
+
+$c[Supply rotation vsr list]
+
+
+$textSplit[$getServerVar[rotation];/]
+$var[supply1;$optOff[$splitText[$sum[$getTextSplitIndex[supply1];1]]]]
+$var[supply2;$optOff[$splitText[$sum[$getTextSplitIndex[supply2];1]]]]
+$var[supply3;$optOff[$splitText[$sum[$getTextSplitIndex[supply3];1]]]]
+
+
+$c[Stigma names var list]
+
+
+$textSplit[$getUserVar[stigma.name];/]
+$var[stig1T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig1T];1]]]]
+$var[stig1M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig1M];1]]]]
+$var[stig1B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig1B];1]]]]
+$var[stig2T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig2T];1]]]]
+$var[stig2M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig2M];1]]]]
+$var[stig2B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig2B];1]]]]
+$var[stig3T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig3T];1]]]]
+$var[stig3M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig3M];1]]]]
+$var[stig3B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig3B];1]]]]
+$var[stig4T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig4T];1]]]]
+$var[stig4M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig4M];1]]]]
+$var[stig4B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig4B];1]]]]
+$var[stig5T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig5T];1]]]]
+$var[stig5M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig5M];1]]]]
+$var[stig5B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig5B];1]]]]
+$var[stig6T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig6T];1]]]]
+$var[stig6M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig6M];1]]]]
+$var[stig6B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig6B];1]]]]
+$var[stig7T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig7T];1]]]]
+$var[stig7M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig7M];1]]]]
+$var[stig7B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig7B];1]]]]
+$var[stig8T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig8T];1]]]]
+$var[stig8M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig8M];1]]]]
+$var[stig8B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig8B];1]]]]
+$var[stig9T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig9T];1]]]]
+$var[stig9M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig9M];1]]]]
+$var[stig9B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig9B];1]]]]
+$var[set1.name;$optOff[$splitText[$sum[$getTextSplitIndex[set1];1]]]]
+$var[set2.name;$optOff[$splitText[$sum[$getTextSplitIndex[set2];1]]]]
+$var[set3.name;$optOff[$splitText[$sum[$getTextSplitIndex[set3];1]]]]
+$var[set4.name;$optOff[$splitText[$sum[$getTextSplitIndex[set4];1]]]]
+$var[set5.name;$optOff[$splitText[$sum[$getTextSplitIndex[set5];1]]]]
+$var[set6.name;$optOff[$splitText[$sum[$getTextSplitIndex[set6];1]]]]
+$var[set7.name;$optOff[$splitText[$sum[$getTextSplitIndex[set7];1]]]]
+$var[set8.name;$optOff[$splitText[$sum[$getTextSplitIndex[set8];1]]]]
+$var[set9.name;$optOff[$splitText[$sum[$getTextSplitIndex[set9];1]]]]
+
+
+$c[Code]
+
+
+$title[__**3 STARS SUPPLY RATE UP**__;1]
+$description[
+$if[$var[supply1]==set1]** **
+SET 1 : $toUppercase[$var[set1.name]]  ( ⭐⭐⭐ )
+
+• $if[$var[stig1T]==false]🔒  $else 🔓 $endif$var[stig1T.name] 
+• $if[$var[stig1M]==false]🔒  $else 🔓 $endif$var[stig1M.name] 
+• $if[$var[stig1B]==false]🔒  $else 🔓 $endif$var[stig1B.name]
+** **
+$endif
+$if[$var[supply1]==set2]** **
+SET 2 : $toUppercase[$var[set2.name]]  ( ⭐⭐⭐ )
+
+• $if[$var[stig2T]==false]🔒  $else 🔓 $endif$var[stig2T.name] 
+• $if[$var[stig2M]==false]🔒  $else 🔓 $endif$var[stig2M.name] 
+• $if[$var[stig2B]==false]🔒  $else 🔓 $endif$var[stig2B.name] 
+** **
+$endif
+$if[$var[supply1]==set3]** **
+SET 3 : $toUppercase[$var[set3.name]]  ( ⭐⭐⭐ )
+
+• $if[$var[stig3T]==false]🔒  $else 🔓 $endif$var[stig3T.name]
+• $if[$var[stig3M]==false]🔒  $else 🔓 $endif$var[stig3M.name]
+• $if[$var[stig3B]==false]🔒  $else 🔓 $endif$var[stig3B.name] 
+** **
+$endif;1]
+
+$title[__**4 STARS SUPPLY RATE UP**__;2]
+$description[
+$if[$var[supply2]==set4]** **
+SET 4 : $toUppercase[$var[set4.name]]  ( ⭐⭐⭐⭐ )
+
+• $if[$var[stig4T]==false]🔒  $else 🔓 $endif$var[stig4T.name] 
+• $if[$var[stig4M]==false]🔒  $else 🔓 $endif$var[stig4M.name]
+• $if[$var[stig4B]==false]🔒  $else 🔓 $endif$var[stig4B.name] 
+** **
+$endif
+$if[$var[supply2]==set5]** **
+SET 5 : $toUppercase[$var[set5.name]]  ( ⭐⭐⭐⭐ )
+
+• $if[$var[stig5T]==false]🔒  $else 🔓 $endif$var[stig5T.name] 
+• $if[$var[stig5M]==false]🔒  $else 🔓 $endif$var[stig5M.name]
+• $if[$var[stig5B]==false]🔒  $else 🔓 $endif$var[stig5B.name] 
+** **
+$endif
+$if[$var[supply2]==set6]** **
+SET 6 : $toUppercase[$var[set6.name]]  ( ⭐⭐⭐⭐ )
+
+• $if[$var[stig6T]==false]🔒  $else 🔓 $endif$var[stig6T.name] 
+• $if[$var[stig6M]==false]🔒  $else 🔓 $endif$var[stig6M.name]
+• $if[$var[stig6B]==false]🔒  $else 🔓 $endif$var[stig6B.name] 
+** **
+$endif;2]
+
+$title[__**5 STARS SUPPLY RATE UP**__;3]
+$description[
+$if[$var[supply3]==set7]** **
+SET 7 : $toUppercase[$var[set7.name]]  ( ⭐⭐⭐⭐⭐ )
+
+• $if[$var[stig7T]==false]🔒  $else 🔓 $endif$var[stig7T.name]
+• $if[$var[stig7M]==false]🔒  $else 🔓 $endif$var[stig7M.name]
+• $if[$var[stig7B]==false]🔒  $else 🔓 $endif$var[stig7B.name]
+** **
+$endif
+$if[$var[supply3]==set8]** **
+SET 8 : $toUppercase[$var[set8.name]]  ( ⭐⭐⭐⭐⭐ )
+
+• $if[$var[stig8T]==false]🔒  $else 🔓 $endif$var[stig8T.name]
+• $if[$var[stig8M]==false]🔒  $else 🔓 $endif$var[stig8M.name]
+• $if[$var[stig8B]==false]🔒  $else 🔓 $endif$var[stig8B.name]
+** **
+$endif
+$if[$var[supply3]==set9]** **
+SET 9 : $toUppercase[$var[set9.name]]  ( ⭐⭐⭐⭐⭐ )
+
+• $if[$var[stig9T]==false]🔒  $else 🔓 $endif$var[stig9T.name]
+• $if[$var[stig9M]==false]🔒  $else 🔓 $endif$var[stig9M.name]
+• $if[$var[stig9B]==false]🔒  $else 🔓 $endif$var[stig9B.name]
+** **$endif;3]
+$footer[You can pull by doing `t!pull 3`;3]
+$footer[You can pull by doing `t!pull 2`;2]
+$footer[You can pull by doing `t!pull 1`;1]
+
+$color[#A0A0A0;1]
+$color[#e0a800;2]
+$color[#00fffb;3]
+
+$image[https://ptirollo.sirv.com/Banners/$var[supply1].png;1]
+$image[https://ptirollo.sirv.com/Banners/$var[supply2].png;2]
+$image[https://ptirollo.sirv.com/Banners/$var[supply3].png;3]

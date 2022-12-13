@@ -1,0 +1,208 @@
+$nomention $ignoreTriggerCase
+$textSplit[$getUserVar[stigma.equip;$mentioned[1;yes]];/]
+$var[stigT.equip;$splitText[$sum[$getTextSplitIndex[stigT];1]]]
+$var[stigM.equip;$splitText[$sum[$getTextSplitIndex[stigM];1]]]
+$var[stigB.equip;$splitText[$sum[$getTextSplitIndex[stigB];1]]]
+
+$textSplit[$getServerVar[stigma.name];/]
+$var[stig1T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig1T];1]]]]
+$var[stig1M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig1M];1]]]]
+$var[stig1B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig1B];1]]]]
+$var[stig2T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig2T];1]]]]
+$var[stig2M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig2M];1]]]]
+$var[stig2B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig2B];1]]]]
+$var[stig3T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig3T];1]]]]
+$var[stig3M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig3M];1]]]]
+$var[stig3B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig3B];1]]]]
+$var[stig4T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig4T];1]]]]
+$var[stig4M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig4M];1]]]]
+$var[stig4B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig4B];1]]]]
+$var[stig5T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig5T];1]]]]
+$var[stig5M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig5M];1]]]]
+$var[stig5B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig5B];1]]]]
+$var[stig6T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig6T];1]]]]
+$var[stig6M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig6M];1]]]]
+$var[stig6B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig6B];1]]]]
+$var[stig7T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig7T];1]]]]
+$var[stig7M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig7M];1]]]]
+$var[stig7B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig7B];1]]]]
+$var[stig8T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig8T];1]]]]
+$var[stig8M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig8M];1]]]]
+$var[stig8B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig8B];1]]]]
+$var[stig9T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig9T];1]]]]
+$var[stig9M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig9M];1]]]]
+$var[stig9B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig9B];1]]]]
+$var[set1.name;$optOff[$splitText[$sum[$getTextSplitIndex[set1];1]]]]
+$var[set2.name;$optOff[$splitText[$sum[$getTextSplitIndex[set2];1]]]]
+$var[set3.name;$optOff[$splitText[$sum[$getTextSplitIndex[set3];1]]]]
+$var[set4.name;$optOff[$splitText[$sum[$getTextSplitIndex[set4];1]]]]
+$var[set5.name;$optOff[$splitText[$sum[$getTextSplitIndex[set5];1]]]]
+$var[set6.name;$optOff[$splitText[$sum[$getTextSplitIndex[set6];1]]]]
+$var[set7.name;$optOff[$splitText[$sum[$getTextSplitIndex[set7];1]]]]
+$var[set8.name;$optOff[$splitText[$sum[$getTextSplitIndex[set8];1]]]]
+$var[set9.name;$optOff[$splitText[$sum[$getTextSplitIndex[set9];1]]]]
+
+$var[pic1;https://ptirollo.sirv.com/Banners/set1.png]
+$var[pic2;https://ptirollo.sirv.com/Banners/set2.png]
+$var[pic3;https://ptirollo.sirv.com/Banners/set3.png]
+$var[pic4;https://ptirollo.sirv.com/Banners/set4.png]
+$var[pic5;https://ptirollo.sirv.com/Banners/set5.png]
+$var[pic6;https://ptirollo.sirv.com/Banners/set6.png]
+$var[pic7;https://ptirollo.sirv.com/Banners/set7.png]
+$var[pic8;https://ptirollo.sirv.com/Banners/set8.png]
+$var[pic9;https://ptirollo.sirv.com/Banners/set9.png]
+
+$var[T;?text.0.text=T&text.0.position.gravity=center&text.0.position.x=-36%25&text.0.color=000000&text.0.font.family=Courgette]
+$var[M;?text.0.text=M&text.0.position.gravity=center&text.0.position.x=-36%25&text.0.color=000000&text.0.font.family=Courgette]
+$var[B;?text.0.text=B&text.0.position.gravity=center&text.0.position.x=-36%25&text.0.color=000000&text.0.font.family=Courgette]
+
+$var[stigT;none]
+$var[stigM;none]
+$var[stigB;none]
+
+$var[count;1]
+$if[$var[stigT.equip]==stig$var[count]T]
+  $var[stigT;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigT.equip]==stig$var[count]T]
+  $var[stigT;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigT.equip]==stig$var[count]T]
+  $var[stigT;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigT.equip]==stig$var[count]T]
+  $var[stigT;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigT.equip]==stig$var[count]T]
+  $var[stigT;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigT.equip]==stig$var[count]T]
+  $var[stigT;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigT.equip]==stig$var[count]T]
+  $var[stigT;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigT.equip]==stig$var[count]T]
+  $var[stigT;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigT.equip]==stig$var[count]T]
+  $var[stigT;$var[count]]
+$endif
+
+$var[count;1]
+$if[$var[stigM.equip]==stig$var[count]M]
+  $var[stigM;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigM.equip]==stig$var[count]M]
+  $var[stigM;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigM.equip]==stig$var[count]M]
+  $var[stigM;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigM.equip]==stig$var[count]M]
+  $var[stigM;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigM.equip]==stig$var[count]M]
+  $var[stigM;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigM.equip]==stig$var[count]M]
+  $var[stigM;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigM.equip]==stig$var[count]M]
+  $var[stigM;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigM.equip]==stig$var[count]M]
+  $var[stigM;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigM.equip]==stig$var[count]M]
+  $var[stigM;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+
+$var[count;1]
+$if[$var[stigB.equip]==stig$var[count]B]
+  $var[stigB;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigB.equip]==stig$var[count]B]
+  $var[stigB;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigB.equip]==stig$var[count]B]
+  $var[stigB;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigB.equip]==stig$var[count]B]
+  $var[stigB;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigB.equip]==stig$var[count]B]
+  $var[stigB;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigB.equip]==stig$var[count]B]
+  $var[stigB;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigB.equip]==stig$var[count]B]
+  $var[stigB;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigB.equip]==stig$var[count]B]
+  $var[stigB;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+$if[$var[stigB.equip]==stig$var[count]B]
+  $var[stigB;$var[count]]
+$endif
+$var[count;$sum[1;$var[count]]]
+
+
+$if[$var[stigT]!=none]
+$title[Top slot :;1]
+$description[$var[stig$var[stigT]T.name];1]
+$footer[Set $var[stigT] : $var[set$var[stigT].name];1]
+$image[$var[pic$var[stigT]]$var[T];1]
+$color[#00FF00;1]
+$else
+$description[**$if[$mentioned[1;yes]==$authorID]You$else<@$mentioned[1;no]>$endif didn't equip any stigma in the top slot !**;1]
+$color[#000000;1]
+$endif
+
+$if[$var[stigM]!=none]
+$title[Middle slot :;2]
+$description[$var[stig$var[stigT]M.name];2]
+$footer[Set $var[stigM] : $var[set$var[stigM].name];2]
+$image[$var[pic$var[stigM]]$var[M];2]
+$color[#0000FF;2]
+$else
+$description[**$if[$mentioned[1;yes]==$authorID]You$else<@$mentioned[1;no]>$endif didn't equip any stigma in the middle slot !**;2]
+$color[#000000;2]
+$endif
+
+$if[$var[stigB]!=none]
+$title[Bottom slot :;3]
+$description[$var[stig$var[stigT]B.name];3]
+$footer[Set $var[stigB] : $var[set$var[stigB].name];3]
+$image[$var[pic$var[stigB]]$var[B];3]
+$color[#FF0000;3]
+$else
+$description[**$if[$mentioned[1;yes]==$authorID]You$else<@$mentioned[1;no]>$endif didn't equip any stigma in the bottom slot !**;3]
+$color[#000000;3]
+$endif

@@ -1,0 +1,19 @@
+$nomention $reply $ignoreTriggerCase
+
+$if[$toLowercase[$message[1]]==all]
+
+✅ TeriTeri deleted your todo list successfully
+$setUserVar[todo;///////////////////////////////////////////////////////////////////////////////////////////////////////////////////]
+
+$else
+
+$if[$isNumber[$message[1]]]
+
+$textSplit[$getUserVar[todo];/]
+
+✅ TeriTeri removed "$splitText[$message[1]]" from your to-do list!
+
+$removeSplitTextElement[$message[1]]
+$setUserVar[todo;$splitText[1]/$splitText[2]/$splitText[3]/$splitText[4]/$splitText[5]/$splitText[6]/$splitText[7]/$splitText[8]/$splitText[9]/$splitText[10]/$splitText[11]/$splitText[12]/$splitText[13]/$splitText[14]/$splitText[15]/$splitText[16]/$splitText[17]/$splitText[18]/$splitText[19]/$splitText[20]/$splitText[21]/$splitText[22]/$splitText[23]/$splitText[24]/$splitText[25]/$splitText[26]/$splitText[27]/$splitText[28]/$splitText[29]/$splitText[30]]
+
+$endif

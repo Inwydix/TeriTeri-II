@@ -1,0 +1,9 @@
+$nomention $reply $ignoreTriggerCase
+
+$if[$mentioned[1;no]==]
+$addCmdReactions[🍪]
+
+$else
+$nickname[$authorID] gave you a cookie! 🍪
+
+$endif 

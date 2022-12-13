@@ -1,0 +1,186 @@
+$setUserVar[dis.money;True]
+$reply $ignoreTriggerCase
+
+$if[$authorID!=481475725598261258]
+$endif
+
+$onlyIf[$getServerVar[bank.prog]>=3;You need to reach the 3rd milestone ! (10M)]
+
+$textSplit[$getVar[emotes];/]
+$var[card1.pic;$optOff[$splitText[$sum[$getTextSplitIndex[card1];1]]]]
+$var[card2.pic;$optOff[$splitText[$sum[$getTextSplitIndex[card2];1]]]]
+$var[card3.pic;$optOff[$splitText[$sum[$getTextSplitIndex[card3];1]]]]
+
+$author[Supply Shop]
+
+$if[$and[$message[1]==1;$isNumber[$message[2]]==false]]
+ 
+ $if[$getUserVar[crystal]>=50]
+  
+  $setUserVar[crystal;$sub[$getUserVar[crystal];50]]
+  $setUserVar[card1;$sum[$getUserVar[card1];1]]
+  
+  $color[#00FF00]
+  $title[You bought a 3 stars supply card $var[card1.pic] !]
+  $description[
+  You can use it by doing
+  `t!pull 1`
+  ]
+  $footer[You now have $numberSeparator[$getUserVar[crystal];,] teristals and $numberSeparator[$getUserVar[card1];,] 3 stars gacha cards]
+  
+ $else
+  
+  $color[#FF0000]
+  $title[You don't have enough $var[teristal.emote] ! ($getUserVar[crystal]/50)]
+  
+ $endif
+
+$elseif[$and[$message[1]==1;$isNumber[$message[2]]==true]]
+
+  $if[$getUserVar[crystal]>=$multi[$message[2];50]]
+  
+  $setUserVar[crystal;$sub[$getUserVar[crystal];$multi[$message[2];50]]]
+  $setUserVar[card1;$sum[$getUserVar[card1];$message[2]]]
+  
+  $color[#00FF00]
+  $title[You bought $numberSeparator[$message[2];,] 3 stars card ($var[card1.pic]) !]
+  $description[
+  You can use it by doing
+  `t!pull 1`
+  ]
+  $footer[You now have $numberSeparator[$getUserVar[crystal];,] crystals and $numberSeparator[$getUserVar[card1];,] 3 stars gacha cards]
+  
+  $else
+  
+  $color[#FF0000]
+  $title[You don't have enough crystal ! ($getUserVar[crystal]/$multi[$message[2];50])]
+  
+  $endif
+
+$elseif[$and[$message[1]==2;$isNumber[$message[2]]==false]]
+
+ $if[$getUserVar[crystal]>=100]
+  
+  $setUserVar[crystal;$sub[$getUserVar[crystal];100]]
+  $setUserVar[card2;$sum[$getUserVar[card2];1]]
+  
+  $color[#00FF00]
+  $title[You bought a 4 stars card !]
+  $description[
+  You can use it by doing
+  `t!pull 2`
+  ]
+  $footer[You now have $getUserVar[crystal] crystals and $getUserVar[card2] 4 stars gacha cards]
+  
+ $else
+  
+  $color[#FF0000]
+  $title[You don't have enough crystal ! ($getUserVar[crystal]/100)]
+  
+ $endif
+ 
+$elseif[$and[$message[1]==2;$isNumber[$message[2]]==true]]
+
+  $if[$getUserVar[crystal]>=$multi[$message[2];100]]
+  
+  $setUserVar[crystal;$sub[$getUserVar[crystal];$multi[$message[2];100]]]
+  $setUserVar[card2;$sum[$getUserVar[card2];$message[2]]]
+  
+  $color[#00FF00]
+  $title[You bought $message[2] 4 stars card !]
+  $description[
+  You can use it by doing
+  `t!pull 2`
+  ]
+  $footer[You now have $getUserVar[crystal] crystals and $getUserVar[card2] 4 stars gacha cards]
+  
+  $else
+  
+  $color[#FF0000]
+  $title[You don't have enough crystal ! ($getUserVar[crystal]/$multi[$message[2];100])]
+  
+  $endif
+   
+$elseif[$and[$message[1]==3;$isNumber[$message[2]]==false]]
+ 
+  $if[$getUserVar[crystal]>=200]
+  
+  $setUserVar[crystal;$sub[$getUserVar[crystal];200]]
+  $setUserVar[card3;$sum[$getUserVar[card3];1]]
+  
+  $color[#00FF00]
+  $title[You bought a 5 stars card !]
+  $description[
+  You can use it by doing
+  `t!pull 3`
+  ]
+  $footer[You now have $getUserVar[crystal] crystals and $getUserVar[card3] 5 stars gacha cards]
+  
+ $else
+  
+  $color[#FF0000]
+  $title[You don't have enough crystal ! ($getUserVar[crystal]/200)]
+  
+ $endif
+
+$elseif[$and[$message[1]==3;$isNumber[$message[2]]==true]]
+
+  $if[$getUserVar[crystal]>=$multi[$message[2];200]]
+  
+  $setUserVar[crystal;$sub[$getUserVar[crystal];$multi[$message[2];200]]]
+  $setUserVar[card3;$sum[$getUserVar[card3];$message[2]]]
+  
+  $color[#00FF00]
+  $title[You bought $message[2] 5 stars card !]
+  $description[
+  You can use it by doing
+  `t!pull 3`
+  ]
+  $footer[You now have $getUserVar[crystal] crystals and $getUserVar[card3] 5 stars gacha cards]
+  
+  $else
+  
+  $color[#FF0000]
+  $title[You don't have enough crystal ! ($getUserVar[crystal]/$multi[$message[2];200])]
+  
+  $endif
+
+$else
+
+ $color[#FF0000]
+ $title[you need to say which card you want !]
+ $description[
+ 
+ You can buy the 3 stars gacha card $var[card1.pic] for 50 crystals by sending
+ `t!buy card 1`
+ 
+ You can buy the 4 stars gacha card $var[card2.pic] for 100 crystals by sending
+ `t!buy card 2`
+ 
+ You can buy the 5 stars gacha card $var[card3.pic] for 200 crystals by sending
+ `t!buy card 3`
+ ]
+
+$endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,79 @@
+$nomention $reply $ignoreTriggerCase
+$onlyIf[$getServerVar[bank.prog]>=7;❌ Ypu need to reach the 7th milestone (40M) to use this]
+
+$textSplit[$getUserVar[wedding;$authorID];/]
+$var[asker;$splitText[$sum[$getTextSplitIndex[asker];1]]]
+$var[asking;$splitText[$sum[$getTextSplitIndex[asking];1]]]
+$var[couple;$splitText[$sum[$getTextSplitIndex[couple];1]]]
+
+$onlyIf[$var[couple]!=null;You don't have a partner to get love points with!]
+
+$var[level;0]
+$var[next;500]
+
+$if[$and[$getUserVar[lovePoints]>=500;$getUserVar[lovePoints]<1000]]
+
+$var[level;1]
+$var[next;1000]
+
+$elseif[$and[$getUserVar[lovePoints]>=1000;$getUserVar[lovePoints]<1500]]
+
+$var[level;2]
+$var[next;1500]
+
+$elseif[$and[$getUserVar[lovePoints]>=1500;$getUserVar[lovePoints]<2000]]
+
+$var[level;3]
+$var[next;2000]
+
+$elseif[$and[$getUserVar[lovePoints]>=2000;$getUserVar[lovePoints]<3000]]
+
+$var[level;4]
+$var[next;3000]
+
+$elseif[$and[$getUserVar[lovePoints]>=3000;$getUserVar[lovePoints]<5000]]
+
+$var[level;5]
+$var[next;5000]
+
+$elseif[$and[$getUserVar[lovePoints]>=5000;$getUserVar[lovePoints]<7000]]
+
+$var[level;6]
+$var[next;7000]
+
+$elseif[$and[$getUserVar[lovePoints]>=7000;$getUserVar[lovePoints]<10000]]
+
+$var[level;7]
+$var[next;10000]
+
+$elseif[$and[$getUserVar[lovePoints]>=10000;$getUserVar[lovePoints]<15000]]
+
+$var[level;8]
+$var[next;15000]
+
+$elseif[$and[$getUserVar[lovePoints]>=15000;$getUserVar[lovePoints]<20000]]
+
+$var[level;9]
+$var[next;20000]
+
+$elseif[$getUserVar[lovePoints]>=20000]
+
+$var[level;10]
+
+$if[$hasRole[$authorID;$roleID[happily ever after]]==false]
+$roleGrant[$authorID;+$roleID[happily ever after]]
+$endif
+
+$if[$hasRole[$var[couple];$roleID[happily ever after]]==false]
+$roleGrant[$var[couple];+$roleID[happily ever after]]
+$endif
+
+
+$endif
+
+$author[Home Sweet Home]
+$title[💘 LOVE LEVEL 💘]
+$description[Current love level : **$var[level]** $if[$var[level]==10]MAX.$endif
+$if[$var[level]<10]Love points until next level : $numberSeparator[$getUserVar[lovePoints];,]/$numberSeparator[$var[next];,]$elseif[$var[level]==10]Love points : $numberSeparator[$getUserVar[lovePoints];,]$endif
+]
+$color[ffffff]

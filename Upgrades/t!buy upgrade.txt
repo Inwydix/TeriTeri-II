@@ -1,0 +1,259 @@
+$nomention $reply $ignoreTriggerCase
+
+$enableDecimals[yes]
+
+
+$if[$isSlash]
+
+
+$if[$message[number]==1]
+
+ $if[$round[$getUserVar[money];0]>=250000]
+  
+  $if[$getUserVar[up1]==0]
+   $setUserVar[money;$sub[$getUserVar[money];250000]]
+   $setUserVar[up1;1]
+   
+   $color[#00FF00]
+   $title[You just got the upgrade n°1 !]
+   $description[You can now have 5 more Lv.1 workers !]
+   
+   $else
+    $color[#FF0000]
+    $title[❌ You can't buy more than 1 of this upgrades !]
+    
+   $endif
+   
+ $else
+  $color[#FF0000]
+  $title[❌ You don't have enough <:Tericoin:863911108283465739> ! (250,000 <:Tericoin:863911108283465739>)]
+
+ $endif
+
+
+
+$elseif[$message[number]==2]
+
+ $if[$round[$getUserVar[money];0]>=500000]
+  
+  $if[$getUserVar[up2]==0]
+   $setUserVar[money;$sub[$getUserVar[money];500000]]
+   $setUserVar[up2;1]
+   
+   $color[#00FF00]
+   $title[You just got the upgrade n°2 !]
+   $description[You can now have 5 more Lv.2 workers !]
+   
+   $else
+    $color[#FF0000]
+    $title[❌ You can't buy more than 1 of this upgrades !]
+    
+   $endif
+   
+ $else
+  $color[#FF0000]
+  $title[❌ You don't have enough <:Tericoin:863911108283465739> ! (500,000 <:Tericoin:863911108283465739>)]
+
+ $endif
+
+$elseif[$message[number]==3]
+
+ $if[$round[$getUserVar[money];0]>=750000]
+ 
+  $if[$getServerVar[bank.prog]<6]
+   $if[$getUserVar[up3]==0]
+    $setUserVar[money;$sub[$getUserVar[money];750000]]
+    $setUserVar[up3;1]
+   
+    $color[#00FF00]
+    $title[You just got the upgrade n°3 !]
+    $description[You can now have 5 more Lv.3 workers !]
+   
+    $else
+     $color[#FF0000]
+     $title[❌ You can't buy more than 1 of this upgrades !]
+    $endif
+    
+   $else
+   
+    $if[$getUserVar[up3]<2]
+     $setUserVar[money;$sub[$getUserVar[money];750000]]
+     $setUserVar[up3;$sum[$getUserVar[up3];1]]
+   
+     $color[#00FF00]
+     $title[You just got the upgrade n°3 !]
+     $description[You can now have $multi[5;$getUserVar[up3]] more Lv.3 workers !]
+   
+    $else
+     $color[#FF0000]
+     $title[❌ You can't buy more than 2 of this upgrades !]
+   $endif
+  $endif
+   
+ $else
+  $color[#FF0000]
+  $title[❌ You don't have enough <:Tericoin:863911108283465739> ! (750,000 <:Tericoin:863911108283465739>)]
+
+ $endif
+ 
+$elseif[$message[number]==4]
+ $onlyIf[$getServerVar[bank.prog]>=4;The bank money is too low !]
+ $if[$round[$getUserVar[money];0]>=1000000]
+  
+  $if[$getUserVar[up4]==0]
+   $setUserVar[money;$sub[$getUserVar[money];1000000]]
+   $setUserVar[up4;1]
+   
+   $color[#00FF00]
+   $title[You just got the upgrade n°4 !]
+   $description[You now have 10 times more reward when doing t!daily !]
+   
+   $else
+    $color[#FF0000]
+    $title[❌ You can't buy more than 1 of this upgrades !]
+    
+   $endif
+   
+   $else
+     $color[#FF0000]
+     $title[❌ You don't have enough <:Tericoin:863911108283465739> ! (1,000,000 <:Tericoin:863911108283465739>)]
+
+     
+  $endif
+   
+$else
+$color[#FF0000]
+$title[You need to add the upgrade number !  `t!buy upgrade <number>`]
+
+$endif
+
+
+
+$else
+
+
+
+$if[$message==1]
+
+ $if[$round[$getUserVar[money];0]>=250000]
+  
+  $if[$getUserVar[up1]==0]
+   $setUserVar[money;$sub[$getUserVar[money];250000]]
+   $setUserVar[up1;1]
+   
+   $color[#00FF00]
+   $title[You just got the upgrade n°1 !]
+   $description[You can now have 5 more Lv.1 workers !]
+   
+   $else
+    $color[#FF0000]
+    $title[❌ You can't buy more than 1 of this upgrades !]
+    
+   $endif
+   
+ $else
+  $color[#FF0000]
+  $title[❌ You don't have enough <:Tericoin:863911108283465739> ! (250,000 <:Tericoin:863911108283465739>)]
+
+ $endif
+
+
+
+$elseif[$message==2]
+
+ $if[$round[$getUserVar[money];0]>=500000]
+  
+  $if[$getUserVar[up2]==0]
+   $setUserVar[money;$sub[$getUserVar[money];500000]]
+   $setUserVar[up2;1]
+   
+   $color[#00FF00]
+   $title[You just got the upgrade n°2 !]
+   $description[You can now have 5 more Lv.2 workers !]
+   
+   $else
+    $color[#FF0000]
+    $title[❌ You can't buy more than 1 of this upgrades !]
+    
+   $endif
+   
+ $else
+  $color[#FF0000]
+  $title[❌ You don't have enough <:Tericoin:863911108283465739> ! (500,000 <:Tericoin:863911108283465739>)]
+
+ $endif
+
+$elseif[$message==3]
+
+ $if[$round[$getUserVar[money];0]>=750000]
+ 
+  $if[$getServerVar[bank.prog]<6]
+   $if[$getUserVar[up3]==0]
+    $setUserVar[money;$sub[$getUserVar[money];750000]]
+    $setUserVar[up3;1]
+   
+    $color[#00FF00]
+    $title[You just got the upgrade n°3 !]
+    $description[You can now have 5 more Lv.3 workers !]
+   
+    $else
+     $color[#FF0000]
+     $title[❌ You can't buy more than 1 of this upgrades !]
+    $endif
+    
+   $else
+   
+    $if[$getUserVar[up3]<2]
+     $setUserVar[money;$sub[$getUserVar[money];750000]]
+     $setUserVar[up3;$sum[$getUserVar[up3];1]]
+   
+     $color[#00FF00]
+     $title[You just got the upgrade n°3 !]
+     $description[You can now have $multi[5;$getUserVar[up3]] more Lv.3 workers !]
+   
+    $else
+     $color[#FF0000]
+     $title[❌ You can't buy more than 2 of this upgrades !]
+   $endif
+  $endif
+   
+ $else
+  $color[#FF0000]
+  $title[❌ You don't have enough <:Tericoin:863911108283465739> ! (750,000 <:Tericoin:863911108283465739>)]
+
+ $endif
+ 
+$elseif[$message==4]
+ $onlyIf[$getServerVar[bank.prog]>=4;The bank money is too low !]
+ $if[$round[$getUserVar[money];0]>=1000000]
+  
+  $if[$getUserVar[up4]==0]
+   $setUserVar[money;$sub[$getUserVar[money];1000000]]
+   $setUserVar[up4;1]
+   
+   $color[#00FF00]
+   $title[You just got the upgrade n°4 !]
+   $description[You now have 10 times more reward when doing t!daily !]
+   
+   $else
+    $color[#FF0000]
+    $title[❌ You can't buy more than 1 of this upgrades !]
+    
+   $endif
+   
+   $else
+     $color[#FF0000]
+     $title[❌ You don't have enough <:Tericoin:863911108283465739> ! (1,000,000 <:Tericoin:863911108283465739>)]
+
+     
+  $endif
+   
+$else
+$color[#FF0000]
+$title[You need to add the upgrade number !  `t!buy upgrade <number>`]
+
+$endif
+
+
+
+$endif

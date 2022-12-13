@@ -1,0 +1,432 @@
+$var[coin.emote;<:Tericoin:1001510021907099750>]
+$var[teristal.emote;<:Teristal:1001507292648308817>]
+
+$nomention $reply $ignoreTriggerCase
+$enableDecimals[yes]
+
+$if[$isSlash]
+
+$author[Business Square]
+
+$if[$message[number]==1]
+
+ $if[$round[$getUserVar[money];0]>=$round[$calculate[1000*1.2**$getUserVar[lv1]];0]]
+  
+  $if[$getUserVar[lv1]<$sum[10;$getServerVar[bank.worker];$multi[$getUserVar[up1];5]]]
+   $setUserVar[money;$round[$sub[$getUserVar[money];$calculate[1000*1.2**$getUserVar[lv1]]];0]]
+   $setUserVar[lv1;$sum[$getUserVar[lv1];1]]
+   
+   $setUserVar[last.claim;$getTimestamp]
+   
+   $color[#00FF00]
+   $title[You bought a new Lv.1 worker !]
+   $description[Now you have **$getUserVar[lv1]** Lv.1 workers !
+The accumulated time is reset each time you buy a new worker, claim your production with `t!worker claim`]
+   $footer[Current Lv.1 worker production : $numberSeparator[$round[$multi[0.01;150;$getUserVar[lv1]];0];,] Tericoin / minutes]
+   
+   $else
+    
+    $color[#FF0000]
+    $title[❌ You can't buy more than $sum[10;$getServerVar[bank.worker];$multi[$getUserVar[up1];5]] Lv.1 workers !]
+    
+   $endif
+   
+   
+ $else
+  $color[#FF0000]
+  $title[❌ You don't have enough $var[coin.emote] !]
+  $description[You need : $numberSeparator[$round[$calculate[1000*1.2**$getUserVar[lv1]];0];,] $var[coin.emote]]
+
+ $endif
+
+
+
+
+$elseif[$message[number]==2]
+
+ $if[$round[$getUserVar[money];0]>=$round[$calculate[10000*1.2**$getUserVar[lv2]];0]]
+  
+  $if[$getUserVar[lv2]<$sum[10;$getServerVar[bank.worker];$multi[$getUserVar[up2];5]]]
+   $setUserVar[money;$round[$sub[$getUserVar[money];$calculate[10000*1.2**$getUserVar[lv2]]];0]]
+   $setUserVar[lv2;$sum[$getUserVar[lv2];1]]
+   
+   
+   $color[#FFFF00]
+   $title[You bought a new Lv.2 worker !]
+   $description[Now you have **$getUserVar[lv2]** Lv.2 workers !]
+   $footer[Current Lv.2 worker production : $getUserVar[lv2] seconds / minutes in errands]
+   
+   $else
+    
+    $color[#FF0000]
+    $title[❌ You can't buy more than $sum[10;$getServerVar[bank.worker];$multi[$getUserVar[up2];5]] Lv.2 workers !]
+    
+   $endif
+   
+   
+ $else
+  $color[#FF0000]
+  $title[❌ You don't have enough $var[coin.emote] !]
+  $description[You need : $numberSeparator[$round[$calculate[10000*1.2**$getUserVar[lv2]];0];,] $var[coin.emote]]
+
+ $endif
+
+
+
+$elseif[$message[number]==3]
+
+ $if[$round[$getUserVar[money];0]>=$round[$calculate[50000*1.2**$getUserVar[lv3]];0]]
+  
+  $if[$getUserVar[lv3]<$sum[10;$getServerVar[bank.worker];$multi[$getUserVar[up3];5]]]
+   $setUserVar[money;$round[$sub[$getUserVar[money];$calculate[50000*1.2**$getUserVar[lv3]]];0]]
+   $setUserVar[lv3;$sum[$getUserVar[lv3];1]]
+   
+   
+   $color[#FFFF00]
+   $title[You bought a new Lv.3 worker !]
+   $description[Now you have **$getUserVar[lv3]** Lv.3 workers !]
+   $footer[Current Lv.3 worker boost : x$round[$calculate[1.1**$getUserVar[lv3]];2] Tericoins / errands !]
+   
+   $else
+    
+    $color[#FF0000]
+    $title[❌ You can't buy more than $sum[10;$getServerVar[bank.worker];$multi[$getUserVar[up3];5]] Lv.3 workers !]
+    
+   $endif
+   
+   
+ $else
+  $color[#FF0000]
+  $title[❌ You don't have enough $var[coin.emote] !]
+  $description[You need : $numberSeparator[$round[$calculate[50000*1.2**$getUserVar[lv3]];0];,] $var[coin.emote]]
+
+ $endif
+
+$else
+$color[#FF0000]
+$title[You need to add the worker level !]
+$description[Command : `t!buy worker <level>`]
+$footer[Open the 't!worker shop' to see info about the workers]
+$endif
+
+
+
+
+
+
+
+$if[$sum[$getUserVar[lv1];$getUserVar[lv2];$getUserVar[lv3]]>=60]
+ $if[$hasRole[$authorID;$findRole[60 workers]]==false]
+  $giveRole[$authorID;$findRole[60 workers]]
+  role $roleName[$findRole[60 workers]] added to <@$authorID>
+ $endif
+ $if[$hasRole[$authorID;$findRole[45 workers]]==true]
+  $takeRole[$authorID;$findRole[45 workers]]
+ $elseif[$hasRole[$authorID;$findRole[30 workers]]==true]    
+  $takeRole[$authorID;$findRole[30 workers]]
+ $elseif[$hasRole[$authorID;$findRole[20 workers]]==true]    
+  $takeRole[$authorID;$findRole[20 workers]]
+ $elseif[$hasRole[$authorID;$findRole[10 workers]]==true]
+  $takeRole[$authorID;$findRole[10 workers]]
+ $elseif[$hasRole[$authorID;$findRole[5 workers]]==true]
+  $takeRole[$authorID;$findRole[5 workers]]
+ $elseif[$hasRole[$authorID;$findRole[1 worker]]==true]
+  $takeRole[$authorID;$findRole[1 worker]]
+ $endif
+ 
+ 
+$elseif[$sum[$getUserVar[lv1];$getUserVar[lv2];$getUserVar[lv3]]>=45]
+ $if[$hasRole[$authorID;$findRole[45 workers]]==false]
+  $giveRole[$authorID;$findRole[45 workers]]
+  role $roleName[$findRole[45 workers]] added to <@$authorID>
+ $endif
+ $if[$hasRole[$authorID;$findRole[30 workers]]==true]    
+  $takeRole[$authorID;$findRole[30 workers]]
+ $elseif[$hasRole[$authorID;$findRole[20 workers]]==true]    
+  $takeRole[$authorID;$findRole[20 workers]]
+ $elseif[$hasRole[$authorID;$findRole[10 workers]]==true]
+  $takeRole[$authorID;$findRole[10 workers]]
+ $elseif[$hasRole[$authorID;$findRole[5 workers]]==true]
+  $takeRole[$authorID;$findRole[5 workers]]
+ $elseif[$hasRole[$authorID;$findRole[1 worker]]==true]
+  $takeRole[$authorID;$findRole[1 worker]]
+ $endif
+
+  
+$elseif[$sum[$getUserVar[lv1];$getUserVar[lv2];$getUserVar[lv3]]>=30]
+ $if[$hasRole[$authorID;$findRole[30 workers]]==false]
+  $giveRole[$authorID;$findRole[30 workers]]
+  role $roleName[$findRole[30 workers]] added to <@$authorID>
+ $endif
+ $if[$hasRole[$authorID;$findRole[20 workers]]==true]    
+  $takeRole[$authorID;$findRole[20 workers]]
+ $elseif[$hasRole[$authorID;$findRole[10 workers]]==true]
+  $takeRole[$authorID;$findRole[10 workers]]
+ $elseif[$hasRole[$authorID;$findRole[5 workers]]==true]
+  $takeRole[$authorID;$findRole[5 workers]]
+ $elseif[$hasRole[$authorID;$findRole[1 worker]]==true]
+  $takeRole[$authorID;$findRole[1 worker]]
+ $endif
+
+
+$elseif[$sum[$getUserVar[lv1];$getUserVar[lv2];$getUserVar[lv3]]>=20]
+ $if[$hasRole[$authorID;$findRole[20 workers]]==false]
+  $giveRole[$authorID;$findRole[20 workers]]
+  role $roleName[$findRole[20 workers]] added to <@$authorID>
+ $endif
+ $if[$hasRole[$authorID;$findRole[10 workers]]==true]
+  $takeRole[$authorID;$findRole[10 workers]]
+ $elseif[$hasRole[$authorID;$findRole[5 workers]]==true]
+  $takeRole[$authorID;$findRole[5 workers]]
+ $elseif[$hasRole[$authorID;$findRole[1 worker]]==true]
+  $takeRole[$authorID;$findRole[1 worker]]
+ $endif
+
+
+$elseif[$sum[$getUserVar[lv1];$getUserVar[lv2];$getUserVar[lv3]]>=10]
+ $if[$hasRole[$authorID;$findRole[10 workers]]==false]
+  $giveRole[$authorID;$findRole[10 workers]]
+  role $roleName[$findRole[10 workers]] added to <@$authorID>
+ $endif
+ $if[$hasRole[$authorID;$findRole[5 workers]]==true]
+  $takeRole[$authorID;$findRole[5 workers]]
+ $elseif[$hasRole[$authorID;$findRole[1 worker]]==true]
+  $takeRole[$authorID;$findRole[1 worker]]
+ $endif
+
+  
+$elseif[$sum[$getUserVar[lv1];$getUserVar[lv2];$getUserVar[lv3]]>=5]
+ $if[$hasRole[$authorID;$findRole[5 workers]]==false]
+  $giveRole[$authorID;$findRole[5 workers]]
+  role $roleName[$findRole[5 workers]] added to <@$authorID>
+ $endif
+ $if[$hasRole[$authorID;$findRole[1 worker]]==true]
+  $takeRole[$authorID;$findRole[1 worker]]
+ $endif
+
+  
+$elseif[$sum[$getUserVar[lv1];$getUserVar[lv2];$getUserVar[lv3]]>=1]
+ $if[$hasRole[$authorID;$findRole[1 worker]]==false]
+  $giveRole[$authorID;$findRole[1 worker]]
+  role $roleName[$findRole[1 worker]] added to <@$authorID>
+ $endif
+
+
+$endif
+
+
+
+
+$else
+
+
+$author[Business Square]
+
+$if[$message==1]
+
+ $if[$round[$getUserVar[money];0]>=$round[$calculate[1000*1.2**$getUserVar[lv1]];0]]
+  
+  $if[$getUserVar[lv1]<$sum[10;$getServerVar[bank.worker];$multi[$getUserVar[up1];5]]]
+   $setUserVar[money;$round[$sub[$getUserVar[money];$calculate[1000*1.2**$getUserVar[lv1]]];0]]
+   $setUserVar[lv1;$sum[$getUserVar[lv1];1]]
+   
+   $setUserVar[last.claim;$getTimestamp]
+   
+   $color[#00FF00]
+   $title[You bought a new Lv.1 worker !]
+   $description[Now you have **$getUserVar[lv1]** Lv.1 workers !
+The accumulated time is reset each time you buy a new worker, claim your production with `t!worker claim`]
+   $footer[Current Lv.1 worker production : $numberSeparator[$round[$multi[0.01;150;$getUserVar[lv1]];0];,] Tericoin / minutes]
+   
+   $else
+    
+    $color[#FF0000]
+    $title[❌ You can't buy more than $sum[10;$getServerVar[bank.worker];$multi[$getUserVar[up1];5]] Lv.1 workers !]
+    
+   $endif
+   
+   
+ $else
+  $color[#FF0000]
+  $title[❌ You don't have enough $var[coin.emote] !]
+  $description[You need : $numberSeparator[$round[$calculate[1000*1.2**$getUserVar[lv1]];0];,] $var[coin.emote]]
+
+ $endif
+
+
+
+
+$elseif[$message==2]
+
+ $if[$round[$getUserVar[money];0]>=$round[$calculate[10000*1.2**$getUserVar[lv2]];0]]
+  
+  $if[$getUserVar[lv2]<$sum[10;$getServerVar[bank.worker];$multi[$getUserVar[up2];5]]]
+   $setUserVar[money;$round[$sub[$getUserVar[money];$calculate[10000*1.2**$getUserVar[lv2]]];0]]
+   $setUserVar[lv2;$sum[$getUserVar[lv2];1]]
+   
+   
+   $color[#FFFF00]
+   $title[You bought a new Lv.2 worker !]
+   $description[Now you have **$getUserVar[lv2]** Lv.2 workers !]
+   $footer[Current Lv.2 worker production : $getUserVar[lv2] seconds / minutes in errands]
+   
+   $else
+    
+    $color[#FF0000]
+    $title[❌ You can't buy more than $sum[10;$getServerVar[bank.worker];$multi[$getUserVar[up2];5]] Lv.2 workers !]
+    
+   $endif
+   
+   
+ $else
+  $color[#FF0000]
+  $title[❌ You don't have enough $var[coin.emote] !]
+  $description[You need : $numberSeparator[$round[$calculate[10000*1.2**$getUserVar[lv2]];0];,] $var[coin.emote]]
+
+ $endif
+
+
+
+$elseif[$message==3]
+
+ $if[$round[$getUserVar[money];0]>=$round[$calculate[50000*1.2**$getUserVar[lv3]];0]]
+  
+  $if[$getUserVar[lv3]<$sum[10;$getServerVar[bank.worker];$multi[$getUserVar[up3];5]]]
+   $setUserVar[money;$round[$sub[$getUserVar[money];$calculate[50000*1.2**$getUserVar[lv3]]];0]]
+   $setUserVar[lv3;$sum[$getUserVar[lv3];1]]
+   
+   
+   $color[#FFFF00]
+   $title[You bought a new Lv.3 worker !]
+   $description[Now you have **$getUserVar[lv3]** Lv.3 workers !]
+   $footer[Current Lv.3 worker boost : x$round[$calculate[1.1**$getUserVar[lv3]];2] Tericoins / errands !]
+   
+   $else
+    
+    $color[#FF0000]
+    $title[❌ You can't buy more than $sum[10;$getServerVar[bank.worker];$multi[$getUserVar[up3];5]] Lv.3 workers !]
+    
+   $endif
+   
+   
+ $else
+  $color[#FF0000]
+  $title[❌ You don't have enough $var[coin.emote] !]
+  $description[You need : $numberSeparator[$round[$calculate[50000*1.2**$getUserVar[lv3]];0];,] $var[coin.emote]]
+
+ $endif
+
+$else
+$color[#FF0000]
+$title[You need to add the worker level !]
+$description[Command : `t!buy worker <level>`]
+$footer[Open the 't!worker shop' to see info about the workers]
+$endif
+
+
+
+
+
+
+
+$if[$sum[$getUserVar[lv1];$getUserVar[lv2];$getUserVar[lv3]]>=60]
+ $if[$hasRole[$authorID;$findRole[60 workers]]==false]
+  $giveRole[$authorID;$findRole[60 workers]]
+  role $roleName[$findRole[60 workers]] added to <@$authorID>
+ $endif
+ $if[$hasRole[$authorID;$findRole[45 workers]]==true]
+  $takeRole[$authorID;$findRole[45 workers]]
+ $elseif[$hasRole[$authorID;$findRole[30 workers]]==true]    
+  $takeRole[$authorID;$findRole[30 workers]]
+ $elseif[$hasRole[$authorID;$findRole[20 workers]]==true]    
+  $takeRole[$authorID;$findRole[20 workers]]
+ $elseif[$hasRole[$authorID;$findRole[10 workers]]==true]
+  $takeRole[$authorID;$findRole[10 workers]]
+ $elseif[$hasRole[$authorID;$findRole[5 workers]]==true]
+  $takeRole[$authorID;$findRole[5 workers]]
+ $elseif[$hasRole[$authorID;$findRole[1 worker]]==true]
+  $takeRole[$authorID;$findRole[1 worker]]
+ $endif
+ 
+ 
+$elseif[$sum[$getUserVar[lv1];$getUserVar[lv2];$getUserVar[lv3]]>=45]
+ $if[$hasRole[$authorID;$findRole[45 workers]]==false]
+  $giveRole[$authorID;$findRole[45 workers]]
+  role $roleName[$findRole[45 workers]] added to <@$authorID>
+ $endif
+ $if[$hasRole[$authorID;$findRole[30 workers]]==true]    
+  $takeRole[$authorID;$findRole[30 workers]]
+ $elseif[$hasRole[$authorID;$findRole[20 workers]]==true]    
+  $takeRole[$authorID;$findRole[20 workers]]
+ $elseif[$hasRole[$authorID;$findRole[10 workers]]==true]
+  $takeRole[$authorID;$findRole[10 workers]]
+ $elseif[$hasRole[$authorID;$findRole[5 workers]]==true]
+  $takeRole[$authorID;$findRole[5 workers]]
+ $elseif[$hasRole[$authorID;$findRole[1 worker]]==true]
+  $takeRole[$authorID;$findRole[1 worker]]
+ $endif
+
+  
+$elseif[$sum[$getUserVar[lv1];$getUserVar[lv2];$getUserVar[lv3]]>=30]
+ $if[$hasRole[$authorID;$findRole[30 workers]]==false]
+  $giveRole[$authorID;$findRole[30 workers]]
+  role $roleName[$findRole[30 workers]] added to <@$authorID>
+ $endif
+ $if[$hasRole[$authorID;$findRole[20 workers]]==true]    
+  $takeRole[$authorID;$findRole[20 workers]]
+ $elseif[$hasRole[$authorID;$findRole[10 workers]]==true]
+  $takeRole[$authorID;$findRole[10 workers]]
+ $elseif[$hasRole[$authorID;$findRole[5 workers]]==true]
+  $takeRole[$authorID;$findRole[5 workers]]
+ $elseif[$hasRole[$authorID;$findRole[1 worker]]==true]
+  $takeRole[$authorID;$findRole[1 worker]]
+ $endif
+
+
+$elseif[$sum[$getUserVar[lv1];$getUserVar[lv2];$getUserVar[lv3]]>=20]
+ $if[$hasRole[$authorID;$findRole[20 workers]]==false]
+  $giveRole[$authorID;$findRole[20 workers]]
+  role $roleName[$findRole[20 workers]] added to <@$authorID>
+ $endif
+ $if[$hasRole[$authorID;$findRole[10 workers]]==true]
+  $takeRole[$authorID;$findRole[10 workers]]
+ $elseif[$hasRole[$authorID;$findRole[5 workers]]==true]
+  $takeRole[$authorID;$findRole[5 workers]]
+ $elseif[$hasRole[$authorID;$findRole[1 worker]]==true]
+  $takeRole[$authorID;$findRole[1 worker]]
+ $endif
+
+
+$elseif[$sum[$getUserVar[lv1];$getUserVar[lv2];$getUserVar[lv3]]>=10]
+ $if[$hasRole[$authorID;$findRole[10 workers]]==false]
+  $giveRole[$authorID;$findRole[10 workers]]
+  role $roleName[$findRole[10 workers]] added to <@$authorID>
+ $endif
+ $if[$hasRole[$authorID;$findRole[5 workers]]==true]
+  $takeRole[$authorID;$findRole[5 workers]]
+ $elseif[$hasRole[$authorID;$findRole[1 worker]]==true]
+  $takeRole[$authorID;$findRole[1 worker]]
+ $endif
+
+  
+$elseif[$sum[$getUserVar[lv1];$getUserVar[lv2];$getUserVar[lv3]]>=5]
+ $if[$hasRole[$authorID;$findRole[5 workers]]==false]
+  $giveRole[$authorID;$findRole[5 workers]]
+  role $roleName[$findRole[5 workers]] added to <@$authorID>
+ $endif
+ $if[$hasRole[$authorID;$findRole[1 worker]]==true]
+  $takeRole[$authorID;$findRole[1 worker]]
+ $endif
+
+  
+$elseif[$sum[$getUserVar[lv1];$getUserVar[lv2];$getUserVar[lv3]]>=1]
+ $if[$hasRole[$authorID;$findRole[1 worker]]==false]
+  $giveRole[$authorID;$findRole[1 worker]]
+  role $roleName[$findRole[1 worker]] added to <@$authorID>
+ $endif
+
+
+$endif
+
+
+$endif

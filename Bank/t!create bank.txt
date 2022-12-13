@@ -1,0 +1,20 @@
+$nomention $reply $ignoreTriggerCase
+
+$if[$isAdmin[$authorID]==false]
+
+$title[Woops]
+$description[❌ Only admins can use this command]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1040692874062344382/TeriMad.png]
+$color[ff1a1a]
+
+$elseif[$isAdmin[$authorID]==true]
+
+$title[Channel created !]
+$createChannel[Bank : $getServerVar[bank];voice]
+$modifyChannelPerms[$channelID[Bank : $getServerVar[bank]];+readmessages;-sendmessages;$guildID]
+
+$color[#FF0000]
+$description[Don't forget to close the channel to `@everyone` !]
+$footer[do  t!setup bank  <bank channel's ID>   so the channel get updated]
+
+$endif

@@ -1,0 +1,3 @@
+$nomention $reply $ignoreTriggerCase
+$onlyIf[$and[$toLowercase[$message[1]]!=ing;$toLowercase[$message[1]]!=ed]==true;]
+<:TeriPist:1000067607254282300>

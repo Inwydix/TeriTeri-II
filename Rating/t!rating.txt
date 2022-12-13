@@ -1,0 +1,8 @@
+$nomention
+$textSplit[$getServerVar[ratings;934475434480009217];/]
+$var[average;$splitText[$sum[$getTextSplitIndex[average];1]]]
+$var[count;$splitText[$sum[$getTextSplitIndex[count];1]]]
+
+$description[Current rating : $if[$round[$var[average];0]==0]🖤🖤🖤🖤🖤$elseif[$round[$var[average];0]==1]🤍🖤🖤🖤🖤$elseif[$round[$var[average];0]==2]🤍🤍🖤🖤🖤$elseif[$round[$var[average];0]==3]🤍🤍🤍🖤🖤$elseif[$round[$var[average];0]==4]🤍🤍🤍🤍🖤$elseif[$round[$var[average];0]==5]🤍🤍🤍🤍🤍$endif ($round[$var[average];2])
+Times rated : $var[count]]
+$color[ffffff]

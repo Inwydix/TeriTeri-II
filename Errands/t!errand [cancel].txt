@@ -1,0 +1,47 @@
+$nomention $ignoreTriggerCase
+$reply
+
+$var[coin.emote;<:Tericoin:1001510021907099750>]
+$var[teristals.emote;<:Teristal:1001507292648308817>]
+
+
+$if[$isSlash]
+
+$cooldown[5m;TeriTeri is tired right now, try again later | Cooldown : %time%]
+
+$if[$getUserVar[errand.start]!=0]
+
+$setUserVar[claimed;yes]
+$setUserVar[errand.start;0]
+$title[Current errand was canceled]
+$color[ffffff]
+
+$else
+
+$title[There is no errand to cancel !]
+$color[ff1a1a]
+
+$endif
+
+
+$else
+
+$onlyIf[$or[$toLowercase[$message[1]]==cancel;$toLowercase[$message[1]]==stop]==true;]
+$cooldown[5m;TeriTeri is tired right now, try again later | Cooldown : %time%]
+
+$if[$getUserVar[errand.start]!=0]
+
+$setUserVar[claimed;yes]
+$setUserVar[errand.start;0]
+$title[Current errand was canceled]
+$color[ffffff]
+
+$else
+
+$title[There is no errand to cancel !]
+$color[ff1a1a]
+
+$endif
+
+
+$endif

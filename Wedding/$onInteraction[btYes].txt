@@ -1,0 +1,22 @@
+$nomention $allowMention
+
+$textSplit[$getUserVar[wedding;$authorID];/]
+$var[askingAsker;$splitText[$sum[$getTextSplitIndex[asker];1]]]
+$var[askingAsking;$splitText[$sum[$getTextSplitIndex[asking];1]]]
+$var[askingCouple;$splitText[$sum[$getTextSplitIndex[couple];1]]]
+
+$textSplit[$getUserVar[wedding;$var[askingAsker]];/]
+$var[askerAsker;$optOff[$splitText[$sum[$getTextSplitIndex[asker];1]]]]
+$var[askerAsking;$optOff[$splitText[$sum[$getTextSplitIndex[asking];1]]]]
+$var[askerCouple;$optOff[$splitText[$sum[$getTextSplitIndex[couple];1]]]]
+
+
+$onlyIf[$and[$authorID==$var[askerAsking];$var[askingAsker]!=null]==true;<@$authorID> you aren't the one supposed to answer this!]
+
+$title[💕  $nickname[$authorID] said YES!!  💕]
+$description[$randomText[TeriTeri thinks you are cute together~ <:TeriWow:1000073782720995338>;TeriTeri wishes you two the best luck! 🤍;TeriTeri hopes you two have lots of fun together~ <:TeriTeeHee:1000068570341982368>;TeriTeri thinks you were made for each other <:TeriCatEyes:1000073829235834890>]]
+$color[ffffff]
+
+$setUserVar[wedding;asker/null/asking/$authorID/couple/$authorID;$var[askingAsker]]
+$setUserVar[wedding;asker/$var[askingAsker]/asking/null/couple/$var[askingAsker];$authorID]
+$removeButtons

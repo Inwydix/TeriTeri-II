@@ -1,0 +1,24 @@
+$nomention $reply $ignoreTriggerCase
+
+$if[$isAdmin[$authorID]==false]
+
+$title[Woops]
+$description[❌ Only admins can use this command]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1040692874062344382/TeriMad.png]
+$color[ff1a1a]
+
+$elseif[$isAdmin[$authorID]==true]
+
+$if[$message==]
+
+you need to send the ID of the bank channel (where the bank's count message apear)
+
+$else
+
+$setServerVar[bankID;$message]
+$color[#FF0000]
+$description[☑️ Bank channel setup done successfully! The channel will be update every time someone sends $var[coin.emote] to the bank]
+
+$endif
+
+$endif

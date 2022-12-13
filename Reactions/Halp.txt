@@ -1,0 +1,2 @@
+$nomention $reply $ignoreTriggerCase
+<:TeriPist:1000067607254282300>

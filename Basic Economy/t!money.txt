@@ -1,0 +1,399 @@
+$var[coin.emote;<:Tericoin:1001510021907099750>]
+$var[teristals.emote;<:Teristal:1001507292648308817>]
+
+$if[$isSlash]
+
+$nomention
+$enableDecimals[yes]
+
+
+ $color[$getRoleColor[$highestRole[$authorID]]]
+
+ $author[$nickname[$authorID] has :]
+ $description[> • $numberSeparator[$round[$getUserVar[money];0];,]  $var[coin.emote] 
+ > • $numberSeparator[$round[$getUserVar[crystal];0];,] $var[teristals.emote] ]
+ 
+ $if[$round[$getUserVar[money];0]>=1000000]
+  $color[#A00000]
+  $title[You're millionaire waw !]
+   $endif
+ $authorIcon[$userAvatar[$authorID]]
+ $thumbnail[$userAvatar[$authorID]]
+ $footer[~ $serverName[$guildID] ~] 
+ 
+
+ 
+  $if[$round[$getUserVar[money];0]>=1000000]
+   $if[$hasRole[$authorID;$findRole[1M]]==false]
+    $giveRole[$authorID;$findRole[1M]]
+    role $roleName[$findRole[1M]] added to <@$authorID>
+   $endif
+   $if[$hasRole[$authorID;$findRole[500k]]==true]    
+    $takeRole[$authorID;$findRole[500k]]
+   $elseif[$hasRole[$authorID;$findRole[100k]]==true]    
+    $takeRole[$authorID;$findRole[100k]]
+   $elseif[$hasRole[$authorID;$findRole[50k]]==true]    
+    $takeRole[$authorID;$findRole[50k]]
+   $elseif[$hasRole[$authorID;$findRole[10k]]==true]
+    $takeRole[$authorID;$findRole[10k]]
+   $elseif[$hasRole[$authorID;$findRole[5k]]==true]
+    $takeRole[$authorID;$findRole[5k]]
+   $elseif[$hasRole[$authorID;$findRole[1k]]==true]
+    $takeRole[$authorID;$findRole[1k]]
+   $endif
+  
+  
+  $elseif[$round[$getUserVar[money];0]>=500000]
+   $if[$hasRole[$authorID;$findRole[500k]]==false]
+    $giveRole[$authorID;$findRole[500k]]
+    role $roleName[$findRole[500k]] added to <@$authorID>
+   $endif
+   $if[$hasRole[$authorID;$findRole[1M]]==true]    
+    $takeRole[$authorID;$findRole[1M]]
+   $elseif[$hasRole[$authorID;$findRole[100k]]==true]    
+    $takeRole[$authorID;$findRole[100k]]
+   $elseif[$hasRole[$authorID;$findRole[50k]]==true]    
+    $takeRole[$authorID;$findRole[50k]]
+   $elseif[$hasRole[$authorID;$findRole[10k]]==true]
+    $takeRole[$authorID;$findRole[10k]]
+   $elseif[$hasRole[$authorID;$findRole[5k]]==true]
+    $takeRole[$authorID;$findRole[5k]]
+   $elseif[$hasRole[$authorID;$findRole[1k]]==true]
+    $takeRole[$authorID;$findRole[1k]]
+   $endif
+  
+  
+  $elseif[$round[$getUserVar[money];0]>=100000]
+   $if[$hasRole[$authorID;$findRole[100k]]==false]
+    $giveRole[$authorID;$findRole[100k]]
+    role $roleName[$findRole[100k]] added to <@$authorID>
+   $endif
+   $if[$hasRole[$authorID;$findRole[1M]]==true]    
+    $takeRole[$authorID;$findRole[1M]]
+   $elseif[$hasRole[$authorID;$findRole[500k]]==true]    
+    $takeRole[$authorID;$findRole[500k]]
+   $elseif[$hasRole[$authorID;$findRole[50k]]==true]    
+    $takeRole[$authorID;$findRole[50k]]
+   $elseif[$hasRole[$authorID;$findRole[10k]]==true]
+    $takeRole[$authorID;$findRole[10k]]
+   $elseif[$hasRole[$authorID;$findRole[5k]]==true]
+    $takeRole[$authorID;$findRole[5k]]
+   $elseif[$hasRole[$authorID;$findRole[1k]]==true]
+    $takeRole[$authorID;$findRole[1k]]
+   $endif
+  
+  
+  $elseif[$round[$getUserVar[money];0]>=50000]
+   $if[$hasRole[$authorID;$findRole[50k]]==false]
+    $giveRole[$authorID;$findRole[50k]]
+    role $roleName[$findRole[50k]] added to <@$authorID>
+   $endif
+   $if[$hasRole[$authorID;$findRole[1M]]==true]    
+    $takeRole[$authorID;$findRole[1M]]
+   $elseif[$hasRole[$authorID;$findRole[500k]]==true]    
+    $takeRole[$authorID;$findRole[500k]]
+   $elseif[$hasRole[$authorID;$findRole[100k]]==true]    
+    $takeRole[$authorID;$findRole[100k]]
+   $elseif[$hasRole[$authorID;$findRole[10k]]==true]
+    $takeRole[$authorID;$findRole[10k]]
+   $elseif[$hasRole[$authorID;$findRole[5k]]==true]
+    $takeRole[$authorID;$findRole[5k]]
+   $elseif[$hasRole[$authorID;$findRole[1k]]==true]
+    $takeRole[$authorID;$findRole[1k]]
+   $endif
+  
+  
+ $elseif[$round[$getUserVar[money];0]>=10000]
+  $if[$hasRole[$authorID;$findRole[10k]]==false]
+   $giveRole[$authorID;$findRole[10k]]
+   role $roleName[$findRole[10k]] added to <@$authorID>
+  $endif
+   $if[$hasRole[$authorID;$findRole[1M]]==true]    
+    $takeRole[$authorID;$findRole[1M]]
+   $elseif[$hasRole[$authorID;$findRole[500k]]==true]    
+    $takeRole[$authorID;$findRole[500k]]
+   $elseif[$hasRole[$authorID;$findRole[100k]]==true]    
+    $takeRole[$authorID;$findRole[100k]]
+   $elseif[$hasRole[$authorID;$findRole[50k]]==true]
+    $takeRole[$authorID;$findRole[50k]]
+   $elseif[$hasRole[$authorID;$findRole[5k]]==true]
+    $takeRole[$authorID;$findRole[5k]]
+   $elseif[$hasRole[$authorID;$findRole[1k]]==true]
+    $takeRole[$authorID;$findRole[1k]]
+   $endif
+
+
+ $elseif[$round[$getUserVar[money];0]>=5000]
+  $if[$hasRole[$authorID;$findRole[5k]]==false]
+   $giveRole[$authorID;$findRole[5k]]
+   role $roleName[$findRole[5k]] added to <@$authorID>
+  $endif
+   $if[$hasRole[$authorID;$findRole[1M]]==true]    
+    $takeRole[$authorID;$findRole[1M]]
+   $elseif[$hasRole[$authorID;$findRole[500k]]==true]    
+    $takeRole[$authorID;$findRole[500k]]
+   $elseif[$hasRole[$authorID;$findRole[100k]]==true]    
+    $takeRole[$authorID;$findRole[100k]]
+   $elseif[$hasRole[$authorID;$findRole[50k]]==true]
+    $takeRole[$authorID;$findRole[50k]]
+   $elseif[$hasRole[$authorID;$findRole[10k]]==true]
+    $takeRole[$authorID;$findRole[10k]]
+   $elseif[$hasRole[$authorID;$findRole[1k]]==true]
+    $takeRole[$authorID;$findRole[1k]]
+   $endif 
+  
+
+ $elseif[$round[$getUserVar[money];0]>=1000]
+  $if[$hasRole[$authorID;$findRole[1k]]==false]
+   $giveRole[$authorID;$findRole[1k]]
+   role $roleName[$findRole[1k]] added to <@$authorID>
+  $endif
+   $if[$hasRole[$authorID;$findRole[1M]]==true]    
+    $takeRole[$authorID;$findRole[1M]]
+   $elseif[$hasRole[$authorID;$findRole[500k]]==true]    
+    $takeRole[$authorID;$findRole[500k]]
+   $elseif[$hasRole[$authorID;$findRole[100k]]==true]    
+    $takeRole[$authorID;$findRole[100k]]
+   $elseif[$hasRole[$authorID;$findRole[50k]]==true]
+    $takeRole[$authorID;$findRole[50k]]
+   $elseif[$hasRole[$authorID;$findRole[10k]]==true]
+    $takeRole[$authorID;$findRole[10k]]
+   $elseif[$hasRole[$authorID;$findRole[5k]]==true]
+    $takeRole[$authorID;$findRole[5k]]
+   $endif
+       
+  $else
+   $if[$hasRole[$authorID;$findRole[1M]]==true]    
+    $takeRole[$authorID;$findRole[1M]]
+   $elseif[$hasRole[$authorID;$findRole[500k]]==true]    
+    $takeRole[$authorID;$findRole[500k]]
+   $elseif[$hasRole[$authorID;$findRole[100k]]==true]    
+    $takeRole[$authorID;$findRole[100k]]
+   $elseif[$hasRole[$authorID;$findRole[50k]]==true]
+    $takeRole[$authorID;$findRole[50k]]
+   $elseif[$hasRole[$authorID;$findRole[10k]]==true]
+    $takeRole[$authorID;$findRole[10k]]
+   $elseif[$hasRole[$authorID;$findRole[5k]]==true]
+    $takeRole[$authorID;$findRole[5k]]
+   $elseif[$hasRole[$authorID;$findRole[1k]]==true]
+    $takeRole[$authorID;$findRole[1k]]
+   $endif
+ 
+ $endif
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+$else
+
+$nomention
+$reply
+$enableDecimals[yes]
+
+$if[$message==bank]
+ $title[The current bank amount is $getServerVar[bank] $var[coin.emote] !]
+ 
+$else
+ $color[$getRoleColor[$highestRole[$mentioned[1;yes]]]]
+ 
+ $author[$nickname[$mentioned[1;yes]] has :]
+ $description[> • $numberSeparator[$round[$getUserVar[money;$mentioned[1;yes]];0];,]  $var[coin.emote] 
+ > • $numberSeparator[$round[$getUserVar[crystal;$mentioned[1;yes]];0];,] $var[teristals.emote] ]
+ 
+ $if[$round[$getUserVar[money;$mentioned[1;yes]];0]>=1000000]
+  $color[#A00000]
+  $title[You're millionaire waw !] $endif
+  
+ $endif
+ 
+ $authorIcon[$userAvatar[$mentioned[1;yes]]]
+ $thumbnail[$userAvatar[$mentioned[1;yes]]]
+$footer[~ $serverName[$guildID] ~] 
+ 
+ 
+  $if[$round[$getUserVar[money];0]>=1000000]
+   $if[$hasRole[$authorID;$findRole[1M]]==false]
+    $giveRole[$authorID;$findRole[1M]]
+    role $roleName[$findRole[1M]] added to <@$authorID>
+   $endif
+   $if[$hasRole[$authorID;$findRole[500k]]==true]    
+    $takeRole[$authorID;$findRole[500k]]
+   $elseif[$hasRole[$authorID;$findRole[100k]]==true]    
+    $takeRole[$authorID;$findRole[100k]]
+   $elseif[$hasRole[$authorID;$findRole[50k]]==true]    
+    $takeRole[$authorID;$findRole[50k]]
+   $elseif[$hasRole[$authorID;$findRole[10k]]==true]
+    $takeRole[$authorID;$findRole[10k]]
+   $elseif[$hasRole[$authorID;$findRole[5k]]==true]
+    $takeRole[$authorID;$findRole[5k]]
+   $elseif[$hasRole[$authorID;$findRole[1k]]==true]
+    $takeRole[$authorID;$findRole[1k]]
+   $endif
+  
+  
+  $elseif[$round[$getUserVar[money];0]>=500000]
+   $if[$hasRole[$authorID;$findRole[500k]]==false]
+    $giveRole[$authorID;$findRole[500k]]
+    role $roleName[$findRole[500k]] added to <@$authorID>
+   $endif
+   $if[$hasRole[$authorID;$findRole[1M]]==true]    
+    $takeRole[$authorID;$findRole[1M]]
+   $elseif[$hasRole[$authorID;$findRole[100k]]==true]    
+    $takeRole[$authorID;$findRole[100k]]
+   $elseif[$hasRole[$authorID;$findRole[50k]]==true]    
+    $takeRole[$authorID;$findRole[50k]]
+   $elseif[$hasRole[$authorID;$findRole[10k]]==true]
+    $takeRole[$authorID;$findRole[10k]]
+   $elseif[$hasRole[$authorID;$findRole[5k]]==true]
+    $takeRole[$authorID;$findRole[5k]]
+   $elseif[$hasRole[$authorID;$findRole[1k]]==true]
+    $takeRole[$authorID;$findRole[1k]]
+   $endif
+  
+  
+  $elseif[$round[$getUserVar[money];0]>=100000]
+   $if[$hasRole[$authorID;$findRole[100k]]==false]
+    $giveRole[$authorID;$findRole[100k]]
+    role $roleName[$findRole[100k]] added to <@$authorID>
+   $endif
+   $if[$hasRole[$authorID;$findRole[1M]]==true]    
+    $takeRole[$authorID;$findRole[1M]]
+   $elseif[$hasRole[$authorID;$findRole[500k]]==true]    
+    $takeRole[$authorID;$findRole[500k]]
+   $elseif[$hasRole[$authorID;$findRole[50k]]==true]    
+    $takeRole[$authorID;$findRole[50k]]
+   $elseif[$hasRole[$authorID;$findRole[10k]]==true]
+    $takeRole[$authorID;$findRole[10k]]
+   $elseif[$hasRole[$authorID;$findRole[5k]]==true]
+    $takeRole[$authorID;$findRole[5k]]
+   $elseif[$hasRole[$authorID;$findRole[1k]]==true]
+    $takeRole[$authorID;$findRole[1k]]
+   $endif
+  
+  
+  $elseif[$round[$getUserVar[money];0]>=50000]
+   $if[$hasRole[$authorID;$findRole[50k]]==false]
+    $giveRole[$authorID;$findRole[50k]]
+    role $roleName[$findRole[50k]] added to <@$authorID>
+   $endif
+   $if[$hasRole[$authorID;$findRole[1M]]==true]    
+    $takeRole[$authorID;$findRole[1M]]
+   $elseif[$hasRole[$authorID;$findRole[500k]]==true]    
+    $takeRole[$authorID;$findRole[500k]]
+   $elseif[$hasRole[$authorID;$findRole[100k]]==true]    
+    $takeRole[$authorID;$findRole[100k]]
+   $elseif[$hasRole[$authorID;$findRole[10k]]==true]
+    $takeRole[$authorID;$findRole[10k]]
+   $elseif[$hasRole[$authorID;$findRole[5k]]==true]
+    $takeRole[$authorID;$findRole[5k]]
+   $elseif[$hasRole[$authorID;$findRole[1k]]==true]
+    $takeRole[$authorID;$findRole[1k]]
+   $endif
+  
+  
+ $elseif[$round[$getUserVar[money];0]>=10000]
+  $if[$hasRole[$authorID;$findRole[10k]]==false]
+   $giveRole[$authorID;$findRole[10k]]
+   role $roleName[$findRole[10k]] added to <@$authorID>
+  $endif
+   $if[$hasRole[$authorID;$findRole[1M]]==true]    
+    $takeRole[$authorID;$findRole[1M]]
+   $elseif[$hasRole[$authorID;$findRole[500k]]==true]    
+    $takeRole[$authorID;$findRole[500k]]
+   $elseif[$hasRole[$authorID;$findRole[100k]]==true]    
+    $takeRole[$authorID;$findRole[100k]]
+   $elseif[$hasRole[$authorID;$findRole[50k]]==true]
+    $takeRole[$authorID;$findRole[50k]]
+   $elseif[$hasRole[$authorID;$findRole[5k]]==true]
+    $takeRole[$authorID;$findRole[5k]]
+   $elseif[$hasRole[$authorID;$findRole[1k]]==true]
+    $takeRole[$authorID;$findRole[1k]]
+   $endif
+
+
+ $elseif[$round[$getUserVar[money];0]>=5000]
+  $if[$hasRole[$authorID;$findRole[5k]]==false]
+   $giveRole[$authorID;$findRole[5k]]
+   role $roleName[$findRole[5k]] added to <@$authorID>
+  $endif
+   $if[$hasRole[$authorID;$findRole[1M]]==true]    
+    $takeRole[$authorID;$findRole[1M]]
+   $elseif[$hasRole[$authorID;$findRole[500k]]==true]    
+    $takeRole[$authorID;$findRole[500k]]
+   $elseif[$hasRole[$authorID;$findRole[100k]]==true]    
+    $takeRole[$authorID;$findRole[100k]]
+   $elseif[$hasRole[$authorID;$findRole[50k]]==true]
+    $takeRole[$authorID;$findRole[50k]]
+   $elseif[$hasRole[$authorID;$findRole[10k]]==true]
+    $takeRole[$authorID;$findRole[10k]]
+   $elseif[$hasRole[$authorID;$findRole[1k]]==true]
+    $takeRole[$authorID;$findRole[1k]]
+   $endif 
+  
+
+ $elseif[$round[$getUserVar[money];0]>=1000]
+  $if[$hasRole[$authorID;$findRole[1k]]==false]
+   $giveRole[$authorID;$findRole[1k]]
+   role $roleName[$findRole[1k]] added to <@$authorID>
+  $endif
+   $if[$hasRole[$authorID;$findRole[1M]]==true]    
+    $takeRole[$authorID;$findRole[1M]]
+   $elseif[$hasRole[$authorID;$findRole[500k]]==true]    
+    $takeRole[$authorID;$findRole[500k]]
+   $elseif[$hasRole[$authorID;$findRole[100k]]==true]    
+    $takeRole[$authorID;$findRole[100k]]
+   $elseif[$hasRole[$authorID;$findRole[50k]]==true]
+    $takeRole[$authorID;$findRole[50k]]
+   $elseif[$hasRole[$authorID;$findRole[10k]]==true]
+    $takeRole[$authorID;$findRole[10k]]
+   $elseif[$hasRole[$authorID;$findRole[5k]]==true]
+    $takeRole[$authorID;$findRole[5k]]
+   $endif
+       
+  $else
+   $if[$hasRole[$authorID;$findRole[1M]]==true]    
+    $takeRole[$authorID;$findRole[1M]]
+   $elseif[$hasRole[$authorID;$findRole[500k]]==true]    
+    $takeRole[$authorID;$findRole[500k]]
+   $elseif[$hasRole[$authorID;$findRole[100k]]==true]    
+    $takeRole[$authorID;$findRole[100k]]
+   $elseif[$hasRole[$authorID;$findRole[50k]]==true]
+    $takeRole[$authorID;$findRole[50k]]
+   $elseif[$hasRole[$authorID;$findRole[10k]]==true]
+    $takeRole[$authorID;$findRole[10k]]
+   $elseif[$hasRole[$authorID;$findRole[5k]]==true]
+    $takeRole[$authorID;$findRole[5k]]
+   $elseif[$hasRole[$authorID;$findRole[1k]]==true]
+    $takeRole[$authorID;$findRole[1k]]
+   $endif
+ 
+ $endif
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+$endif
+
+
+$endif

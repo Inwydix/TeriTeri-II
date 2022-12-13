@@ -1,0 +1,11 @@
+$nomention $ignoreTriggerCase
+$onlyAdmin[❌ You have to be an admin to do this!!]
+
+rotation.c $getServerVar[rotation.c] (<t:$getServerVar[rotation.c]>)
+  $setServerVar[rotation.c;$sub[$getTimestamp;$modulo[$sum[$getServerVar[rotation.c];259200];604800]]]
+rotation.c $getServerVar[rotation.c] (<t:$getServerVar[rotation.c]>)
+
+
+
+
+

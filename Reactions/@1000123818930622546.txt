@@ -1,0 +1,17 @@
+$nomention $reply
+ $ignoreTriggerCase
+
+$if[$or[$toLowercase[$noMentionMessage]==i love you;$toLowercase[$noMentionMessage]==wuv u]]
+TeriTeri loves you too $randomText[<a:TeriHeart:999867474499608626>;<:TeriLove:1034213910536015982>;<:TeriPat:1000068843806400512>;<:TeriHug:1000067934800072804> ]
+
+$elseif[$or[$toLowercase[$noMentionMessage]==why;$toLowercase[$noMentionMessage]==why?]==true]
+Why not? <:CDCTeriDerp:1000058284859994212>
+
+$elseif[$toLowercase[$noMentionMessage]==u ok?]
+$randomText[yes <:TeriLaik:1000071888556539945>;no <:TeriSad:1000071836987559976>;nope <:TeriEhe:1000063159488483529>;no comment <:TeriTea:1000067705841389618>; maybe <:TeriThink:1000073086865002646>; mayhaps <:CDCTeriDerp:1000058284859994212>]
+
+$else
+
+$randomText[<a:TeriHeart:999867474499608626>;<:TeriThink:1000073086865002646>;<:TeriPist:1000067607254282300>;<:TeriCute:999834523816689814>;<:TeriEhe:1000063159488483529>;<:TeriSmug:1000060822678151248>;<:TeriNom:1000067749076271224>;<:TeriCelebrate:1014124677926490222>;<:CDCTeriDerp:1000058284859994212>]
+
+$endif

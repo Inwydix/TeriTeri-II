@@ -1,0 +1,289 @@
+$nomention $suppressErrors
+$enableDecimals[yes] 
+$allowMention
+
+$onlyIf[$getServerVar[level.channel]!=;]
+
+$c[rounding if not rounded]
+
+$if[$round[$getUserVar[money];0]!=$getUserVar[money]]
+$setUserVar[money;$round[$getUserVar[money];0]]
+$endif
+
+$if[$round[$getUserVar[crystal];0]!=$getUserVar[crystal]]
+$setUserVar[crystal;$round[$getUserVar[crystal];0]]
+$endif
+
+
+$var[coin.emote;<:Tericoin:1001510021907099750>]
+$var[teristal.emote;<:Teristal:1001507292648308817>]
+
+$c[Badges var list]
+
+$textSplit[$getUserVar[badges];/]
+$var[unchanged;errand/$splitText[$sum[$getTextSplitIndex[errand];1]]/$splitText[$sum[$getTextSplitIndex[errand];2]]/casino/$splitText[$sum[$getTextSplitIndex[casino];1]]/$splitText[$sum[$getTextSplitIndex[casino];2]]/streak/$splitText[$sum[$getTextSplitIndex[streak];1]]/$splitText[$sum[$getTextSplitIndex[streak];2]]/bug/$splitText[$sum[$getTextSplitIndex[bug];1]]/$splitText[$sum[$getTextSplitIndex[bug];2]]/rank/$splitText[$sum[$getTextSplitIndex[rank];1]]/$splitText[$sum[$getTextSplitIndex[rank];2]]/badge/$splitText[$sum[$getTextSplitIndex[badge];1]]/$splitText[$sum[$getTextSplitIndex[badge];2]]/bank/$splitText[$sum[$getTextSplitIndex[bank];1]]/$splitText[$sum[$getTextSplitIndex[bank];2]]]
+$var[tc.total;$splitText[$sum[$getTextSplitIndex[tc];1]]]
+$var[tc.badge;$splitText[$sum[$getTextSplitIndex[tc];2]]]
+$var[ts.total;$splitText[$sum[$getTextSplitIndex[ts];1]]]
+$var[ts.badge;$splitText[$sum[$getTextSplitIndex[ts];2]]]
+
+$c[End badge var list]
+
+
+
+$c[stigma crystal giving code var list]
+
+$textSplit[$getUserVar[stigma.equip];/]
+$var[stigT.equip;$optOff[$splitText[$sum[$getTextSplitIndex[stigT];1]]]]
+$var[stigM.equip;$optOff[$splitText[$sum[$getTextSplitIndex[stigM];1]]]]
+$var[stigB.equip;$optOff[$splitText[$sum[$getTextSplitIndex[stigB];1]]]]
+$var[probs;0]
+
+$c[Checking if you have the crystal stigmas equipped & calculating your chances of getting crystals]
+
+
+$if[$var[stigT.equip]==stig2T]
+  $var[probs;$sum[$var[probs];1]]
+$elseif[$var[stigT.equip]==stig5T]
+  $var[probs;$sum[$var[probs];2]]
+$elseif[$var[stigT.equip]==stig8T]
+  $var[probs;$sum[$var[probs];3]]
+$endif
+
+$if[$var[stigM.equip]==stig2M]
+  $var[probs;$sum[$var[probs];1]]
+$elseif[$var[stigM.equip]==stig5M]
+  $var[probs;$sum[$var[probs];2]]
+$elseif[$var[stigM.equip]==stig8M]
+  $var[probs;$sum[$var[probs];4]]
+$endif
+
+$if[$var[stigB.equip]==stig2B]
+  $var[probs;$sum[$var[probs];1]]
+$elseif[$var[stigB.equip]==stig5B]
+  $var[probs;$sum[$var[probs];2]]
+$elseif[$var[stigB.equip]==stig8B]
+  $var[probs;$sum[$var[probs];3]]
+$endif
+
+
+$c[ends checking equipped stigmas]
+
+$c[Other code → get crystal or not get crystal?]
+
+$if[$var[probs]>0]
+  $var[random;$modulo[$messageID;100]]
+  $if[$var[random]<=$var[probs]]
+    $setUserVar[crystal;$sum[$getUserVar[crystal];1]]
+    $var[ts.total;$sum[$var[ts.total];1]]
+    $setUserVar[badges;$var[unchanged]/tc/$var[tc.total]/$var[tc.badge]/ts/$var[ts.total]/$var[ts.badge]]
+    $addCmdReactions[$var[teristal.emote]]
+  $endif
+$endif
+
+$c[end stigma crystal giving code]
+
+$c[reset probs]
+$var[probs;0]
+
+$c[Checking if you have the coins stigmas equipped & calculating your chances of getting coins]
+
+
+$if[$var[stigT.equip]==stig3T]
+  $var[probs;$sum[$var[probs];2]]
+$endif
+$if[$var[stigM.equip]==stig3M]
+  $var[probs;$sum[$var[probs];2]]
+$endif
+$if[$var[stigB.equip]==stig3B]
+  $var[probs;$sum[$var[probs];2]]
+$endif
+
+$c[ends checking equipped stigmas]
+
+$c[Other code → get coins or not get crystal?]
+
+$if[$var[probs]>0]
+  $var[random;$modulo[$calculate[$messageID+3];100]]
+  $if[$var[random]<=$var[probs]]
+    $setUserVar[money;$sum[$getUserVar[money];150]]
+    $var[tc.total;$sum[$var[tc.total];150]]
+    $setUserVar[badges;$var[unchanged]/tc/$var[tc.total]/$var[tc.badge]/ts/$var[ts.total]/$var[ts.badge]]
+    $addCmdReactions[$var[coin.emote]]
+  $endif
+$endif
+
+$c[end stigma coins giving code]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$if[$getServerVar[level.channel]!=0]
+$useChannel[$getServerVar[level.channel]]
+$endif
+
+
+
+
+$c[cooldown]
+
+$if[$sub[$getTimestamp;$getUserVar[pts.cooldown]]>=30]
+ $setUserVar[pts.cooldown;$getTimestamp]
+ $setUserVar[point;$sum[$getUserVar[point];$getServerVar[lvl.boost]]]
+$endif
+
+$c[end cooldown]
+
+$c[level up]
+
+$if[$getUserVar[point]>=$round[$multi[10;$calculate[1.2**$getUserVar[level]]];0]]
+ 
+$author[$nickname[$authorID], LEVEL UP !]
+$authorIcon[$userServerAvatar[$authorID]]
+ $color[AE6800]
+ $description[
+ > + $numberSeparator[$round[$multi[10;$calculate[1.25**$getUserVar[level]]];0];,] $var[coin.emote]
+ > + $numberSeparator[$round[$multi[5;$calculate[1.25**$getUserVar[level]]];0];,] $var[teristal.emote]
+ ]
+ 
+ $setUserVar[money;$round[$sum[$getUserVar[money];$multi[10;$calculate[1.25**$getUserVar[level]]]];0]]
+ $setUserVar[crystal;$round[$sum[$getUserVar[crystal];$round[$multi[5;$calculate[1.25**$getUserVar[level]]];0]];0]]
+ 
+ $var[tc.total;$sum[$var[tc.total];$multi[10;$calculate[1.25**$getUserVar[level]]]]]
+ $var[ts.total;$sum[$var[ts.total];$round[$multi[5;$calculate[1.25**$getUserVar[level]]];0]]]
+ 
+ $setUserVar[level;$sum[$getUserVar[level];1]]
+ $title[Now you are Lvl.$getUserVar[level] <:TeriCute:999834523816689814>]
+ $setUserVar[badges;$var[unchanged]/tc/$var[tc.total]/$var[tc.badge]/ts/$var[ts.total]/$var[ts.badge]]
+ 
+ $c[pong]
+ 
+   $if[$getUserVar[lv.ping]==on]<@$authorID>$endif
+
+$endif
+
+$c[end level up]
+
+$c[start role giving]
+
+$if[$mentionedRoles[1]==]
+$modifyRole[$findRole[1M];!unchanged;$round[$random[000000;16777215];0];!unchanged;!unchanged]
+  
+  
+   $if[$getUserVar[level]>=50]
+   $if[$hasRole[$authorID;$findRole[Lv.50]]==false]
+    $giveRole[$authorID;$findRole[Lv.50]]
+    $color[#A0A0FF;2]$description[role $roleName[$findRole[Lv.50]] added to <@$authorID>;2]   
+    $endif
+   $if[$hasRole[$authorID;$findRole[Lv.40]]==true]    
+    $takeRole[$authorID;$findRole[Lv.40]]
+   $elseif[$hasRole[$authorID;$findRole[Lv.30]]==true]    
+    $takeRole[$authorID;$findRole[Lv.30]]
+   $elseif[$hasRole[$authorID;$findRole[Lv.20]]==true]
+    $takeRole[$authorID;$findRole[Lv.20]]
+   $elseif[$hasRole[$authorID;$findRole[Lv.10]]==true]
+    $takeRole[$authorID;$findRole[Lv.10]]
+   $elseif[$hasRole[$authorID;$findRole[Lv.1]]==true]
+    $takeRole[$authorID;$findRole[Lv.1]]
+   $endif
+   
+
+
+  $elseif[$getUserVar[level]>=40]
+   $if[$hasRole[$authorID;$findRole[Lv.40]]==false]
+    $giveRole[$authorID;$findRole[Lv.40]]
+    $color[#A0A0FF;2]$description[role $roleName[$findRole[Lv.40]] added to <@$authorID>;2]   
+    $endif
+  $if[$hasRole[$authorID;$findRole[Lv.30]]==true]    
+   $takeRole[$authorID;$findRole[Lv.30]]
+  $elseif[$hasRole[$authorID;$findRole[Lv.20]]==true]    
+   $takeRole[$authorID;$findRole[Lv.20]]
+  $elseif[$hasRole[$authorID;$findRole[Lv.10]]==true]
+   $takeRole[$authorID;$findRole[Lv.10]]
+  $elseif[$hasRole[$authorID;$findRole[Lv.1]]==true]
+   $takeRole[$authorID;$findRole[Lv.1]]
+  $endif
+  
+  
+  
+  $elseif[$getUserVar[level]>=30]
+   $if[$hasRole[$authorID;$findRole[Lv.30]]==false]
+    $giveRole[$authorID;$findRole[Lv.30]]
+    $color[#A0A0FF;2]$description[role $roleName[$findRole[Lv.30]] added to <@$authorID>;2]   
+    $endif
+   $if[$hasRole[$authorID;$findRole[Lv.20]]==true]
+    $takeRole[$authorID;$findRole[Lv.20]]
+   $elseif[$hasRole[$authorID;$findRole[Lv.10]]==true]
+    $takeRole[$authorID;$findRole[Lv.10]]
+   $elseif[$hasRole[$authorID;$findRole[Lv.1]]==true]
+    $takeRole[$authorID;$findRole[Lv.1]]
+   $endif
+   
+   
+   
+ $elseif[$getUserVar[level]>=20]
+  $if[$hasRole[$authorID;$findRole[Lv.20]]==false]
+   $giveRole[$authorID;$findRole[Lv.20]]
+   $color[#A0A0FF;2]$description[role $roleName[$findRole[Lv.20]] added to <@$authorID>;2]  
+   $endif
+  $if[$hasRole[$authorID;$findRole[Lv.10]]==true]
+   $takeRole[$authorID;$findRole[Lv.10]]
+  $elseif[$hasRole[$authorID;$findRole[Lv.1]]==true]
+   $takeRole[$authorID;$findRole[Lv.1]]
+  $endif
+  
+  
+  
+ $elseif[$getUserVar[level]>=10]
+  $if[$hasRole[$authorID;$findRole[Lv.10]]==false]
+   $giveRole[$authorID;$findRole[Lv.10]]
+   $color[#A0A0FF;2]$description[role $roleName[$findRole[Lv.10]] added to <@$authorID>;2]  
+   $endif
+  $if[$hasRole[$authorID;$findRole[Lv.1]]==true]
+   $takeRole[$authorID;$findRole[Lv.1]]
+  $endif 
+  
+  
+  
+ $elseif[$getUserVar[level]>=1]
+  $if[$hasRole[$authorID;$findRole[Lv.1]]==false]
+   $giveRole[$authorID;$findRole[Lv.1]]
+   $color[#A0A0FF;2]$description[role $roleName[$findRole[Lv.1]] added to <@$authorID>;2]  
+   $endif
+ $endif
+$endif
+
+
+$c[end role giving]
+

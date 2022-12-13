@@ -1,0 +1,24 @@
+$nomention
+$enableDecimals[yes]
+$onlyIf[$isNumber[$message[1]]==true;❌ You have to enter a rating!!]
+$onlyIf[$and[$message[1]>=0;$message[1]<=5]==true;❌ Please, enter a number between 0 and 5 (being 0 "I hate it" and 5 "perfection")!!]
+
+$textSplit[$message;{]
+
+$sendEmbedMessage[1029462989411197020;New rating!;;;$splitText[2];ffffff;$username[$authorID]  •  $if[$message[1]==0]🖤🖤🖤🖤🖤$elseif[$message[1]==1]🤍🖤🖤🖤🖤$elseif[$message[1]==2]🤍🤍🖤🖤🖤$elseif[$message[1]==3]🤍🤍🤍🖤🖤$elseif[$message[1]==4]🤍🤍🤍🤍🖤$elseif[$message[1]==5]🤍🤍🤍🤍🤍$endif;$authorAvatar;$serverName[$guildID];;;;yes;no]
+
+$author[YOUR RATE :  $if[$message[1]==0]🖤🖤🖤🖤🖤$elseif[$message[1]==1]🤍🖤🖤🖤🖤$elseif[$message[1]==2]🤍🤍🖤🖤🖤$elseif[$message[1]==3]🤍🤍🤍🖤🖤$elseif[$message[1]==4]🤍🤍🤍🤍🖤$elseif[$message[1]==5]🤍🤍🤍🤍🤍$endif]
+$description[$splitText[2]]
+$footer[$username[$authorID]]
+$footerIcon[$authorAvatar]
+$addTimestamp
+$color[ffffff]
+
+$textSplit[$getServerVar[ratings;934475434480009217];/]
+$var[average;$optOff[$splitText[$sum[$getTextSplitIndex[average];1]]]]
+$var[count;$optOff[$splitText[$sum[$getTextSplitIndex[count];1]]]]
+
+$var[average;$divide[$sum[$multi[$var[average];$var[count]];$message[1]];$sum[$var[count];1]]]
+$var[count;$sum[$var[count];1]]
+
+$setServerVar[ratings;average/$var[average]/count/$var[count];934475434480009217]

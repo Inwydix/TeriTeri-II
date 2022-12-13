@@ -1,0 +1,226 @@
+$nomention
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1020078823896797285/0de490e58a3dbed37e9a17f66c8173e8.jpg]
+
+$color[#FFFFFF]
+ 
+$if[$message==general]
+
+ $title[__MISCELLANEOUS__]
+ $description[** **
+:placard: **FOR ADMINS** :placard:
+
+• `t!lock <channelID` : Remove the 'send messages' permits for everyone
+ 
+• `t!welcome <channelID>` : Set the channel for custom welcome messages (set it to 0 to disable it)
+
+🌐 **FOR EVERYONE** 🌐
+
+• `t!ping` : Return the current ping of the bot
+ 
+• `t!teri` : Send a random TeRiRi picture (no nsfw) between around 40 pictures
+
+• `t!<category>` : Get a random image of the chosen category 
+
+• `t!image <category>` : Get a random image of the chosen category
+
+• `t!poll <title> | <description> | <imageLink> | <emote1> | <option1> | <emote2> | <option2>.... (up to 7 options)` : Build a poll with embed and reactions
+ 
+** **]
+ 
+$elseif[$message==help]
+ $title[__HELP AND INFO__]
+$description[** **
+• `t!help` : Show TeriTeri's help center
+  
+• `t!help eco` : Display economy related command list
+  
+• `t!poll help` : Opens the poll help menu
+  
+• `t!image help` : Shows all the available image categories
+  
+• `t!changelog` : Display the bot's update changelog
+
+• `t!bonus` :  See your current bonuses
+
+• `t!odds` : Display the odds of casino or errands
+
+• `t!profile | t!profile <@user>` : Shows your server profile or another user's profile
+  ** **]
+
+$elseif[$message==eco]
+ $title[__ECONOMIC COMMANDS__]
+ $description[** **
+• `t!money | t!money <@user>` : Display your money or other user's
+money
+
+• `t!wallet` : Open your wallet and see how many tericoins you own
+
+• `t!send <amount> to <@user>` : Send that amount of money to someone else
+
+• `t!daily` : Claim your daily reward
+
+• `t!casino <amount>` : Bet your money in the casino (5min cooldown)
+
+• `t!emotes` : Display the emotes used by the bot
+
+• `t!toggle display <all/money/card/off>` : Choose the display messages you see while playing
+
+• `t!leaderboard level` : Display the user's level leaderboard 
+
+• `t!leaderboard money` : Display the user's money leaderboard
+  ** **]
+
+$elseif[$message==errand]
+ $title[__ERRANDS__]
+ $description[** **
+• `t!errand start` : Start an errand or display the remaining time
+ 
+
+• `t!errand claim` : Claim an errand or display the remaining time
+
+• `t!errand time` : Display the remaining errand time
+
+• `t!errand cancel` | `t!errand stop` : Stop a running errand (you won't get rewards)
+  ** **]
+
+$elseif[$message==worker]
+ $title[__WORKERS__]
+ $description[** **
+• `t!worker shop` : Display the worker shop and current ammoint of workers
+  
+
+• `t!buy worker <level>` : Buy a worker of said level (10 of each max.)
+  
+• `t!worker claim` : Claim the Tericoins produced by the level 1 workers
+  ** **]
+
+$elseif[$message==bank]
+ $title[__BANK__]
+ $description[** **
+:placard: **FOR ADMINS** :placard:
+
+• `t!create bank` : Create the server bank (voice channel)
+
+• `t!setup bank <channelID>` : Link the bank so the bot can update it
+
+🌐 **FOR EVERYONE** 🌐
+ 
+• `t!add bank <amount>` : Send money to the bank (server cooldown: 1s every 10 <:Tericoin:863911108283465739> added, with a min. of 10 minutes)
+ 
+
+• `t!money bank` : Display the current bank money
+  ** **]
+
+$elseif[$message==level]
+ $title[__LEVELLING SYSTEM__ ]
+ $description[** **
+:placard: **FOR ADMINS** :placard:
+
+• `t!level channel <channelID>` : Set the channel where the level up messages will be sent
+
+• `t!level boost <number>` : Set a boost to the level up system (default: 1)
+
+🌐 **FOR EVERYONE** 🌐
+  
+• `t!toggle ping <on/off>` : Activates/deactivates the levelling up pings
+  
+** **]
+
+$elseif[$message==upgrade]
+ $title[__UPGRADES__]
+ $description[** **
+• `t!upgrade shop` : Display the upgrade shop and your current upgrades
+
+• `t!buy upgrade <number>` : Buy the selected upgrade
+  ** **]
+
+$elseif[$message==trophy]
+ $title[__TROPHIES__]
+ $description[** **
+• `t!role update` : Create/update the missing/broken trophy roles
+ 
+• `t!trophy list` : Display the list of obtainable trophies
+ ** **]
+
+$elseif[$message==extra]
+ $title[__EXTRA INFO__]
+ $description[** **
+__TeRiRi's Classroom: How to Economic system__
+
+> https://docs.google.com/presentation/d/1AlSSlLdOxAfmG4If16co-py8k0Z5xYakR_AQ7rFFbsg/edit?usp=sharing
+
+__Google Sheet with numbers and stats of the Economic System__
+  
+> https://docs.google.com/spreadsheets/d/1YHDXZpnSoEx-rQWJqRUVrtYKdxL7O8m1Iq59STCREo0/edit?usp=sharing
+  ** **]
+  
+$elseif[$message==gacha]
+  $title[ __GACHA__ ]
+  $description[** **
+:placard: **FOR ADMINS** :placard:
+  
+• `t!rotate <supply number> (<stigma set>)` : Rotate the rate up stigmas (leave the set empty to get a random set)
+
+🌐 **FOR EVERYONE** 🌐
+  
+• `t!money | t!money <@user>` : Shows your coins and crystals, or another user's coins and crystals
+
+• `t!inventory | t!inventory <@user> | t!inv | t!inv <@user>` : Display the stigma collection and your supply cards or someone else's
+  
+• `t!supply` : Display the rate up stigma sets
+
+• `t!pull <supply>` : Pull in the selected supply
+  
+• `t!buy card <supply>` : Buy a card for pulling in the selected supply
+
+• `t!buy card <supply> <amount>` : Buy the chosen amount of cards for pulling in the selected supply
+
+• `t!equip <set number> <T/M/B>` : Equip the selected stigma from the selected set (select set 0 to unequip)
+
+• `t!equipped` : Display the equipped stigmas
+   ** **]
+  
+$elseif[$message==role.shop]
+  $title[ __ROLE SHOP__ ]
+  $description[** **
+• `t!role update` : Create/update the role shop roles
+
+• `t!role shop` : Open the role shop
+
+• `t!buy role <number>` : Buy the chosen role
+  ** **]
+  
+
+$elseif[$message==fun]
+  $title[__FUN COMMANDS__ ]
+  $description[** **
+• `t!coin` : Flip a coin (returns heads or tails)
+  
+• `t!8ball <question>` : Ask questions to TeriTeri's almighty 8 ball 
+  
+• `t!hol` : Play a game of higher or lower
+
+• `t!crate` : Open a daily crate
+  ** **]
+  
+$elseif[$message==mine]
+$title[__MINE__ ]
+$description[** **
+• `t!buy mine` : Buy a teristals mine
+
+• `t!mine` | `t!mine <@user>` : Display your mine's info or someone else's
+
+• `t!mine claim` : Claim your mine's production
+** **]
+$elseif[$message==festive]
+ $title[__FESTIVE ACTIVATION COMMANDS__ ]
+ $description[** **
+:placard: **FOR ADMINS** :placard:
+
+• `t!spooky time` : Activate/deactivate the Halloween themed commands
+
+• `t!winter time` : Activate/deactivate the Christmas themed commands
+** **]
+$footer[The rest of the festive commands will appear in 't!help' once you activate them]
+
+$endif

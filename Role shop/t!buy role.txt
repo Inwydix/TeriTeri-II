@@ -1,0 +1,205 @@
+$nomention
+$if[$authorID!=490201258859167748]$onlyIf[$getVar[pause]==off;The bot is currently paused, please wait a bit or ask The_Zermiste#1809]$endif
+$reply
+$onlyIf[$getServerVar[bank.prog]>=5;You need to reach the 5th milestone ! (20M)]
+
+
+
+$async[cd]
+  $try
+  $cooldown[10s;]
+  $catch
+  no yeet
+  $stop
+  $endtry
+$endasync
+
+
+$c[Role 1 : Tuna Lord]
+
+
+$if[$message==1]
+
+  $onlyIf[$getUserVar[crystal]>=100;❌ You don't have enough Teristals!]
+
+  $if[$hasRole[$authorID;$roleID[Tuna Lord]]]
+  
+    $color[ff1a1a]
+    $title[❌ You already have this role!]
+
+  $else
+    $await[cd]
+    $setUserVar[crystal;$sub[$getUserVar[crystal];100]]
+    $giveRole[$authorID;$roleID[Tuna Lord]]
+
+    $title[**SUCCESS!**]
+    $description[Now you have the role <@&$roleID[Tuna Lord]> !]
+    $color[33cc33]
+    
+    $if[$hasRole[$authorID;$roleID[Goose Appreciator]]]
+    
+      $takeRole[$authorID;$roleID[Goose Appreciator]]
+      $description[<@&$roleID[Goose Appreciator]> role has been taken from you;2]
+    
+    $endif
+    
+  $endif
+ 
+  
+
+$c[Role 2 : Goose Appreciator]
+
+
+
+$elseif[$message==2]
+
+  $onlyIf[$getUserVar[crystal]>=100;❌ You don't have enough Teristals!]
+
+  $if[$hasRole[$authorID;$roleID[Goose Appreciator]]]
+  
+    $color[ff1a1a]
+    $title[❌ You already have this role!]
+
+  $else
+    $await[cd]
+    $setUserVar[crystal;$sub[$getUserVar[crystal];100]]
+    $giveRole[$authorID;$roleID[Goose Appreciator]]
+
+    $title[**SUCCESS!**]
+    $description[Now you have the role <@&$roleID[Goose Appreciator]> !]
+    $color[33cc33]
+    
+    $if[$hasRole[$authorID;$roleID[Tuna Lord]]]
+    
+      $takeRole[$authorID;$roleID[Tuna Lord]]
+      $description[<@&$roleID[Tuna Lord]> role has been taken from you;2]
+    
+    $endif
+    
+  $endif
+
+
+
+$c[Role 3 : Vodka Pink]
+
+
+
+$elseif[$message==3]
+
+  $onlyIf[$getUserVar[crystal]>=200;❌ You don't have enough Teristals!]
+
+  $if[$hasRole[$authorID;$roleID[Vodka Pink]]]
+  
+    $color[ff1a1a]
+    $title[❌ You already have this role!]
+
+  $else
+
+    $setUserVar[crystal;$sub[$getUserVar[crystal];200]]
+    $giveRole[$authorID;$roleID[Vodka Pink]]
+
+    $title[**SUCCESS!**]
+    $description[Now you have the role <@&$roleID[Vodka Pink]> !]
+    $color[33cc33]
+    
+    $if[$hasRole[$authorID;$roleID[Vodka Blue]]]
+    
+      $takeRole[$authorID;$roleID[Vodka Blue]]
+      $description[<@&$roleID[Vodka Blue]> role has been taken from you;2]
+    
+    $endif
+    
+  $endif
+
+
+$c[Role 4 : Vodka Blue]
+
+
+
+$elseif[$message==4]
+
+  $onlyIf[$getUserVar[crystal]>=200;❌ You don't have enough Teristals!]
+
+  $if[$hasRole[$authorID;$roleID[Vodka Blue]]]
+  
+    $color[ff1a1a]
+    $title[❌ You already have this role!]
+
+  $else
+
+    $setUserVar[crystal;$sub[$getUserVar[crystal];200]]
+    $giveRole[$authorID;$roleID[Vodka Blue]]
+
+    $title[**SUCCESS!**]
+    $description[Now you have the role <@&$roleID[Vodka Blue]> !]
+    $color[33cc33]
+    
+    $if[$hasRole[$authorID;$roleID[Vodka Pink]]]
+    
+      $takeRole[$authorID;$roleID[Vodka Pink]]
+      $description[<@&$roleID[Vodka Pink]> role has been taken from you;2]
+    
+    $endif
+    
+  $endif
+
+
+
+$c[Role 5 : Mobius' Pet]
+
+
+
+$elseif[$message==5]
+
+  $onlyIf[$getUserVar[crystal]>=500;❌ You don't have enough Teristals!]
+
+  $if[$hasRole[$authorID;$roleID[Mobius' Pet]]]
+  
+    $color[ff1a1a]
+    $title[❌ You already have this role!]
+
+  $else
+
+    $setUserVar[crystal;$sub[$getUserVar[crystal];500]]
+    $giveRole[$authorID;$roleID[Mobius' Pet]]
+
+    $title[**SUCCESS!**]
+    $description[Now you have the role <@&$roleID[Mobius' Pet]> !]
+    $color[33cc33]
+    
+  $endif
+
+
+
+$c[Role 6 : I had 1k]
+
+
+
+$elseif[$message==6]
+
+  $onlyIf[$getUserVar[crystal]>=1000;❌ You don't have enough Teristals!]
+
+  $if[$hasRole[$authorID;$roleID[I had 1k]]]
+  
+    $color[ff1a1a]
+    $title[❌ You already have this role!]
+
+  $else
+
+    $setUserVar[crystal;$sub[$getUserVar[crystal];1000]]
+    $giveRole[$authorID;$roleID[I had 1k]]
+
+    $title[**SUCCESS!**]
+    $description[Now you have the role <@&$roleID[I had 1k]> !]
+    $color[33cc33]
+    
+    
+  $endif
+
+
+$else
+
+  $color[ff1a1a]
+  $title[❌  TeriTeri couldn't find that role!]
+
+$endif

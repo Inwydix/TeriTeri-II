@@ -1,0 +1,121 @@
+$nomention
+$color[ffffff]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1020078823896797285/0de490e58a3dbed37e9a17f66c8173e8.jpg]
+
+$if[$message==bank]
+
+$title[🏦  __BANK MILESTONES__  🏦]
+$description[** ** 
+**1st MILESTONE : 1M**
+> Everyone gets x10 daily rewards
+> +1 max. worker of each level added
+
+**2nd MILESTONE : 5M**
+> Lv.3 workers gets more efficient (X1.1 each one)
+> +1 max. worker of each level added
+
+**3rd MILESTONE : 10M**
+> Unlocks the gacha system 
+> +1 max. worker of each level added
+
+**4th MILESTONE : 15M**
+> Unlocks the 4th upgrade
+> +1 max. worker of each level added
+
+**5th MILESTONE : 20M**
+> Unlocks the role shop
+> +1 max. worker of each level added
+
+**6th MILESTONE : 30M**
+> You can buy the upgrade 3 once more
+
+**7th MILESTONE : 40M**
+> Unlocks the wedding and harem system
+
+**8th MILESTONE : 50M**
+> Unlocks TeriTeri's minigames
+
+**9th MILESTONE : 75M**
+> Teristal mine
+
+**10th MILESTONE : 100M**
+> Festivities
+** **]
+$footer[More milestones will be added in future updates]
+
+$elseif[$message==odds]
+
+$title[🎲 ODDS 🎲]
+$description[
+**__ERRANDS__**
+12h -  10%
+9h  -  20%
+6h  -  40%
+3h  -  20%
+1h   -  10%
+
+__When claiming__
+1% chance of getting 3 crystals
+1% chance of getting 2 crystals
+1% chance of getting 1 crystal
+
+**__CASINO__**
+x20  -  1%
+x10   -  1%
+x5  -  3%
+x3  -  5%
+x2  -  10%
+x1   -  20%
+x0.5  -  30%
+x0.1   -  30%
+]
+
+$elseif[$message==extra]
+
+ $title[🔍 EXTRA INFO 🔍]
+ $description[** **
+  __TeRiRi's classroom: How to Economic system__
+
+  https://docs.google.com/presentation/d/1AlSSlLdOxAfmG4If16co-py8k0Z5xYakR_AQ7rFFbsg/edit?usp=sharing
+
+  __Google Sheet with numbers and stats of the Economic System__
+
+  https://docs.google.com/spreadsheets/d/1YHDXZpnSoEx-rQWJqRUVrtYKdxL7O8m1Iq59STCREo0/edit?usp=sharing
+  ** **]
+  
+$elseif[$message==credits]
+  
+  $textSplit[$getVar[emotes];/]
+  $var[card1.pic;$optOff[$splitText[$sum[$getTextSplitIndex[card1];1]]]]
+  $var[card2.pic;$optOff[$splitText[$sum[$getTextSplitIndex[card2];1]]]]
+  $var[card3.pic;$optOff[$splitText[$sum[$getTextSplitIndex[card3];1]]]]
+ 
+  $title[☄️ CREDITS 🌙]
+  $description[** **
+Made using BDFD (Bot Designer For Discord)
+  
+__TeriTeri 1.0 (original)__
+> • Code : `The_Zermiste#1809`
+> • Documentation : `The_Zermiste#1809`
+> • Explanations : `The_Zermiste#1809` and `PGA#9269`
+> • Testing and help : `The_Zermiste#1809`, `Se̴i̴s̸h̷i̷-̷s̴a̸n̸#3080`, `The One Without Purpose#3565`, `Snowdrift#0504` and `PGA#9269`
+
+__TeriTeri 2.0 (TeriTeri II)__
+> • Code : `The_Zermiste#1809` and `PGA#9269`
+> • Documentation update : `The_Zermiste#1809`
+> • Explanations : `PGA#9269` (not finished yet)
+> • Testing : `The_Zermiste#1809`, `Sacchi#7777`, `_IcyPaws_#0916`, `ShadowCorvus#8550` and `PGA#9269`
+> • Bot pfp : `The One Without Purpose#3565`
+
+__Emotes and pic edits__
+> • <:Tericoin:1001510021907099750> : `PGA#9269`
+> • <:Teristal:1001507292648308817> : `The_Zermiste#1809`
+> • $var[card1.pic] $var[card2.pic] $var[card3.pic] : `The_Zermiste#1809`
+> • Stigma sets images : `The_Zermiste#1809`
+
+__OTHERS__
+> • <:wallet:1015883346758344734> : https://www.flaticon.com/free-icon/wallet_214362
+** **]
+$footer[Special thanks to all of you, who play and have fun with our little TeriTeri bot! We hope you continue to love her as much as we love this awesome community 🤍]
+  
+$endif

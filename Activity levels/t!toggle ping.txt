@@ -1,0 +1,38 @@
+$nomention
+$author[Toggle Ping]
+
+$if[$message==on]
+
+  $if[$getUserVar[lv.ping]==on]
+    $title[❌ Level pings are already activated !]
+    $color[ff1a1a]
+  $else
+    $setUserVar[lv.ping;on]
+    $title[Level pings successfully activated !]
+    $description[Now you will start getting pings when levelling up]
+    $color[33cc33]
+  $endif
+
+$elseif[$message==off]
+
+  $if[$getUserVar[lv.ping]==off]
+    $title[❌ Level pings already deactivated !]
+    $color[ff1a1a]
+  $else
+    $setUserVar[lv.ping;off]
+    $title[Level pings successfully deactivated !]
+    $description[Now you will stop getting pings when levelling up]
+    $color[33cc33]
+  $endif
+  
+$else
+
+  $title[TOGGLE PING HELP]
+  $description[• `t!toggle ping on`
+  > Activates the level up pings
+  
+  • `t!toggle ping off`
+  > Deactivates the level up pings]
+  $color[ff1a1a]
+  
+$endif

@@ -1,0 +1,64 @@
+$nomention $reply $ignoreTriggerCase
+
+$onlyIf[$isNSFW[$channelID]==false;]
+
+$textSplit[$getUserVar[wedding;$authorID];/]
+$var[asker;$splitText[$sum[$getTextSplitIndex[asker];1]]]
+$var[asking;$splitText[$sum[$getTextSplitIndex[asking];1]]]
+$var[couple;$splitText[$sum[$getTextSplitIndex[couple];1]]]
+
+
+$if[$mentioned[1;no]==$var[couple]]
+
+$var[lp;$random[50;100]]
+$setUserVar[lovePoints;$sum[$getUserVar[lovePoints];$var[lp]]]
+$setUserVar[lovePoints;$getUserVar[lovePoints];$var[couple]]
+
+$endif
+
+
+$if[$or[$message[1]==waifu;$message[1]==neko;$message[1]==shinobu;$message[1]==megumin;$message[1]==bully;$message[1]==cuddle;$message[1]==cry;$message[1]==hug;$message[1]==awoo;$message[1]==kiss;$message[1]==lick;$message[1]==pat;$message[1]==smug;$message[1]==bonk;$message[1]==yeet;$message[1]==blush;$message[1]==smile;$message[1]==wave;$message[1]==highfive;$message[1]==handhold;$message[1]==nom;$message[1]==bite;$message[1]==glomp;$message[1]==slap;$message[1]==kill;$message[1]==kick;$message[1]==happy;$message[1]==wink;$message[1]==poke;$message[1]==dance;$message[1]==cringe]==true]
+
+$cooldown[10s;wow, relax with those reactions or your face will turn old quick! | Time : %time%]
+
+$var[option;$toLowercase[$message[1]]]
+$httpGet[https://api.waifu.pics/sfw/$var[option]]
+$textSplit[$httpResult;"]
+
+$if[$mentioned[1;yes]!=$authorID]
+$description[$randomText[<@$mentioned[1;no]>, <@$authorID> sends you $var[option]$if[$var[option]==kiss]e$endifs from the bottom of their heart <:TeriCute:999834523816689814>;A$if[$var[option]==awoo]n$endif $var[option] a day, keeps the sadness away! <:TeriNom:1000067749076271224>;<@$authorID> $var[option]$if[$var[option]==kiss]e$endifs <@$mentioned[1;no]> <:TeriEhe:1000063159488483529>;<@$mentioned[1;no]> $var[option] $var[option] $var[option]!!]]
+$else
+$description[<@$authorID>, $randomText[TeriTeri gave you a$if[$var[option]==awoo]n$endif $var[option] <:TeriNom:1000067749076271224>;TeriTeri sends $var[option]$if[$var[option]==kiss]e$endifs with her best will 🤍;TeriTeri went to the dark side, so she gave you a sneaky $var[option]! <:TeriSmug:1000060822678151248>;TeriTeri feels generous today, so she gave you a$if[$var[option]==awoo]n$endif $var[option] <:TeriEhe:1000063159488483529>;A$if[$var[option]==awoo]n$endif $var[option] a day, keeps the sadness away! <:TeriCute:999834523816689814>]]
+$endif
+
+$title[📸 $toUppercase[$var[option]] 🖼️]
+$image[$splitText[4]]
+$color[$getRoleColor[$highestRole[$authorID]]]
+$footer[Link: $splitText[4]]
+
+$elseif[$toLowercase[$message[1]]==uwu]
+
+<:TeriOwO:1000067565437063308>
+
+$elseif[$toLowercase[$message[1]]==shinobun]
+
+$var[option;Shinobu]
+
+$title[📸 $toUppercase[$var[option]] 🖼️]
+$image[$randomText[https://media.discordapp.net/attachments/882374741594349629/1021493506331648061/565df2ad74f350f662c54d371bb7082e.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493506331648061/565df2ad74f350f662c54d371bb7082e.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493506331648061/565df2ad74f350f662c54d371bb7082e.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493506331648061/565df2ad74f350f662c54d371bb7082e.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493507619311736/a9da35190f9a38d4368f3182f71ca3c2.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493507619311736/a9da35190f9a38d4368f3182f71ca3c2.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493507837394965/d2a9d0a10d0409e7e471d7ac94ffac87.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493507837394965/d2a9d0a10d0409e7e471d7ac94ffac87.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493507837394965/d2a9d0a10d0409e7e471d7ac94ffac87.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493507837394965/d2a9d0a10d0409e7e471d7ac94ffac87.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493535951827035/56252c66609ffc8e4cd129d58fb13960.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493535951827035/56252c66609ffc8e4cd129d58fb13960.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493535951827035/56252c66609ffc8e4cd129d58fb13960.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493536748736572/d46d86ac88856d3f98efe6725ccdf75f.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493536748736572/d46d86ac88856d3f98efe6725ccdf75f.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493536748736572/d46d86ac88856d3f98efe6725ccdf75f.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493539827372122/d7415ed6041a2b26e4fc994dab34bc7f.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493540141928508/c2a0454b1a3f3f502b605624c2581bcf.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493576040984638/d1d8f27734e1a0d10450d13ba5043354.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493576040984638/d1d8f27734e1a0d10450d13ba5043354.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493576485584956/ce35862d10a5eb4e3998f5920527558d.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493576485584956/ce35862d10a5eb4e3998f5920527558d.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493576707870872/a780dd903ffb569f910192aa4885a3cc.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493576707870872/a780dd903ffb569f910192aa4885a3cc.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493576707870872/a780dd903ffb569f910192aa4885a3cc.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493577425096784/adc847813065ce31070bab1c939356b6.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493577701916804/273f5d6c88a2ce66c235bd7faf31c0c0.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493577701916804/273f5d6c88a2ce66c235bd7faf31c0c0.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493606470647978/3a333188d9b1413702de2a382515f7c8.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493606470647978/3a333188d9b1413702de2a382515f7c8.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493606755868764/3699f7bd9c4dce6ac0050c26c946424a.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493606755868764/3699f7bd9c4dce6ac0050c26c946424a.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493607250788412/c1f7c84c0e1a6e16a2c5e60b9a99ce7b.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493607485677668/d79b70feb3eb560826be1d5974b4aa22.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493607833817128/6d72c7444b18b0971139a4c3ee0edd36.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493606470647978/3a333188d9b1413702de2a382515f7c8.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493608374870026/8008cd81cc96fadfe8cddf5868fc7641.jpg;https://media.discordapp.net/attachments/882374741594349629/1021493609004015686/a916ca09e631f89700416677606565d1.jpg]]
+$color[$getRoleColor[$highestRole[$authorID]]]
+
+$if[$mentioned[1;yes]!=$authorID]
+$description[$randomText[<@$mentioned[1;no]>, <@$authorID> sends you $var[option]$if[$var[option]==kiss]e$endifs from the bottom of their heart <:TeriCute:999834523816689814>;A$if[$var[option]==awoo]n$endif $var[option] a day, keeps the sadness away! <:TeriNom:1000067749076271224>;<@$authorID> $var[option]$if[$var[option]==kiss]e$endifs <@$mentioned[1;no]> <:TeriEhe:1000063159488483529>;<@$mentioned[1;no]> $var[option] $var[option] $var[option]!!]]
+$else
+$description[<@$authorID>, $randomText[TeriTeri gave you a$if[$var[option]==awoo]n$endif $var[option] <:TeriNom:1000067749076271224>;TeriTeri sends $var[option]$if[$var[option]==kiss]e$endifs with her best will 🤍;TeriTeri went to the dark side, so she gave you a sneaky $var[option]! <:TeriSmug:1000060822678151248>;TeriTeri feels generous today, so she gave you a$if[$var[option]==awoo]n$endif $var[option] <:TeriEhe:1000063159488483529>;A$if[$var[option]==awoo]n$endif $var[option] a day, keeps the sadness away! <:TeriCute:999834523816689814>]]
+$endif
+
+$elseif[$toLowercase[$message[1]]==hob]
+$title[📸 HoB 🖼️]
+$var[option;HoB]
+$description[<@$authorID>, $randomText[TeriTeri gave you a$if[$var[option]==awoo]n$endif $var[option] <:TeriNom:1000067749076271224>;TeriTeri sends $var[option]$if[$var[option]==kiss]e$endifs with her best will 🤍;TeriTeri went to the dark side, so she gave you a sneaky $var[option]! <:TeriSmug:1000060822678151248>;TeriTeri feels generous today, so she gave you a$if[$var[option]==awoo]n$endif $var[option] <:TeriEhe:1000063159488483529>;A$if[$var[option]==awoo]n$endif $var[option] a day, keeps the sadness away! <:TeriCute:999834523816689814>]]
+$image[https://media.discordapp.net/attachments/877675066706505749/1029693787599020062/original_drawn_by_koguma105__5ad85642e1ded5a35de2c95a45817067.jpg]
+$color[$getRoleColor[$highestRole[$authorID]]]
+
+$endif

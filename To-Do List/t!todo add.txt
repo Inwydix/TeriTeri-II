@@ -1,0 +1,8 @@
+$nomention $reply $ignoreTriggerCase
+$textSplit[$getUserVar[todo];/]
+
+$onlyIf[$splitText[30]==;]
+
+✅ "$message" added to the to-do list
+
+$setUserVar[todo;$message/$getUserVar[todo]]

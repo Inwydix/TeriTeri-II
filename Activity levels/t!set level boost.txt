@@ -1,0 +1,30 @@
+$nomention $reply $ignoreTriggerCase
+$enableDecimals[yes]
+
+$onlyAdmin[❌ You need to be Administrator to do this !]
+
+$if[$isNumber[$message]==true]
+
+ $if[$round[$message;0]>20]
+  $color[FF8080]
+  $title[The maximum boost is around **x20** !]
+  $stop
+  
+ $endif
+ 
+ $setServerVar[lvl.boost;$message]
+ 
+ $color[#00FF00]
+ $title[The level boost is now x$message !]
+ 
+$elseif[$message==]
+ $color[#FF0000]
+ $title[You need to enter the level up boost !]
+ $description[`t!set level boost <number>`]
+ $footer[1 is default, 0 is no xp gain]
+ 
+$else
+ $color[#FF0000]
+ $title[Only numbers can work as a boost !]
+ 
+$endif

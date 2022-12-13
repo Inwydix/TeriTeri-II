@@ -1,0 +1,98 @@
+$nomention
+
+$textSplit[$getUserVar[miniGameVar];/]
+$var[game;$splitText[$sum[$getTextSplitIndex[game];1]]]
+$var[first;$splitText[$sum[$getTextSplitIndex[first];1]]]
+$var[second;$splitText[$sum[$getTextSplitIndex[second];1]]]
+
+$textSplit[$getUserVar[badges];/]
+$var[unchanged;$optOff[errand/$splitText[$sum[$getTextSplitIndex[errand];1]]/$splitText[$sum[$getTextSplitIndex[errand];2]]/casino/$splitText[$sum[$getTextSplitIndex[casino];1]]/$splitText[$sum[$getTextSplitIndex[casino];2]]/streak/$splitText[$sum[$getTextSplitIndex[streak];1]]/$splitText[$sum[$getTextSplitIndex[streak];2]]/bug/$splitText[$sum[$getTextSplitIndex[bug];1]]/$splitText[$sum[$getTextSplitIndex[bug];2]]/rank/$splitText[$sum[$getTextSplitIndex[rank];1]]/$splitText[$sum[$getTextSplitIndex[rank];2]]/badge/$splitText[$sum[$getTextSplitIndex[badge];1]]/$splitText[$sum[$getTextSplitIndex[badge];2]]/bank/$splitText[$sum[$getTextSplitIndex[bank];1]]/$splitText[$sum[$getTextSplitIndex[bank];2]]]]
+$var[tc.total;$optOff[$splitText[$sum[$getTextSplitIndex[tc];1]]]]
+$var[tc.badge;$optOff[$splitText[$sum[$getTextSplitIndex[tc];2]]]]
+$var[ts.total;$optOff[$splitText[$sum[$getTextSplitIndex[ts];1]]]]
+$var[ts.badge;$optOff[$splitText[$sum[$getTextSplitIndex[ts];2]]]]
+
+$var[coinEmote;<:Tericoin:1001510021907099750>]
+$var[crystalsEmote;<:Teristal:1001507292648308817>]
+
+$c[HIGHER OR LOWER - YOU CHOSE LOWER!]
+
+$if[$var[game]==hol]
+
+$removeButtons
+$onlyIf[$var[first]!=0;❌ <@$authorID>, you can't play someone else's game!]
+$author[Higher or Lower?]
+
+$if[$var[first]==$var[second]]
+
+$var[winCoins;$random[100;10000]]
+$setUserVar[money;$sum[$getUserVar[money];$var[winCoins]]]
+$var[tc.total;$sum[$var[tc.total];$var[winCoins]]]
+$setUserVar[badges;$var[unchanged]/tc/$var[tc.total]/$var[tc.badge]/ts/$var[ts.total]/$var[ts.badge]]
+
+$title[🏳️  **THEY WERE EQUAL!**  🏳️]
+$description[Congrats!!! You just won **$numberSeparator[$var[winCoins];,]** $var[coinEmote]
+
+> First number : $if[$var[first]==1]1️⃣$elseif[$var[first]==2]2️⃣$elseif[$var[first]==3]3️⃣$elseif[$var[first]==4]4️⃣$elseif[$var[first]==5]5️⃣$elseif[$var[first]==6]6️⃣$elseif[$var[first]==7]7️⃣$elseif[$var[first]==8]8️⃣$elseif[$var[first]==9]9️⃣$endif
+> Second number : $if[$var[second]==1]1️⃣$elseif[$var[second]==2]2️⃣$elseif[$var[second]==3]3️⃣$elseif[$var[second]==4]4️⃣$elseif[$var[second]==5]5️⃣$elseif[$var[second]==6]6️⃣$elseif[$var[second]==7]7️⃣$elseif[$var[second]==8]8️⃣$elseif[$var[second]==9]9️⃣$endif
+** **]
+$footer[Now you have $getUserVar[money]]
+$color[ffffff]
+
+$elseif[$var[first]>$var[second]]
+
+$title[📉  **...IT WAS LOWER...**  📉]
+$description[
+> First number : $if[$var[first]==1]1️⃣$elseif[$var[first]==2]2️⃣$elseif[$var[first]==3]3️⃣$elseif[$var[first]==4]4️⃣$elseif[$var[first]==5]5️⃣$elseif[$var[first]==6]6️⃣$elseif[$var[first]==7]7️⃣$elseif[$var[first]==8]8️⃣$elseif[$var[first]==9]9️⃣$endif
+> Second number : $if[$var[second]==1]1️⃣$elseif[$var[second]==2]2️⃣$elseif[$var[second]==3]3️⃣$elseif[$var[second]==4]4️⃣$elseif[$var[second]==5]5️⃣$elseif[$var[second]==6]6️⃣$elseif[$var[second]==7]7️⃣$elseif[$var[second]==8]8️⃣$elseif[$var[second]==9]9️⃣$endif
+** **]
+$footer[You didn't win any coins, but you still have TeriTeri's love~]
+$color[3385ff]
+
+$else
+
+$title[📈  **...IT WAS HIGHER...**  📈]
+$description[
+> First number : $if[$var[first]==1]1️⃣$elseif[$var[first]==2]2️⃣$elseif[$var[first]==3]3️⃣$elseif[$var[first]==4]4️⃣$elseif[$var[first]==5]5️⃣$elseif[$var[first]==6]6️⃣$elseif[$var[first]==7]7️⃣$elseif[$var[first]==8]8️⃣$elseif[$var[first]==9]9️⃣$endif
+> Second number : $if[$var[second]==1]1️⃣$elseif[$var[second]==2]2️⃣$elseif[$var[second]==3]3️⃣$elseif[$var[second]==4]4️⃣$elseif[$var[second]==5]5️⃣$elseif[$var[second]==6]6️⃣$elseif[$var[second]==7]7️⃣$elseif[$var[second]==8]8️⃣$elseif[$var[second]==9]9️⃣$endif
+** **]
+$footer[You didn't win any coins, but you still have TeriTeri's love~]
+$color[ff3333]
+
+$endif
+$setUserVar[miniGameVar;game/null/first/0/second/0]
+
+$elseif[$var[game]==crate]
+
+$removeButtons
+$setUserVar[miniGameVar;game/null/first/0/second/0]
+
+$var[random;$optOff[$random[1;100]]]
+
+$if[$or[$var[random]<=10;$var[random]>=90]==true]
+
+$var[crystals;$optOff[$randomText[1;1;1;2;3;2;1;1;2;5;15;30]]]
+$setUserVar[crystal;$sum[$getUserVar[crystal];$var[crystals]]]
+$var[coins;0]
+$var[ts.total;$sum[$var[ts.total];$var[crystals]]]
+
+$else
+
+$var[coins;$optOff[$randomText[100;100;500;500;500;700;700;1000;5000;1000;1000;1000;1000;5000;5000;5000;60000;100000;9999;9999;9999;9999;10000;40000;20000;20000;20000;150000;20000]]]
+$setUserVar[money;$sum[$getUserVar[money];$var[coins]]]
+$var[crystals;0]
+$var[tc.total;$sum[$var[tc.total];$var[coins]]]
+
+$endif
+
+$setUserVar[badges;$var[unchanged]/tc/$var[tc.total]/$var[tc.badge]/ts/$var[ts.total]/$var[ts.badge]]
+
+$title[<:crate:1011688337683259492>  **DAILY CRATE**  <:crate:1011688337683259492>]
+$description[**Drumroll** 🥁 🥁 🥁 🥁 🥁 🥁
+
+> 🎉 Congrats!! 🎉 **You got : $if[$var[crystals]!=0]$var[crystals] $var[crystalsEmote]$else $numberSeparator[$var[coins];,] $var[coinEmote]$endif** ! 
+** **]
+$footer[Come back tomorrow to open another crate]
+$color[ff3333]
+
+$endif

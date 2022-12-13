@@ -1,0 +1,307 @@
+$nomention $ignoreTriggerCase
+$onlyAdmin[❌ You need to be an admin to do this!]
+
+
+
+$c[~~~~~~money~~~~~~]
+
+
+
+$if[$roleExists[$findRole[1k]]==false]
+ $createRole[1k;0080FF;no;no]
+ role 1k created
+$else
+ role $roleName[$findRole[1k]] already created
+$endif
+
+
+$if[$roleExists[$findRole[5k]]==false]
+ $createRole[5k;0080FF;no;no]
+ role 5k created
+$else
+ role $roleName[$findRole[5k]] already created
+$endif
+
+
+$if[$roleExists[$findRole[10k]]==false]
+ $createRole[10k;0080FF;no;no]
+ role 10k created
+$else
+ role $roleName[$findRole[10k]] already created
+$endif
+
+
+$if[$roleExists[$findRole[50k]]==false]
+ $createRole[50k;0080FF;no;no]
+ role 50k created
+$else
+ role $roleName[$findRole[50k]] already created
+$endif
+
+
+$if[$roleExists[$findRole[100k]]==false]
+ $createRole[100k;0080FF;no;no]
+ role 100k created
+$else
+ role $roleName[$findRole[100k]] already created
+$endif
+
+
+$if[$roleExists[$findRole[500k]]==false]
+ $createRole[500k;0080FF;no;no]
+ role 500k created
+$else
+ role $roleName[$findRole[500k]] already created
+$endif
+
+
+$if[$roleExists[$findRole[1M]]==false]
+ $createRole[1M;0080FF;no;no]
+ role 1M created
+$else
+ role $roleName[$findRole[1M]] already created
+$endif
+
+
+$if[$roleExists[$findRole[50M]]==false]
+ $createRole[50M;CD7F32;no;no]
+ role 50M created
+$else
+ role $roleName[$findRole[50M]] already created
+$endif
+
+
+$c[~~~~~~levels~~~~~~]
+
+
+
+$if[$roleExists[$findRole[Lv.1]]==false]
+ $createRole[Lv.1;FF8080;no;no]
+ role Lv.1 created
+$else
+ role $roleName[$findRole[Lv.1]] already created
+$endif
+
+$if[$roleExists[$findRole[Lv.10]]==false]
+ $createRole[Lv.10;FF8080;no;no]
+ role Lv.10 created
+$else
+ role $roleName[$findRole[Lv.10]] already created
+$endif
+
+$if[$roleExists[$findRole[Lv.20]]==false]
+ $createRole[Lv.20;FF8080;no;no]
+ role Lv.20 created
+$else
+ role $roleName[$findRole[Lv.20]] already created
+$endif
+
+$if[$roleExists[$findRole[Lv.30]]==false]
+ $createRole[Lv.30;FF8080;no;no]
+ role Lv.30 created
+$else
+ role $roleName[$findRole[Lv.30]] already created
+$endif
+
+$if[$roleExists[$findRole[Lv.40]]==false]
+ $createRole[Lv.40;FF8080;no;no]
+ role Lv.40 created
+$else
+ role $roleName[$findRole[Lv.40]] already created
+$endif
+
+$if[$roleExists[$findRole[Lv.50]]==false]
+ $createRole[Lv.50;FF8080;no;no]
+ role Lv.50 created
+$else
+ role $roleName[$findRole[Lv.50]] already created
+$endif
+
+
+
+$c[~~~~~~workers~~~~~~]
+
+
+
+$if[$roleExists[$findRole[1 worker]]==false]
+ $createRole[1 worker;80FF80;no;no]
+ role 1 worker created
+$else
+ role $roleName[$findRole[1 worker]] already created
+$endif
+
+$if[$roleExists[$findRole[5 workers]]==false]
+ $createRole[5 workers;80FF80;no;no]
+ role 5 workers created
+$else
+ role $roleName[$findRole[5 workers]] already created
+$endif
+
+$if[$roleExists[$findRole[10 workers]]==false]
+ $createRole[10 workers;80FF80;no;no]
+ role 10 workers created
+$else
+ role $roleName[$findRole[10 workers]] already created
+$endif
+
+$if[$roleExists[$findRole[20 workers]]==false]
+ $createRole[20 workers;80FF80;no;no]
+ role 20 workers created
+$else
+ role $roleName[$findRole[20 workers]] already created
+$endif
+
+$if[$roleExists[$findRole[30 workers]]==false]
+ $createRole[30 workers;80FF80;no;no]
+ role 30 workers created
+$else
+ role $roleName[$findRole[30 workers]] already created
+$endif
+
+$if[$roleExists[$findRole[45 workers]]==false]
+ $createRole[45 workers;80FF80;no;no]
+ role 45 workers created
+$else
+ role $roleName[$findRole[45 workers]] already created
+$endif
+
+$if[$roleExists[$findRole[60 workers]]==false]
+ $createRole[60 workers;80FF80;no;no]
+ role 60 workers created
+$else
+ role $roleName[$findRole[60 workers]] already created
+$endif
+
+
+
+$c[~~~~~~casino~~~~~~]
+
+
+
+$if[$roleExists[$findRole[x5 luck]]==false]
+ $createRole[x5 luck;FFFF80;no;no]
+ role x5 luck created
+$else
+ role $roleName[$findRole[x5 luck]] already created
+$endif
+
+
+$if[$roleExists[$findRole[x10 luck]]==false]
+ $createRole[x10 luck;FFFF80;no;no]
+ role x10 luck created
+$else
+ role $roleName[$findRole[x10 luck]] already created
+$endif
+
+
+$if[$roleExists[$findRole[x20 lucky~]]==false]
+ $createRole[x20 lucky~;FFFF80;no;no]
+ role x20 lucky~ created
+$else
+ role $roleName[$findRole[x20 lucky~]] already created
+$endif
+
+
+
+$c[All 3 stars role]
+
+
+$if[$roleExists[$roleID[All 3 stars]]]
+  All 3 stars role already created!
+$else
+  $createRole[All 3 stars;ff6600;no;no]
+  All 3 stars role created!
+$endif
+
+
+$c[All 4 stars role]
+
+
+$if[$roleExists[$roleID[All 4 stars]]]
+  All 4 stars role already created!
+$else
+  $createRole[All 4 stars;ff6600;no;no]
+  All 4 stars role created!
+$endif
+
+
+$c[All 5 stars role]
+
+
+$if[$roleExists[$roleID[All 5 stars]]]
+  All 5 stars role already created!
+$else
+  $createRole[All 5 stars;ff6600;no;no]
+  All 5 stars role created!
+$endif
+
+
+
+$c[Tuna Lord - White role]
+
+
+$if[$roleExists[$roleID[Tuna Lord]]]
+  Tuna Lord role already created!
+$else
+  $createRole[Tuna Lord;ffffff;no;no]
+  Tuna Lord role created!
+$endif
+
+
+$c[Goose Appreciator - yellow role]
+
+
+$if[$roleExists[$roleID[Goose Appreciator]]]
+  Goose Appreciator role already created!
+$else
+  $createRole[Goose Appreciator;ffcc66;no;no]
+  Goose Appreciator role created!
+$endif
+
+
+$c[Vodka Pink - pink role]
+
+
+$if[$roleExists[$roleID[Vodka Pink]]]
+  Vodka Pink role already created!
+$else
+  $createRole[Vodka Pink;ff80ff;no;no]
+  Vodka Pink role created!
+$endif
+
+
+$c[Vodka Blue - blue role]
+
+
+$if[$roleExists[$roleID[Vodka Blue]]]
+  Vodka Blue role already created!
+$else
+  $createRole[Vodka Blue;80bfff;no;no]
+  Vodka Blue role created!
+$endif
+
+
+$c[Mobius' Pet - green role]
+
+
+$if[$roleExists[$roleID[Mobius' Pet]]]
+  Mobius' Pet role already created!
+$else
+  $createRole[Mobius' Pet;33cc33;no;no]
+  Mobius' Pet role created!
+$endif
+
+
+$c[I had 1k - gray role]
+
+
+$if[$roleExists[$roleID[I had 1k]]]
+  I had 1k role already created!
+$else
+  $createRole[I had 1k;b3b3cc;no;no]
+  I had 1k role created!
+$endif
+
+
+
+

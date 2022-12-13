@@ -1,0 +1,447 @@
+$nomention
+$if[$authorID!=490201258859167748]$onlyIf[$getVar[pause]==off;The bot is currently paused, please wait a bit or ask The_Zermiste#1809]$endif
+
+$onlyAdmin[❌ Only admins can modify the stigma supply rotations!]
+
+$c[tt!rotate <supply number> (<stigma set number>)]
+
+$c[Big ol var list]
+
+$textSplit[$getServerVar[rotation];/]
+$var[supply1;$splitText[$sum[$getTextSplitIndex[supply1];1]]]
+$var[supply2;$splitText[$sum[$getTextSplitIndex[supply2];1]]]
+$var[supply3;$splitText[$sum[$getTextSplitIndex[supply3];1]]]
+
+$c[For supply #1]
+
+
+$if[$message[1]==1]
+
+
+  $if[$message[2]==1]
+  
+    $title[**SUCCESS**]
+    $footer[You can change the selected set by using the command again~]
+    $color[00cc00]
+  
+    $if[$var[supply1]!=set1]
+  
+      $var[supply1;set1]
+      $description[Now the 3 stars stigma supply has the set 1!]
+      $setServerVar[rotation;supply1/$var[supply1]/supply2/$var[supply2]/supply3/$var[supply3]]
+  
+    $elseif[$var[supply1]==set1]
+  
+      $description[The 3 stars stigma supply will maintain the same set (set 1) for another week!]
+    
+    $endif
+    
+    
+  $elseif[$message[2]==2]
+  
+    $title[**SUCCESS**]
+    $footer[You can change the selected set by using the command again~]
+    $color[00cc00]
+  
+    $if[$var[supply1]!=set2]
+  
+      $var[supply1;set2]
+      $description[Now the 3 stars stigma supply has the set 2!]      
+      $setServerVar[rotation;supply1/$var[supply1]/supply2/$var[supply2]/supply3/$var[supply3]]
+  
+    $elseif[$var[supply1]==set2]
+  
+      $description[The 3 stars stigma supply will maintain the same set (set 2) for another week!]
+    
+    $endif
+    
+    
+  $elseif[$message[2]==3]
+  
+    $title[**SUCCESS**]
+    $footer[You can change the selected set by using the command again~]
+    $color[00cc00]
+  
+    $if[$var[supply1]!=set3]
+  
+      $var[supply1;set3]
+      $description[Now the 3 stars stigma supply has the set 3!]
+      $setServerVar[rotation;supply1/$var[supply1]/supply2/$var[supply2]/supply3/$var[supply3]]
+ 
+    $elseif[$var[supply1]==set3]
+  
+      $description[The 3 stars stigma supply will maintain the same set (set 3) for another week!]
+    
+    $endif
+    
+      
+  $elseif[$message[2]==]
+  
+  
+    $c[Choose a random 3 star stigma!]
+  
+ 
+    $var[random;$random[1;4]] 
+  
+  
+    $if[$var[random]==1]
+  
+      $title[**SUCCESS**]
+      $footer[You can reroll the results by using the command again~]
+      $color[00cc00]
+  
+      $if[$var[supply1]!=set1]
+ 
+        $var[supply1;set1]
+  
+        $description[Now the 3 stars stigma supply has the set 1!]
+        $setServerVar[rotation;supply1/$var[supply1]/supply2/$var[supply2]/supply3/$var[supply3]]
+  
+      $elseif[$var[supply1]==set1]
+    
+        $description[The 3 stars stigma supply will maintain the same set (set 1) for another week!]
+    
+      $endif
+    
+    $elseif[$var[random]==2]
+  
+      $title[**SUCCESS**]
+      $footer[You can reroll the results by using the command again~]
+      $color[00cc00]
+  
+      $if[$var[supply1]!=set2]
+ 
+        $var[supply1;set2]
+    
+        $description[Now the 3 stars stigma supply has the set 2!]
+        $setServerVar[rotation;supply1/$var[supply1]/supply2/$var[supply2]/supply3/$var[supply3]]
+
+      $elseif[$var[supply1]==set2]
+    
+        $description[The 3 stars stigma supply will maintain the same set (set 2) for another week!]
+    
+      $endif    
+    
+    $elseif[$var[random]==3]
+  
+      $title[**SUCCESS**]
+      $footer[You can reroll the results by using the command again~]
+      $color[00cc00]
+  
+      $if[$var[supply1]!=set3]
+ 
+        $var[supply1;set3]
+  
+        $description[Now the 3 stars stigma supply has the set 3!]
+        $setServerVar[rotation;supply1/$var[supply1]/supply2/$var[supply2]/supply3/$var[supply3]]
+  
+      $elseif[$var[supply1]==set3]
+    
+        $description[The 3 stars stigma supply will maintain the same set (set 3) for another week!]
+    
+      $endif  
+        
+    $endif
+    
+  $else
+  
+    $title[OOPS... UNEXPECTED ERROR]
+    $description[Please, check you wrote everything all right and try again!]
+    $color[ff1a1a]
+ 
+  $endif  
+
+
+
+$c[For supply #2]
+
+
+
+$elseif[$message[1]==2]
+
+
+  $if[$message[2]==4]
+  
+    $title[**SUCCESS**]
+    $footer[You can change the selected set by using the command again~]
+    $color[00cc00]
+  
+    $if[$var[supply2]!=set4]
+  
+      $var[supply2;set4]
+      $description[Now the 4 stars stigma supply has the set 4!]
+      $setServerVar[rotation;supply1/$var[supply1]/supply2/$var[supply2]/supply3/$var[supply3]]
+  
+    $elseif[$var[supply2]==set4]
+  
+      $description[The 4 stars stigma supply will maintain the same set (set 4) for another week!]
+    
+    $endif
+    
+    
+  $elseif[$message[2]==5]
+  
+    $title[**SUCCESS**]
+    $footer[You can change the selected set by using the command again~]
+    $color[00cc00]
+  
+    $if[$var[supply2]!=set5]
+  
+      $var[supply2;set5]
+      $description[Now the 4 stars stigma supply has the set 5!]      
+      $setServerVar[rotation;supply1/$var[supply1]/supply2/$var[supply2]/supply3/$var[supply3]]
+  
+    $elseif[$var[supply2]==set5]
+  
+      $description[The 4 stars stigma supply will maintain the same set (set 5) for another week!]
+    
+    $endif
+    
+    
+  $elseif[$message[2]==6]
+  
+    $title[**SUCCESS**]
+    $footer[You can change the selected set by using the command again~]
+    $color[00cc00]
+  
+    $if[$var[supply2]!=set6]
+  
+      $var[supply2;set6]
+      $description[Now the 4 stars stigma supply has the set 6!]
+      $setServerVar[rotation;supply1/$var[supply1]/supply2/$var[supply2]/supply3/$var[supply3]]
+ 
+    $elseif[$var[supply2]==set6]
+  
+      $description[The 4 stars stigma supply will maintain the same set (set 6) for another week!]
+    
+    $endif
+    
+      
+  $elseif[$message[2]==]
+  
+  
+    $c[Choose a random 4 star stigma!]
+  
+ 
+    $var[random;$random[1;4]] 
+  
+  
+    $if[$var[random]==1]
+  
+      $title[**SUCCESS**]
+      $footer[You can reroll the results by using the command again~]
+      $color[00cc00]
+  
+      $if[$var[supply2]!=set4]
+ 
+        $var[supply2;set4]
+  
+        $description[Now the 4 stars stigma supply has the set 4!]
+        $setServerVar[rotation;supply1/$var[supply1]/supply2/$var[supply2]/supply3/$var[supply3]]
+  
+      $elseif[$var[supply2]==set4]
+    
+        $description[The 4 stars stigma supply will maintain the same set (set 4) for another week!]
+    
+      $endif
+    
+    $elseif[$var[random]==2]
+  
+      $title[**SUCCESS**]
+      $footer[You can reroll the results by using the command again~]
+      $color[00cc00]
+  
+      $if[$var[supply2]!=set5]
+ 
+        $var[supply2;set5]
+    
+        $description[Now the 4 stars stigma supply has the set 5!]
+        $setServerVar[rotation;supply1/$var[supply1]/supply2/$var[supply2]/supply3/$var[supply3]]
+
+      $elseif[$var[supply2]==set5]
+    
+        $description[The 4 stars stigma supply will maintain the same set (set 5) for another week!]
+    
+      $endif    
+    
+    $elseif[$var[random]==3]
+  
+      $title[**SUCCESS**]
+      $footer[You can reroll the results by using the command again~]
+      $color[00cc00]
+  
+      $if[$var[supply2]!=set6]
+ 
+        $var[supply2;set6]
+  
+        $description[Now the 4 stars stigma supply has the set 6!]
+        $setServerVar[rotation;supply1/$var[supply1]/supply2/$var[supply2]/supply3/$var[supply3]]
+  
+      $elseif[$var[supply2]==set6]
+    
+        $description[The 4 stars stigma supply will maintain the same set (set 6) for another week!]
+    
+      $endif  
+        
+    $endif
+    
+  $else
+  
+    $title[OOPS... UNEXPECTED ERROR]
+    $description[Please, check you wrote everything all right and try again!]
+    $color[ff1a1a]
+ 
+  $endif  
+  
+  
+  
+$c[For supply #3]
+
+
+
+
+$elseif[$message[1]==3]
+
+
+  $if[$message[2]==7]
+  
+    $title[**SUCCESS**]
+    $footer[You can change the selected set by using the command again~]
+    $color[00cc00]
+  
+    $if[$var[supply3]!=set7]
+  
+      $var[supply3;set7]
+      $description[Now the 5 stars stigma supply has the set 7!]
+      $setServerVar[rotation;supply1/$var[supply1]/supply2/$var[supply2]/supply3/$var[supply3]]
+  
+    $elseif[$var[supply3]==set7]
+  
+      $description[The 5 stars stigma supply will maintain the same set (set 7) for another week!]
+    
+    $endif
+    
+    
+  $elseif[$message[2]==8]
+  
+    $title[**SUCCESS**]
+    $footer[You can change the selected set by using the command again~]
+    $color[00cc00]
+  
+    $if[$var[supply3]!=set8]
+  
+      $var[supply3;set8]
+      $description[Now the 5 stars stigma supply has the set 8!]      
+      $setServerVar[rotation;supply1/$var[supply1]/supply2/$var[supply2]/supply3/$var[supply3]]
+  
+    $elseif[$var[supply3]==set8]
+  
+      $description[The 5 stars stigma supply will maintain the same set (set 8) for another week!]
+    
+    $endif
+    
+    
+  $elseif[$message[2]==9]
+  
+    $title[**SUCCESS**]
+    $footer[You can change the selected set by using the command again~]
+    $color[00cc00]
+  
+    $if[$var[supply3]!=set9]
+  
+      $var[supply3;set9]
+      $description[Now the 5 stars stigma supply has the set 9!]
+      $setServerVar[rotation;supply1/$var[supply1]/supply2/$var[supply2]/supply3/$var[supply3]]
+ 
+    $elseif[$var[supply3]==set9]
+  
+      $description[The 5 stars stigma supply will maintain the same set (set 9) for another week!]
+    
+    $endif
+    
+      
+  $elseif[$message[2]==]
+  
+  
+    $c[Choose a random 5 star stigma!]
+  
+ 
+    $var[random;$random[1;4]] 
+  
+  
+    $if[$var[random]==1]
+  
+      $title[**SUCCESS**]
+      $footer[You can reroll the results by using the command again~]
+      $color[00cc00]
+  
+      $if[$var[supply3]!=set7]
+ 
+        $var[supply3;set7]
+  
+        $description[Now the 5 stars stigma supply has the set 7!]
+        $setServerVar[rotation;supply1/$var[supply1]/supply2/$var[supply2]/supply3/$var[supply3]]
+  
+      $elseif[$var[supply3]==set7]
+    
+        $description[The 5 stars stigma supply will maintain the same set (set 7) for another week!]
+    
+      $endif
+    
+    $elseif[$var[random]==2]
+  
+      $title[**SUCCESS**]
+      $footer[You can reroll the results by using the command again~]
+      $color[00cc00]
+  
+      $if[$var[supply3]!=set8]
+ 
+        $var[supply3;set8]
+    
+        $description[Now the 5 stars stigma supply has the set 8!]
+        $setServerVar[rotation;supply1/$var[supply1]/supply2/$var[supply2]/supply3/$var[supply3]]
+
+      $elseif[$var[supply3]==set8]
+    
+        $description[The 5 stars stigma supply will maintain the same set (set 8) for another week!]
+    
+      $endif    
+    
+    $elseif[$var[random]==3]
+  
+      $title[**SUCCESS**]
+      $footer[You can reroll the results by using the command again~]
+      $color[00cc00]
+  
+      $if[$var[supply3]!=set9]
+ 
+        $var[supply3;set9]
+  
+        $description[Now the 5 stars stigma supply has the set 9!]
+        $setServerVar[rotation;supply1/$var[supply1]/supply2/$var[supply2]/supply3/$var[supply3]]
+  
+      $elseif[$var[supply3]==set9]
+    
+        $description[The 5 stars stigma supply will maintain the same set (set 9) for another week!]
+    
+      $endif  
+        
+    $endif
+    
+  $else
+  
+    $title[OOPS... UNEXPECTED ERROR]
+    $description[Please, check you wrote everything all right and try again!]
+    $color[ff1a1a]
+ 
+  $endif  
+
+$else
+  
+  $title[OOPS... UNEXPECTED ERROR]
+  $description[Please, check you wrote everything all right and try again!]
+  $color[ff1a1a]    
+  
+$endif
+
+$setServerVar[rotation.c;$sub[$getServerVar[rotation.c];$modulo[$sum[$getServerVar[rotation.c];259200];604800]]]

@@ -1,0 +1,53 @@
+$nomention $reply $allowMention $ignoreTriggerCase
+$onlyIf[$getServerVar[bank.prog]>=7;❌ You need to reach the 7th milestone (40M) to use this]
+
+$var[coin.emote;<:Tericoin:1001510021907099750>]
+$color[ffffff]
+$author[Piggy Bank]
+
+$textSplit[$getUserVar[wedding;$authorID];/]
+$var[asker;$splitText[$sum[$getTextSplitIndex[asker];1]]]
+$var[asking;$splitText[$sum[$getTextSplitIndex[asking];1]]]
+$var[couple;$splitText[$sum[$getTextSplitIndex[couple];1]]]
+
+$onlyIf[$var[couple]!=null;You have to be married to have a shared piggy bank]
+
+$if[$message[1]==add]
+
+$onlyIf[$isNumber[$message[2]]==true;You need to add a number!]
+$onlyIf[$round[$message[2];0]<=$round[$getUserVar[money];0];You don't have enough $var[coin.emote]]
+$onlyIf[$round[$message[2];0]>=1;Add 1 or more $var[coin.emote] baka!]
+
+$setUserVar[account;$sum[$getUserVar[account];$round[$message[2];0]];$authorID]
+$setUserVar[account;$getUserVar[account];$var[couple]]
+$setUserVar[money;$sub[$getUserVar[money];$round[$message[2];0]]]
+
+$title[$numberSeparator[$round[$message[2];0];,] $var[coin.emote] added to your piggy bank!]
+$description[Now it has : **$numberSeparator[$getUserVar[account];,]**  $var[coin.emote]]
+
+$elseif[$message[1]==remove]
+
+$onlyIf[$isNumber[$message[2]]==true;You need to add a number!]
+$onlyIf[$round[$message[2];0]<=$round[$getUserVar[account];0];There isn't enough $var[coin.emote] in your piggy bank!]
+$onlyIf[$round[$message[2];0]>=1;Remove 1 or more $var[coin.emote] baka!]
+
+$setUserVar[account;$sub[$getUserVar[account];$round[$message[2];0]];$authorID]
+$setUserVar[account;$getUserVar[account];$var[couple]]
+$setUserVar[money;$sum[$round[$message[2];0];$getUserVar[money]]]
+
+$title[$numberSeparator[$round[$message[2];0];,] $var[coin.emote] removed from your piggy bank!]
+$description[Now it has : **$numberSeparator[$getUserVar[account];,]**  $var[coin.emote]]
+
+$else
+
+$author[Home Sweet Home]
+$title[🐖 PIGGY BANK 💰]
+$description[1...2...3... your shared piggy bank with <@$var[couple]> has : **$numberSeparator[$round[$getUserVar[account];0];,]**  $var[coin.emote]
+
+__COMMANDS__
+
+> • `t!piggy bank`
+> • `t!piggy bank add <amount>`
+> • `t!piggy bank remove <amount>`]
+
+$endif
