@@ -10,7 +10,10 @@ $title[$message[title]]
 $description[$message[description]
 
 __**OPTIONS**__
->>> $message[emote1] $message[option1] $message[emote2] $message[option2] $message[emote3] $message[option3] $message[emote4] $message[option4]]
+>>> $message[emote1] $message[option1] 
+$message[emote2] $message[option2] 
+$message[emote3] $message[option3] 
+$message[emote4] $message[option4]]
 
 $if[$message[image]!=]
 $image[$message[image]]
@@ -19,6 +22,19 @@ $endif
 $thumbnail[$userServerAvatar[$authorID]]
 
 $color[#$getRoleColor[$highestRole[$authorID]]]
+
+$if[$message[emote1]!=]
+$addReactions[$message[emote1]]
+$endif
+$if[$message[emote2]!=]
+$addReactions[$message[emote2]]
+$endif
+$if[$message[emote3]!=]
+$addReactions[$message[emote3]]
+$endif
+$if[$message[emote4]!=]
+$addReactions[$message[emote4]]
+$endif
 
 $catch
 $title[Something went wrong]
@@ -100,10 +116,6 @@ $thumbnail[https://media.discordapp.net/attachments/1000927157150814228/10406928
 $color[ff1a1a]
 
 $endif
-
-
-$c[Poll help - sends embed with instructions]
-
 
 $if[$or[$toLowercase[$message]==help;$message==]]
 
