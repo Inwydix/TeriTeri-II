@@ -13,17 +13,26 @@ She is a fun oriented bot, so most (if not all) of her commands were made for pl
 
 # 💰 TeriCoins
 The tericoins are the bot's economy system main currency. It's easy to get and you can spend it in different ways: to improve your income, to play with the 🎰 casino 🎰 command or to unlock more features reaching the bank milestones 
- 
+
+# 🛠 Workers
+Hire workers in the worker shop to boost your tericoin income!
+
 # 🏦 Server Bank
 The server has a communitary bank where everyone can add tericoins and try reach determined milestones. Each one of these milestones unlocks boosts and/or new features to play with
 
 The milestones are:
 > 1M, 5M, 10M, 15M, 20M, 30M, 40M, 50M, 75M, 100M (150M, 300M, 500M, 750M, 1B)
 
-# 💎 Gacha System
+# 💎 Gacha
 Use your teristals (special and weird currency) to pull in the gacha supplies and get stigmata!
 
 > Stigmata can be equipped to obtain some boosts 😃
+
+# 🧩 Fun & Minigames
+TeriTeri also includes a lot of fun commands, like 8ball, gambling commands, like casino, and minigames, like higher or lower!
+
+# 👰 Wedding
+Marry each other or create a harem using the TeriTeri bot, and discover the unique features not being single unlocks
 
 # 🌙 Credits
 TeriTeri 1.0 (original)
