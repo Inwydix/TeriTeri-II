@@ -1,0 +1,13 @@
+$nomention
+$onlyAdmin[Nah]
+$textSplit[$message;/]
+$banID[$splitText[2];$splitText[1]]
+
+$if[$isBanned[$splitText[1]]==true]
+$title[User Banned!]
+$description[<@$splitText[1]> is now banned from the server!]
+$color[ffffff]
+$else
+$title[Woops, TeriTeri couldnt ban <@$splitText[1]>]
+$color[ff1a1a]
+$endif

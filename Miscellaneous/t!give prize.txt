@@ -1,0 +1,20 @@
+$nomention $allowMention $reply
+$onlyIf[$authorID==481475725598261258;⛔️ You have to be the event manager to do this!]
+$var[coin;<:Tericoin:1001510021907099750>]
+$color[$getRoleColor[$highestRole[$mentioned[1;yes]]]]
+
+<@$mentioned[1;no]>
+
+$if[$message[1]==win]
+
+$setUserVar[money;$sum[$getUserVar[money;$mentioned[1;no]];150000];$mentioned[1;no]]
+$title[Congrats! You won **150,000** $var[coin]!]
+$description[Now you have **$numberSeparator[$round[$getUserVar[money;$mentioned[1;no]];0];,]** $var[coin]]
+
+$elseif[$message[1]==part]
+
+$setUserVar[money;$sum[$getUserVar[money;$mentioned[1;no]];20000];$mentioned[1;no]]
+$title[Thanks for participating! You got **20,000** $var[coin] as participation prize]
+$description[Now you have **$numberSeparator[$round[$getUserVar[money;$mentioned[1;no]];0];,]** $var[coin]]
+
+$endif

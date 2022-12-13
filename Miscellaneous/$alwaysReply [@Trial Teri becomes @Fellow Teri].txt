@@ -1,0 +1,22 @@
+$nomention $reply
+
+$onlyIf[$guildID==999752640730763415;]
+
+$var[celebrate;<:TeriCelebrate:1014124677926490222>]
+
+$if[$and[$getUserVar[level]>=5;$hasRole[$authorID;$roleID[Fellow TeRiRi]]==false]==true]
+
+$title[YOU ARE NOW A FELLOW TERI! <:TeriWow:1000073782720995338>]
+$description[Now you are an official member of the TeriTeri Cult, so TeriTeri gave you the <@&$roleID[Fellow TeRiRi]> role! $var[TeriCelebrate]]
+$footer[Now you can do official member things, like inviting others to the server!]
+$color[ffffff]
+
+$roleGrant[$authorID;+$roleID[Fellow TeRiRi]]
+
+$if[$hasRole[$authorID;$roleID[Trial Teri]]]
+$roleGrant[$authorID;-$roleID[Trial Teri]]
+$description[Now you are an official member of the TeriTeri Cult, so TeriTeri gave you the <@&$roleID[Fellow TeRiRi]> role! $var[TeriCelebrate]
+She also removed the old <@&$roleID[Trial Teri]> role]
+$endif
+
+$endif
