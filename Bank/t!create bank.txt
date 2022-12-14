@@ -2,19 +2,32 @@ $nomention $reply $ignoreTriggerCase
 
 $if[$isAdmin[$authorID]==false]
 
-$title[Woops]
-$description[❌ Only admins can use this command]
+$title[You can't use that!]
+$description[❌ TeriTeri can't let you use this command, it's only for admins!]
 $thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1040692874062344382/TeriMad.png]
 $color[ff1a1a]
 
 $elseif[$isAdmin[$authorID]==true]
 
-$title[Channel created !]
-$createChannel[Bank : $getServerVar[bank];voice]
-$modifyChannelPerms[$channelID[Bank : $getServerVar[bank]];+readmessages;-sendmessages;$guildID]
+$if[$channelExists[$channelID[Bank : $getServerVar[bank]]]==false]
 
-$color[#FF0000]
-$description[Don't forget to close the channel to `@everyone` !]
-$footer[do  t!setup bank  <bank channel's ID>   so the channel get updated]
+$createChannel[Bank : $getServerVar[bank];voice]
+
+$title[Channel created]
+$description[✅ Use `t!set bank channel <channel ID>` to conect the bot to the bank and start saving together!]
+$footer[TeriNote: Don't forget to close the channel to @everyone so no one can speak there!]
+$color[33cc33]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1052353333198848061/5266b497949df64037f417d9a5446d20e336dd74.png]
+
+$else
+
+$title[Channel already exists]
+$description[❌ You can't have two or more server banks!
+
+Use `t!set bank channel <channel ID>` to connect the bank to the bot and start saving together]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1040692874062344382/TeriMad.png]
+$color[ff1a1a]
+
+$endif
 
 $endif
