@@ -1,0 +1,176 @@
+$nomention $replyIn[1s] $ignoreTriggerCase
+
+$if[$and[$getServerVar[bank]>=1000000;$getServerVar[bank]<5000000]]
+ 
+$if[$getServerVar[bank.prog]<1]
+   
+$title[waw, you reached the 1st milestone (1M) ! TeriTeri is impressed]
+$description[Let's celebrate!]
+$color[ffffff]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1052362278776868874/TeriCelebrate.png]  
+
+$endif
+ 
+$setServerVar[bank.prog;1]
+$setServerVar[bank.worker;1]
+$c[x10 daily]
+  
+$endif
+
+
+$if[$and[$getServerVar[bank]>=5000000;$getServerVar[bank]<10000000]]
+  
+$if[$getServerVar[bank.prog]<2]
+   
+$title[waw, you reached the 2nd milestone (5M) ! TeriTeri is impressed]
+$description[Let's celebrate!]
+$color[ffffff]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1052362278776868874/TeriCelebrate.png]  
+
+$endif
+ 
+$setServerVar[bank.prog;2]
+$setServerVar[bank.worker;2]
+$setServerVar[w3.boost;1]
+$c[w3 up] 
+ 
+$endif
+
+
+$if[$and[$getServerVar[bank]>=10000000;$getServerVar[bank]<15000000]]
+ 
+$if[$getServerVar[bank.prog]<3]
+   
+$title[waw, you reached the 3rd milestone (10M) ! TeriTeri is impressed]
+$description[Let's celebrate!]
+$color[ffffff]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1052362278776868874/TeriCelebrate.png]  
+  
+$endif
+ 
+$setServerVar[bank.prog;3]
+$setServerVar[bank.worker;3]
+$c[gacha system unlock : inventory, pull, and stigma]
+ 
+$endif
+
+
+$if[$and[$getServerVar[bank]>=15000000;$getServerVar[bank]<20000000]]
+  
+$if[$getServerVar[bank.prog]<4]
+   
+$title[waw, you reached the 4th milestone (15M) ! TeriTeri is impressed]
+$description[Let's celebrate!]
+$color[ffffff]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1052362278776868874/TeriCelebrate.png]  
+
+$endif
+ 
+$setServerVar[bank.prog;4]
+$setServerVar[bank.worker;4]
+$c[unlock up4]
+ 
+$endif
+
+
+$if[$and[$getServerVar[bank]>=20000000;$getServerVar[bank]<30000000]]
+ 
+$if[$getServerVar[bank.prog]<5]
+   
+$title[waw, you reached the 5th milestone (20M) ! TeriTeri is impressed]
+$description[Let's celebrate!]
+$color[ffffff]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1052362278776868874/TeriCelebrate.png]  
+
+$endif
+ 
+$setServerVar[bank.prog;5]
+$setServerVar[bank.worker;5]
+$c[unlock role shop]
+ 
+$endif
+
+
+$if[$and[$getServerVar[bank]>=30000000;$getServerVar[bank]<40000000]]
+
+$if[$getServerVar[bank.prog]<6]
+   
+$title[waw, you reached the 6th milestone (30M) ! TeriTeri is impressed]
+$description[Let's celebrate!]
+$color[ffffff]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1052362278776868874/TeriCelebrate.png]  
+     
+$endif
+ 
+$setServerVar[bank.prog;6]
+$c[Up 3 buyable again]
+ 
+$endif
+
+
+$if[$and[$getServerVar[bank]>=40000000;$getServerVar[bank]<50000000]]
+
+$if[$getServerVar[bank.prog]<7]
+   
+$title[waw, you reached the 7th milestone (40M) ! TeriTeri is impressed]
+$description[Let's celebrate!]
+$color[ffffff]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1052362278776868874/TeriCelebrate.png]  
+     
+$endif
+ 
+$setServerVar[bank.prog;7]
+$c[Wedding]
+ 
+$endif
+
+
+$if[$and[$getServerVar[bank]>=50000000;$getServerVar[bank]<7500000]]
+
+$if[$getServerVar[bank.prog]<8]
+   
+$title[waw, you reached the 8th milestone (50M) ! TeriTeri is impressed]
+$description[Let's celebrate!]
+$color[ffffff]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1052362278776868874/TeriCelebrate.png]  
+    
+$endif
+ 
+$setServerVar[bank.prog;8]
+$c[Mini games]
+ 
+$endif
+
+
+$if[$and[$getServerVar[bank]>=75000000;$getServerVar[bank]<10000000]]
+
+$if[$getServerVar[bank.prog]<9]
+   
+$title[waw, you reached the 9th milestone (75M) ! TeriTeri is impressed]
+$description[Let's celebrate!]
+$color[ffffff]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1052362278776868874/TeriCelebrate.png]  
+     
+$endif
+ 
+$setServerVar[bank.prog;9]
+$c[Mine]
+ 
+$endif
+
+
+$if[$getServerVar[bank]>=100000000]
+
+$if[$getServerVar[bank.prog]<10]
+   
+$title[waw, you reached the 10th milestone (100M) ! TeriTeri is impressed]
+$description[Let's celebrate!]
+$color[ffffff]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1052362278776868874/TeriCelebrate.png]  
+     
+$endif
+ 
+$setServerVar[bank.prog;10]
+$c[Festivities]
+ 
+$endif
