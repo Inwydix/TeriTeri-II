@@ -1,11 +1,5 @@
-$onlyIf[$or[1==1;$authorID==490201258859167748]==true;❌ This command has been turned off for development purposes (please wait for next update)]
-
-$if[$authorID!=490201258859167748]$onlyIf[$getVar[pause]==off;The bot is currently paused, please wait a bit or ask The_Zermiste#1809]$endif
-$setUserVar[dis.money;True]
+$nomention $reply $ignoreTriggerCase
 $var[coin.emote;<:Tericoin:1001510021907099750>]
-
-$nomention $reply
-
 
 $c[Bank cooldown vars]
 
@@ -24,75 +18,92 @@ $var[bank.badge;$optOff[$splitText[$sum[$getTextSplitIndex[bank];2]]]]
 
 $c[End badge vars]
 
+$try
+
 $if[$isNumber[$message]==true]
 
-  $if[$message>=1]
+$if[$message>=1]
   
-    $if[$round[$message;0]<=$round[$getUserVar[money];0]]
+$if[$round[$message;0]<=$round[$getUserVar[money];0]]
   
-      $if[$getTimestamp>=$sum[$var[timestamp];$var[cd]]]
+$if[$getTimestamp>=$sum[$var[timestamp];$var[cd]]]
 
-        $modifyChannel[$getServerVar[bankID];Bank : $numberSeparator[$round[$sum[$getServerVar[bank];$message];0];,];!unchanged;!unchanged;!unchanged;!unchanged]
-       
-        The previous bank amount was $numberSeparator[$getServerVar[bank];,] $var[coin.emote]
-        
-        $c[Badge code]
-        $var[bank.total;$sum[$var[bank.total];$message]]
-        $setUserVar[badges;$var[unchanged]/bank/$var[bank.total]/$var[bank.badge]]
-        $c[End badge code]
-        
-        $setUserVar[money;$sub[$getUserVar[money];$round[$message;0]]]
-        $setServerVar[bank;$sum[$getServerVar[bank];$round[$message;0]]]
-  
-        $color[#B09000]
-        $title[You sent $numberSeparator[$message;,] $var[coin.emote] to the bank !]
-        $description[The new bank amount is now $numberSeparator[$getServerVar[bank];,] $var[coin.emote]]
-        $footer[$username]
-        $footerIcon[$authorAvatar]
-  
-        $c[Saving the new cooldown values]
-  
-        $var[timestamp;$getTimestamp]
+$modifyChannel[$getServerVar[bankID];Bank : $numberSeparator[$round[$sum[$getServerVar[bank];$message];0];,];!unchanged;!unchanged;!unchanged;!unchanged]
 
-        $if[$round[$divide[$message;10];0]<=600]
-          
-          $var[cd;600]
-          
-        $else
+The previous bank amount was $numberSeparator[$getServerVar[bank];,] $var[coin.emote]
         
-          $var[cd;$round[$divide[$message;10];0]]
+$c[Badge code]
+$var[bank.total;$sum[$var[bank.total];$message]]
+$setUserVar[badges;$var[unchanged]/bank/$var[bank.total]/$var[bank.badge]]
+$c[End badge code]
         
-        $endif
+$setUserVar[money;$sub[$getUserVar[money];$round[$message;0]]]
+$setServerVar[bank;$sum[$getServerVar[bank];$round[$message;0]]]
   
-        $setServerVar[bank.cd;$var[timestamp]/$var[cd]]
+$color[#B09000]
+$title[You sent $numberSeparator[$message;,] $var[coin.emote] to the bank successfully]
+$description[The new bank amount is **$numberSeparator[$getServerVar[bank];,]** $var[coin.emote]
+Thanks for your contribution!] 
+$footer[$username]
+$footerIcon[$authorAvatar]
+$thumbnail[https://media.discordapp.net/attachments/1003332722665725973/1020231733767045170/a2c4fe2a46b5d4040494776476e80a4dcae1d19fr1-300-307_hq.gif]
+$addTimestamp
 
-     $else
+$c[Saving the new cooldown values]
+  
+$var[timestamp;$getTimestamp]
 
-       $title[❌ The server needs to wait between transactions !]
-       $description[Last transaction : <t:$sub[$getTimestamp;$sub[$var[cd];$sub[$sum[$var[timestamp];$var[cd]];$getTimestamp]]]:R>
-1 second cooldown for every 10 $var[coin.emote] sent (min. 10 minutes)
-Left: **$divide[$divide[$sub[$sum[$var[cd];$var[timestamp]];$getTimestamp];3600];24]d $modulo[$divide[$sub[$sum[$var[cd];$var[timestamp]];$getTimestamp];3600];24]h $divide[$modulo[$sub[$sum[$var[cd];$var[timestamp]];$getTimestamp];3600];60]m $modulo[$modulo[$sub[$sum[$var[cd];$var[timestamp]];$getTimestamp];3600];60]s** ($sub[$sum[$var[cd];$var[timestamp]];$getTimestamp]s)]       $color[#FF0000]
+$if[$round[$divide[$message;10];0]<=600]        
+$var[cd;600]    
+$else     
+$var[cd;$round[$divide[$message;10];0]]
+$endif
+
+$setServerVar[bank.cd;$var[timestamp]/$var[cd]]
+
+$else
+
+$title[The server needs to wait between transactions]
+$description[1 second cooldown for every 10 $var[coin.emote] sent (min. 10 minutes)
+
+> • Last transaction: <t:$sub[$getTimestamp;$sub[$var[cd];$sub[$sum[$var[timestamp];$var[cd]];$getTimestamp]]]:R>
+> • Next transaction in: **$divide[$divide[$sub[$sum[$var[cd];$var[timestamp]];$getTimestamp];3600];24]d $modulo[$divide[$sub[$sum[$var[cd];$var[timestamp]];$getTimestamp];3600];24]h $divide[$modulo[$sub[$sum[$var[cd];$var[timestamp]];$getTimestamp];3600];60]m $modulo[$modulo[$sub[$sum[$var[cd];$var[timestamp]];$getTimestamp];3600];60]s** ($sub[$sum[$var[cd];$var[timestamp]];$getTimestamp]s)]
+$color[ff1a1a]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1040692874062344382/TeriMad.png]
  
-     $endif
+$endif
  
-   $else
+$else
 
-     $color[#FF0000]
-     $title[❌ you don't have enough $var[coin.emote] !]
+$color[ff1a1a]
+$title[You don't have enough tericoins]
+$description[❌ You don't have enough money to add $numberSeparator[$round[$message[1];0];,] $var[coin.emote] to the bank]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1040692874062344382/TeriMad.png]
 
-   $endif
+$endif
  
-  $else
+$else
 
-    $color[#FF0000]
-    $title[❌ you have to add at least 1 $var[coin.emote] !]
+$color[#FF0000]
+$title[❌ you have to add at least 1 $var[coin.emote] !]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1040692874062344382/TeriMad.png]
 
-  $endif
+$endif
 
 $elseif[$isNumber[$message]==false]
  
- $color[#FF0000]
- $title[you need to enter a number to send to the bank !]
+$color[#FF0000]
+$title[you need to enter a number to send to the bank !]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1040692874062344382/TeriMad.png]
  
 $endif
 
+$catch
+
+$title[Something went wrong]
+$description[❌ Invalid amount or linked bank channel not found, please check everything is set and/or try again with a smaller ammount]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1040692874062344382/TeriMad.png]
+$color[ff1a1a]
+
+$endtry
+       
