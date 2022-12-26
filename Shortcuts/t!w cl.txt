@@ -1,0 +1,279 @@
+$var[coin.emote;<:Tericoin:1001510021907099750>]
+$var[teristal.emote;<:Teristal:1001507292648308817>]
+
+$nomention $reply $ignoreTriggerCase
+$enableDecimals[yes]
+
+$c[Equipped stigmas var list - before if so I only need to put this once <3]
+
+$textSplit[$getUserVar[stigma.equip];/]
+$var[stigT.equip;$splitText[$sum[$getTextSplitIndex[stigT];1]]]
+$var[stigM.equip;$splitText[$sum[$getTextSplitIndex[stigM];1]]]
+$var[stigB.equip;$splitText[$sum[$getTextSplitIndex[stigB];1]]]
+
+$c[End Equipped stigmas var list]
+
+$c[Badge vars]
+
+$textSplit[$getUserVar[badges];/]
+$var[unchanged;$optOff[errand/$splitText[$sum[$getTextSplitIndex[errand];1]]/$splitText[$sum[$getTextSplitIndex[errand];2]]/casino/$splitText[$sum[$getTextSplitIndex[casino];1]]/$splitText[$sum[$getTextSplitIndex[casino];2]]/streak/$splitText[$sum[$getTextSplitIndex[streak];1]]/$splitText[$sum[$getTextSplitIndex[streak];2]]/bug/$splitText[$sum[$getTextSplitIndex[bug];1]]/$splitText[$sum[$getTextSplitIndex[bug];2]]/rank/$splitText[$sum[$getTextSplitIndex[rank];1]]/$splitText[$sum[$getTextSplitIndex[rank];2]]/badge/$splitText[$sum[$getTextSplitIndex[badge];1]]/$splitText[$sum[$getTextSplitIndex[badge];2]]/bank/$splitText[$sum[$getTextSplitIndex[bank];1]]/$splitText[$sum[$getTextSplitIndex[bank];2]]]]
+$var[tc.total;$optOff[$splitText[$sum[$getTextSplitIndex[tc];1]]]]
+$var[tc.badge;$optOff[$splitText[$sum[$getTextSplitIndex[tc];2]]]]
+$var[ts.total;$optOff[$splitText[$sum[$getTextSplitIndex[ts];1]]]]
+$var[ts.badge;$optOff[$splitText[$sum[$getTextSplitIndex[ts];2]]]]
+
+$c[End badge vars]
+
+
+$c[t!worker claim code]
+
+$if[$getUserVar[last.claim]==0]
+ $color[#FF0000]
+ $title[❌ Buy a Lv.1 worker first!]
+ $description[  `t!buy worker 1`  first !]
+
+$else
+ 
+ $color[#00FF00]
+ 
+ 
+ 
+ $if[$getServerVar[bank]>=50000]
+  
+  
+  $c[Calculation var : w.claim (worker.claim)]
+  
+  $var[w.claim;$multi[$multi[$getUserVar[lv1];0.01;150];$divide[$sub[$getTimestamp;$getUserVar[last.claim]];60]]]
+  
+  $c[End calculation var]
+  
+  
+  $c[Set 9 : 3/3/3% coins when claiming]
+  
+  $c[s.coins (set.coins) → percentage of coins you get with set]
+  $var[s.coins;0]
+  
+  $if[$var[stigT.equip]==stig9T]
+    $var[s.coins;$sum[$var[s.coins];3]]
+  $endif
+  $if[$var[stigM.equip]==stig9M]
+    $var[s.coins;$sum[$var[s.coins];3]]
+  $endif
+  $if[$var[stigB.equip]==stig9B]
+    $var[s.coins;$sum[$var[s.coins];3]]
+  $endif
+  
+  $c[Set 9 : end]
+    
+  $c[Embed code and money setting]
+  
+  $description[Last claim : <t:$getUserVar[last.claim]:R>]
+  $title[You just claimed $numberSeparator[$round[$var[w.claim];0];,] $var[coin.emote] !]
+  
+  
+  $c[adds the set 9 effects to the ammount you gonna claim after showing what you get without the set 9 effect]
+  
+  $if[$var[s.coins]!=0]
+    $var[s.coins;$multi[$var[w.claim];$divide[$var[s.coins];100]]]
+    $var[w.claim;$sum[$var[w.claim];$var[s.coins]]]
+  $endif
+  
+  $c[end of the set 9 effects]
+  
+  
+  $setUserVar[money;$round[$sum[$getUserVar[money];$var[w.claim]];0]]
+  $var[tc.total;$sum[$var[tc.total];$var[w.claim]]]
+  
+  $c[End embed code and money setting]
+  
+  
+  $c[s.crystal (set.crystal) var → total crystals you get because of the set]
+  
+  $var[s.crystal;0]
+
+
+  $c[Set 4 : 1/1/1 crystal every 500k claim]
+  
+  $if[$sub[$var[w.claim];500000]>=0]
+  
+    $if[$var[stigT.equip]==stig4T]
+      $var[s.crystal;$sum[$var[s.crystal];$round[$divide[$var[w.claim];500000];0]]]
+    $endif
+    $if[$var[stigM.equip]==stig4M]
+      $var[s.crystal;$sum[$var[s.crystal];$round[$divide[$var[w.claim];500000];0]]]
+    $endif
+    $if[$var[stigB.equip]==stig4B]
+      $var[s.crystal;$sum[$var[s.crystal];$round[$divide[$var[w.claim];500000];0]]]    $endif
+   $endif
+  
+  $c[Set 4 : end]
+  
+  
+  $c[Set 7 : 1/1/1 crystal every 300k claimed if B part is equipped]
+  
+  $if[$sub[$var[w.claim];300000]>=0]
+  
+    $if[$var[stigB.equip]==stig7B]
+  
+      $var[s.crystal;$sum[$var[s.crystal];$round[$divide[$var[w.claim];300000];0]]]
+  
+      $if[$var[stigT.equip]==stig7T]
+        $var[s.crystal;$sum[$var[s.crystal];$round[$divide[$var[w.claim];300000];0]]]
+      $endif
+  
+      $if[$var[stigM.equip]==stig7M]
+        $var[s.crystal;$sum[$var[s.crystal];$round[$divide[$var[w.claim];300000];0]]]
+      $endif
+  
+    $endif
+  
+  $endif
+  
+  $c[Set 7 : end]
+  
+  
+  $c[Crystal & coins embed + crystal setting]
+  
+  $if[$and[$var[s.crystal]!=0;$var[s.coins]==0]]
+    $setUserVar[crystal;$sum[$getUserVar[crystal];$var[s.crystal]]]
+    $var[ts.total;$sum[$var[ts.total];$var[s.crystal]]]
+    $title[You got  **$numberSeparator[$var[s.crystal];,]**  $var[teristal.emote];2]
+    $color[#4786C0;2]
+  $elseif[$and[$var[s.crystal]==0;$var[s.coins]!=0]]
+    $title[You got **$numberSeparator[$round[$var[s.coins];0];,]**  $var[coin.emote]  extra!;2]
+    $color[#EDCD55;2]
+  $elseif[$and[$var[s.crystal]!=0;$var[s.coins]!=0]]
+    $setUserVar[crystal;$sum[$getUserVar[crystal];$var[s.crystal]]]
+    $var[ts.total;$sum[$var[ts.total];$var[s.crystal]]]
+    $title[You got  **$numberSeparator[$var[s.crystal]]**  $var[teristal.emote]  and  **$numberSeparator[$round[$var[s.coins];0];,]**  $var[coin.emote]  extra!;2]
+    $color[ffffff;2]
+  $endif
+  
+  $c[End crystal embed + setting]
+ 
+  $setUserVar[badges;$var[unchanged]/tc/$var[tc.total]/$var[tc.badge]/ts/$var[ts.total]/$var[ts.badge]]
+ 
+ 
+ $else
+  
+  $c[Calculation var : w.claim (worker.claim)]
+
+  $var[w.claim;$multi[$multi[$getUserVar[lv1];0.01;$round[$calculate[1.01**$divide[$getServerVar[bank];100]];4]];$divide[$sub[$getTimestamp;$getUserVar[last.claim]];60]]]
+
+  $c[Set 9 : 3/3/3% coins when claiming]
+  
+  $c[s.coins (set.coins) → percentage of coins you get with set]
+  $var[s.coins;0]
+  
+  $if[$var[stigT.equip]==stig9T]
+    $var[s.coins;$sum[$var[s.coins];3]]
+  $endif
+  $if[$var[stigM.equip]==stig9M]
+    $var[s.coins;$sum[$var[s.coins];3]]
+  $endif
+  $if[$var[stigB.equip]==stig9B]
+    $var[s.coins;$sum[$var[s.coins];3]]
+  $endif
+  
+  $c[Set 9 : end]
+  
+  
+  $c[Embed code and money setting]
+  
+  
+  $description[Last claim : <t:$getUserVar[last.claim]:R>]
+  $title[You just claimed $numberSeparator[$round[$var[w.claim];0];,] $var[coin.emote] !]
+  
+  
+  $c[adds the set 9 effects to the ammount you gonna claim after showing what you get without the set 9 effect]
+  
+  $if[$var[s.coins]!=0]
+    $var[s.coins;$multi[$var[w.claim];$divide[$var[s.coins];100]]]
+    $var[w.claim;$sum[$var[w.claim];$multi[$var[w.claim];$divide[$var[s.coins];100]]]]
+  $endif
+  
+  $c[end of the set 9 effects]
+  
+  
+  $setUserVar[money;$round[$sum[$getUserVar[money];$var[w.claim]];0]]
+  $var[tc.total;$sum[$var[tc.total];$var[w.claim]]]
+  
+  $c[End embed code and money setting]
+  
+  
+  $c[s.crystal (set.crystal) var → total crystals you get because of the set]
+  
+  $var[s.crystal;0]
+
+
+  $c[Set 4 : 1/1/1 crystal every 500k claim]
+  
+  $if[$and[$round[$var[w.claim];0]!=0;$modulo[$round[$var[w.claim];0];500000]==0]]
+  
+    $if[$var[stigT.equip]==stig4T]
+      $var[s.crystal;$sum[$var[s.crystal];1]]
+    $endif
+    $if[$var[stigM.equip]==stig4M]
+      $var[s.crystal;$sum[$var[s.crystal];1]]a
+    $endif
+    $if[$var[stigB.equip]==stig4B]
+      $var[s.crystal;$sum[$var[s.crystal];1]]
+    $endif
+  
+  $endif
+  
+  $c[Set 4 : end]
+  
+  
+  $c[Set 7 : 1/1/1 crystal every 300k claimed if B part is equipped]
+  
+  $if[$and[$round[$var[w.claim];0]!=0;$modulo[$round[$var[w.claim];0];300000]==0]]
+  
+    $if[$var[stigB.equip]==stig7B]
+  
+      $var[s.crystal;$sum[$var[s.crystal];1]]b
+  
+      $if[$var[stigT.equip]==stig7T]
+        $var[s.crystal;$sum[$var[s.crystal];1]]
+      $endif
+  
+      $if[$var[stigM.equip]==stig7M]
+        $var[s.crystal;$sum[$var[s.crystal];1]]
+      $endif
+  
+    $endif
+  
+  $endif
+  
+  $c[Set 7 : end]
+  
+  
+  $c[Crystal & coins embed + crystal setting]
+  
+  $if[$and[$var[s.crystal]!=0;$var[s.coins]==0]]
+    $setUserVar[crystal;$sum[$getUserVar[crystal];$var[s.crystal]]]
+    $var[ts.total;$sum[$var[ts.total];$var[s.crystal]]]
+    $title[You got  **$numberSeparator[$var[s.crystal];,]**  $var[teristal.emote];2]
+    $color[#4786C0;2]c1
+  $elseif[$and[$var[s.crystal]==0;$var[s.coins]!=0]]
+    $title[You got **$numberSeparator[$round[$var[s.coins];0];,]**  $var[coin.emote]  extra!;2]
+    $color[#EDCD55;2]
+  $elseif[$and[$var[s.crystal]!=0;$var[s.coins]!=0]]
+    $setUserVar[crystal;$sum[$getUserVar[crystal];$var[s.crystal]]]
+    $var[ts.total;$sum[$var[ts.total];$var[s.crystal]]]
+    $title[You got  **$numberSeparator[$var[s.crystal];,]**  $var[teristal.emote]  and  **$numberSeparator[$round[$var[s.coins];0];,]**  $var[coin.emote]  extra!;2]
+    $color[ffffff;2]
+  $endif
+  
+  $c[End crystal embed + setting]
+  
+  $setUserVar[badges;$var[unchanged]/tc/$var[tc.total]/$var[tc.badge]/ts/$var[ts.total]/$var[ts.badge]]
+ 
+ $endif
+ 
+  
+  $footer[Current Lv.1 worker production : $round[$multi[0.01;150;$getUserVar[lv1]];2] Tericoin / minute for $getUserVar[lv1] workers]
+  $footerIcon[$authorAvatar]
+  $setUserVar[last.claim;$getTimestamp]
+ 
+$endif
