@@ -1,0 +1,39 @@
+$nomention $reply $ignoreTriggerCase
+$onlyIf[$getServerVar[bank.prog]>=9;You need to reach the 9th milestone ! (75M)]
+$onlyIf[$toLowercase[$message[1]]!=claim;]
+
+$if[$getUserVar[mine;$mentioned[1;yes]]==false]
+
+$title[MINE NOT FOUND]
+$description[❌ TeriTeri couldn't find a mine with$if[$mentioned[1;yes]==$authorID] your$else $nickname[$mentioned[1;no]]'s$endif name in it$if[$mentioned[1;yes]==$authorID], why don't you buy one?
+
+**COMMANDS**
+```t!buy mine```
+Tip: Mines produce Teristals, so buy one and get a ton of them! $endif]
+$color[ff1a1a]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1040692874062344382/TeriMad.png]
+
+$elseif[$getUserVar[mine;$mentioned[1;yes]]==true]
+
+$enableDecimals[yes]
+$var[m.claim;$multi[$getUserVar[mine.boost];$divide[$sub[$getTimestamp;$getUserVar[last.mine.claim]];60]]]
+  
+$author[$nickname[$mentioned[1;yes]]'s Mine:]
+$authorIcon[$userServerAvatar[$mentioned[1;yes]]]
+$description[Produced: $numberSeparator[$round[$var[m.claim];0];,]
+Last claim: <t:$getUserVar[last.mine.claim]:R>
+
+**COMMANDS**
+`t!mine claim`: claim your mine production
+** **]
+$color[#$getRoleColor[$highestRole[$authorID]]]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1042832942508027991/export202211171705023970.png]
+
+$else
+
+$title[UNEXPECTED ERROR]
+$description[❌ You aren't supposed to be seeing this, please use `t!bug report <message>` to report the bug]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1040692874062344382/TeriMad.png]
+$color[ff1a1a]
+
+$endif

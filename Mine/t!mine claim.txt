@@ -1,0 +1,32 @@
+$nomention $reply $ignoreTriggerCase
+$onlyIf[$getServerVar[bank.prog]>=9;You need to reach the 9th milestone ! (75M)]
+
+$if[$getUserVar[mine]==true]
+
+$var[m.claim;$multi[$getUserVar[mine.boost];$divide[$sub[$getTimestamp;$getUserVar[last.mine.claim]];60]]]
+$var[crystal.emote;<:Teristal:1001507292648308817>]
+$enableDecimals[yes]
+
+$setUserVar[crystal;$round[$sum[$getUserVar[crystal];$var[m.claim]];0]]
+
+$title[You just claimed $var[m.claim] $var[crystal.emote]!]
+$description[Last claim: <t:$getUserVar[last.mine.claim]:R> 
+Now you have $getUserVar[crystal] $var[crystal.emote]]
+$footer[Current production: $getUserVar[mine.boost] Teristal/minute]
+$color[#$getRoleColor[$highestRole[$authorID]]]
+$thumbnail[$userServerAvatar[$authorID]]
+$footerIcon[$userServerAvatar[$authorID]]
+
+$setUserVar[last.mine.claim;$getTimestamp]
+
+$else
+
+$title[YOU DON'T HAVE ANY MINE]
+$description[❌ You can't claim your mine production because you don't have any mine!
+
+**COMMANDS**
+```t!buy mine```]
+$color[ff1a1a]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1040692874062344382/TeriMad.png]
+
+$endif
