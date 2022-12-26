@@ -1,0 +1,13 @@
+$nomention
+$if[$isSlash]
+
+$var[option;waifu]
+$httpGet[https://api.waifu.pics/sfw/$var[option]]
+$textSplit[$httpResult;"]
+$title[📷  $toUppercase[$var[option]]  🖼️]
+$color[$getRoleColor[$highestRole[$authorID]]]
+$footer[Link: $splitText[4]]
+$image[$splitText[4]]
+$color[ffffff]
+
+$endif

@@ -1,0 +1,15 @@
+$nomention $reply $ignoreTriggerCase
+
+$onlyIf[$isNSFW[$channelID]==true;]
+$var[option;$toLowercase[$message[1]]]
+
+$if[$or[$var[option]==waifu;$var[option]==neko;$var[option]==trap;$var[option]==blowjob]]
+$httpGet[https://api.waifu.pics/nsfw/$var[option]]
+$textSplit[$httpResult;"]
+
+$title[🥵 $toUppercase[$var[option]] 💦]
+$description[Options: `waifu / neko / trap / blowjob`]
+$image[$splitText[4]]
+$color[$getRoleColor[$highestRole[$authorID]]]
+$footer[Link: $splitText[4]]
+$endif

@@ -1,0 +1,16 @@
+$nomention
+$if[$isSlash]
+
+$if[$message[user]!=]
+$title[$nickname[$authorID] pats $nickname[$message[user]]]]
+$endif
+
+$var[option;pat]
+$httpGet[https://api.waifu.pics/sfw/$var[option]]
+$textSplit[$httpResult;"]
+$color[$getRoleColor[$highestRole[$authorID]]]
+$footer[Link: $splitText[4]]
+$image[$splitText[4]]
+$color[ffffff]
+
+$endif

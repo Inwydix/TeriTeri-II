@@ -1,0 +1,14 @@
+$nomention
+$if[$isSlash]
+
+$var[option;dance]
+$httpGet[https://api.waifu.pics/sfw/$var[option]]
+$textSplit[$httpResult;"]
+$title[🎶 MUSIC IS ON 🎶]
+$description[<@$authorID> $randomText[started to dance;shakie shakie shakie;move that buttie!;dance dance dance;is dancing~]]
+$color[$getRoleColor[$highestRole[$authorID]]]
+$footer[Link: $splitText[4]]
+$image[$splitText[4]]
+$color[ffffff]
+
+$endif
