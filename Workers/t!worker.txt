@@ -1,0 +1,24 @@
+$nomention $reply $ignoreTriggerCase
+$onlyIf[$and[$toLowercase[$message[1]]!=claim;$toLowercase[$message[1]]!=shop]==true;]
+$enableDecimals[yes]
+$var[coin.emote;<:Tericoin:1001510021907099750>]
+
+$author[$nickname[$mentioned[1;yes]]'s Worker Status]
+$description[__Workers__
+
+Lvl 1 workers: $getUserVar[lv1;$mentioned[1;yes]]
+Lvl 2 workers: $getUserVar[lv2;$mentioned[1;yes]]
+Lvl 3 workers: $getUserVar[lv3;$mentioned[1;yes]]
+
+__Lvl 1 workers production__
+
+Current production: $numberSeparator[$round[$multi[$multi[$getUserVar[lv1;$mentioned[1;yes]];0.01;150];$divide[$sub[$getTimestamp;$getUserVar[last.claim;$mentioned[1;yes]]];60]];0];,] $var[coin.emote]
+Last claim : <t:$getUserVar[last.claim;$mentioned[1;yes]]:R>
+
+__Worker commands__
+
+• `t!worker claim | t!claim worker | t!w cl` : claim the lvl 1 worker production
+• `t!worker shop` : open the worker shop
+• `t!buy worker <lvl>` : buy a worker of said level]
+$thumbnail[$userServerAvatar[$mentioned[1;yes]]]
+$color[$getRoleColor[$highestRole[$mentioned[1;yes]]]]
