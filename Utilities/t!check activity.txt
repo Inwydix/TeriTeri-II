@@ -1,0 +1,8 @@
+$nomention $reply $ignoreTriggerCase
+$onlyIf[$hasRole[$authorID;$roleID[moderator]]==true;❌ You need to be a moderator to use this!]
+$title[$nickname[$message[1]]'s Server Activity]
+$description[• Activity points: $getUserVar[point;$message[1]] 
+• Current server boost: $getServerVar[lvl.boost] points/message
+• Cooldown between points: 30s
+$footer[Joined in $userJoined[$message[1];January 2, 2006 at 3:04 PM]]]
+$color[ffffff]
