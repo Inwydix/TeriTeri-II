@@ -1,0 +1,10 @@
+$nomention $reply $ignoreTriggerCase
+$title[📐TERIRI'S CLASSROOM 📌]
+$description[**FOR ADMINISTRATORS**
+- Festivities
+
+**FOR EVERYONE**
+- How to economic system (TTB Ver. 1.0): https://docs.google.com/presentation/d/1AlSSlLdOxAfmG4If16co-py8k0Z5xYakR_AQ7rFFbsg/edit?usp=sharing
+]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1020078823896797285/0de490e58a3dbed37e9a17f66c8173e8.jpg]
+$color[ffffff]
