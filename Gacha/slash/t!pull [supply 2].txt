@@ -1,0 +1,841 @@
+$nomention
+ $ignoreTriggerCase
+$if[$isSlash]
+$var[coin.emote;<:Tericoin:1001510021907099750>]
+
+$reply 
+$onlyIf[$getServerVar[bank.prog]>=3;]
+
+$c[Split text var list: in general to all of them 'cause then you just need to have them once and copy paste the same 'setUserVar' all over the place]
+
+$c[picture links to the banners]
+
+$var[pic1;https://ptirollo.sirv.com/Banners/set1.png]
+$var[pic2;https://ptirollo.sirv.com/Banners/set2.png]
+$var[pic3;https://ptirollo.sirv.com/Banners/set3.png]
+$var[pic4;https://ptirollo.sirv.com/Banners/set4.png]
+$var[pic5;https://ptirollo.sirv.com/Banners/set5.png]
+$var[pic6;https://ptirollo.sirv.com/Banners/set6.png]
+$var[pic7;https://ptirollo.sirv.com/Banners/set7.png]
+$var[pic8;https://ptirollo.sirv.com/Banners/set8.png]
+$var[pic9;https://ptirollo.sirv.com/Banners/set9.png]
+
+$var[T;?text.0.text=T&text.0.position.gravity=center&text.0.position.x=-36%25&text.0.color=000000&text.0.font.family=Courgette]
+$var[M;?text.0.text=M&text.0.position.gravity=center&text.0.position.x=-36%25&text.0.color=000000&text.0.font.family=Courgette]
+$var[B;?text.0.text=B&text.0.position.gravity=center&text.0.position.x=-36%25&text.0.color=000000&text.0.font.family=Courgette]
+
+
+$c[user var]
+
+
+$textSplit[$getUserVar[stigma];/]
+$var[stig1T;$splitText[$sum[$getTextSplitIndex[stig1T];1]]]
+$var[stig1M;$splitText[$sum[$getTextSplitIndex[stig1M];1]]]
+$var[stig1B;$splitText[$sum[$getTextSplitIndex[stig1B];1]]]
+$var[stig2T;$splitText[$sum[$getTextSplitIndex[stig2T];1]]]
+$var[stig2M;$splitText[$sum[$getTextSplitIndex[stig2M];1]]]
+$var[stig2B;$splitText[$sum[$getTextSplitIndex[stig2B];1]]]
+$var[stig3T;$splitText[$sum[$getTextSplitIndex[stig3T];1]]]
+$var[stig3M;$splitText[$sum[$getTextSplitIndex[stig3M];1]]]
+$var[stig3B;$splitText[$sum[$getTextSplitIndex[stig3B];1]]]
+$var[stig4T;$splitText[$sum[$getTextSplitIndex[stig4T];1]]]
+$var[stig4M;$splitText[$sum[$getTextSplitIndex[stig4M];1]]]
+$var[stig4B;$splitText[$sum[$getTextSplitIndex[stig4B];1]]]
+$var[stig5T;$splitText[$sum[$getTextSplitIndex[stig5T];1]]]
+$var[stig5M;$splitText[$sum[$getTextSplitIndex[stig5M];1]]]
+$var[stig5B;$splitText[$sum[$getTextSplitIndex[stig5B];1]]]
+$var[stig6T;$splitText[$sum[$getTextSplitIndex[stig6T];1]]]
+$var[stig6M;$splitText[$sum[$getTextSplitIndex[stig6M];1]]]
+$var[stig6B;$splitText[$sum[$getTextSplitIndex[stig6B];1]]]
+$var[stig7T;$splitText[$sum[$getTextSplitIndex[stig7T];1]]]
+$var[stig7M;$splitText[$sum[$getTextSplitIndex[stig7M];1]]]
+$var[stig7B;$splitText[$sum[$getTextSplitIndex[stig7B];1]]]
+$var[stig8T;$splitText[$sum[$getTextSplitIndex[stig8T];1]]]
+$var[stig8M;$splitText[$sum[$getTextSplitIndex[stig8M];1]]]
+$var[stig8B;$splitText[$sum[$getTextSplitIndex[stig8B];1]]]
+$var[stig9T;$splitText[$sum[$getTextSplitIndex[stig9T];1]]]
+$var[stig9M;$splitText[$sum[$getTextSplitIndex[stig9M];1]]]
+$var[stig9B;$splitText[$sum[$getTextSplitIndex[stig9B];1]]]
+
+
+$c[Rotation vars]
+
+
+$textSplit[$getServerVar[rotation];/]
+$var[supply1;$optOff[$splitText[$sum[$getTextSplitIndex[supply1];1]]]]
+$var[supply2;$optOff[$splitText[$sum[$getTextSplitIndex[supply2];1]]]]
+$var[supply3;$optOff[$splitText[$sum[$getTextSplitIndex[supply3];1]]]]
+
+
+$c[Stigma name vars]
+
+
+$textSplit[$getUserVar[stigma.name];/]
+$var[stig4T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig4T];1]]]]
+$var[stig4M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig4M];1]]]]
+$var[stig4B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig4B];1]]]]
+$var[stig5T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig5T];1]]]]
+$var[stig5M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig5M];1]]]]
+$var[stig5B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig5B];1]]]]
+$var[stig6T.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig6T];1]]]]
+$var[stig6M.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig6M];1]]]]
+$var[stig6B.name;$optOff[$splitText[$sum[$getTextSplitIndex[stig6B];1]]]]
+
+
+$c[Just to bother var (aka. the coins u get in exchange of douplets)]
+
+
+$var[exchange;20000]
+
+
+$c[Badge vars]
+
+$textSplit[$getUserVar[badges];/]
+$var[tc.total;$optOff[$splitText[$sum[$getTextSplitIndex[tc];1]]]]
+$var[tc.badge;$optOff[$splitText[$sum[$getTextSplitIndex[tc];2]]]]
+$var[unchanged;$optOff[ts/$splitText[$sum[$getTextSplitIndex[ts];1]]/$splitText[$sum[$getTextSplitIndex[ts];2]]/errand/$splitText[$sum[$getTextSplitIndex[errand];1]]/$splitText[$sum[$getTextSplitIndex[errand];2]]/casino/$splitText[$sum[$getTextSplitIndex[casino];1]]/$splitText[$sum[$getTextSplitIndex[casino];2]]/streak/$splitText[$sum[$getTextSplitIndex[streak];1]]/$splitText[$sum[$getTextSplitIndex[streak];2]]/bug/$splitText[$sum[$getTextSplitIndex[bug];1]]/$splitText[$sum[$getTextSplitIndex[bug];2]]/rank/$splitText[$sum[$getTextSplitIndex[rank];1]]/$splitText[$sum[$getTextSplitIndex[rank];2]]/badge/$splitText[$sum[$getTextSplitIndex[badge];1]]/$splitText[$sum[$getTextSplitIndex[badge];2]]/bank/$splitText[$sum[$getTextSplitIndex[bank];1]]/$splitText[$sum[$getTextSplitIndex[bank];2]]]]
+
+
+$c[Supply 2]
+
+
+
+$if[$message==2]  
+
+  $onlyIf[$getUserVar[card2]>=1;❌ You don't have enough 4 stars gacha cards!]
+
+  $title[__PULL RESULTS__]
+  $color[ffffff]
+ 
+  $setUserVar[card2;$sub[$getUserVar[card2];1]]
+  $var[probs;$modulo[$getTimestamp;100]]
+ 
+ 
+  $c[For set 4]
+  
+  
+  $if[$var[supply2]==set4] 
+
+    $if[$and[$var[probs]>=0;$var[probs]<=52]]
+
+      $var[g.coins;$random[500;20000]]
+      $setUserVar[money;$sum[$getUserVar[money];$var[g.coins]]]
+      $var[tc.total;$sum[$var[tc.total];$var[g.coins]]]
+      $description[You got $var[g.coins]  $var[coin.emote]  !]
+      $footer[Now you have : $getUserVar[money] tericoins]
+
+    $elseif[$and[$var[probs]>=53;$var[probs]<=62]]
+ 
+      $if[$var[stig4T]==false]
+ 
+        $var[stig4T;true]
+        $description[You got $var[stig4T.name] stigma!]
+        $footer[You can equip it using 'equip command']
+        $image[$var[pic4]$var[T]]
+        $setUserVar[stigma;stig1T/$var[stig1T]/stig1M/$var[stig1M]/stig1B/$var[stig1B]/stig2T/$var[stig2T]/stig2M/$var[stig2M]/stig2B/$var[stig2B]/stig3T/$var[stig3T]/stig3M/$var[stig3M]/stig3B/$var[stig3B]/stig4T/$var[stig4T]/stig4M/$var[stig4M]/stig4B/$var[stig4B]/stig5T/$var[stig5T]/stig5M/$var[stig5M]/stig5B/$var[stig5B]/stig6T/$var[stig6T]/stig6M/$var[stig6M]/stig6B/$var[stig6B]/stig7T/$var[stig7T]/stig7M/$var[stig7M]/stig7B/$var[stig7B]/stig8T/$var[stig8T]/stig8M/$var[stig8M]/stig8B/$var[stig8B]/stig9T/$var[stig9T]/stig9M/$var[stig9M]/stig9B/$var[stig9B]]
+ 
+      $else
+ 
+        $setUserVar[money;$sum[$getUserVar[money];$var[exchange]]]
+        $var[tc.total;$sum[$var[tc.total];$var[exchange]]]
+        $description[You got $var[stig4T.name] stigma!
+$var[stig4T.name] → $var[exchange]  $var[coin.emote]]
+        $footer[Now you have : $getUserVar[money] tericoins] 
+ 
+      $endif
+ 
+    $elseif[$and[$var[probs]>=63;$var[probs]<=72]]
+ 
+      $if[$var[stig4M]==false]
+ 
+        $var[stig4M;true]
+        $description[You got $var[stig4M.name] stigma!]
+        $footer[You can equip it using 'equip command']
+        $image[$var[pic4]$var[M]]
+        $setUserVar[stigma;stig1T/$var[stig1T]/stig1M/$var[stig1M]/stig1B/$var[stig1B]/stig2T/$var[stig2T]/stig2M/$var[stig2M]/stig2B/$var[stig2B]/stig3T/$var[stig3T]/stig3M/$var[stig3M]/stig3B/$var[stig3B]/stig4T/$var[stig4T]/stig4M/$var[stig4M]/stig4B/$var[stig4B]/stig5T/$var[stig5T]/stig5M/$var[stig5M]/stig5B/$var[stig5B]/stig6T/$var[stig6T]/stig6M/$var[stig6M]/stig6B/$var[stig6B]/stig7T/$var[stig7T]/stig7M/$var[stig7M]/stig7B/$var[stig7B]/stig8T/$var[stig8T]/stig8M/$var[stig8M]/stig8B/$var[stig8B]/stig9T/$var[stig9T]/stig9M/$var[stig9M]/stig9B/$var[stig9B]]
+ 
+      $else
+ 
+        $setUserVar[money;$sum[$getUserVar[money];$var[exchange]]]
+        $var[tc.total;$sum[$var[tc.total];$var[exchange]]]
+        $description[You got $var[stig4M.name] stigma!
+$var[stig4M.name] → $var[exchange]  $var[coin.emote]]
+        $footer[Now you have : $getUserVar[money] tericoins]
+
+      $endif
+ 
+    $elseif[$and[$var[probs]>=73;$var[probs]<=82]]
+ 
+      $if[$var[stig4B]==false]
+ 
+       $var[stig4B;true]
+       $description[You got $var[stig4B.name] stigma!]
+       $footer[You can equip it using 'equip command']
+       $image[$var[pic4]$var[B]]
+       $setUserVar[stigma;stig1T/$var[stig1T]/stig1M/$var[stig1M]/stig1B/$var[stig1B]/stig2T/$var[stig2T]/stig2M/$var[stig2M]/stig2B/$var[stig2B]/stig3T/$var[stig3T]/stig3M/$var[stig3M]/stig3B/$var[stig3B]/stig4T/$var[stig4T]/stig4M/$var[stig4M]/stig4B/$var[stig4B]/stig5T/$var[stig5T]/stig5M/$var[stig5M]/stig5B/$var[stig5B]/stig6T/$var[stig6T]/stig6M/$var[stig6M]/stig6B/$var[stig6B]/stig7T/$var[stig7T]/stig7M/$var[stig7M]/stig7B/$var[stig7B]/stig8T/$var[stig8T]/stig8M/$var[stig8M]/stig8B/$var[stig8B]/stig9T/$var[stig9T]/stig9M/$var[stig9M]/stig9B/$var[stig9B]]
+
+     $else
+ 
+       $setUserVar[money;$sum[$getUserVar[money];$var[exchange]]]
+       $var[tc.total;$sum[$var[tc.total];$var[exchange]]]
+       $description[You got $var[stig4B.name] stigma!
+$var[stig4B.name] → $var[exchange]  $var[coin.emote]]
+       $footer[Now you have : $getUserVar[money] tericoins]
+
+     $endif
+     
+    $c[Off rates]
+   
+    
+    $elseif[$and[$var[probs]>=83;$var[probs]<=99]]
+    
+      $var[offRate;$random[1;7]] $c[Happy reminder: randoms wont return the highest value you put]
+      
+      $if[$var[offRate]==1]
+      
+        $c[Set 5 - T]
+
+$if[$var[stig5T]==false]
+ 
+        $var[stig5T;true]
+        $description[You got $var[stig5T.name] stigma!]
+        $footer[You can equip it using 'equip command']
+        $image[$var[pic5]$var[T]]
+        $setUserVar[stigma;stig1T/$var[stig1T]/stig1M/$var[stig1M]/stig1B/$var[stig1B]/stig2T/$var[stig2T]/stig2M/$var[stig2M]/stig2B/$var[stig2B]/stig3T/$var[stig3T]/stig3M/$var[stig3M]/stig3B/$var[stig3B]/stig4T/$var[stig4T]/stig4M/$var[stig4M]/stig4B/$var[stig4B]/stig5T/$var[stig5T]/stig5M/$var[stig5M]/stig5B/$var[stig5B]/stig6T/$var[stig6T]/stig6M/$var[stig6M]/stig6B/$var[stig6B]/stig7T/$var[stig7T]/stig7M/$var[stig7M]/stig7B/$var[stig7B]/stig8T/$var[stig8T]/stig8M/$var[stig8M]/stig8B/$var[stig8B]/stig9T/$var[stig9T]/stig9M/$var[stig9M]/stig9B/$var[stig9B]]
+ 
+      $else
+ 
+        $setUserVar[money;$sum[$getUserVar[money];$var[exchange]]]
+        $var[tc.total;$sum[$var[tc.total];$var[exchange]]]
+        $description[You got $var[stig5T.name] stigma!
+$var[stig5T.name] → $var[exchange]  $var[coin.emote]]
+        $footer[Now you have : $getUserVar[money] tericoins] 
+ 
+      $endif
+
+
+
+
+      
+      $elseif[$var[offRate]==2]
+      
+        $c[Set 5 - M]
+
+$if[$var[stig5M]==false]
+ 
+        $var[stig5M;true]
+        $description[You got $var[stig5M.name] stigma!]
+        $footer[You can equip it using 'equip command']
+        $image[$var[pic5]$var[M]]
+        $setUserVar[stigma;stig1T/$var[stig1T]/stig1M/$var[stig1M]/stig1B/$var[stig1B]/stig2T/$var[stig2T]/stig2M/$var[stig2M]/stig2B/$var[stig2B]/stig3T/$var[stig3T]/stig3M/$var[stig3M]/stig3B/$var[stig3B]/stig4T/$var[stig4T]/stig4M/$var[stig4M]/stig4B/$var[stig4B]/stig5T/$var[stig5T]/stig5M/$var[stig5M]/stig5B/$var[stig5B]/stig6T/$var[stig6T]/stig6M/$var[stig6M]/stig6B/$var[stig6B]/stig7T/$var[stig7T]/stig7M/$var[stig7M]/stig7B/$var[stig7B]/stig8T/$var[stig8T]/stig8M/$var[stig8M]/stig8B/$var[stig8B]/stig9T/$var[stig9T]/stig9M/$var[stig9M]/stig9B/$var[stig9B]]
+ 
+      $else
+ 
+        $setUserVar[money;$sum[$getUserVar[money];$var[exchange]]]
+        $var[tc.total;$sum[$var[tc.total];$var[exchange]]]
+        $description[You got $var[stig5M.name] stigma!
+$var[stig5M.name] → $var[exchange]  $var[coin.emote]]
+        $footer[Now you have : $getUserVar[money] tericoins] 
+ 
+      $endif
+
+
+
+      
+      $elseif[$var[offRate]==3]
+      
+        $c[Set 5 - B]
+
+$if[$var[stig5B]==false]
+ 
+       $var[stig5B;true]
+       $description[You got $var[stig5B.name] stigma!]
+       $footer[You can equip it using 'equip command']
+       $image[$var[pic5]$var[B]]
+       $setUserVar[stigma;stig1T/$var[stig1T]/stig1M/$var[stig1M]/stig1B/$var[stig1B]/stig2T/$var[stig2T]/stig2M/$var[stig2M]/stig2B/$var[stig2B]/stig3T/$var[stig3T]/stig3M/$var[stig3M]/stig3B/$var[stig3B]/stig4T/$var[stig4T]/stig4M/$var[stig4M]/stig4B/$var[stig4B]/stig5T/$var[stig5T]/stig5M/$var[stig5M]/stig5B/$var[stig5B]/stig6T/$var[stig6T]/stig6M/$var[stig6M]/stig6B/$var[stig6B]/stig7T/$var[stig7T]/stig7M/$var[stig7M]/stig7B/$var[stig7B]/stig8T/$var[stig8T]/stig8M/$var[stig8M]/stig8B/$var[stig8B]/stig9T/$var[stig9T]/stig9M/$var[stig9M]/stig9B/$var[stig9B]]
+
+     $else
+ 
+       $setUserVar[money;$sum[$getUserVar[money];$var[exchange]]]
+       $var[tc.total;$sum[$var[tc.total];$var[exchange]]]
+       $description[You got $var[stig5B.name] stigma!
+$var[stig5B.name] → $var[exchange]  $var[coin.emote]]
+       $footer[Now you have : $getUserVar[money] tericoins]
+
+     $endif
+
+
+
+      
+      $elseif[$var[offRate]==4]
+      
+        $c[Set 6 - T]
+
+$if[$var[stig6T]==false]
+ 
+        $var[stig6T;true]
+        $description[You got $var[stig6T.name] stigma!]
+        $footer[You can equip it using 'equip command']
+        $image[$var[pic6]$var[T]]
+        $setUserVar[stigma;stig1T/$var[stig1T]/stig1M/$var[stig1M]/stig1B/$var[stig1B]/stig2T/$var[stig2T]/stig2M/$var[stig2M]/stig2B/$var[stig2B]/stig3T/$var[stig3T]/stig3M/$var[stig3M]/stig3B/$var[stig3B]/stig4T/$var[stig4T]/stig4M/$var[stig4M]/stig4B/$var[stig4B]/stig5T/$var[stig5T]/stig5M/$var[stig5M]/stig5B/$var[stig5B]/stig6T/$var[stig6T]/stig6M/$var[stig6M]/stig6B/$var[stig6B]/stig7T/$var[stig7T]/stig7M/$var[stig7M]/stig7B/$var[stig7B]/stig8T/$var[stig8T]/stig8M/$var[stig8M]/stig8B/$var[stig8B]/stig9T/$var[stig9T]/stig9M/$var[stig9M]/stig9B/$var[stig9B]]
+ 
+      $else
+ 
+        $setUserVar[money;$sum[$getUserVar[money];$var[exchange]]]
+        $var[tc.total;$sum[$var[tc.total];$var[exchange]]]
+        $description[You got $var[stig6T.name] stigma!
+$var[stig6T.name] → $var[exchange]  $var[coin.emote]]
+        $footer[Now you have : $getUserVar[money] tericoins] 
+ 
+      $endif
+
+
+
+      
+      $elseif[$var[offRate]==5]
+      
+        $c[Set 6 - M]
+
+
+$if[$var[stig6M]==false]
+ 
+        $var[stig6M;true]
+        $description[You got $var[stig6M.name] stigma!]
+        $footer[You can equip it using 'equip command']
+        $image[$var[pic6]$var[M]]
+        $setUserVar[stigma;stig1T/$var[stig1T]/stig1M/$var[stig1M]/stig1B/$var[stig1B]/stig2T/$var[stig2T]/stig2M/$var[stig2M]/stig2B/$var[stig2B]/stig3T/$var[stig3T]/stig3M/$var[stig3M]/stig3B/$var[stig3B]/stig4T/$var[stig4T]/stig4M/$var[stig4M]/stig4B/$var[stig4B]/stig5T/$var[stig5T]/stig5M/$var[stig5M]/stig5B/$var[stig5B]/stig6T/$var[stig6T]/stig6M/$var[stig6M]/stig6B/$var[stig6B]/stig7T/$var[stig7T]/stig7M/$var[stig7M]/stig7B/$var[stig7B]/stig8T/$var[stig8T]/stig8M/$var[stig8M]/stig8B/$var[stig8B]/stig9T/$var[stig9T]/stig9M/$var[stig9M]/stig9B/$var[stig9B]]
+ 
+      $else
+ 
+        $setUserVar[money;$sum[$getUserVar[money];$var[exchange]]]
+        $var[tc.total;$sum[$var[tc.total];$var[exchange]]]
+        $description[You got $var[stig6M.name] stigma!
+$var[stig6M.name] → $var[exchange]  $var[coin.emote]]
+        $footer[Now you have : $getUserVar[money] tericoins]
+
+      $endif
+
+
+
+
+      
+      $elseif[$var[offRate]==6]
+      
+        $c[Set 6 - B]
+
+
+$if[$var[stig6B]==false]
+ 
+       $var[stig6B;true]
+       $description[You got $var[stig6B.name] stigma!]
+       $footer[You can equip it using 'equip command']
+       $image[$var[pic6]$var[B]]
+       $setUserVar[stigma;stig1T/$var[stig1T]/stig1M/$var[stig1M]/stig1B/$var[stig1B]/stig2T/$var[stig2T]/stig2M/$var[stig2M]/stig2B/$var[stig2B]/stig3T/$var[stig3T]/stig3M/$var[stig3M]/stig3B/$var[stig3B]/stig4T/$var[stig4T]/stig4M/$var[stig4M]/stig4B/$var[stig4B]/stig5T/$var[stig5T]/stig5M/$var[stig5M]/stig5B/$var[stig5B]/stig6T/$var[stig6T]/stig6M/$var[stig6M]/stig6B/$var[stig6B]/stig7T/$var[stig7T]/stig7M/$var[stig7M]/stig7B/$var[stig7B]/stig8T/$var[stig8T]/stig8M/$var[stig8M]/stig8B/$var[stig8B]/stig9T/$var[stig9T]/stig9M/$var[stig9M]/stig9B/$var[stig9B]]
+
+     $else
+ 
+       $setUserVar[money;$sum[$getUserVar[money];$var[exchange]]]
+       $var[tc.total;$sum[$var[tc.total];$var[exchange]]]
+       $description[You got $var[stig6B.name] stigma!
+$var[stig6B.name] → $var[exchange]  $var[coin.emote]]
+       $footer[Now you have : $getUserVar[money] tericoins]
+
+     $endif
+
+
+
+
+      
+      $endif
+
+    $endif
+   
+   
+   
+  $c[For set 5]
+   
+   
+  $elseif[$var[supply2]==set5]
+
+    $if[$and[$var[probs]>=0;$var[probs]<=52]]
+
+      $var[g.coins;$random[500;20000]]
+      $setUserVar[money;$sum[$getUserVar[money];$var[g.coins]]]
+      $var[tc.total;$sum[$var[tc.total];$var[g.coins]]]
+      $description[You got $var[g.coins]  $var[coin.emote]  !]
+      $footer[Now you have : $getUserVar[money] tericoins]
+
+    $elseif[$and[$var[probs]>=53;$var[probs]<=62]]
+ 
+      $if[$var[stig5T]==false]
+ 
+        $var[stig5T;true]
+        $description[You got $var[stig5T.name] stigma!]
+        $footer[You can equip it using 'equip command']
+        $image[$var[pic5]$var[T]]
+        $setUserVar[stigma;stig1T/$var[stig1T]/stig1M/$var[stig1M]/stig1B/$var[stig1B]/stig2T/$var[stig2T]/stig2M/$var[stig2M]/stig2B/$var[stig2B]/stig3T/$var[stig3T]/stig3M/$var[stig3M]/stig3B/$var[stig3B]/stig4T/$var[stig4T]/stig4M/$var[stig4M]/stig4B/$var[stig4B]/stig5T/$var[stig5T]/stig5M/$var[stig5M]/stig5B/$var[stig5B]/stig6T/$var[stig6T]/stig6M/$var[stig6M]/stig6B/$var[stig6B]/stig7T/$var[stig7T]/stig7M/$var[stig7M]/stig7B/$var[stig7B]/stig8T/$var[stig8T]/stig8M/$var[stig8M]/stig8B/$var[stig8B]/stig9T/$var[stig9T]/stig9M/$var[stig9M]/stig9B/$var[stig9B]]
+ 
+      $else
+ 
+        $setUserVar[money;$sum[$getUserVar[money];$var[exchange]]]
+        $var[tc.total;$sum[$var[tc.total];$var[exchange]]]
+        $description[You got $var[stig5T.name] stigma!
+$var[stig5T.name] → $var[exchange]  $var[coin.emote]]
+        $footer[Now you have : $getUserVar[money] tericoins] 
+ 
+      $endif
+ 
+    $elseif[$and[$var[probs]>=63;$var[probs]<=72]]
+ 
+      $if[$var[stig5M]==false]
+ 
+        $var[stig5M;true]
+        $description[You got $var[stig5M.name] stigma!]
+        $footer[You can equip it using 'equip command']
+        $image[$var[pic5]$var[M]]
+        $setUserVar[stigma;stig1T/$var[stig1T]/stig1M/$var[stig1M]/stig1B/$var[stig1B]/stig2T/$var[stig2T]/stig2M/$var[stig2M]/stig2B/$var[stig2B]/stig3T/$var[stig3T]/stig3M/$var[stig3M]/stig3B/$var[stig3B]/stig4T/$var[stig4T]/stig4M/$var[stig4M]/stig4B/$var[stig4B]/stig5T/$var[stig5T]/stig5M/$var[stig5M]/stig5B/$var[stig5B]/stig6T/$var[stig6T]/stig6M/$var[stig6M]/stig6B/$var[stig6B]/stig7T/$var[stig7T]/stig7M/$var[stig7M]/stig7B/$var[stig7B]/stig8T/$var[stig8T]/stig8M/$var[stig8M]/stig8B/$var[stig8B]/stig9T/$var[stig9T]/stig9M/$var[stig9M]/stig9B/$var[stig9B]]
+ 
+      $else
+ 
+        $setUserVar[money;$sum[$getUserVar[money];$var[exchange]]]
+        $var[tc.total;$sum[$var[tc.total];$var[exchange]]]
+        $description[You got $var[stig5M.name] stigma!
+$var[stig5M.name] → $var[exchange]  $var[coin.emote]]
+        $footer[Now you have : $getUserVar[money] tericoins]
+
+      $endif
+ 
+    $elseif[$and[$var[probs]>=73;$var[probs]<=82]]
+ 
+      $if[$var[stig5B]==false]
+ 
+       $var[stig5B;true]
+       $description[You got $var[stig5B.name] stigma!]
+       $footer[You can equip it using 'equip command']
+       $image[$var[pic5]$var[B]]
+       $setUserVar[stigma;stig1T/$var[stig1T]/stig1M/$var[stig1M]/stig1B/$var[stig1B]/stig2T/$var[stig2T]/stig2M/$var[stig2M]/stig2B/$var[stig2B]/stig3T/$var[stig3T]/stig3M/$var[stig3M]/stig3B/$var[stig3B]/stig4T/$var[stig4T]/stig4M/$var[stig4M]/stig4B/$var[stig4B]/stig5T/$var[stig5T]/stig5M/$var[stig5M]/stig5B/$var[stig5B]/stig6T/$var[stig6T]/stig6M/$var[stig6M]/stig6B/$var[stig6B]/stig7T/$var[stig7T]/stig7M/$var[stig7M]/stig7B/$var[stig7B]/stig8T/$var[stig8T]/stig8M/$var[stig8M]/stig8B/$var[stig8B]/stig9T/$var[stig9T]/stig9M/$var[stig9M]/stig9B/$var[stig9B]]
+
+     $else
+ 
+       $setUserVar[money;$sum[$getUserVar[money];$var[exchange]]]
+       $var[tc.total;$sum[$var[tc.total];$var[exchange]]]
+       $description[You got $var[stig5B.name] stigma!
+$var[stig5B.name] → $var[exchange]  $var[coin.emote]]
+       $footer[Now you have : $getUserVar[money] tericoins]
+
+     $endif
+     
+    $c[Off rates]
+   
+    
+    $elseif[$and[$var[probs]>=83;$var[probs]<=99]]
+    
+      $var[offRate;$random[1;7]] $c[Happy reminder: randoms wont return the highest value you put]
+      
+      $if[$var[offRate]==1]
+      
+        $c[Set 4 - T]
+      
+
+$if[$var[stig4T]==false]
+ 
+        $var[stig4T;true]
+        $description[You got $var[stig4T.name] stigma!]
+        $footer[You can equip it using 'equip command']
+        $image[$var[pic4]$var[T]]
+        $setUserVar[stigma;stig1T/$var[stig1T]/stig1M/$var[stig1M]/stig1B/$var[stig1B]/stig2T/$var[stig2T]/stig2M/$var[stig2M]/stig2B/$var[stig2B]/stig3T/$var[stig3T]/stig3M/$var[stig3M]/stig3B/$var[stig3B]/stig4T/$var[stig4T]/stig4M/$var[stig4M]/stig4B/$var[stig4B]/stig5T/$var[stig5T]/stig5M/$var[stig5M]/stig5B/$var[stig5B]/stig6T/$var[stig6T]/stig6M/$var[stig6M]/stig6B/$var[stig6B]/stig7T/$var[stig7T]/stig7M/$var[stig7M]/stig7B/$var[stig7B]/stig8T/$var[stig8T]/stig8M/$var[stig8M]/stig8B/$var[stig8B]/stig9T/$var[stig9T]/stig9M/$var[stig9M]/stig9B/$var[stig9B]]
+ 
+      $else
+ 
+        $setUserVar[money;$sum[$getUserVar[money];$var[exchange]]]
+        $var[tc.total;$sum[$var[tc.total];$var[exchange]]]
+        $description[You got $var[stig4T.name] stigma!
+$var[stig4T.name] → $var[exchange]  $var[coin.emote]]
+        $footer[Now you have : $getUserVar[money] tericoins] 
+ 
+      $endif
+
+
+
+
+      $elseif[$var[offRate]==2]
+      
+        $c[Set 4 - M]
+
+      $if[$var[stig4M]==false]
+ 
+        $var[stig4M;true]
+        $description[You got $var[stig4M.name] stigma!]
+        $footer[You can equip it using 'equip command']
+        $image[$var[pic4]$var[M]]
+        $setUserVar[stigma;stig1T/$var[stig1T]/stig1M/$var[stig1M]/stig1B/$var[stig1B]/stig2T/$var[stig2T]/stig2M/$var[stig2M]/stig2B/$var[stig2B]/stig3T/$var[stig3T]/stig3M/$var[stig3M]/stig3B/$var[stig3B]/stig4T/$var[stig4T]/stig4M/$var[stig4M]/stig4B/$var[stig4B]/stig5T/$var[stig5T]/stig5M/$var[stig5M]/stig5B/$var[stig5B]/stig6T/$var[stig6T]/stig6M/$var[stig6M]/stig6B/$var[stig6B]/stig7T/$var[stig7T]/stig7M/$var[stig7M]/stig7B/$var[stig7B]/stig8T/$var[stig8T]/stig8M/$var[stig8M]/stig8B/$var[stig8B]/stig9T/$var[stig9T]/stig9M/$var[stig9M]/stig9B/$var[stig9B]]
+ 
+      $else
+ 
+        $setUserVar[money;$sum[$getUserVar[money];$var[exchange]]]
+        $var[tc.total;$sum[$var[tc.total];$var[exchange]]]
+        $description[You got $var[stig4M.name] stigma!
+$var[stig4M.name] → $var[exchange]  $var[coin.emote]]
+        $footer[Now you have : $getUserVar[money] tericoins]
+
+      $endif
+
+
+
+
+      
+      $elseif[$var[offRate]==3]
+      
+        $c[Set 4 - B]
+
+      $if[$var[stig4B]==false]
+ 
+       $var[stig4B;true]
+       $description[You got $var[stig4B.name] stigma!]
+       $footer[You can equip it using 'equip command']
+       $image[$var[pic4]$var[B]]
+       $setUserVar[stigma;stig1T/$var[stig1T]/stig1M/$var[stig1M]/stig1B/$var[stig1B]/stig2T/$var[stig2T]/stig2M/$var[stig2M]/stig2B/$var[stig2B]/stig3T/$var[stig3T]/stig3M/$var[stig3M]/stig3B/$var[stig3B]/stig4T/$var[stig4T]/stig4M/$var[stig4M]/stig4B/$var[stig4B]/stig5T/$var[stig5T]/stig5M/$var[stig5M]/stig5B/$var[stig5B]/stig6T/$var[stig6T]/stig6M/$var[stig6M]/stig6B/$var[stig6B]/stig7T/$var[stig7T]/stig7M/$var[stig7M]/stig7B/$var[stig7B]/stig8T/$var[stig8T]/stig8M/$var[stig8M]/stig8B/$var[stig8B]/stig9T/$var[stig9T]/stig9M/$var[stig9M]/stig9B/$var[stig9B]]
+
+     $else
+ 
+       $setUserVar[money;$sum[$getUserVar[money];$var[exchange]]]
+       $var[tc.total;$sum[$var[tc.total];$var[exchange]]]
+       $description[You got $var[stig4B.name] stigma!
+$var[stig4B.name] → $var[exchange]  $var[coin.emote]]
+       $footer[Now you have : $getUserVar[money] tericoins]
+
+     $endif
+
+
+
+
+      
+      $elseif[$var[offRate]==4]
+      
+        $c[Set 6 - T]
+
+$if[$var[stig6T]==false]
+ 
+        $var[stig6T;true]
+        $description[You got $var[stig6T.name] stigma!]
+        $footer[You can equip it using 'equip command']
+        $image[$var[pic6]$var[T]]
+        $setUserVar[stigma;stig1T/$var[stig1T]/stig1M/$var[stig1M]/stig1B/$var[stig1B]/stig2T/$var[stig2T]/stig2M/$var[stig2M]/stig2B/$var[stig2B]/stig3T/$var[stig3T]/stig3M/$var[stig3M]/stig3B/$var[stig3B]/stig4T/$var[stig4T]/stig4M/$var[stig4M]/stig4B/$var[stig4B]/stig5T/$var[stig5T]/stig5M/$var[stig5M]/stig5B/$var[stig5B]/stig6T/$var[stig6T]/stig6M/$var[stig6M]/stig6B/$var[stig6B]/stig7T/$var[stig7T]/stig7M/$var[stig7M]/stig7B/$var[stig7B]/stig8T/$var[stig8T]/stig8M/$var[stig8M]/stig8B/$var[stig8B]/stig9T/$var[stig9T]/stig9M/$var[stig9M]/stig9B/$var[stig9B]]
+ 
+      $else
+ 
+        $setUserVar[money;$sum[$getUserVar[money];$var[exchange]]]
+        $var[tc.total;$sum[$var[tc.total];$var[exchange]]]
+        $description[You got $var[stig6T.name] stigma!
+$var[stig6T.name] → $var[exchange]  $var[coin.emote]]
+        $footer[Now you have : $getUserVar[money] tericoins] 
+ 
+      $endif
+
+
+
+
+      
+      $elseif[$var[offRate]==5]
+      
+        $c[Set 6 - M]
+
+
+$if[$var[stig6M]==false]
+ 
+        $var[stig6M;true]
+        $description[You got $var[stig6M.name] stigma!]
+        $footer[You can equip it using 'equip command']
+        $image[$var[pic6]$var[M]]
+        $setUserVar[stigma;stig1T/$var[stig1T]/stig1M/$var[stig1M]/stig1B/$var[stig1B]/stig2T/$var[stig2T]/stig2M/$var[stig2M]/stig2B/$var[stig2B]/stig3T/$var[stig3T]/stig3M/$var[stig3M]/stig3B/$var[stig3B]/stig4T/$var[stig4T]/stig4M/$var[stig4M]/stig4B/$var[stig4B]/stig5T/$var[stig5T]/stig5M/$var[stig5M]/stig5B/$var[stig5B]/stig6T/$var[stig6T]/stig6M/$var[stig6M]/stig6B/$var[stig6B]/stig7T/$var[stig7T]/stig7M/$var[stig7M]/stig7B/$var[stig7B]/stig8T/$var[stig8T]/stig8M/$var[stig8M]/stig8B/$var[stig8B]/stig9T/$var[stig9T]/stig9M/$var[stig9M]/stig9B/$var[stig9B]]
+ 
+      $else
+ 
+        $setUserVar[money;$sum[$getUserVar[money];$var[exchange]]]
+        $var[tc.total;$sum[$var[tc.total];$var[exchange]]]
+        $description[You got $var[stig6M.name] stigma!
+$var[stig6M.name] → $var[exchange]  $var[coin.emote]]
+        $footer[Now you have : $getUserVar[money] tericoins]
+
+      $endif
+
+
+
+
+      
+      $elseif[$var[offRate]==6]
+      
+        $c[Set 6 - B]
+
+
+$if[$var[stig6B]==false]
+ 
+       $var[stig6B;true]
+       $description[You got $var[stig6B.name] stigma!]
+       $footer[You can equip it using 'equip command']
+       $image[$var[pic6]$var[B]]
+       $setUserVar[stigma;stig1T/$var[stig1T]/stig1M/$var[stig1M]/stig1B/$var[stig1B]/stig2T/$var[stig2T]/stig2M/$var[stig2M]/stig2B/$var[stig2B]/stig3T/$var[stig3T]/stig3M/$var[stig3M]/stig3B/$var[stig3B]/stig4T/$var[stig4T]/stig4M/$var[stig4M]/stig4B/$var[stig4B]/stig5T/$var[stig5T]/stig5M/$var[stig5M]/stig5B/$var[stig5B]/stig6T/$var[stig6T]/stig6M/$var[stig6M]/stig6B/$var[stig6B]/stig7T/$var[stig7T]/stig7M/$var[stig7M]/stig7B/$var[stig7B]/stig8T/$var[stig8T]/stig8M/$var[stig8M]/stig8B/$var[stig8B]/stig9T/$var[stig9T]/stig9M/$var[stig9M]/stig9B/$var[stig9B]]
+
+     $else
+ 
+       $setUserVar[money;$sum[$getUserVar[money];$var[exchange]]]
+       $var[tc.total;$sum[$var[tc.total];$var[exchange]]]
+       $description[You got $var[stig6B.name] stigma!
+$var[stig6B.name] → $var[exchange]  $var[coin.emote]]
+       $footer[Now you have : $getUserVar[money] tericoins]
+
+     $endif
+
+
+
+
+      
+      $endif
+
+    $endif
+    
+    
+    
+  $c[For set 6]
+
+
+  $elseif[$var[supply2]==set6] 
+
+    $if[$and[$var[probs]>=0;$var[probs]<=52]]
+
+      $var[g.coins;$random[500;20000]]
+      $setUserVar[money;$sum[$getUserVar[money];$var[g.coins]]]
+      $var[tc.total;$sum[$var[tc.total];$var[g.coins]]]
+      $description[You got $var[g.coins]  $var[coin.emote]  !]
+      $footer[Now you have : $getUserVar[money] tericoins]
+
+    $elseif[$and[$var[probs]>=53;$var[probs]<=62]]
+ 
+      $if[$var[stig6T]==false]
+ 
+        $var[stig6T;true]
+        $description[You got $var[stig6T.name] stigma!]
+        $footer[You can equip it using 'equip command']
+        $image[$var[pic6]$var[T]]
+        $setUserVar[stigma;stig1T/$var[stig1T]/stig1M/$var[stig1M]/stig1B/$var[stig1B]/stig2T/$var[stig2T]/stig2M/$var[stig2M]/stig2B/$var[stig2B]/stig3T/$var[stig3T]/stig3M/$var[stig3M]/stig3B/$var[stig3B]/stig4T/$var[stig4T]/stig4M/$var[stig4M]/stig4B/$var[stig4B]/stig5T/$var[stig5T]/stig5M/$var[stig5M]/stig5B/$var[stig5B]/stig6T/$var[stig6T]/stig6M/$var[stig6M]/stig6B/$var[stig6B]/stig7T/$var[stig7T]/stig7M/$var[stig7M]/stig7B/$var[stig7B]/stig8T/$var[stig8T]/stig8M/$var[stig8M]/stig8B/$var[stig8B]/stig9T/$var[stig9T]/stig9M/$var[stig9M]/stig9B/$var[stig9B]]
+ 
+      $else
+ 
+        $setUserVar[money;$sum[$getUserVar[money];$var[exchange]]]
+        $var[tc.total;$sum[$var[tc.total];$var[exchange]]]
+        $description[You got $var[stig6T.name] stigma!
+$var[stig6T.name] → $var[exchange]  $var[coin.emote]]
+        $footer[Now you have : $getUserVar[money] tericoins] 
+ 
+      $endif
+ 
+    $elseif[$and[$var[probs]>=63;$var[probs]<=72]]
+ 
+      $if[$var[stig6M]==false]
+ 
+        $var[stig6M;true]
+        $description[You got $var[stig6M.name] stigma!]
+        $footer[You can equip it using 'equip command']
+        $image[$var[pic6]$var[M]]
+        $setUserVar[stigma;stig1T/$var[stig1T]/stig1M/$var[stig1M]/stig1B/$var[stig1B]/stig2T/$var[stig2T]/stig2M/$var[stig2M]/stig2B/$var[stig2B]/stig3T/$var[stig3T]/stig3M/$var[stig3M]/stig3B/$var[stig3B]/stig4T/$var[stig4T]/stig4M/$var[stig4M]/stig4B/$var[stig4B]/stig5T/$var[stig5T]/stig5M/$var[stig5M]/stig5B/$var[stig5B]/stig6T/$var[stig6T]/stig6M/$var[stig6M]/stig6B/$var[stig6B]/stig7T/$var[stig7T]/stig7M/$var[stig7M]/stig7B/$var[stig7B]/stig8T/$var[stig8T]/stig8M/$var[stig8M]/stig8B/$var[stig8B]/stig9T/$var[stig9T]/stig9M/$var[stig9M]/stig9B/$var[stig9B]]
+ 
+      $else
+ 
+        $setUserVar[money;$sum[$getUserVar[money];$var[exchange]]]
+        $var[tc.total;$sum[$var[tc.total];$var[exchange]]]
+        $description[You got $var[stig6M.name] stigma!
+$var[stig6M.name] → $var[exchange]  $var[coin.emote]]
+        $footer[Now you have : $getUserVar[money] tericoins]
+
+      $endif
+ 
+    $elseif[$and[$var[probs]>=73;$var[probs]<=82]]
+ 
+      $if[$var[stig6B]==false]
+ 
+       $var[stig6B;true]
+       $description[You got $var[stig6B.name] stigma!]
+       $footer[You can equip it using 'equip command']
+       $image[$var[pic6]$var[B]]
+       $setUserVar[stigma;stig1T/$var[stig1T]/stig1M/$var[stig1M]/stig1B/$var[stig1B]/stig2T/$var[stig2T]/stig2M/$var[stig2M]/stig2B/$var[stig2B]/stig3T/$var[stig3T]/stig3M/$var[stig3M]/stig3B/$var[stig3B]/stig4T/$var[stig4T]/stig4M/$var[stig4M]/stig4B/$var[stig4B]/stig5T/$var[stig5T]/stig5M/$var[stig5M]/stig5B/$var[stig5B]/stig6T/$var[stig6T]/stig6M/$var[stig6M]/stig6B/$var[stig6B]/stig7T/$var[stig7T]/stig7M/$var[stig7M]/stig7B/$var[stig7B]/stig8T/$var[stig8T]/stig8M/$var[stig8M]/stig8B/$var[stig8B]/stig9T/$var[stig9T]/stig9M/$var[stig9M]/stig9B/$var[stig9B]]
+
+     $else
+ 
+       $setUserVar[money;$sum[$getUserVar[money];$var[exchange]]]
+       $var[tc.total;$sum[$var[tc.total];$var[exchange]]]
+       $description[You got $var[stig6B.name] stigma!
+$var[stig6B.name] → $var[exchange]  $var[coin.emote]]
+       $footer[Now you have : $getUserVar[money] tericoins]
+
+     $endif
+     
+    $c[Off rates]
+   
+    
+    $elseif[$and[$var[probs]>=83;$var[probs]<=99]]
+    
+      $var[offRate;$random[1;7]] $c[Happy reminder: randoms wont return the highest value you put]
+      
+      $if[$var[offRate]==1]
+      
+        $c[Set 4 - T]
+
+
+$if[$var[stig4T]==false]
+ 
+        $var[stig4T;true]
+        $description[You got $var[stig4T.name] stigma!]
+        $footer[You can equip it using 'equip command']
+        $image[$var[pic4]$var[T]]
+        $setUserVar[stigma;stig1T/$var[stig1T]/stig1M/$var[stig1M]/stig1B/$var[stig1B]/stig2T/$var[stig2T]/stig2M/$var[stig2M]/stig2B/$var[stig2B]/stig3T/$var[stig3T]/stig3M/$var[stig3M]/stig3B/$var[stig3B]/stig4T/$var[stig4T]/stig4M/$var[stig4M]/stig4B/$var[stig4B]/stig5T/$var[stig5T]/stig5M/$var[stig5M]/stig5B/$var[stig5B]/stig6T/$var[stig6T]/stig6M/$var[stig6M]/stig6B/$var[stig6B]/stig7T/$var[stig7T]/stig7M/$var[stig7M]/stig7B/$var[stig7B]/stig8T/$var[stig8T]/stig8M/$var[stig8M]/stig8B/$var[stig8B]/stig9T/$var[stig9T]/stig9M/$var[stig9M]/stig9B/$var[stig9B]]
+ 
+      $else
+ 
+        $setUserVar[money;$sum[$getUserVar[money];$var[exchange]]]
+        $var[tc.total;$sum[$var[tc.total];$var[exchange]]]
+        $description[You got $var[stig4T.name] stigma!
+$var[stig4T.name] → $var[exchange]  $var[coin.emote]]
+        $footer[Now you have : $getUserVar[money] tericoins] 
+ 
+      $endif
+
+
+
+      
+      $elseif[$var[offRate]==2]
+      
+        $c[Set 4 - M]
+
+      $if[$var[stig4M]==false]
+ 
+        $var[stig4M;true]
+        $description[You got $var[stig4M.name] stigma!]
+        $footer[You can equip it using 'equip command']
+        $image[$var[pic4]$var[M]]
+        $setUserVar[stigma;stig1T/$var[stig1T]/stig1M/$var[stig1M]/stig1B/$var[stig1B]/stig2T/$var[stig2T]/stig2M/$var[stig2M]/stig2B/$var[stig2B]/stig3T/$var[stig3T]/stig3M/$var[stig3M]/stig3B/$var[stig3B]/stig4T/$var[stig4T]/stig4M/$var[stig4M]/stig4B/$var[stig4B]/stig5T/$var[stig5T]/stig5M/$var[stig5M]/stig5B/$var[stig5B]/stig6T/$var[stig6T]/stig6M/$var[stig6M]/stig6B/$var[stig6B]/stig7T/$var[stig7T]/stig7M/$var[stig7M]/stig7B/$var[stig7B]/stig8T/$var[stig8T]/stig8M/$var[stig8M]/stig8B/$var[stig8B]/stig9T/$var[stig9T]/stig9M/$var[stig9M]/stig9B/$var[stig9B]]
+ 
+      $else
+ 
+        $setUserVar[money;$sum[$getUserVar[money];$var[exchange]]]
+        $var[tc.total;$sum[$var[tc.total];$var[exchange]]]
+        $description[You got $var[stig4M.name] stigma!
+$var[stig4M.name] → $var[exchange]  $var[coin.emote]]
+        $footer[Now you have : $getUserVar[money] tericoins]
+
+      $endif
+
+
+
+
+      
+      $elseif[$var[offRate]==3]
+      
+        $c[Set 4 - B]
+
+      $if[$var[stig4B]==false]
+ 
+       $var[stig4B;true]
+       $description[You got $var[stig4B.name] stigma!]
+       $footer[You can equip it using 'equip command']
+        $image[$var[pic4]$var[M]]
+       $setUserVar[stigma;stig1T/$var[stig1T]/stig1M/$var[stig1M]/stig1B/$var[stig1B]/stig2T/$var[stig2T]/stig2M/$var[stig2M]/stig2B/$var[stig2B]/stig3T/$var[stig3T]/stig3M/$var[stig3M]/stig3B/$var[stig3B]/stig4T/$var[stig4T]/stig4M/$var[stig4M]/stig4B/$var[stig4B]/stig5T/$var[stig5T]/stig5M/$var[stig5M]/stig5B/$var[stig5B]/stig6T/$var[stig6T]/stig6M/$var[stig6M]/stig6B/$var[stig6B]/stig7T/$var[stig7T]/stig7M/$var[stig7M]/stig7B/$var[stig7B]/stig8T/$var[stig8T]/stig8M/$var[stig8M]/stig8B/$var[stig8B]/stig9T/$var[stig9T]/stig9M/$var[stig9M]/stig9B/$var[stig9B]]
+
+     $else
+ 
+       $setUserVar[money;$sum[$getUserVar[money];$var[exchange]]]
+       $var[tc.total;$sum[$var[tc.total];$var[exchange]]]
+       $description[You got $var[stig4B.name] stigma!
+$var[stig4B.name] → $var[exchange]  $var[coin.emote]]
+       $footer[Now you have : $getUserVar[money] tericoins]
+
+     $endif
+
+
+
+
+      
+      $elseif[$var[offRate]==4]
+      
+        $c[Set 5 - T]
+
+$if[$var[stig5T]==false]
+ 
+        $var[stig5T;true]
+        $description[You got $var[stig5T.name] stigma!]
+        $footer[You can equip it using 'equip command']
+        $image[$var[pic5]$var[T]]
+        $setUserVar[stigma;stig1T/$var[stig1T]/stig1M/$var[stig1M]/stig1B/$var[stig1B]/stig2T/$var[stig2T]/stig2M/$var[stig2M]/stig2B/$var[stig2B]/stig3T/$var[stig3T]/stig3M/$var[stig3M]/stig3B/$var[stig3B]/stig4T/$var[stig4T]/stig4M/$var[stig4M]/stig4B/$var[stig4B]/stig5T/$var[stig5T]/stig5M/$var[stig5M]/stig5B/$var[stig5B]/stig6T/$var[stig6T]/stig6M/$var[stig6M]/stig6B/$var[stig6B]/stig7T/$var[stig7T]/stig7M/$var[stig7M]/stig7B/$var[stig7B]/stig8T/$var[stig8T]/stig8M/$var[stig8M]/stig8B/$var[stig8B]/stig9T/$var[stig9T]/stig9M/$var[stig9M]/stig9B/$var[stig9B]]
+ 
+      $else
+ 
+        $setUserVar[money;$sum[$getUserVar[money];$var[exchange]]]
+        $var[tc.total;$sum[$var[tc.total];$var[exchange]]]
+        $description[You got $var[stig5T.name] stigma!
+$var[stig5T.name] → $var[exchange]  $var[coin.emote]]
+        $footer[Now you have : $getUserVar[money] tericoins] 
+ 
+      $endif
+
+
+
+      
+      $elseif[$var[offRate]==5]
+      
+        $c[Set 5 - M]
+
+$if[$var[stig5M]==false]
+ 
+        $var[stig5M;true]
+        $description[You got $var[stig5M.name] stigma!]
+        $footer[You can equip it using 'equip command']
+        $image[$var[pic5]$var[M]]
+        $setUserVar[stigma;stig1T/$var[stig1T]/stig1M/$var[stig1M]/stig1B/$var[stig1B]/stig2T/$var[stig2T]/stig2M/$var[stig2M]/stig2B/$var[stig2B]/stig3T/$var[stig3T]/stig3M/$var[stig3M]/stig3B/$var[stig3B]/stig4T/$var[stig4T]/stig4M/$var[stig4M]/stig4B/$var[stig4B]/stig5T/$var[stig5T]/stig5M/$var[stig5M]/stig5B/$var[stig5B]/stig6T/$var[stig6T]/stig6M/$var[stig6M]/stig6B/$var[stig6B]/stig7T/$var[stig7T]/stig7M/$var[stig7M]/stig7B/$var[stig7B]/stig8T/$var[stig8T]/stig8M/$var[stig8M]/stig8B/$var[stig8B]/stig9T/$var[stig9T]/stig9M/$var[stig9M]/stig9B/$var[stig9B]]
+ 
+      $else
+ 
+        $setUserVar[money;$sum[$getUserVar[money];$var[exchange]]]
+        $var[tc.total;$sum[$var[tc.total];$var[exchange]]]
+        $description[You got $var[stig5M.name] stigma!
+$var[stig5M.name] → $var[exchange]  $var[coin.emote]]
+        $footer[Now you have : $getUserVar[money] tericoins] 
+ 
+      $endif
+
+
+
+
+      
+      $elseif[$var[offRate]==6]
+      
+        $c[Set 5 - B]
+
+$if[$var[stig5B]==false]
+ 
+       $var[stig5B;true]
+       $description[You got $var[stig5B.name] stigma!]
+       $footer[You can equip it using 'equip command']
+       $image[$var[pic5]$var[B]]
+       $setUserVar[stigma;stig1T/$var[stig1T]/stig1M/$var[stig1M]/stig1B/$var[stig1B]/stig2T/$var[stig2T]/stig2M/$var[stig2M]/stig2B/$var[stig2B]/stig3T/$var[stig3T]/stig3M/$var[stig3M]/stig3B/$var[stig3B]/stig4T/$var[stig4T]/stig4M/$var[stig4M]/stig4B/$var[stig4B]/stig5T/$var[stig5T]/stig5M/$var[stig5M]/stig5B/$var[stig5B]/stig6T/$var[stig6T]/stig6M/$var[stig6M]/stig6B/$var[stig6B]/stig7T/$var[stig7T]/stig7M/$var[stig7M]/stig7B/$var[stig7B]/stig8T/$var[stig8T]/stig8M/$var[stig8M]/stig8B/$var[stig8B]/stig9T/$var[stig9T]/stig9M/$var[stig9M]/stig9B/$var[stig9B]]
+
+     $else
+ 
+       $setUserVar[money;$sum[$getUserVar[money];$var[exchange]]]
+       $var[tc.total;$sum[$var[tc.total];$var[exchange]]]
+       $description[You got $var[stig5B.name] stigma!
+$var[stig5B.name] → $var[exchange]  $var[coin.emote]]
+       $footer[Now you have : $getUserVar[money] tericoins]
+
+     $endif
+
+
+      
+      $endif
+
+    $endif
+
+  $endif
+
+  $setUserVar[badges;$var[unchanged]/tc/$var[tc.total]/$var[tc.badge]]
+
+$endif
+$endif
