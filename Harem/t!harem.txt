@@ -1,0 +1,25 @@
+$nomention $reply $ignoreTriggerCase
+$onlyIf[$getServerVar[bank.prog]>=7;❌ Ypu need to reach the 7th milestone (40M) to use this]
+
+$onlyIf[$toLowercase[$message[1]]!=add;]
+$author[Home Sweet Home]
+$title[$nickname[$mentioned[1;yes]]'s Harem]
+$color[$getRoleColor[$highestRole[$authorID]]]
+
+$textSplit[$getUserVar[harem;$mentioned[1;yes]];/]
+$description[
+MEMBERS:
+
+$if[$splitText[1]!=]1 - <@$splitText[1]>$endif
+$if[$splitText[2]!=]2 - <@$splitText[2]>$endif
+$if[$splitText[3]!=]3 - <@$splitText[3]>$endif
+$if[$splitText[4]!=]4 - <@$splitText[4]>$endif
+$if[$splitText[5]!=]5 - <@$splitText[5]>$endif
+$if[$splitText[6]!=]6 - <@$splitText[6]>$endif
+$if[$splitText[7]!=]7 - <@$splitText[7]>$endif
+$if[$splitText[8]!=]8 - <@$splitText[8]>$endif
+$if[$splitText[9]!=]9 - <@$splitText[9]>$endif
+$if[$splitText[10]!=]10 - <@$splitText[10]>$endif
+
+Add more using `t!harem add <@user>`]
+$footer[You can have up to 10 people in your harem]

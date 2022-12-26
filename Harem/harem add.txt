@@ -1,0 +1,68 @@
+$nomention $reply $ignoreTriggerCase
+$onlyIf[$getServerVar[bank.prog]>=7;❌ Ypu need to reach the 7th milestone (40M) to use this]
+
+$author[Home Sweet Home]
+$color[ff1a1a]
+
+$if[$mentioned[1;yes]!=$authorID]
+
+$textSplit[$getUserVar[harem];/]
+$var[m1;$splitText[1]]
+$var[m2;$splitText[2]]
+$var[m3;$splitText[3]]
+$var[m4;$splitText[4]]
+$var[m5;$splitText[5]]
+$var[m6;$splitText[6]]
+$var[m7;$splitText[7]]
+$var[m8;$splitText[8]]
+$var[m9;$splitText[9]]
+$var[m10;$splitText[10]]
+
+$if[$splitText[10]==]
+
+$if[$and[$var[m1]!=$mentioned[1;no];$var[m2]!=$mentioned[1;no];$var[m3]!=$mentioned[1;no];$var[m4]!=$mentioned[1;no];$var[m5]!=$mentioned[1;no];$var[m6]!=$mentioned[1;no];$var[m7]!=$mentioned[1;no];$var[m8]!=$mentioned[1;no];$var[m9]!=$mentioned[1;no];$var[m10]!=$mentioned[1;no]]]
+
+$title[Would you like to be part of my harem?]
+$description[It will be fun, pinky promise~]
+$color[$getRoleColor[$highestRole[$authorID]]]
+$addButton[yes;btharem;Yes!;success;no;🤍;]
+
+$var[asking;$mentioned[1;no]]
+
+$setUserVar[harem;$var[m1]/$var[m2]/$var[m3]/$var[m4]/$var[m5]/$var[m6]/$var[m7]/$var[m8]/$var[m9]/$var[m10]//$var[asking]]
+
+$textSplit[$getUserVar[harem;$mentioned[1;no]];/]
+$var[m1;$optOff[$splitText[1]]]
+$var[m2;$optOff[$splitText[2]]]
+$var[m3;$optOff[$splitText[3]]]
+$var[m4;$optOff[$splitText[4]]]
+$var[m5;$optOff[$splitText[5]]]
+$var[m6;$optOff[$splitText[6]]]
+$var[m7;$optOff[$splitText[7]]]
+$var[m8;$optOff[$splitText[8]]]
+$var[m9;$optOff[$splitText[9]]]
+$var[m10;$optOff[$splitText[10]]]
+$var[asker;$authorID]
+
+$setUserVar[harem;$var[m1]/$var[m2]/$var[m3]/$var[m4]/$var[m5]/$var[m6]/$var[m7]/$var[m8]/$var[m9]/$var[m10]/$var[asker]/;$mentioned[1;no]]
+
+$else
+
+$title[❌ User already in your harem]
+$description[Why don't you try asking someone else?]
+
+$endif
+
+$else
+
+$title[❌ You are out of harem slots]
+$description[A harem can have max. 10 members, and there are already 10 members in your harem!]
+
+$endif
+
+$else
+
+$title[❌ User not found]
+$description[You have to mention a user to add them to your harem!]
+
+$endif
