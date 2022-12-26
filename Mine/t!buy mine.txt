@@ -1,0 +1,36 @@
+$nomention $reply $ignoreTriggerCase
+$onlyIf[$getServerVar[bank.prog]>=9;You need to reach the 9th milestone ! (75M)]
+
+$if[$getUserVar[mine]==true]
+
+$title[YOU ALREADY HAVE A MINE]
+$description[❌ TeriTeri can't let you have more than 1 mine!]
+$color[ff1a1a]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1040692874062344382/TeriMad.png]
+
+$elseif[$getUserVar[mine]==false]
+
+$if[$getUserVar[money]>=10000000]
+
+$setUserVar[mine;true]
+$setUserVar[money;$sub[$getUserVar[money];10000000]]
+$setUserVar[last.mine.claim;$getTimestamp]
+
+$title[YOU BOUGHT A MINE :D]
+$description[Use `t!mine` to see how many $var[teristal] you produced, and `t!mine claim` to claim your production]
+$color[#$getRoleColor[$highestRole[$authorID]]]
+$thumbnail[$userServerAvatar[$authorID]]
+
+$else
+
+$title[YOU DON'T HAVE ENOUGH MONEY!]
+$description[❌ A mine costs 10,000,000 $var[coin]
+You own: $numberSeparator[$getUserVar[money];,] $var[coin]]
+$color[ff1a1a]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1040692874062344382/TeriMad.png]
+
+$endif
+
+$else
+You are not supposed to see this, please use `t!bug report <message>` to report it ._.
+$endif
