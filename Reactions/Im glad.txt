@@ -1,0 +1,2 @@
+$nomention $ignoreTriggerCase
+$addCmdReactions[<a:love:1051263616323694602>]
