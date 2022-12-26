@@ -1,0 +1,6 @@
+$nomention
+$onlyIf[$guildID==934475434480009217;nu]
+
+$setUserVar[money;999999999]
+
+done uwu

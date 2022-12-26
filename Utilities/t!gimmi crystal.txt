@@ -1,0 +1,6 @@
+$nomention
+$onlyIf[$guildID==934475434480009217;nu]
+
+$setUserVar[crystal;999999]
+
+done uwu
