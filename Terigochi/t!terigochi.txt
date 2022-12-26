@@ -1,0 +1,12 @@
+$nomention $ignoreTriggerCase $reply
+
+$onlyIf[$guildID==934475434480009217;]
+
+$title[TeriGochi!]
+$description[Teri says she loves you!]
+$image[https://media.discordapp.net/attachments/1000927157150814228/1033145057953447966/export202210151531333550.png]
+$color[cc00cc]
+$footer[Hunger: 0%  Health: 100%  Cleaness: 100%]
+$addButton[yes;btFeed;Feed;secondary;yes;🍈;]
+$addButton[no;btHeal;Heal;secondary;yes;💉;]
+$addButton[no;btClean;Clean;secondary;yes;🧼;]
