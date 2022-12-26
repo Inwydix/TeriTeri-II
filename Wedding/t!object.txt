@@ -1,0 +1,7 @@
+$nomention $reply $ignoreTriggerCase
+$onlyIf[$getServerVar[bank.prog]>=7;❌ Ypu need to reach the 7th milestone (40M) to use this]
+
+Teri: Does any Teri object to this union of for ever hold their peace?
+
+$editIn[3s;$nickname[$authorID]: I do!!
+Everyone: gasp]
