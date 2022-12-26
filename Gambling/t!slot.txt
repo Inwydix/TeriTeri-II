@@ -1,0 +1,64 @@
+$nomention $reply $ignoreTriggerCase
+$var[coin.emote;<:Tericoin:1001510021907099750>]
+
+$if[$isNumber[$message[1]]]
+
+$if[$message[1]>=1]
+
+$if[$getUserVar[money]>=$round[$message[1];0]]
+
+$cooldown[2m;❌ You are looking for more coins | Time left: %time%]
+$setUserVar[money;$sub[$getUserVar[money];$round[$message[1];0]]]
+
+$title[TeriSlot]
+$description[| ⭐ | ⭐ | ⭐ |]
+$color[$random[111111;999999]]
+
+$var[s1;$randomText[⭐;🤍;🌻;🎁;🥒;🐛;🎈]]
+$var[s2;$optOff[$randomText[⭐;🤍;🌻;🎁;🥒;🐛;🎈]]]
+$var[s3;$optOff[$randomText[⭐;🤍;🌻;🎁;🥒;🐛;🎈]]]
+
+$if[$and[$var[s1]==$var[s2];$var[s2]==$var[s3]]]
+$var[result;JACKPOT!!! :D]
+$var[price;$multi[$round[$message[1];0];5]]
+$setUserVar[money;$sum[$getUserVar[money];$var[price]]]
+$elseif[$or[$var[s1]==$var[s2];$var[s1]==$var[s3];$var[s2]==$var[s3]]]
+$var[result;You won a prize! :0]
+$var[price;$multi[$round[$message[1];0];2]]
+$setUserVar[money;$sum[$getUserVar[money];$var[price]]]
+$else
+$var[result;You lose! :(]
+$var[price;0]
+$endif 
+
+$editEmbedIn[1s;$var[result];| $var[s1] | $var[s2] | $var[s3] |;You won $numberSeparator[$var[price];,] Tericoins;$random[111111;999999]]
+
+$else
+
+$title[You don't have enough Tericoins]
+$description[❌ You don't have $numberSeparator[$round[$message[1];0];,] $var[coin.emote]!]
+$color[ff1a1a]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1040692874062344382/TeriMad.png]
+
+$endif
+
+$else
+
+$title[Bet at least 1 Tericoin]
+$description[❌ Baka, you can't bet less than 1 $var[coin.emote]]
+$color[ff1a1a]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1040692874062344382/TeriMad.png]
+
+$endif
+
+$else
+
+$title[Invalid number]
+$description[❌ You have to place a bet
+
+For example:
+```t!slot 10000```]
+$color[ff1a1a]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1040692874062344382/TeriMad.png]
+
+$endif
