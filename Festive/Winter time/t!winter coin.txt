@@ -1,0 +1,9 @@
+$nomention $reply $ignoreTriggerCase
+$onlyIf[$getServerVar[winter.time]==true;]
+
+$textSplit[$getUserVar[winterUserVar];/]
+$var[coins;$splitText[$sum[$getTextSplitIndex[winterCoins];1]]]
+
+$title[❄️  **YOU OPENED YOUR SNOWFLAKE BAG**  ❄️]
+$description[One, two, three... you have **$var[coins]**  ❄️]
+$color[ccffff]

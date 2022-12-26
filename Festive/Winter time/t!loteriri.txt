@@ -1,0 +1,48 @@
+$nomention
+$onlyIf[$getServerVar[winter.time]==true;]
+
+$textSplit[$getServerVar[winterServerVar];/]
+$var[ticketPack;$splitText[$sum[$getTextSplitIndex[ticketPack];1]]]
+$var[ticketPrice;$splitText[$sum[$getTextSplitIndex[ticketPrice];1]]]
+$textSplit[$getUserVar[winterUserVar];/]
+$var[tickets;$optOff[$splitText[$sum[$getTextSplitIndex[tickets];1]]]]
+$var[coins;$optOff[$splitText[$sum[$getTextSplitIndex[winterCoins];1]]]]
+
+$title[🎟️  __**WINTER LOTERIRI**__  🎟️]
+$description[** **
+Welcome to TeRiRi's special lottery stall! 
+Here you can buy some winter loteriri tickets and see the prizes~
+
+**__JACKPOT__**
+
+1st prize: 20.000   ❄️
+2nd prize: 10.000   ❄️
+3rd prize: 5.000   ❄️
+
+**__OTHER PRIZES__**
+
+4th prize: 7   📦
+5th prize: 3   📦
+6th prize: 200  ❄️
+
+__**CONSOLATION PRIZES**__
+
+7th prize: 1   🍪 
+8th prize: 10   ❄️
+9th prize: a pat from TeRiRi 
+
+**__BUY TICKETS__**
+
+Price: $var[ticketPrice]  ❄️  per  🎟️
+
+Commands:
+- `t!buy ticket` : to buy  🎟️  (x1)
+- `t!buy ticket pack`: to buy  🎟️  (x$var[ticketPack])
+
+**__TO PLAY LOTERIRI__**
+
+Just use `t!play loteriri` ! 
+(Note: playing will consume  🎟️  (x1))
+** **]
+$footer[You have :  $var[tickets]  🎟️  $var[coins]  ❄️]
+$color[ccffff]

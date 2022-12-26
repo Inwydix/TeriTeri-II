@@ -1,0 +1,46 @@
+$nomention $reply $ignoreTriggerCase
+$onlyIf[$getServerVar[winter.time]==true;]
+
+$var[nothing;<:nothing:1004040766236139622>]
+
+$title[🤖  __**WINTER TIME COMMANDS**__  🤖]
+$description[** **
+:santa:  __**ADMIN COMMANDS**__
+
+$var[nothing]  - `t!winter time:` activate/deactivate the winter time commands
+
+:snowflake:  __**WINTER COMMANDS**__
+
+$var[nothing]  - `t!snowflake hunt:` to go hunt snowflakes with your snowflake hunting net (gives you ❄️)
+
+:santa:  - `t!calendar:` to claim your daily advent calendar rewards
+
+$var[nothing]  - `t!winter coins`: shows your winter money
+
+:snowflake:  - `t!winter shop | t!shop:` opens TeRiRi's winter shop
+$var[nothing]  - `t!buy winter <number>`: to buy the selected winter item
+  
+$var[nothing]  - `t!winter upgrade shop`: opens TeRiRi's winter upgrade shop
+:santa:  - `t!upgrade winter <number>`: to buy the selected winter upgrade
+
+$var[nothing]  - `t!wait for santa:` waits for Santa to come
+$var[nothing]  - `t!wait for santa help:` opens the wait for santa help
+:snowflake:
+$var[nothing]  - `t!gift shop:` opens TeRiRi's gifts shop
+$var[nothing]  - `t!gifts:` opens your gift bag
+$var[nothing]  - `t!open <color> | t!open <color> gift`: to open a received gift
+:santa:  - `t!send <color> gift to <@user>:` to send a gift to an user
+
+$var[nothing]  - `t!loteriri:` opens TeRiRi's special lottery stall
+$var[nothing]  - `t!play loteriri:` to play loteriri
+:snowflake:
+$var[nothing]  - `t!mysteriri box:` opens the mysteriri box menu
+$var[nothing]  - `t!open box | t!open mysteriri box | t!open mystery box:` to open a mysteriri box
+
+:santa:  - `t!winter card:` shows your winter info
+$var[nothing]  - `t!points:` shows you your winter and festive points    
+☃️]
+$footer[TeRiRi wishes you have a merry Christmas and a happy new year!! \(๑╹◡╹๑)ﾉ♬]
+$color[ccffff]
+
+$endif

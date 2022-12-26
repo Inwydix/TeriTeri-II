@@ -1,0 +1,122 @@
+$nomention $reply
+$onlyIf[$getServerVar[winter.time]==true;]
+
+$textSplit[$getUserVar[winterUserVar];/]
+$var[userVar;cookieCount/$splitText[$sum[$getTextSplitIndex[cookieCount];1]]/milkCount/$splitText[$sum[$getTextSplitIndex[milkCount];1]]/pillsCount/$splitText[$sum[$getTextSplitIndex[pillsCount];1]]/santasGot/$splitText[$sum[$getTextSplitIndex[santasGot];1]]/cookieProbs/$splitText[$sum[$getTextSplitIndex[cookieProbs];1]]/milkProbs/$splitText[$sum[$getTextSplitIndex[milkProbs];1]]/pillProbs/$splitText[$sum[$getTextSplitIndex[pillProbs];1]]/cookies/$splitText[$sum[$getTextSplitIndex[cookies];1]]/milk/$splitText[$sum[$getTextSplitIndex[milk];1]]/pills/$splitText[$sum[$getTextSplitIndex[pills];1]]/winterPoints/$splitText[$sum[$getTextSplitIndex[winterPoints];1]]/firstHunt/$splitText[$sum[$getTextSplitIndex[firstHunt];1]]/totalHunts/$splitText[$sum[$getTextSplitIndex[totalHunts];1]]/netUps/$splitText[$sum[$getTextSplitIndex[netUps];1]]/netPrice/$splitText[$sum[$getTextSplitIndex[netPrice];1]]/c&mUp/$splitText[$sum[$getTextSplitIndex[c&mUp];1]]/c&mPrice/$splitText[$sum[$getTextSplitIndex[c&mPrice];1]]/pillUp/$splitText[$sum[$getTextSplitIndex[pillUp];1]]/pillUpPrice/$splitText[$sum[$getTextSplitIndex[pillUpPrice];1]]/received/$splitText[$sum[$getTextSplitIndex[received];1]]/gifted/$splitText[$sum[$getTextSplitIndex[gifted];1]]/recBlue/$splitText[$sum[$getTextSplitIndex[recBlue];1]]/recYello/$splitText[$sum[$getTextSplitIndex[recYello];1]]/recRed/$splitText[$sum[$getTextSplitIndex[recRed];1]]/box/$splitText[$sum[$getTextSplitIndex[box];1]]/lotteryPlays/$splitText[$sum[$getTextSplitIndex[lotteryPlays];1]]/days/$splitText[$sum[$getTextSplitIndex[days];1]]/unlockUp/$splitText[$sum[$getTextSplitIndex[unlockUp];1]]/unlockNet/$splitText[$sum[$getTextSplitIndex[unlockNet];1]]/unlockB/$splitText[$sum[$getTextSplitIndex[unlockB];1]]/unlockY/$splitText[$sum[$getTextSplitIndex[unlockY];1]]/unlockR/$splitText[$sum[$getTextSplitIndex[unlockR];1]]]
+$var[blueG;$splitText[$sum[$getTextSplitIndex[blueG];1]]]
+$var[yellowG;$splitText[$sum[$getTextSplitIndex[yellowG];1]]]
+$var[redG;$splitText[$sum[$getTextSplitIndex[redG];1]]]
+$var[coins;$splitText[$sum[$getTextSplitIndex[winterCoins];1]]]
+$var[points;$splitText[$sum[$getTextSplitIndex[winterPoints];1]]]
+$var[tickets;$splitText[$sum[$getTextSplitIndex[tickets];1]]]
+$var[unlockB;$splitText[$sum[$getTextSplitIndex[unlockB];1]]]
+$var[unlockY;$splitText[$sum[$getTextSplitIndex[unlockY];1]]]
+$var[unlockR;$splitText[$sum[$getTextSplitIndex[unlockR];1]]]
+
+$textSplit[$getServerVar[winterServerVar];/]
+$var[yPrice;$optOff[$splitText[$sum[$getTextSplitIndex[yPrice];1]]]]
+$var[bPrice;$optOff[$splitText[$sum[$getTextSplitIndex[bPrice];1]]]]
+$var[rPrice;$optOff[$splitText[$sum[$getTextSplitIndex[rPrice];1]]]]
+$var[ticketPack;$optOff[$splitText[$sum[$getTextSplitIndex[ticketPack];1]]]]
+$var[ticketPrice;$optOff[$splitText[$sum[$getTextSplitIndex[ticketPrice];1]]]]
+
+$if[$or[$message[1]==blue;$message[1]==blu;$and[$message[1]==gift;$message[2]==1]==true]]
+
+$onlyIf[$var[unlockB]==true; ❌ You didn't unlock this type of gift yet!]
+$if[$var[coins]>=$var[bPrice]]
+$var[coins;$sub[$var[coins];$var[bPrice]]]
+$var[blueG;$sum[$var[blueG];1]]
+$title[💸  SUCESS  💸]
+$description[You bought a blue gift! Use `t!send <color> gift to <@user>` to send it to someone or `t!gifts` to see your gifts!]
+$footer[Now you have $var[coins] ❄️ and $var[blueG] 🔷🎁]
+$color[33cc33]
+$setUserVar[winterUserVar;$var[userVar]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/winterCoins/$var[coins]/winterPoints/$var[points]/tickets/$var[tickets]]
+
+$elseif[$var[coins]<$var[bPrice]]
+$title[❌  YOU DON'T HAVE ENOUGH ❄️  ❌]
+$description[TeRiRi won't let you buy this until you have $var[bPrice] ❄️]
+$color[ff1a1a]
+$endif
+
+$elseif[$or[$message[1]==yellow;$message[1]==yelow;$and[$message[1]==gift;$message[2]==2]==true]]
+
+$onlyIf[$var[unlockY]==true;❌ You didn't unlock this type of gift yet!]
+$if[$var[coins]>=$var[yPrice]]
+$var[coins;$sub[$var[coins];$var[yPrice]]]
+$var[yellowG;$sum[$var[yellowG];1]]
+$title[💸  SUCESS  💸]
+$description[You bought a yellow gift! Use `t!send <color> gift to <@user>` to send it to someone or `t!gifts` to see your gifts!]
+$footer[Now you have $var[coins] ❄️ and $var[yellowG] 💛🎁]
+$color[33cc33]
+$setUserVar[winterUserVar;$var[userVar]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/winterCoins/$var[coins]/winterPoints/$var[points]/tickets/$var[tickets]]
+
+$elseif[$var[coins]<$var[yPrice]]
+$title[❌  YOU DON'T HAVE ENOUGH ❄️  ❌]
+$description[TeRiRi won't let you buy this until you have $var[yPrice] ❄️]
+$color[ff1a1a]
+$endif
+
+$elseif[$or[$message[1]==red;$and[$message[1]==gift;$message[2]==3]==true]]
+
+$onlyIf[$var[unlockR]==true;❌ You didnt unlock this type of gift yet!]
+$if[$var[coins]>=$var[rPrice]]
+$var[coins;$sub[$var[coins];$var[rPrice]]]
+$var[redG;$sum[$var[redG];1]]
+$title[💸  SUCESS  💸]
+$description[You bought a red gift! Use `t!send <color> gift to <@user>` to send it to someone or `t!gifts` to see your gifts!]
+$footer[Now you have $var[coins] ❄️ and $var[redG] 🔴🎁]
+$color[33cc33]
+$setUserVar[winterUserVar;$var[userVar]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/winterCoins/$var[coins]/winterPoints/$var[points]/tickets/$var[tickets]]
+
+$elseif[$var[coins]<$var[rPrice]]
+$title[❌  YOU DON'T HAVE ENOUGH ❄️  ❌]
+$description[TeRiRi won't let you buy this until you have $var[rPrice] ❄️]
+$color[ff1a1a]
+$endif
+
+$elseif[$and[$message[1]==gift;$and[$message[2]==1;$message[2]==2;$message[2]==3]==false]]
+
+$title[❌  TERIRI COULDN'T FIND THIS GIFT  ❌]
+$description[Check you wrote it correctly and try again!]
+$color[ff1a1a]
+
+$elseif[$or[$message[1]==ticket;$message[1]==tickets]]
+
+$if[$message[2]==pack]
+
+$if[$var[coins]>=$multi[$var[ticketPrice];5]]
+$var[tickets;$sum[$var[tickets];$var[ticketPack]]]
+$var[coins;$sub[$var[coins];$multi[$var[ticketPrice];$var[ticketPack]]]]
+$title[💸  **__SUCCESS__** 💸]
+$description[You bought $var[ticketPack]  🎟️  ! Now you have $var[tickets] 🎟️]
+$footer[Coins left: $var[coins]  ❄️]
+$color[33cc33]
+$setUserVar[winterUserVar;$var[userVar]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/winterCoins/$var[coins]/winterPoints/$var[points]/tickets/$var[tickets]]
+
+$else
+$title[❌  YOU DON'T HAVE ENOUGH  ❄️  ❌]
+$description[TeRiRi can't let you buy this until you have $multi[$var[ticketPrice];$var[ticketPack]]  ❄️]
+$color[ff1a1a]
+$endif
+
+$else
+
+$if[$var[coins]>=$var[ticketPrice]]
+$var[coins;$sub[$var[coins];$var[ticketPrice]]]
+$var[tickets;$sum[$var[tickets];1]]
+$title[💸  SUCCESS  💸]
+$description[You bought 1  🎟️  ! Now you have $var[tickets] 🎟️]
+$footer[Coins left: $var[coins]  ❄️]
+$color[33cc33]
+$setUserVar[winterUserVar;$var[userVar]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/winterCoins/$var[coins]/winterPoints/$var[points]/tickets/$var[tickets]]
+
+$else
+$title[❌  YOU DON'T HAVE ENOUGH  ❄️  ❌]
+$description[TeRiRi can't let you buy this untill you have $var[ticketPrice]  ❄️]
+$color[ff1a1a]
+$endif
+
+$endif
+
+$endif
+$endif

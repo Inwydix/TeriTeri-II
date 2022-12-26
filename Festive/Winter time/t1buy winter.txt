@@ -1,0 +1,103 @@
+$nomention $reply $botTyping
+$onlyIf[$getServerVar[winter.time]==true;]
+
+$enableDecimals[yes]
+
+  $textSplit[$getUserVar[winterUserVar];/]
+  $var[userVar;cookieCount/$splitText[$sum[$getTextSplitIndex[cookieCount];1]]/milkCount/$splitText[$sum[$getTextSplitIndex[milkCount];1]]/pillsCount/$splitText[$sum[$getTextSplitIndex[pillsCount];1]]/santasGot/$splitText[$sum[$getTextSplitIndex[santasGot];1]]/winterPoints/$splitText[$sum[$getTextSplitIndex[winterPoints];1]]/firstHunt/$splitText[$sum[$getTextSplitIndex[firstHunt];1]]/totalHunts/$splitText[$sum[$getTextSplitIndex[totalHunts];1]]/blueG/$splitText[$sum[$getTextSplitIndex[blueG];1]]/yellowG/$splitText[$sum[$getTextSplitIndex[yellowG];1]]/redG/$splitText[$sum[$getTextSplitIndex[redG];1]]/received/$splitText[$sum[$getTextSplitIndex[received];1]]/gifted/$splitText[$sum[$getTextSplitIndex[gifted];1]]/recBlue/$splitText[$sum[$getTextSplitIndex[recBlue];1]]/recYello/$splitText[$sum[$getTextSplitIndex[recYello];1]]/recRed/$splitText[$sum[$getTextSplitIndex[recRed];1]]/box/$splitText[$sum[$getTextSplitIndex[box];1]]/tickets/$splitText[$sum[$getTextSplitIndex[tickets];1]]/lotteryPlays/$splitText[$sum[$getTextSplitIndex[lotteryPlays];1]]/days/$splitText[$sum[$getTextSplitIndex[days];1]]/unlockB/$splitText[$sum[$getTextSplitIndex[unlockB];1]]/unlockY/$splitText[$sum[$getTextSplitIndex[unlockY];1]]/unlockR/$splitText[$sum[$getTextSplitIndex[unlockR];1]]/unlockUp/$splitText[$sum[$getTextSplitIndex[unlockUp];1]]/unlockNet/$splitText[$sum[$getTextSplitIndex[unlockNet];1]]]
+  $var[coins;$splitText[$sum[$getTextSplitIndex[winterCoins];1]]]
+  $var[cookies;$splitText[$sum[$getTextSplitIndex[cookies];1]]]
+  $var[milk;$splitText[$sum[$getTextSplitIndex[milk];1]]]
+  $var[pills;$splitText[$sum[$getTextSplitIndex[pills];1]]]
+  $var[netUp;$splitText[$sum[$getTextSplitIndex[netUps];1]]]
+  $var[netUpPrice;$splitText[$sum[$getTextSplitIndex[netPrice];1]]]
+  $var[c&mUp;$splitText[$sum[$getTextSplitIndex[c&mUp];1]]]
+  $var[c&mPrice;$splitText[$sum[$getTextSplitIndex[c&mPrice];1]]]
+  $var[pillUp;$splitText[$sum[$getTextSplitIndex[pillUp];1]]]
+  $var[pillUpPrice;$splitText[$sum[$getTextSplitIndex[pillUpPrice];1]]]
+  $var[cookieProbs;$splitText[$sum[$getTextSplitIndex[cookieProbs];1]]]
+  $var[milkProbs;$splitText[$sum[$getTextSplitIndex[milkProbs];1]]]
+  $var[pillProbs;$splitText[$sum[$getTextSplitIndex[pillProbs];1]]]
+  $var[unlockUp;$splitText[$sum[$getTextSplitIndex[unlockUp];1]]]
+  $var[unlockNet;$splitText[$sum[$getTextSplitIndex[unlockNet];1]]]
+
+  $textSplit[$getServerVar[winterServerVar];/]
+  $var[cookiePrice;$optOff[$splitText[$sum[$getTextSplitIndex[cookiePrice];1]]]]
+  $var[milkPrice;$optOff[$splitText[$sum[$getTextSplitIndex[milkPrice];1]]]]
+  $var[pillsPrice;$optOff[$splitText[$sum[$getTextSplitIndex[pillsPrice];1]]]]
+  $var[shopCookies;$optOff[$splitText[$sum[$getTextSplitIndex[cookies];1]]]]
+  $var[shopMilk;$optOff[$splitText[$sum[$getTextSplitIndex[milk];1]]]]
+  $var[shopPills;$optOff[$splitText[$sum[$getTextSplitIndex[pills];1]]]]
+    
+
+    $if[$message==1]
+
+      $if[$var[coins]>=$var[cookiePrice]]
+
+        $var[coins;$sub[$var[coins];$var[cookiePrice]]]
+        $var[cookies;$sum[$var[cookies];$var[shopCookies]]]
+        $setUserVar[winterUserVar;$var[userVar]/winterCoins/$var[coins]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/netUps/$var[netUp]/netPrice/$var[netUpPrice]/c&mUp/$var[c&mUp]/c&mPrice/$var[c&mPrice]/pillUp/$var[pillUp]/pillUpPrice/$var[pillUpPrice]/cookieProbs/$var[cookieProbs]/milkProbs/$var[milkProbs]/pillProbs/$var[pillProbs]]
+        $title[💸  **SUCCESS**  💸]
+        $description[You bought a cookie box, now you have $var[cookies] 🍪]
+        $footer[Money left: $var[coins] ❄️]
+        $color[33cc33]
+
+      $else
+
+        $title[❌  **YOU DON'T HAVE ENOUGH  ❄️ !**]
+        $description[TeRiRi can't sell you this untill you have at least $var[cookiePrice] ❄️]
+        $footer[Right now you have $var[coins] ❄️]
+        $color[ff1a1a]
+
+      $endif 
+
+    $elseif[$message==2]
+
+      $if[$var[coins]>=$var[milkPrice]]
+
+        $var[coins;$sub[$var[coins];$var[milkPrice]]]
+        $var[milk;$sum[$var[milk];$var[shopMilk]]]
+        $setUserVar[winterUserVar;$var[userVar]/winterCoins/$var[coins]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/netUps/$var[netUp]/netPrice/$var[netUpPrice]/c&mUp/$var[c&mUp]/c&mPrice/$var[c&mPrice]/pillUp/$var[pillUp]/pillUpPrice/$var[pillUpPrice]/cookieProbs/$var[cookieProbs]/milkProbs/$var[milkProbs]/pillProbs/$var[pillProbs]]
+        $title[💸  **SUCCESS**  💸]
+        $description[You bought a milk bottle, now you have $var[milk] 🥛]
+        $footer[Money left: $var[coins] ❄️]
+        $color[33cc33]
+
+      $else
+
+        $title[❌  **YOU DON'T HAVE ENOUGH  ❄️ !**]
+        $description[TeRiRi can't sell you this untill you have at least $var[milkPrice] ❄️]
+        $footer[Right now you have $var[coins] ❄️]
+        $color[ff1a1a]
+
+      $endif 
+
+    $elseif[$message==3]
+
+      $if[$var[coins]>=$var[pillsPrice]]
+
+        $var[coins;$sub[$var[coins];$var[pillsPrice]]]
+        $var[pills;$sum[$var[pills];$var[shopPills]]]
+        $setUserVar[winterUserVar;$var[userVar]/winterCoins/$var[coins]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/netUps/$var[netUp]/netPrice/$var[netUpPrice]/c&mUp/$var[c&mUp]/c&mPrice/$var[c&mPrice]/pillUp/$var[pillUp]/pillUpPrice/$var[pillUpPrice]/cookieProbs/$var[cookieProbs]/milkProbs/$var[milkProbs]/pillProbs/$var[pillProbs]]
+        $title[💸  **SUCCESS**  💸]
+        $description[You boughtTeRiRi's special pill box, now you have $var[pills] 💊]
+        $footer[Money left: $var[coins] ❄️]
+        $color[33cc33]
+
+      $else
+
+        $title[❌  **YOU DON'T HAVE ENOUGH  ❄️ !**]
+        $description[TeRiRi can't sell you this untill you have at least $var[pillsPrice] ❄️]
+        $footer[Right now you have $var[coins] ❄️]
+        $color[ff1a1a]
+
+      $endif 
+
+    $else
+
+      $onlyIf[$message[1]!=winter;]
+      $title[❌  **404 : NOT FOUND**  ❌]
+      $description[Check you wrote everything okay and try again!]
+      $color[ff1a1a]
+
+    $endif

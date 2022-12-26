@@ -1,0 +1,81 @@
+$nomention $reply $botTyping
+$onlyIf[$getServerVar[winter.time]==true;]
+
+$if[$or[$argCount[$message]==0;$mentioned[1]==$authorID]]
+
+$textSplit[$getUserVar[winterUserVar];/]
+$var[coins;$splitText[$sum[$getTextSplitIndex[winterCoins];1]]]
+$var[points;$splitText[$sum[$getTextSplitIndex[winterPoints];1]]]
+$var[cookies;$splitText[$sum[$getTextSplitIndex[cookies];1]]]
+$var[milk;$splitText[$sum[$getTextSplitIndex[milk];1]]]
+$var[pills;$splitText[$sum[$getTextSplitIndex[pills];1]]]
+$var[netUps;$splitText[$sum[$getTextSplitIndex[netUps];1]]]
+$var[c&mUp;$splitText[$sum[$getTextSplitIndex[c&mUp];1]]]
+$var[pillUp;$splitText[$sum[$getTextSplitIndex[pillUp];1]]]
+$var[totalHunts;$splitText[$sum[$getTextSplitIndex[totalHunts];1]]]
+$var[cookieCount;$splitText[$sum[$getTextSplitIndex[cookieCount];1]]]
+$var[milkCount;$splitText[$sum[$getTextSplitIndex[milkCount];1]]]
+$var[pillsCount;$splitText[$sum[$getTextSplitIndex[pillsCount];1]]]
+$var[santasGot;$splitText[$sum[$getTextSplitIndex[santasGot];1]]]
+$var[blueG;$splitText[$sum[$getTextSplitIndex[blueG];1]]]
+$var[yellowG;$splitText[$sum[$getTextSplitIndex[yellowG];1]]]
+$var[redG;$splitText[$sum[$getTextSplitIndex[redG];1]]]
+$var[received;$splitText[$sum[$getTextSplitIndex[received];1]]]
+$var[gifted;$splitText[$sum[$getTextSplitIndex[gifted];1]]]
+$var[box;$splitText[$sum[$getTextSplitIndex[box];1]]]
+$var[tickets;$splitText[$sum[$getTextSplitIndex[tickets];1]]]
+$var[days;$splitText[$sum[$getTextSplitIndex[days];1]]]
+$var[lotteryPlays;$splitText[$sum[$getTextSplitIndex[lotteryPlays];1]]]
+
+$title[<:Santa:913832134832173166>  **__YOUR WINTER CARD__**  <:atnaS:913832320904077382>]
+$description[** **
+```Coins : $var[coins] ❄️
+Points : $var[points]
+```
+
+**__INVENTORY__**
+
+```
+Cookies : $var[cookies] 🍪
+Milk : $var[milk] 🥛
+Sleepless pills : $var[pills] 💊
+
+Blue gifts : $var[blueG] 🔷 🎁
+Yellow gifts : $var[yellowG] 💛 🎁
+Red gifts : $var[redG] 🔴 🎁
+
+Mysteriri boxes : $var[box] 📦
+Loteriri tickets : $var[tickets] 🎟️
+```
+**__UPGRADES__**
+
+```
+Net upgrades : $var[netUps] ⏫
+Cookies & Milk upgades : $var[c&mUp] ⏫
+Sleeless pill upgrades : $var[pillUp] ⏫
+```
+**__TOTALS__**
+
+```
+Cookies used : $var[cookieCount] 🍪
+Milk used : $var[milkCount] 🥛
+Pills used : $var[pillsCount] 💊
+
+Gifts given : $var[gifted] 🎁
+Gifts received : $var[received] 🎁
+
+Loteriri plays : $var[lotteryPlays] 🎟️
+Snowflake hunts : $var[totalHunts] 🏹
+Advent calendar days : $var[days] 📆
+
+Cought Santas : $var[santasGot] 🎅
+```** **]
+$footer[TeRiRi thinks you are doing a good job here, $nickname[$authorID]]
+$footerIcon[$authorAvatar]
+$color[ccffff]
+
+$elseif[$mentioned[1]!=$authorID]
+$title[❌  **__WOOPS...!__**  ❌]
+$description[TeRiRi can only let you know your info! She must protect other's data if she wants to get paid (she needs to buy bitter melon juice)]
+$color[ff1a1a]
+$endif

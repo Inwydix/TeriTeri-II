@@ -1,0 +1,149 @@
+$reply
+$onlyIf[$getServerVar[winter.time]==true;]
+
+$c[user var list]
+
+$textSplit[$getUserVar[winterUserVar];/]
+$var[userVar;cookieCount/$splitText[$sum[$getTextSplitIndex[cookieCount];1]]/milkCount/$splitText[$sum[$getTextSplitIndex[milkCount];1]]/pillsCount/$splitText[$sum[$getTextSplitIndex[pillsCount];1]]/santasGot/$splitText[$sum[$getTextSplitIndex[santasGot];1]]/cookieProbs/$splitText[$sum[$getTextSplitIndex[cookieProbs];1]]/milkProbs/$splitText[$sum[$getTextSplitIndex[milkProbs];1]]/pillProbs/$splitText[$sum[$getTextSplitIndex[pillProbs];1]]/firstHunt/$splitText[$sum[$getTextSplitIndex[firstHunt];1]]/totalHunts/$splitText[$sum[$getTextSplitIndex[totalHunts];1]]/netUps/$splitText[$sum[$getTextSplitIndex[netUps];1]]/netPrice/$splitText[$sum[$getTextSplitIndex[netPrice];1]]/c&mUp/$splitText[$sum[$getTextSplitIndex[c&mUp];1]]/c&mPrice/$splitText[$sum[$getTextSplitIndex[c&mPrice];1]]/pillUp/$splitText[$sum[$getTextSplitIndex[pillUp];1]]/pillUpPrice/$splitText[$sum[$getTextSplitIndex[pillUpPrice];1]]/blueG/$splitText[$sum[$getTextSplitIndex[blueG];1]]/yellowG/$splitText[$sum[$getTextSplitIndex[yellowG];1]]/redG/$splitText[$sum[$getTextSplitIndex[redG];1]]/received/$splitText[$sum[$getTextSplitIndex[received];1]]/gifted/$splitText[$sum[$getTextSplitIndex[gifted];1]]/lotteryPlays/$splitText[$sum[$getTextSplitIndex[lotteryPlays];1]]/days/$splitText[$sum[$getTextSplitIndex[days];1]]/unlockB/$splitText[$sum[$getTextSplitIndex[unlockB];1]]/unlockY/$splitText[$sum[$getTextSplitIndex[unlockY];1]]/unlockR/$splitText[$sum[$getTextSplitIndex[unlockR];1]]/unlockUp/$splitText[$sum[$getTextSplitIndex[unlockUp];1]]/unlockNet/$splitText[$sum[$getTextSplitIndex[unlockNet];1]]]
+
+$var[recBlue;$splitText[$sum[$getTextSplitIndex[recBlue];1]]]
+$var[recYello;$splitText[$sum[$getTextSplitIndex[recYello];1]]]
+$var[recRed;$splitText[$sum[$getTextSplitIndex[recRed];1]]]
+$var[cookies;$splitText[$sum[$getTextSplitIndex[cookies];1]]]
+$var[milk;$splitText[$sum[$getTextSplitIndex[milk];1]]]
+$var[pills;$splitText[$sum[$getTextSplitIndex[pills];1]]]
+$var[coins;$splitText[$sum[$getTextSplitIndex[winterCoins];1]]]
+$var[points;$splitText[$sum[$getTextSplitIndex[winterPoints];1]]]
+$var[box;$splitText[$sum[$getTextSplitIndex[box];1]]]
+$var[tickets;$splitText[$sum[$getTextSplitIndex[tickets];1]]]
+
+$c[code]
+
+$if[$message[1]==blue]
+
+$onlyIf[$var[recBlue]>=1;❌ You don't have any blue gifts to open!]
+$var[randomc;$random[0;16]]
+$var[randomm;$random[0;8]]
+$var[randoms;$random[0;100]]
+$var[cookies;$sum[$var[cookies];$var[randomc]]]
+$var[milk;$sum[$var[milk];$var[randomm]]]
+$var[coins;$sum[$var[coins];$var[randoms]]]
+$var[points;$sum[$var[points];50]]
+$var[recBlue;$sub[$var[recBlue];1]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];50]]
+$title[🎁  **__YOU OPENED A BLUE GIFT__**  🎁]
+$description[** **
+__RECEIVED__
+
++ $var[randomc]  🍪
++ $var[randomm]  🥛
++ $var[randoms]  ❄️
+** **]
+$footer[Now you have $var[cookies]  🍪  $var[milk]  🥛  $var[coins]  ❄️]
+$color[ccffff]
+$setUserVar[winterUserVar;$var[userVar]/recBlue/$var[recBlue]/recYello/$var[recYello]/recRed/$var[recRed]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[coins]/winterPoints/$var[points]/box/$var[box]/tickets/$var[tickets]]
+
+$elseif[$message[1]==yellow]
+
+$onlyIf[$var[recYello]>=1;❌ You don't have any yellow gift to open!]
+$var[randoms;$random[20;200]]
+$var[cookies;$sum[$var[cookies];10]] 
+$var[milk;$sum[$var[milk];5]]
+$var[coins;$sum[$var[coins];$var[randoms]]]
+$var[points;$sum[$var[points];100]]
+$var[recYello;$sub[$var[recYello];1]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];100]]
+$title[🎁  **__YOU OPENED A YELLOW GIFT__**  🎁]
+$description[** ** 
+__RECEIVED__
+
++ 10  🍪
++ 5  🥛
++ $var[randoms]  ❄️
+** **]
+$footer[Now you have $var[cookies]  🍪  $var[milk]  🥛  $var[coins]  ❄️]
+$color[ccffff]
+$setUserVar[winterUserVar;$var[userVar]/recBlue/$var[recBlue]/recYello/$var[recYello]/recRed/$var[recRed]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[coins]/winterPoints/$var[points]/box/$var[box]/tickets/$var[tickets]]
+
+$elseif[$message[1]==red]
+
+$onlyIf[$var[recRed]>=1;❌ You don't have any red gift to open!]
+$var[randomp;$random[1;4]]
+$var[randoms;$random[50;1000]]
+$var[pills;$sum[$var[pills];$var[randomp]]]
+$var[coins;$sum[$var[coins];$var[randoms]]]
+$var[points;$sum[$var[points];150]]
+$var[recRed;$sub[$var[recRed];1]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];150]]
+$title[🎁  **__YOU OPENED A RED GIFT__**  🎁]
+$description[** **
+__RECEIVED__
+
++ $var[randomp]  💊
++ $var[randoms]  ❄️
+** **]
+$footer[Now you have $var[pills]  💊  $var[coins]  ❄️]
+$color[ccffff]
+$setUserVar[winterUserVar;$var[userVar]/recBlue/$var[recBlue]/recYello/$var[recYello]/recRed/$var[recRed]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[coins]/winterPoints/$var[points]/box/$var[box]/tickets/$var[tickets]]
+
+$elseif[$or[$message[1]==box;$and[$message[1]==mysteriri;$message[2]==box]==true;$and[$message[1]==mystery;$message[2]==box]==true]]
+
+$onlyIf[$var[box]>=1;❌ You don't have any mysteriri boxes to open!]
+$var[probsM;$random[1;101]]
+$var[probsT;$random[1;101]]
+$var[probsP;$random[1;101]]
+$var[probsB;$random[1;101]]
+$var[recCoins;$random[50;800]]
+$var[recPoints;$random[10;100]]
+$var[recCook;$random[1;10]]
+$var[recMilk;$random[1;5]]
+$var[recTick;$random[1;4]]
+$var[recPills;$random[1;3]]
+$var[getMilks;false]
+$var[getTickets;false]
+$var[getPills;false]
+$var[getXBox;false]
+
+$var[coins;$sum[$var[coins];$var[recCoins]]]
+$var[cookies;$sum[$var[cookies];$var[recCook]]]
+$var[points;$sum[$var[points];$var[recPoints]]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];$var[recPoints]]]
+
+$if[$and[$var[probsM]>=1;$var[probsM]<=50]]
+$var[milk;$sum[$var[milk];$var[recMilk]]]
+$var[getMilks;true]
+$endif
+
+$if[$and[$var[probsT]>=60;$var[probsT]<=80]]
+$var[tickets;$sum[$var[tickets];$var[recTick]]]
+$var[getTickets;true]
+$endif
+
+$if[$and[$var[probsP]>=75;$var[probsP]<=90]]
+$var[pills;$sum[$var[pills];$var[recPills]]]
+$var[getPills;true]
+$endif
+
+$if[$or[$var[probsB]==99;$var[probsB]==100]]
+$var[getXBox;true]
+$else
+$var[box;$sub[$var[box];1]]
+$endif
+
+$title[📦  **__YOU OPENED A MYSTERIRI BOX__**  📦]
+$description[** **
+__RECEIVED__
+$if[$var[getMilks]==true]** **
++ $var[recMilk]  🥛 $endif
+$if[$var[getPills]==true]+ $var[recPills]  💊 $endif
+$if[$var[getTickets]==true]+ $var[recTick]  🎟️ $endif
+$if[$var[getXBox]==true]+ 1  📦 $endif
++ $var[recCook]  🍪
++ $var[recCoins]  ❄️
++ $var[recPoints] winter points
+** **]
+$footer[Now you have : $var[cookies] 🍪  $if[$var[getMilks]==true]$var[milk]  🥛 $endif $if[$var[getPills]==true]$var[pills]  💊 $endif $if[$var[getTickets]==true]$var[tickets]  🎟️ $endif $var[box]  📦  $var[coins]  ❄️]
+$color[ccffff]
+$setUserVar[winterUserVar;$var[userVar]/recBlue/$var[recBlue]/recYello/$var[recYello]/recRed/$var[recRed]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[coins]/winterPoints/$var[points]/box/$var[box]/tickets/$var[tickets]]
+
+$endif

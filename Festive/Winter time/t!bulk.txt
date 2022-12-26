@@ -1,0 +1,280 @@
+$nomention $reply
+$onlyIf[$getServerVar[winter.time]==true;]
+
+$if[$message[1]==buy]
+
+$textSplit[$getUserVar[winterUserVar];/]
+$var[userVar;cookieCount/$splitText[$sum[$getTextSplitIndex[cookieCount];1]]/milkCount/$splitText[$sum[$getTextSplitIndex[milkCount];1]]/pillsCount/$splitText[$sum[$getTextSplitIndex[pillsCount];1]]/santasGot/$splitText[$sum[$getTextSplitIndex[santasGot];1]]/cookieProbs/$splitText[$sum[$getTextSplitIndex[cookieProbs];1]]/milkProbs/$splitText[$sum[$getTextSplitIndex[milkProbs];1]]/pillProbs/$splitText[$sum[$getTextSplitIndex[pillProbs];1]]/cookies/$splitText[$sum[$getTextSplitIndex[cookies];1]]/milk/$splitText[$sum[$getTextSplitIndex[milk];1]]/pills/$splitText[$sum[$getTextSplitIndex[pills];1]]/winterPoints/$splitText[$sum[$getTextSplitIndex[winterPoints];1]]/firstHunt/$splitText[$sum[$getTextSplitIndex[firstHunt];1]]/totalHunts/$splitText[$sum[$getTextSplitIndex[totalHunts];1]]/netUps/$splitText[$sum[$getTextSplitIndex[netUps];1]]/netPrice/$splitText[$sum[$getTextSplitIndex[netPrice];1]]/c&mUp/$splitText[$sum[$getTextSplitIndex[c&mUp];1]]/c&mPrice/$splitText[$sum[$getTextSplitIndex[c&mPrice];1]]/pillUp/$splitText[$sum[$getTextSplitIndex[pillUp];1]]/pillUpPrice/$splitText[$sum[$getTextSplitIndex[pillUpPrice];1]]/received/$splitText[$sum[$getTextSplitIndex[received];1]]/gifted/$splitText[$sum[$getTextSplitIndex[gifted];1]]/recBlue/$splitText[$sum[$getTextSplitIndex[recBlue];1]]/recYello/$splitText[$sum[$getTextSplitIndex[recYello];1]]/recRed/$splitText[$sum[$getTextSplitIndex[recRed];1]]/box/$splitText[$sum[$getTextSplitIndex[box];1]]/lotteryPlays/$splitText[$sum[$getTextSplitIndex[lotteryPlays];1]]/days/$splitText[$sum[$getTextSplitIndex[days];1]]/unlockUp/$splitText[$sum[$getTextSplitIndex[unlockUp];1]]/unlockNet/$splitText[$sum[$getTextSplitIndex[unlockNet];1]]/unlockB/$splitText[$sum[$getTextSplitIndex[unlockB];1]]/unlockY/$splitText[$sum[$getTextSplitIndex[unlockY];1]]/unlockR/$splitText[$sum[$getTextSplitIndex[unlockR];1]]]
+$var[blueG;$splitText[$sum[$getTextSplitIndex[blueG];1]]]
+$var[yellowG;$splitText[$sum[$getTextSplitIndex[yellowG];1]]]
+$var[redG;$splitText[$sum[$getTextSplitIndex[redG];1]]]
+$var[coins;$splitText[$sum[$getTextSplitIndex[winterCoins];1]]]
+$var[points;$splitText[$sum[$getTextSplitIndex[winterPoints];1]]]
+$var[tickets;$splitText[$sum[$getTextSplitIndex[tickets];1]]]
+$var[unlockB;$splitText[$sum[$getTextSplitIndex[unlockB];1]]]
+$var[unlockY;$splitText[$sum[$getTextSplitIndex[unlockY];1]]]
+$var[unlockR;$splitText[$sum[$getTextSplitIndex[unlockR];1]]]
+
+$textSplit[$getServerVar[winterServerVar];/]
+$var[yPrice;$optOff[$splitText[$sum[$getTextSplitIndex[yPrice];1]]]]
+$var[bPrice;$optOff[$splitText[$sum[$getTextSplitIndex[bPrice];1]]]]
+$var[rPrice;$optOff[$splitText[$sum[$getTextSplitIndex[rPrice];1]]]]
+$var[ticketPack;$optOff[$splitText[$sum[$getTextSplitIndex[ticketPack];1]]]]
+$var[ticketPrice;$optOff[$splitText[$sum[$getTextSplitIndex[ticketPrice];1]]]]
+$var[bulkBuy;$optOff[$splitText[$sum[$getTextSplitIndex[bulkBuy];1]]]]
+
+$if[$or[$message[2]==blue;$and[$message[2]==gift;$message[3]==1]==true]]
+
+$onlyIf[$var[unlockB]==true;❌ You didn't unlock this type of gift yet!]
+$onlyIf[$var[coins]>=$sub[$multi[$var[bPrice];$var[bulkBuy]];$divide[$var[bPrice];8]];❌ You don't have enough winter coins ( ❄️ )! TeRiRi can't sell you this untill you own, at least, $sub[$multi[$var[bPrice];$var[bulkBuy]];$divide[$var[bPrice];8]] ❄️]
+
+$var[coins;$sub[$var[coins];$sub[$multi[$var[bPrice];$var[bulkBuy]];$divide[$var[bPrice];8]]]]
+$var[blueG;$sum[$var[blueG];$var[bulkBuy]]]
+$title[💸  **SUCCESS**  💸]
+$description[You bulk bought $var[bulkBuy] blue gifts ( 🔷 🎁 ) successfully!]
+$footer[Now you have :  $var[coins]  ❄️  $var[blueG]  🔷 🎁]
+$color[33cc33]
+$setUserVar[winterUserVar;$var[userVar]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/winterCoins/$var[coins]/winterPoints/$var[points]/tickets/$var[tickets]]
+
+$elseif[$or[$message[2]==yellow;$and[$message[2]==gift;$message[3]==2]==true]]
+
+$onlyIf[$var[unlockY]==true;❌ You didn't unlock this type of gift yet!]
+$onlyIf[$var[coins]>=$sub[$multi[$var[yPrice];$var[bulkBuy]];$divide[$var[yPrice];8]];❌ You don't have enough winter coins ( ❄️ )! TeRiRi can't sell you this untill you own, at least, $sub[$multi[$var[yPrice];$var[bulkBuy]];$divide[$var[yPrice];8]] ❄️]
+
+$var[coins;$sub[$var[coins];$sub[$multi[$var[yPrice];$var[bulkBuy]];$divide[$var[yPrice];8]]]]
+$var[yellowG;$sum[$var[yellowG];$var[bulkBuy]]]
+$title[💸  **SUCCESS**  💸]
+$description[You bulk bought $var[bulkBuy] yellow gifts ( 💛 🎁 ) successfully!]
+$footer[Now you have :  $var[coins]  ❄️  $var[yellowG]  💛 🎁]
+$color[33cc33]
+$setUserVar[winterUserVar;$var[userVar]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/winterCoins/$var[coins]/winterPoints/$var[points]/tickets/$var[tickets]]
+
+$elseif[$or[$message[2]==red;$and[$message[2]==gift;$message[3]==3]==true]]
+
+$onlyIf[$var[unlockR]==true;❌ You didn't unlock this type of gift yet!]
+$onlyIf[$var[coins]>=$sub[$multi[$var[rPrice];$var[bulkBuy]];$divide[$var[rPrice];8]];❌ You don't have enough winter coins ( ❄️ )! TeRiRi can't sell you this untill you own, at least, $sub[$multi[$var[rPrice];$var[bulkBuy]];$divide[$var[rPrice];8]] ❄️]
+
+$var[coins;$sub[$var[coins];$sub[$multi[$var[rPrice];$var[bulkBuy]];$divide[$var[rPrice];8]]]]
+$var[redG;$sum[$var[redG];$var[bulkBuy]]]
+$title[💸  **SUCCESS**  💸]
+$description[You bulk bought $var[bulkBuy] red gifts ( 🔴 🎁 ) successfully!]
+$footer[Now you have :  $var[coins]  ❄️  $var[redG]  🔴 🎁]
+$color[33cc33]
+$setUserVar[winterUserVar;$var[userVar]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/winterCoins/$var[coins]/winterPoints/$var[points]/tickets/$var[tickets]]
+
+$elseif[$or[$message[2]==ticket;$message[2]==tickets]]
+
+$onlyIf[$var[coins]>=$sub[$multi[$multi[$var[ticketPrice];$var[ticketPack]];$var[bulkBuy]];$divide[$var[ticketPrice];8]];❌ You don't have enough winter coins ( ❄️ )! TeRiRi can't sell you this untill you own, at least, $sub[$multi[$multi[$var[ticketPrice];$var[ticketPack]];$var[bulkBuy]];$divide[$var[ticketPrice];8]] ❄️]
+
+$var[coins;$sub[$var[coins];$sub[$multi[$multi[$var[ticketPrice];$var[ticketPack]];$var[bulkBuy]];$divide[$var[ticketPrice];8]]]]
+$var[tickets;$sum[$var[tickets];$multi[$var[bulkBuy];$var[ticketPack]]]]
+$title[💸  **SUCCESS**  💸]
+$description[You bulk bought $multi[$var[bulkBuy];$var[ticketPack]] loteriri tickets ( 🎟️ ) successfully!]
+$footer[Now you have :  $var[coins]  ❄️  $var[tickets]  🎟️]
+$color[33cc33]
+$setUserVar[winterUserVar;$var[userVar]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/winterCoins/$var[coins]/winterPoints/$var[points]/tickets/$var[tickets]]
+
+$else
+
+$title[❌  **404 : NOT FOUND**  ❌]
+$description[TeRiRi couldn't find this item... check you wrote everything ok and try again!]
+$color[ff1a1a]
+
+$endif
+
+$elseif[$message[1]==send]
+
+$c[Var list Sender]
+
+
+$textSplit[$getUserVar[winterUserVar];/]
+$var[userVarSend;cookieCount/$splitText[$sum[$getTextSplitIndex[cookieCount];1]]/milkCount/$splitText[$sum[$getTextSplitIndex[milkCount];1]]/pillsCount/$splitText[$sum[$getTextSplitIndex[pillsCount];1]]/santasGot/$splitText[$sum[$getTextSplitIndex[santasGot];1]]/cookieProbs/$splitText[$sum[$getTextSplitIndex[cookieProbs];1]]/milkProbs/$splitText[$sum[$getTextSplitIndex[milkProbs];1]]/pillProbs/$splitText[$sum[$getTextSplitIndex[pillProbs];1]]/cookies/$splitText[$sum[$getTextSplitIndex[cookies];1]]/milk/$splitText[$sum[$getTextSplitIndex[milk];1]]/pills/$splitText[$sum[$getTextSplitIndex[pills];1]]/firstHunt/$splitText[$sum[$getTextSplitIndex[firstHunt];1]]/totalHunts/$splitText[$sum[$getTextSplitIndex[totalHunts];1]]/netUps/$splitText[$sum[$getTextSplitIndex[netUps];1]]/netPrice/$splitText[$sum[$getTextSplitIndex[netPrice];1]]/c&mUp/$splitText[$sum[$getTextSplitIndex[c&mUp];1]]/c&mPrice/$splitText[$sum[$getTextSplitIndex[c&mPrice];1]]/pillUp/$splitText[$sum[$getTextSplitIndex[pillUp];1]]/pillUpPrice/$splitText[$sum[$getTextSplitIndex[pillUpPrice];1]]/received/$splitText[$sum[$getTextSplitIndex[received];1]]/recBlue/$splitText[$sum[$getTextSplitIndex[recBlue];1]]/recYello/$splitText[$sum[$getTextSplitIndex[recYello];1]]/recRed/$splitText[$sum[$getTextSplitIndex[recRed];1]]/box/$splitText[$sum[$getTextSplitIndex[box];1]]/tickets/$splitText[$sum[$getTextSplitIndex[tickets];1]]/lotteryPlays/$splitText[$sum[$getTextSplitIndex[lotteryPlays];1]]/days/$splitText[$sum[$getTextSplitIndex[days];1]]/unlockB/$splitText[$sum[$getTextSplitIndex[unlockB];1]]/unlockY/$splitText[$sum[$getTextSplitIndex[unlockY];1]]/unlockR/$splitText[$sum[$getTextSplitIndex[unlockR];1]]/unlockUp/$splitText[$sum[$getTextSplitIndex[unlockUp];1]]/unlockNet/$splitText[$sum[$getTextSplitIndex[unlockNet];1]]]
+$var[blueGSend;$splitText[$sum[$getTextSplitIndex[blueG];1]]]
+$var[yellowGSend;$splitText[$sum[$getTextSplitIndex[yellowG];1]]]
+$var[redGSend;$splitText[$sum[$getTextSplitIndex[redG];1]]]
+$var[giftedSend;$splitText[$sum[$getTextSplitIndex[gifted];1]]]
+$var[coinsSend;$splitText[$sum[$getTextSplitIndex[winterCoins];1]]]
+$var[pointsSend;$splitText[$sum[$getTextSplitIndex[winterPoints];1]]]
+
+
+$c[Var list Receiver]
+
+
+$textSplit[$getUserVar[winterUserVar;$mentioned[1;no]];/]
+$var[userVarRec;$optOff[cookieCount/$splitText[$sum[$getTextSplitIndex[cookieCount];1]]/milkCount/$splitText[$sum[$getTextSplitIndex[milkCount];1]]/pillsCount/$splitText[$sum[$getTextSplitIndex[pillsCount];1]]/santasGot/$splitText[$sum[$getTextSplitIndex[santasGot];1]]/cookieProbs/$splitText[$sum[$getTextSplitIndex[cookieProbs];1]]/milkProbs/$splitText[$sum[$getTextSplitIndex[milkProbs];1]]/pillProbs/$splitText[$sum[$getTextSplitIndex[pillProbs];1]]/cookies/$splitText[$sum[$getTextSplitIndex[cookies];1]]/milk/$splitText[$sum[$getTextSplitIndex[milk];1]]/pills/$splitText[$sum[$getTextSplitIndex[pills];1]]/winterCoins/$splitText[$sum[$getTextSplitIndex[winterCoins];1]]/firstHunt/$splitText[$sum[$getTextSplitIndex[firstHunt];1]]/totalHunts/$splitText[$sum[$getTextSplitIndex[totalHunts];1]]/netUps/$splitText[$sum[$getTextSplitIndex[netUps];1]]/netPrice/$splitText[$sum[$getTextSplitIndex[netPrice];1]]/c&mUp/$splitText[$sum[$getTextSplitIndex[c&mUp];1]]/c&mPrice/$splitText[$sum[$getTextSplitIndex[c&mPrice];1]]/pillUp/$splitText[$sum[$getTextSplitIndex[pillUp];1]]/pillUpPrice/$splitText[$sum[$getTextSplitIndex[pillUpPrice];1]]/blueG/$splitText[$sum[$getTextSplitIndex[blueG];1]]/yellowG/$splitText[$sum[$getTextSplitIndex[yellowG];1]]/redG/$splitText[$sum[$getTextSplitIndex[redG];1]]/gifted/$splitText[$sum[$getTextSplitIndex[gifted];1]]/box/$splitText[$sum[$getTextSplitIndex[box];1]]/tickets/$splitText[$sum[$getTextSplitIndex[tickets];1]]/lotteryPlays/$splitText[$sum[$getTextSplitIndex[lotteryPlays];1]]/days/$splitText[$sum[$getTextSplitIndex[days];1]]/unlockB/$splitText[$sum[$getTextSplitIndex[unlockB];1]]/unlockY/$splitText[$sum[$getTextSplitIndex[unlockY];1]]/unlockR/$splitText[$sum[$getTextSplitIndex[unlockR];1]]/unlockUp/$splitText[$sum[$getTextSplitIndex[unlockUp];1]]/unlockNet/$splitText[$sum[$getTextSplitIndex[unlockNet];1]]]]
+$var[recBlueRec;$optOff[$splitText[$sum[$getTextSplitIndex[recBlue];1]]]]
+$var[recYelloRec;$optOff[$splitText[$sum[$getTextSplitIndex[recYello];1]]]]
+$var[recRedRec;$optOff[$splitText[$sum[$getTextSplitIndex[recRed];1]]]]
+$var[receivedRec;$optOff[$splitText[$sum[$getTextSplitIndex[received];1]]]]
+$var[pointsRec;$optOff[$splitText[$sum[$getTextSplitIndex[winterPoints];1]]]]
+
+$textSplit[$getServerVar[winterServerVar];/]
+$var[bulkSend;$optOff[$splitText[$sum[$getTextSplitIndex[bulkSend];1]]]]
+
+
+$c[Big Chunky code]
+
+
+$if[$and[$message[2]==gift;$message[3]==to]]
+$title[❌  404 : NOT FOUND  ❌]
+$description[You have to select a gift type to send ( blue | yellow | red ) !]
+$color[ff1a1a]
+$stop
+
+$elseif[$or[$message[3]!=gifts;$message[4]!=to]]
+$title[❌  UNEXPECTED ERROR  ❌]
+$description[TeRiRi didn't understand the command! Check you wrote everything ok and try again ( ```ft!bulk send <color> gifts to <@user>``` )]
+$color[ff1a1a]
+$stop
+
+$elseif[$mentioned[1;no]==]
+$title[❌  USER NOT FOUND  ❌]
+$description[TeRiRi can't deliver a gift if you don't select an user to send it to!]
+$color[ff1a1a]
+$stop
+
+$else
+
+$if[$and[$isBot[$mentioned[1;no]]==false;$mentioned[1;no]!=$authorID]]
+
+$if[$or[$message[2]==blue;$message[2]==blu;$message[2]==bleu;$message[2]==🔷]]
+
+$if[$var[blueGSend]>=$var[bulkSend]]
+
+$var[blueGSend;$sub[$var[blueGSend];$var[bulkSend]]]
+$var[giftedSend;$sum[$var[giftedSend];$var[bulkSend]]]
+$var[pointsSend;$sum[$var[pointsSend];$multi[200;$var[bulkSend]]]]
+$title[🎁  SUCCESS  🎁;1]
+$description[<@$authorID>, TeRiRi delivered your gifts successfully!;1]
+$color[33cc33;1]
+$setUserVar[winterUserVar;$var[userVarSend]/blueG/$var[blueGSend]/yellowG/$var[yellowGSend]/redG/$var[redGSend]/gifted/$var[giftedSend]/winterCoins/$var[coinsSend]/winterPoints/$var[pointsSend]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];$multi[200;$var[bulkSend]]]]
+
+$var[recBlueRec;$sum[$var[recBlueRec];$var[bulkSend]]]
+$var[receivedRec;$sum[$var[receivedRec];$var[bulkSend]]]
+$var[pointsRec;$sum[$var[pointsRec];$multi[50;$var[bulkSend]]]]
+$title[🎁  YOU RECEIVED SOME GIFTS!  🎁;2]
+$description[<@$mentioned[1]>, <@$authorID> sent you $var[bulkSend] blue gifts ( 🔷 🎁 ) ! 
+You can see them if you go to your gift bag (```ft!gifts```) and open them using ```ft!open <color> (gift)```!;2]
+$footer[Why don't you send them a gift as a "thank you"?;2]
+$color[66ccff;2]
+$setUserVar[winterUserVar;$var[userVarRec]/recBlue/$var[recBlueRec]/recYello/$var[recYelloRec]/recRed/$var[recRedRec]/received/$var[receivedRec]/winterPoints/$var[pointsRec];$mentioned[1]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints;$mentioned[1;no]];$multi[50;$var[bulkSend]]];$mentioned[1;no]]
+
+
+$elseif[$var[blueGSend]<$var[bulkSend]]
+$title[❌ YOU DON'T HAVE ENOUGH BLUE GIFT ❌]
+$description[You can buy more in TeRiRi's gift shop (```ft!gift shop```)]
+$footer[Gifts needed to bulk send : $var[bulkSend]]
+$color[ff1a1a]
+$endif
+
+$elseif[$or[$message[2]==yello;$message[2]==yellow;$message[2]==yelow;$message[2]==💛]]
+
+$if[$var[yellowGSend]>=$var[bulkSend]]
+
+$var[yellowGSend;$sub[$var[yellowGSend];$var[bulkSend]]]
+$var[giftedSend;$sum[$var[giftedSend];$var[bulkSend]]]
+$var[pointsSend;$sum[$var[pointsSend];$multi[400;$var[bulkSend]]]]
+$title[🎁  SUCCESS  🎁;1]
+$description[<@$authorID>, TeRiRi delivered your gifts successfully!;1]
+$color[33cc33;1]
+$setUserVar[winterUserVar;$var[userVarSend]/blueG/$var[blueGSend]/yellowG/$var[yellowGSend]/redG/$var[redGSend]/gifted/$var[giftedSend]/winterCoins/$var[coinsSend]/winterPoints/$var[pointsSend]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];$multi[400;$var[bulkSend]]]]
+
+
+$var[recYelloRec;$sum[$var[recYelloRec];$var[bulkSend]]]
+$var[receivedRec;$sum[$var[receivedRec];$var[bulkSend]]]
+$var[pointsRec;$sum[$var[pointsRec];$multi[50;$var[bulkSend]]]]
+$title[🎁  YOU RECEIVED SOME GIFTS!  🎁;2]
+$description[<@$mentioned[1]>, <@$authorID> sent you $var[bulkSend] yellow gifts ( 💛 🎁 ) ! 
+You can see them if you go to your gift bag (```ft!gifts```) and open them using ```ft!open <color> (gift)```!;2]
+$footer[Why don't you send them a gift as a "thank you"?;2]
+$color[ffcc66;2]
+$setUserVar[winterUserVar;$var[userVarRec]/recBlue/$var[recBlueRec]/recYello/$var[recYelloRec]/recRed/$var[recRedRec]/received/$var[receivedRec]/winterPoints/$var[pointsRec];$mentioned[1]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints;$mentioned[1;no]];$multi[$var[bulkSend];50]];$mentioned[1;no]]
+
+
+$elseif[$var[yellowGSend]<$var[bulkSend]]
+$title[❌ YOU DON'T HAVE ENOUGH YELLOW GIFT ❌]
+$description[You can buy more in TeRiRi's gift shop (```ft!gift shop```)]
+$footer[Gifts needed to bulk send : $var[bulkSend]]
+$color[ff1a1a]
+$endif
+
+
+$elseif[$or[$message[2]==red;$message[2]==re;$message[2]==rd;$message[2]==🔴]]
+
+$if[$var[redGSend]>=$var[bulkSend]]
+
+$var[redGSend;$sub[$var[redGSend];$var[bulkSend]]]
+$var[giftedSend;$sum[$var[giftedSend];$var[bulkSend]]]
+$var[pointsSend;$sum[$var[pointsSend];$multi[600;$var[bulkSend]]]]
+$title[🎁  SUCCESS  🎁;1]
+$description[<@$authorID>, TeRiRi delivered your gifts successfully!;1]
+$color[33cc33;1]
+$setUserVar[winterUserVar;$var[userVarSend]/blueG/$var[blueGSend]/yellowG/$var[yellowGSend]/redG/$var[redGSend]/gifted/$var[giftedSend]/winterCoins/$var[coinsSend]/winterPoints/$var[pointsSend]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];$multi[600;$var[bulkSend]]]]
+
+
+$var[recRedRec;$sum[$var[recRedRec];$var[bulkSend]]]
+$var[receivedRec;$sum[$var[receivedRec];$var[bulkSend]]]
+$var[pointsRec;$sum[$var[pointsRec];$multi[50;$var[bulkSend]]]]
+$title[🎁  YOU RECEIVED SOME GIFTS!  🎁;2]
+$description[<@$mentioned[1]>, <@$authorID> sent you $var[bulkSend] red gifts ( 🔴 🎁 ) ! 
+You can see them if you go to your gift bag (```ft!gifts```) and open them using ```ft!open <color> (gift)```!;2]
+$footer[Why don't you send them a gift as a "thank you"?;2]
+$color[ff5050;2]
+$setUserVar[winterUserVar;$var[userVarRec]/recBlue/$var[recBlueRec]/recYello/$var[recYelloRec]/recRed/$var[recRedRec]/received/$var[receivedRec]/winterPoints/$var[pointsRec];$mentioned[1]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints;$mentioned[1;no]];$multi[50;$var[bulkSend]]];$mentioned[1;no]]
+
+
+$elseif[$var[redGSend]<$var[bulkSend]]
+$title[❌ YOU DON'T HAVE ENOUGH RED GIFTS ❌]
+$description[You can buy more on TeRiRi's gift shop (```ft!gift shop```)]
+$footer[Gifts needed to bulk send : $var[bulkSend]]
+$color[ff1a1a]
+$endif
+
+
+$else
+$title[❌  404 : NOT FOUND  ❌]
+$description[TeRiRi couldn't find that gift... check you wrote everything ok and try again!]
+$color[ff1a1a]
+$endif
+
+$elseif[$isBot[$mentioned[1]]]
+$title[❌  BOTS CAN'T OPEN GIFTS  ❌]
+$description[TeRiRi will only deliver gifts to people that can open them! Why don't you send it to an user instead?]
+$color[ff1a1a]
+
+$elseif[$mentioned[1]==$authorID]
+$title[❌  SEND THE GIFT TO OTHER USER  ❌]
+$description[TeRiRi knows is tempting to have gifts you can't open... but they are for you to give to other people!!]
+$color[ff1a1a]
+
+$endif
+$endif
+
+$else
+
+$title[❌  **YOU HAVE TO CHOOSE AN OPTION!**  ❌]
+$description[TeRiRi can't do her job if you don't tell her what you want to do!
+
+**__BULK BUY__**
+
+- ```ft!bulk buy blue (gift) | ft!bulk buy gift 1 :``` to bulk buy blue gifts ( 🔷 🎁 )
+- ```ft!bulk buy yellow (gift) | ft!bulk buy gift 2 :``` to bulk buy yellow gifts ( 💛 🎁 )
+- ```ft!bulk buy red (gift) | ft!bulk buy gift 3 :``` to bulk buy red gifts ( 🔴 🎁 )
+- ```ft!bulk buy tickets | ft!bulk buy ticket (pack) :``` to bulk buy loteriri ticket packs ( 🎟️ )
+
+**__BULK SEND__**
+
+- ```ft!bulk send blue gifts to <@user> :``` to bulk send blue gifts to someone
+- ```ft!bulk send yellow gifts to <@user> :``` to bulk send yellow gifts to someone
+- ```ft!bulk send red gifts to <@user> :``` to bulk send red gifts to someone
+** **]
+$footer[TeRiRi offers a little discount while bulk buying items~]
+$color[ff1a1a]
+
+$endif

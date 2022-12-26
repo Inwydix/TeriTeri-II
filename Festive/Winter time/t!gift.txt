@@ -1,0 +1,70 @@
+$nomention
+$onlyIf[$getServerVar[winter.time]==true;]
+
+$textSplit[$getUserVar[winterUserVar];/]
+$var[unlockB;$splitText[$sum[$getTextSplitIndex[unlockB];1]]]
+$var[unlockY;$splitText[$sum[$getTextSplitIndex[unlockY];1]]]
+$var[unlockR;$splitText[$sum[$getTextSplitIndex[unlockR];1]]]
+$var[blueG;$splitText[$sum[$getTextSplitIndex[blueG];1]]]
+$var[yellowG;$splitText[$sum[$getTextSplitIndex[yellowG];1]]]
+$var[redG;$splitText[$sum[$getTextSplitIndex[redG];1]]]
+$var[recBlue;$splitText[$sum[$getTextSplitIndex[recBlue];1]]]
+$var[recYello;$splitText[$sum[$getTextSplitIndex[recYello];1]]]
+$var[recRed;$splitText[$sum[$getTextSplitIndex[recRed];1]]]
+
+$textSplit[$getServerVar[winterServerVar];/]
+$var[yPrice;$optOff[$splitText[$sum[$getTextSplitIndex[yPrice];1]]]]
+$var[bPrice;$optOff[$splitText[$sum[$getTextSplitIndex[bPrice];1]]]]
+$var[rPrice;$optOff[$splitText[$sum[$getTextSplitIndex[rPrice];1]]]]
+
+$if[$message[1]==shop]
+
+$title[🎁  **__GIFT SHOP__**  🎁]
+$description[Welcome to TeRiRi's gift shop! Here you can buy some gifts to give others
+
+$if[$var[unlockB]==true]
+**1  |  BLUE GIFT:**
+   → Price: $var[bPrice] ❄️
+   → Contents: 🍪 (x0-15) 🥛 (x0-8) ❄️ (x0-100)
+   $endif $if[$var[unlockY]==true]
+**2  |  YELLOW GIFT:**
+   → Price: $var[yPrice] ❄️
+   → Contents: 🍪 (x10) 🥛 (x5) ❄️ (x20-200)
+   $endif $if[$var[unlockR]==true]
+**3  |  RED GIFT:**
+   → Price: $var[rPrice] ❄️
+   → Contents: 💊 (x1-3) ❄️ (x50-1000)
+   $endif $if[$and[$var[unlockB]==false;$var[unlockY]==false;$var[unlockR]==false]]
+❌ You didn't unlock any gift type yet! (You can do it by claiming your advent calendar rewards (`t!calendar`)) 
+$endif ** **]
+$footer[Use 'ft!buy gift <number/color>' to buy a gift]
+$color[ccffff]
+
+$else
+
+$title[🎁  **__YOU OPEN YOUR GIFT BAG__**  🎁]
+$description[** **
+__**OWNED GIFTS**__
+
+$var[blueG]  🔷 🎁
+$var[yellowG]  💛 🎁
+$var[redG]  🔴 🎁
+
+You can buy more gifts in the `t!gift shop` or send the ones you own using `t!send <color> gift to <@user>` !
+
+__**RECEIVED GIFTS**__
+
+$if[$and[$var[recBlue]==0;$var[recYello]==0;$var[recRed]==0]]
+😅 You don't have any gifts to open! 😅
+$else
+$if[$var[recBlue]>0]$var[recBlue]  🔷 🎁 $endif
+$if[$var[recYello]>0]$var[recYello]  💛 🎁 $endif
+$if[$var[recRed]>0]$var[recRed]  🔴 🎁 $endif
+
+Use ``t!open <color> (gift)` to open one of your received gifts!
+$endif]
+$color[ccffff]
+
+$endif
+
+$endif

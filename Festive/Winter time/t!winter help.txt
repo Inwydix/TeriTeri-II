@@ -1,0 +1,17 @@
+$nomention
+
+$onlyIf[$getServerVar[winter.time]==true;]
+$newSelectMenu[smWinter;1;1;Get info about the Christmas event! ❄️]
+$addSelectMenuOption[smWinter;Commands;commands;Shows a list with all the winter commands!;no;🤖;]
+$addSelectMenuOption[smWinter;Winter Time;winTime;General info about the winter time;no;☃️;]
+$addSelectMenuOption[smWinter;Winter Coins;winCoins;Info about the winter coins;no;❄️;]
+$addSelectMenuOption[smWinter;Snowflake Hunt;snowHunt;Info about the snowflake hunt;no;🏹;]
+$addSelectMenuOption[smWinter;Winter Shop;winShop;Info about the winter shop;no;💸;]
+$addSelectMenuOption[smWinter;Wait for Santa;wait;Info about waiting for Santa;no;<:Santa:913832134832173166>;]
+$addSelectMenuOption[smWinter;Gifts & Gift Shop;gifts;Info about the gifts and gift shop;no;🎁;]
+$addSelectMenuOption[smWinter;Advent Calendar;calendar;Info about the advent calendar;no;📆;]
+$addSelectMenuOption[smWinter;Winter Loteriri;loteriri;Info about the winter loteriri;no;🎟️;]
+$addSelectMenuOption[smWinter;Mysteriri Boxes;boxes;Info about the mysteriri boxes;no;📦;]
+$addSelectMenuOption[smWinter;Winter Card;winCard;Info about the winter card;no;📇;]
+$addSelectMenuOption[smWinter;Bulk Buying and Sending;bulkBuy;Info about bulk buying and sending;no;📈;]
+$addSelectMenuOption[smWinter;Winter Upgrades;winUps;Info about the winter upgades and upgrade shop;no;⏫;]

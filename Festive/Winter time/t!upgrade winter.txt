@@ -1,0 +1,194 @@
+$nomention $reply $ignoreTriggerCase
+$enableDecimals[yes]
+$onlyIf[$getServerVar[winter.time]==true;]
+
+$textSplit[$getUserVar[winterUserVar];/]
+$var[userVar;cookieCount/$splitText[$sum[$getTextSplitIndex[cookieCount];1]]/milkCount/$splitText[$sum[$getTextSplitIndex[milkCount];1]]/pillsCount/$splitText[$sum[$getTextSplitIndex[pillsCount];1]]/santasGot/$splitText[$sum[$getTextSplitIndex[santasGot];1]]/cookies/$splitText[$sum[$getTextSplitIndex[cookies];1]]/milk/$splitText[$sum[$getTextSplitIndex[milk];1]]/pills/$splitText[$sum[$getTextSplitIndex[pills];1]]/winterPoints/$splitText[$sum[$getTextSplitIndex[winterPoints];1]]/firstHunt/$splitText[$sum[$getTextSplitIndex[firstHunt];1]]/totalHunts/$splitText[$sum[$getTextSplitIndex[totalHunts];1]]/blueG/$splitText[$sum[$getTextSplitIndex[blueG];1]]/yellowG/$splitText[$sum[$getTextSplitIndex[yellowG];1]]/redG/$splitText[$sum[$getTextSplitIndex[redG];1]]/received/$splitText[$sum[$getTextSplitIndex[received];1]]/gifted/$splitText[$sum[$getTextSplitIndex[gifted];1]]/recBlue/$splitText[$sum[$getTextSplitIndex[recBlue];1]]/recYello/$splitText[$sum[$getTextSplitIndex[recYello];1]]/recRed/$splitText[$sum[$getTextSplitIndex[recRed];1]]/box/$splitText[$sum[$getTextSplitIndex[box];1]]/tickets/$splitText[$sum[$getTextSplitIndex[tickets];1]]/lotteryPlays/$splitText[$sum[$getTextSplitIndex[lotteryPlays];1]]/days/$splitText[$sum[$getTextSplitIndex[days];1]]/unlockB/$splitText[$sum[$getTextSplitIndex[unlockB];1]]/unlockY/$splitText[$sum[$getTextSplitIndex[unlockY];1]]/unlockR/$splitText[$sum[$getTextSplitIndex[unlockR];1]]/unlockNet/$splitText[$sum[$getTextSplitIndex[unlockNet];1]]/unlockUp/$splitText[$sum[$getTextSplitIndex[unlockUp];1]]]
+$var[netUp;$splitText[$sum[$getTextSplitIndex[netUps];1]]]
+$var[netUpPrice;$splitText[$sum[$getTextSplitIndex[netPrice];1]]]
+$var[c&mUp;$splitText[$sum[$getTextSplitIndex[c&mUp];1]]]
+$var[c&mPrice;$splitText[$sum[$getTextSplitIndex[c&mPrice];1]]]
+$var[pillUp;$splitText[$sum[$getTextSplitIndex[pillUp];1]]]
+$var[pillUpPrice;$splitText[$sum[$getTextSplitIndex[pillUpPrice];1]]]
+$var[cookieProbs;$splitText[$sum[$getTextSplitIndex[cookieProbs];1]]]
+$var[milkProbs;$splitText[$sum[$getTextSplitIndex[milkProbs];1]]]
+$var[pillProbs;$splitText[$sum[$getTextSplitIndex[pillProbs];1]]]
+$var[coins;$splitText[$sum[$getTextSplitIndex[winterCoins];1]]]
+$var[unlockUp;$splitText[$sum[$getTextSplitIndex[unlockUp];1]]]
+$var[unlockNet;$splitText[$sum[$getTextSplitIndex[unlockNet];1]]]
+
+$textSplit[$getServerVar[winterServerVar];/]
+$var[server.netPrice;$optOff[$splitText[$sum[$getTextSplitIndex[netPrice];1]]]]
+$var[server.c&mPrice;$optOff[$splitText[$sum[$getTextSplitIndex[c&mPrice];1]]]]
+$var[server.pillUpPrice;$optOff[$splitText[$sum[$getTextSplitIndex[pillUpPrice];1]]]]
+
+$if[$var[netUpPrice]==0]
+$var[netUpPrice;$var[server.netPrice]]
+$endif
+$if[$var[c&mPrice]==0]
+$var[c&mPrice;$var[server.c&mPrice]]
+$endif
+$if[$var[pillUpPrice]==0]
+$var[pillUpPrice;$var[server.pillUpPrice]]
+$endif
+
+$if[$message[1]==1]
+
+$if[$var[unlockNet]==false]
+
+$if[$and[$var[coins]>=$var[netUpPrice];$var[netUp]<3]]
+$var[netUp;$sum[$var[netUp];1]]
+$var[coins;$sub[$var[coins];$var[netUpPrice]]]
+$var[netUpPrice;$multi[$var[netUpPrice];2]]
+$title[💸  **SUCCESS**  💸]
+$description[Now your snowflake hunting net is bigger, so you will catch more rewards per hunt!]
+$footer[Money left: $var[coins] ❄️]
+$color[33cc33]
+$setUserVar[winterUserVar;$var[userVar]/winterCoins/$var[coins]/netUps/$var[netUp]/netPrice/$var[netUpPrice]/c&mUp/$var[c&mUp]/c&mPrice/$var[c&mPrice]/pillUp/$var[pillUp]/pillUpPrice/$var[pillUpPrice]/cookieProbs/$var[cookieProbs]/milkProbs/$var[milkProbs]/pillProbs/$var[pillProbs]]
+
+$elseif[$var[netUp]==3]
+$title[❌  **YOU ALREADY MAXED YOUR NET**  ❌]
+$description[TeRiRi only offers 3 net upgrades and you already have them!]
+$color[ff1a1a]
+
+$elseif[$var[coins]<$var[netUpPrice]]
+$title[❌  **YOU DON'T HAVE ENOUGH** ❄️  ❌]
+$description[TeRiRi won't let you buy this untill you have $var[netUpPrice] ❄️]
+$footer[You own $var[coins] ❄️]
+$color[ff1a1a]
+$endif
+
+$elseif[$var[unlockNet]==true]
+
+$if[$and[$var[coins]>=$var[netUpPrice];$var[netUp]<4]]
+$var[netUp;$sum[$var[netUp];1]]
+$var[coins;$sub[$var[coins];$var[netUpPrice]]]
+$var[netUpPrice;$multi[$var[netUpPrice];2]]
+$title[💸  **SUCCESS**  💸]
+$description[Now your snowflake hunting net is bigger, so you will catch more rewards per hunt!]
+$footer[Money left: $var[coins] ❄️]
+$color[33cc33]
+$setUserVar[winterUserVar;$var[userVar]/winterCoins/$var[coins]/netUps/$var[netUp]/netPrice/$var[netUpPrice]/c&mUp/$var[c&mUp]/c&mPrice/$var[c&mPrice]/pillUp/$var[pillUp]/pillUpPrice/$var[pillUpPrice]/cookieProbs/$var[cookieProbs]/milkProbs/$var[milkProbs]/pillProbs/$var[pillProbs]]
+
+$elseif[$var[netUp]==4]
+$title[❌  **YOU ALREADY MAXED YOUR NET**  ❌]
+$description[TeRiRi only offers 4 net upgrades and you already have them!]
+$color[ff1a1a]
+
+$elseif[$var[coins]<$var[netUpPrice]]
+$title[❌  **YOU DON'T HAVE ENOUGH** ❄️  ❌]
+$description[TeRiRi won't let you buy this untill you have $var[netUpPrice] ❄️]
+$footer[You own $var[coins] ❄️]
+$color[ff1a1a]5
+$endif
+$endif
+
+$elseif[$message[1]==2]
+
+$if[$var[unlockUp]==false]
+
+$if[$and[$var[coins]>=$var[c&mPrice];$var[c&mUp]<3]]
+$var[c&mUp;$sum[$var[c&mUp];1]]
+$var[coins;$sub[$var[coins];$var[c&mPrice]]]
+$var[c&mPrice;$multi[$var[c&mPrice];1.5]]
+$title[💸  **SUCCESS**  💸]
+$description[TeRiRi improved her cookies and milk formula! Now your cookies and milk have more chances of making Santa stay longer]
+$footer[Money left: $var[coins] ❄️]
+$color[33cc33]
+$setUserVar[winterUserVar;$var[userVar]/winterCoins/$var[coins]/netUps/$var[netUp]/netPrice/$var[netUpPrice]/c&mUp/$var[c&mUp]/c&mPrice/$var[c&mPrice]/pillUp/$var[pillUp]/pillUpPrice/$var[pillUpPrice]/cookieProbs/$var[cookieProbs]/milkProbs/$var[milkProbs]/pillProbs/$var[pillProbs]]
+
+$elseif[$var[c&mUp]==3]
+$title[❌  **YOU ALREADY MAXED YOUR COOKIES AND MILK**  ❌]
+$description[TeRiRi only offers 3 cookies and milk upgrades and you already have them!]
+$color[ff1a1a]
+
+$elseif[$var[coins]<$var[c&mPrice]]
+$title[❌  **YOU DON'T HAVE ENOUGH** ❄️  ❌]
+$description[TeRiRi won't let you buy this untill you have $var[c&mPrice] ❄️]
+$footer[You own $var[coins] ❄️]
+$color[ff1a1a]
+$endif
+
+$elseif[$var[unlockUp]==true]
+
+$if[$and[$var[coins]>=$var[c&mPrice];$var[c&mUp]<4]]
+$var[c&mUp;$sum[$var[c&mUp];1]]
+$var[coins;$sub[$var[coins];$var[c&mPrice]]]
+$var[c&mPrice;$multi[$var[c&mPrice];1.5]]
+$title[💸  **SUCCESS**  💸]
+$description[TeRiRi improved her cookies and milk formula! Now your cookies and milk have more chances of making Santa stay longer]
+$footer[Money left: $var[coins] ❄️]
+$color[33cc33]
+$setUserVar[winterUserVar;$var[userVar]/winterCoins/$var[coins]/netUps/$var[netUp]/netPrice/$var[netUpPrice]/c&mUp/$var[c&mUp]/c&mPrice/$var[c&mPrice]/pillUp/$var[pillUp]/pillUpPrice/$var[pillUpPrice]/cookieProbs/$var[cookieProbs]/milkProbs/$var[milkProbs]/pillProbs/$var[pillProbs]]
+
+$elseif[$var[c&mUp]==4]
+$title[❌  **YOU ALREADY MAXED YOUR COOKIES AND MILK**  ❌]
+$description[TeRiRi only offers 4 cookies and milk upgrades and you already have them!]
+$color[ff1a1a]
+
+$elseif[$var[coins]<$var[c&mPrice]]
+$title[❌  **YOU DON'T HAVE ENOUGH** ❄️  ❌]
+$description[TeRiRi won't let you buy this untill you have $var[c&mPrice] ❄️]
+$footer[You own $var[coins] ❄️]
+$color[ff1a1a]
+$endif
+$endif
+
+$elseif[$message[1]==3]
+
+$if[$var[unlockUp]==false]
+
+$if[$and[$var[coins]>=$var[pillUpPrice];$var[pillUp]<3]]
+$var[pillUp;$sum[$var[pillUp];1]]
+$var[coins;$sub[$var[coins];$var[pillUpPrice]]]
+$var[pillUpPrice;$multi[$var[pillUpPrice];2]]
+$title[💸  **SUCCESS**  💸]
+$description[TeRiRi improved the formula of her slepless pills! Now they will be a little more effective (｡•ᴗ-)✧]
+$footer[Money left: $var[coins] ❄️]
+$color[33cc33]
+$setUserVar[winterUserVar;$var[userVar]/winterCoins/$var[coins]/netUps/$var[netUp]/netPrice/$var[netUpPrice]/c&mUp/$var[c&mUp]/c&mPrice/$var[c&mPrice]/pillUp/$var[pillUp]/pillUpPrice/$var[pillUpPrice]/cookieProbs/$var[cookieProbs]/milkProbs/$var[milkProbs]/pillProbs/$var[pillProbs]]
+
+$elseif[$var[pillUp]==3]
+$title[❌  **YOU ALREADY MAXED YOUR NET**  ❌]
+$description[TeRiRi only offers 3 slepless pill upgrades and you already have them!]
+$color[ff1a1a]
+
+$elseif[$var[coins]<$var[pillUpPrice]]
+$title[❌  **YOU DON'T HAVE ENOUGH** ❄️  ❌]
+$description[TeRiRi won't let you buy this untill you have $var[pillUpPrice] ❄️]
+$footer[You own $var[coins] ❄️]
+$color[ff1a1a]
+$endif
+
+$elseif[$var[unlockUp]==true]
+
+$if[$and[$var[coins]>=$var[pillUpPrice];$var[pillUp]<4]]
+$var[pillUp;$sum[$var[pillUp];1]]
+$var[coins;$sub[$var[coins];$var[pillUpPrice]]]
+$var[pillUpPrice;$multi[$var[pillUpPrice];2]]
+$title[💸  **SUCCESS**  💸]
+$description[TeRiRi improved the formula of her slepless pills! Now they will be a little more effective (｡•ᴗ-)✧]
+$footer[Money left: $var[coins] ❄️]
+$color[33cc33]
+$setUserVar[winterUserVar;$var[userVar]/winterCoins/$var[coins]/netUps/$var[netUp]/netPrice/$var[netUpPrice]/c&mUp/$var[c&mUp]/c&mPrice/$var[c&mPrice]/pillUp/$var[pillUp]/pillUpPrice/$var[pillUpPrice]/cookieProbs/$var[cookieProbs]/milkProbs/$var[milkProbs]/pillProbs/$var[pillProbs]]
+
+$elseif[$var[pillUp]==4]
+$title[❌  **YOU ALREADY MAXED YOUR NET**  ❌]
+$description[TeRiRi only offers 4 slepless pill upgrades and you already have them!]
+$color[ff1a1a]
+
+$elseif[$var[coins]<$var[pillUpPrice]]
+$title[❌  **YOU DON'T HAVE ENOUGH** ❄️  ❌]
+$description[TeRiRi won't let you buy this untill you have $var[pillUpPrice] ❄️]
+$footer[You own $var[coins] ❄️]
+$color[ff1a1a]
+$endif
+$endif
+
+$else
+$title[❌  **404 : NOT FOUND**  ❌]
+$description[Check you wrote everything okay and try again!]
+$color[ff1a1a]
+$endif
+
+$endif

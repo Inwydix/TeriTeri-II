@@ -1,0 +1,112 @@
+$onlyIf[$getServerVar[winter.time]==true;]
+$cooldown[3m;You went get some snacks | Time left : %time%]
+
+$reply
+
+$textSplit[$getUserVar[winterUserVar];/]
+$var[userVar;cookieProbs/$splitText[$sum[$getTextSplitIndex[cookieProbs];1]]/milkProbs/$splitText[$sum[$getTextSplitIndex[milkProbs];1]]/pillProbs/$splitText[$sum[$getTextSplitIndex[pillProbs];1]]/firstHunt/$splitText[$sum[$getTextSplitIndex[firstHunt];1]]/totalHunts/$splitText[$sum[$getTextSplitIndex[totalHunts];1]]/netUps/$splitText[$sum[$getTextSplitIndex[netUps];1]]/netPrice/$splitText[$sum[$getTextSplitIndex[netPrice];1]]/c&mUp/$splitText[$sum[$getTextSplitIndex[c&mUp];1]]/c&mPrice/$splitText[$sum[$getTextSplitIndex[c&mPrice];1]]/pillUp/$splitText[$sum[$getTextSplitIndex[pillUp];1]]/pillUpPrice/$splitText[$sum[$getTextSplitIndex[pillUpPrice];1]]/blueG/$splitText[$sum[$getTextSplitIndex[blueG];1]]/yellowG/$splitText[$sum[$getTextSplitIndex[yellowG];1]]/redG/$splitText[$sum[$getTextSplitIndex[redG];1]]/received/$splitText[$sum[$getTextSplitIndex[received];1]]/gifted/$splitText[$sum[$getTextSplitIndex[gifted];1]]/recBlue/$splitText[$sum[$getTextSplitIndex[recBlue];1]]/recYello/$splitText[$sum[$getTextSplitIndex[recYello];1]]/recRed/$splitText[$sum[$getTextSplitIndex[recRed];1]]/tickets/$splitText[$sum[$getTextSplitIndex[tickets];1]]/lotteryPlays/$splitText[$sum[$getTextSplitIndex[lotteryPlays];1]]/days/$splitText[$sum[$getTextSplitIndex[days];1]]/unlockB/$splitText[$sum[$getTextSplitIndex[unlockB];1]]/unlockY/$splitText[$sum[$getTextSplitIndex[unlockY];1]]/unlockR/$splitText[$sum[$getTextSplitIndex[unlockR];1]]/unlockUp/$splitText[$sum[$getTextSplitIndex[unlockUp];1]]/unlockNet/$splitText[$sum[$getTextSplitIndex[unlockNet];1]]]
+
+$var[coins;$splitText[$sum[$getTextSplitIndex[winterCoins];1]]]
+$var[points;$splitText[$sum[$getTextSplitIndex[winterPoints];1]]]
+$var[cookies;$splitText[$sum[$getTextSplitIndex[cookies];1]]]
+$var[milk;$splitText[$sum[$getTextSplitIndex[milk];1]]]
+$var[pills;$splitText[$sum[$getTextSplitIndex[pills];1]]]
+$var[box;$splitText[$sum[$getTextSplitIndex[box];1]]]
+
+$var[cookieProbs;$splitText[$sum[$getTextSplitIndex[cookieProbs];1]]]
+$var[milkProbs;$splitText[$sum[$getTextSplitIndex[milkProbs];1]]]
+$var[pillProbs;$splitText[$sum[$getTextSplitIndex[pillProbs];1]]]
+
+$var[random;$random[1;100]]
+
+$var[cookieCount;$splitText[$sum[$getTextSplitIndex[cookieCount];1]]]
+$var[milkCount;$splitText[$sum[$getTextSplitIndex[milkCount];1]]]
+$var[pillsCount;$splitText[$sum[$getTextSplitIndex[pillsCount];1]]]
+
+$var[santasGot;$splitText[$sum[$getTextSplitIndex[santasGot];1]]]
+
+$var[sms;santa help]
+
+$if[$toLowercase[$message]==$var[sms]]
+
+$title[<:Santa:913832134832173166>  **__WAIT FOR SANTA__**  <:atnaS:913832320904077382>]
+$description[** **
+Wait for Santa to come and try to catch him on duty! Will him give you extra gifts if you discover him?  <:TeriThink:823213577141354526>
+
+**__ITEMS__**
+
+- **Cookies**: leave a plate with cookies (x5 🍪) to entertain Santa and make him stay longer (+$var[cookieProbs]% chances of seeing Santa)
+ 
+- **Milk**: leave a glass of milk (x1 🥛) to entertain Santa and make him stay longer (+$var[milkProbs]% chances of seeing Santa)
+
+- **Sleepless pills**: take one of TeRiRi's special slepless pills to stay awake longer (+$var[pillProbs]% chances of seeing Santa)
+
+(TeRiRi will automatically prepare the items when you play, if you have enough of them!!)
+** **]
+$footer[You have $var[cookies] 🍪 $var[milk] 🥛 $var[pills] 💊]
+$color[ccffff]
+
+$elseif[$toLowercase[$message]==santa]
+
+$var[santaProbs;1]
+
+$if[$var[cookies]>=5]
+$var[cookieCount;$sum[$var[cookieCount];5]]
+$var[cookies;$sub[$var[cookies];5]] 
+$var[santaProbs;$sum[$var[santaProbs];$var[cookieProbs]]]
+$endif
+
+$if[$var[milk]>=1]
+$var[milkCount;$sum[$var[milk];1]]
+$var[milk;$sub[$var[milk];1]]
+$var[santaProbs;$sum[$var[milkProbs];$var[santaProbs]]]
+$endif
+
+$if[$var[pills]>=1]
+$var[pillsCount;$sum[$var[pillsCount];1]]
+$var[pills;$sub[$var[pills];1]]
+$var[santaProbs;$sum[$var[pillProbs];$var[santaProbs]]]
+$endif
+
+$var[random;$random[1;1001]]
+
+$if[$and[$var[random]>1;$var[random]<$multi[$var[santaProbs];10]]]
+$var[santasGot;$sum[$var[santasGot];1]]
+$var[pBox;$random[1;5]]
+$var[pCoins;$random[100;1000]]
+$var[pPoints;$random[500;1000]]
+
+$var[box;$sum[$var[box];$var[pBox]]]
+$var[coins;$sum[$var[coins];$var[pCoins]]]
+$var[points;$sum[$var[points];$var[pPoints]]]
+
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];$var[pPoints]]]
+$setUserVar[winterUserVar;$var[userVar]/winterCoins/$var[coins]/winterPoints/$var[points]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/box/$var[box]/cookieProbs/$var[cookieProbs]/milkProbs/$var[milkProbs]/pillProbs/$var[pillProbs]/cookieCount/$var[cookieCount]/milkCount/$var[milkCount]/pillsCount/$var[pillsCount]/santasGot/$var[santasGot]]
+
+$title[<:Santa:913832134832173166>  __**YOU WAITED FOR SANTA AND...**__  <:atnaS:913832320904077382>]
+$description[...you catched him on duty!!  <:TeriWow:824970624489226250>
+
+$randomText[He was in shock when you saw him devour those cookies, so he ran away after giving you a little gift so you didn't say anything to his wife (seems he was on a diet);You where falling asleep when you see a big red thing enjoying some of the cookies and milk you prepared for Santa... wait, that was Santa!!;"Ho Ho Ho, I'm stuck in this hole!" (That's what he said when he couldn't get back using the chimney...)]
+ 
+__**RECEIVED**__
+
++ $var[pBox]  📦
++ $var[pCoins]  ❄️
++ $var[pPoints] winter points
+** **] 
+$footer[Items left:  $var[cookies]  🍪  $var[milk]  🥛  $var[pills]  💊]
+$color[33cc33]
+
+$else
+$var[points;$sum[$var[points];10]]
+$setUserVar[winterUserVar;$var[userVar]/winterCoins/$var[coins]/winterPoints/$var[points]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/box/$var[box]/cookieProbs/$var[cookieProbs]/milkProbs/$var[milkProbs]/pillProbs/$var[pillProbs]/cookieCount/$var[cookieCount]/milkCount/$var[milkCount]/pillsCount/$var[pillsCount]/santasGot/$var[santasGot]]
+
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];10]]
+
+$title[<:Santa:913832134832173166>  __**YOU WAITED FOR SANTA AND...**__  <:atnaS:913832320904077382>]
+$description[$randomText[...you couldn't see him  <:TeriSad:824973754618347520>;...you fell asleep 💤;...your cat distracted you and you missed him 🐈;...your dog distracted you and you missed him 🐕;...your parents saw you waiting for Santa and told you to go sleep 💤;...you couldn't see him  <:TeriSad:824973754618347520>;...you fell asleep 💤]]
+$footer[Items left: $var[cookies]  🍪  $var[milk]  🥛  $var[pills]  💊  ]
+$color[ff1a1a]
+
+$endif
+$endif

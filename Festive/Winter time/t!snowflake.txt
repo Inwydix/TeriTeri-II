@@ -1,0 +1,94 @@
+$onlyIf[$getServerVar[winter.time]==true;]
+
+$reply
+
+$textSplit[$getUserVar[winterUserVar];/]
+$var[userVar;cookieCount/$splitText[$sum[$getTextSplitIndex[cookieCount];1]]/milkCount/$splitText[$sum[$getTextSplitIndex[milkCount];1]]/pillsCount/$splitText[$sum[$getTextSplitIndex[pillsCount];1]]/santasGot/$splitText[$sum[$getTextSplitIndex[santasGot];1]]/cookieProbs/$splitText[$sum[$getTextSplitIndex[cookieProbs];1]]/milkProbs/$splitText[$sum[$getTextSplitIndex[milkProbs];1]]/pillProbs/$splitText[$sum[$getTextSplitIndex[pillProbs];1]]/cookies/$splitText[$sum[$getTextSplitIndex[cookies];1]]/milk/$splitText[$sum[$getTextSplitIndex[milk];1]]/pills/$splitText[$sum[$getTextSplitIndex[pills];1]]/netUps/$splitText[$sum[$getTextSplitIndex[netUps];1]]/netPrice/$splitText[$sum[$getTextSplitIndex[netPrice];1]]/c&mUp/$splitText[$sum[$getTextSplitIndex[c&mUp];1]]/c&mPrice/$splitText[$sum[$getTextSplitIndex[c&mPrice];1]]/pillUp/$splitText[$sum[$getTextSplitIndex[pillUp];1]]/pillUpPrice/$splitText[$sum[$getTextSplitIndex[pillUpPrice];1]]/blueG/$splitText[$sum[$getTextSplitIndex[blueG];1]]/yellowG/$splitText[$sum[$getTextSplitIndex[yellowG];1]]/redG/$splitText[$sum[$getTextSplitIndex[redG];1]]/received/$splitText[$sum[$getTextSplitIndex[received];1]]/gifted/$splitText[$sum[$getTextSplitIndex[gifted];1]]/recBlue/$splitText[$sum[$getTextSplitIndex[recBlue];1]]/recYello/$splitText[$sum[$getTextSplitIndex[recYello];1]]/recRed/$splitText[$sum[$getTextSplitIndex[recRed];1]]/box/$splitText[$sum[$getTextSplitIndex[box];1]]/tickets/$splitText[$sum[$getTextSplitIndex[tickets];1]]/lotteryPlays/$splitText[$sum[$getTextSplitIndex[lotteryPlays];1]]/days/$splitText[$sum[$getTextSplitIndex[days];1]]/unlockB/$splitText[$sum[$getTextSplitIndex[unlockB];1]]/unlockY/$splitText[$sum[$getTextSplitIndex[unlockY];1]]/unlockR/$splitText[$sum[$getTextSplitIndex[unlockR];1]]/unlockUp/$splitText[$sum[$getTextSplitIndex[unlockUp];1]]/unlockNet/$splitText[$sum[$getTextSplitIndex[unlockNet];1]]]
+
+$var[totalHunts;$splitText[$sum[$getTextSplitIndex[totalHunts];1]]]
+$var[points;$splitText[$sum[$getTextSplitIndex[winterPoints];1]]]
+$var[coins;$splitText[$sum[$getTextSplitIndex[winterCoins];1]]]
+$var[firstHunt;$splitText[$sum[$getTextSplitIndex[firstHunt];1]]]
+$var[nowHunt;$getTimestamp]
+$var[netUps;$splitText[$sum[$getTextSplitIndex[netUps];1]]]
+
+$if[$var[firstHunt]==null]
+
+$var[firstHunt;$getTimestamp]
+
+$endif
+
+$if[$var[nowHunt]>=$sum[$var[firstHunt];300]]
+
+$var[firstHunt;$getTimestamp]
+
+$endif
+
+$cooldown[2m;❌ You are exhausted from that much hunting, take a 2 minutes break. Time left: %time%]
+
+$if[$var[netUps]==0]
+
+$var[points;$sum[$var[points];50]]
+$var[random;$random[50;150]]
+$var[coins;$sum[$var[random];$var[coins]]]
+$var[totalHunts;$sum[$var[totalHunts];1]] 
+$title[❄️  **__YOU CAUGHT SOME SNOWFLAKES__**  ❄️]
+$description[$randomText[Your habilities with you snowflake hunting net are incredible, so you got a total of $var[random] ❄️; You shaked frenetically your snowflake hunting net and, waw, you caught $var[random] ❄️;You managed to get $var[random] ❄️ with that old snowflake hunting net! TeRiRi is impressed!;You worked really hard and got $var[random] ❄️ , good job!]]
+$footer[Now you own $var[coins] ❄️]
+$color[ccffff]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];50]]
+$setUserVar[winterUserVar;$var[userVar]/winterCoins/$var[coins]/winterPoints/$var[points]/totalHunts/$var[totalHunts]/firstHunt/$var[firstHunt]]
+
+$elseif[$var[netUps]==1]
+
+$var[points;$sum[$var[points];100]]
+$var[random;$random[100;300]]
+$var[coins;$sum[$var[random];$var[coins]]]
+$var[totalHunts;$sum[$var[totalHunts];1]] 
+$title[❄️  **__YOU CAUGHT SOME SNOWFLAKES__**  ❄️]
+$description[$randomText[Your habilities with you snowflake hunting net are incredible, so you got a total of $var[random] ❄️; You shaked frenetically your snowflake hunting net and, waw, you caught $var[random] ❄️;You managed to get $var[random] ❄️ with that old snowflake hunting net! TeRiRi is impressed!;You worked really hard and got $var[random] ❄️ , good job!]]
+$footer[Now you own $var[coins] ❄️]
+$color[ccffff]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];100]]
+$setUserVar[winterUserVar;$var[userVar]/winterCoins/$var[coins]/winterPoints/$var[points]/totalHunts/$var[totalHunts]/firstHunt/$var[firstHunt]]
+
+$elseif[$var[netUps]==2]
+
+$var[points;$sum[$var[points];150]]
+$var[random;$random[200;600]]
+$var[coins;$sum[$var[random];$var[coins]]]
+$var[totalHunts;$sum[$var[totalHunts];1]] 
+$title[❄️  **__YOU CAUGHT SOME SNOWFLAKES__**  ❄️]
+$description[$randomText[Your habilities with you snowflake hunting net are incredible, so you got a total of $var[random] ❄️; You shaked frenetically your snowflake hunting net and, waw, you caught $var[random] ❄️;You managed to get $var[random] ❄️ with that old snowflake hunting net! TeRiRi is impressed!;You worked really hard and got $var[random] ❄️ , good job!]]
+$footer[Now you own $var[coins] ❄️]
+$color[ccffff]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];150]]
+$setUserVar[winterUserVar;$var[userVar]/winterCoins/$var[coins]/winterPoints/$var[points]/totalHunts/$var[totalHunts]/firstHunt/$var[firstHunt]]
+
+$elseif[$var[netUps]==3]
+
+$var[points;$sum[$var[points];200]]
+$var[random;$random[400;1200]]
+$var[coins;$sum[$var[random];$var[coins]]]
+$var[totalHunts;$sum[$var[totalHunts];1]] 
+$title[❄️  **__YOU CAUGHT SOME SNOWFLAKES__**  ❄️]
+$description[$randomText[Your habilities with you snowflake hunting net are incredible, so you got a total of $var[random] ❄️; You shaked frenetically your snowflake hunting net and, waw, you caught $var[random] ❄️;You managed to get $var[random] ❄️ with that old snowflake hunting net! TeRiRi is impressed!;You worked really hard and got $var[random] ❄️ , good job!]]
+$footer[Now you own $var[coins] ❄️]
+$color[ccffff]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];200]]
+$setUserVar[winterUserVar;$var[userVar]/winterCoins/$var[coins]/winterPoints/$var[points]/totalHunts/$var[totalHunts]/firstHunt/$var[firstHunt]]
+
+$elseif[$var[netUps]==4]
+
+$var[points;$sum[$var[points];250]]
+$var[random;$random[600;1800]]
+$var[coins;$sum[$var[random];$var[coins]]]
+$var[totalHunts;$sum[$var[totalHunts];1]] 
+$title[❄️  **__YOU CAUGHT SOME SNOWFLAKES__**  ❄️]
+$description[$randomText[Your habilities with you snowflake hunting net are incredible, so you got a total of $var[random] ❄️; You shaked frenetically your snowflake hunting net and, waw, you caught $var[random] ❄️;You managed to get $var[random] ❄️ with that old snowflake hunting net! TeRiRi is impressed!;You worked really hard and got $var[random] ❄️ , good job!]]
+$footer[Now you own $var[coins] ❄️]
+$color[ccffff]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];250]]
+$setUserVar[winterUserVar;$var[userVar]/winterCoins/$var[coins]/winterPoints/$var[points]/totalHunts/$var[totalHunts]/firstHunt/$var[firstHunt]]
+
+$endif

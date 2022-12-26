@@ -1,0 +1,657 @@
+$nomention
+$onlyIf[$getServerVar[winter.time]==true;]
+
+$textSplit[$getUserVar[winterUserVar];/]
+$var[userVar;cookieCount/$splitText[$sum[$getTextSplitIndex[cookieCount];1]]/milkCount/$splitText[$sum[$getTextSplitIndex[milkCount];1]]/pillsCount/$splitText[$sum[$getTextSplitIndex[pillsCount];1]]/santasGot/$splitText[$sum[$getTextSplitIndex[santasGot];1]]/cookieProbs/$splitText[$sum[$getTextSplitIndex[cookieProbs];1]]/milkProbs/$splitText[$sum[$getTextSplitIndex[milkProbs];1]]/pillProbs/$splitText[$sum[$getTextSplitIndex[pillProbs];1]]/firstHunt/$splitText[$sum[$getTextSplitIndex[firstHunt];1]]/totalHunts/$splitText[$sum[$getTextSplitIndex[totalHunts];1]]/netUps/$splitText[$sum[$getTextSplitIndex[netUps];1]]/netPrice/$splitText[$sum[$getTextSplitIndex[netPrice];1]]/c&mUp/$splitText[$sum[$getTextSplitIndex[c&mUp];1]]/c&mPrice/$splitText[$sum[$getTextSplitIndex[c&mPrice];1]]/pillUp/$splitText[$sum[$getTextSplitIndex[pillUp];1]]/pillUpPrice/$splitText[$sum[$getTextSplitIndex[pillUpPrice];1]]/received/$splitText[$sum[$getTextSplitIndex[received];1]]/gifted/$splitText[$sum[$getTextSplitIndex[gifted];1]]/recBlue/$splitText[$sum[$getTextSplitIndex[recBlue];1]]/recYello/$splitText[$sum[$getTextSplitIndex[recYello];1]]/recRed/$splitText[$sum[$getTextSplitIndex[recRed];1]]/lotteryPlays/$splitText[$sum[$getTextSplitIndex[lotteryPlays];1]]]
+
+$var[cookies;$splitText[$sum[$getTextSplitIndex[cookies];1]]]
+$var[milk;$splitText[$sum[$getTextSplitIndex[milk];1]]]
+$var[pills;$splitText[$sum[$getTextSplitIndex[pills];1]]]
+$var[winterCoins;$splitText[$sum[$getTextSplitIndex[winterCoins];1]]]
+$var[winterPoints;$splitText[$sum[$getTextSplitIndex[winterPoints];1]]]
+$var[blueG;$splitText[$sum[$getTextSplitIndex[blueG];1]]]
+$var[yellowG;$splitText[$sum[$getTextSplitIndex[yellowG];1]]]
+$var[redG;$splitText[$sum[$getTextSplitIndex[redG];1]]]
+$var[box;$splitText[$sum[$getTextSplitIndex[box];1]]]
+$var[tickets;$splitText[$sum[$getTextSplitIndex[tickets];1]]]
+$var[days;$splitText[$sum[$getTextSplitIndex[days];1]]]
+$var[unlockB;$splitText[$sum[$getTextSplitIndex[unlockB];1]]]
+$var[unlockY;$splitText[$sum[$getTextSplitIndex[unlockY];1]]]
+$var[unlockR;$splitText[$sum[$getTextSplitIndex[unlockR];1]]]
+$var[unlockUp;$splitText[$sum[$getTextSplitIndex[unlockUp];1]]]
+$var[unlockNet;$splitText[$sum[$getTextSplitIndex[unlockNet];1]]]
+
+$cooldown[20h; ❌ You have to wait at least 20 hours to get the next reward !  |  Time left : %time%]
+
+$if[$var[days]==0]
+$var[days;$sum[$var[days];1]]
+$var[winterPoints;$sum[$var[winterPoints];50]]
+$var[winterCoins;$sum[$var[winterCoins];500]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];50]]
+$title[📆  __**ADVENT CALENDAR**__  📆]
+$description[** **
+You claimed your day $var[days] calendar rewards!!
+
+**__RECEIVED__**
+
++ 500  ❄️
++ 50 winter points
+** **]
+$color[ccffff]
+$footer[Claim at least 25 days to get an special reward! Claim 31 days to win all the calendar rewards!!]
+$setUserVar[winterUserVar;$var[userVar]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[winterCoins]/winterPoints/$var[winterPoints]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/box/$var[box]/tickets/$var[tickets]/days/$var[days]/unlockB/$var[unlockB]/unlockY/$var[unlockY]/unlockR/$var[unlockR]/unlockUp/$var[unlockUp]/unlockNet/$var[unlockNet]]
+
+$elseif[$var[days]==1]
+$var[days;$sum[$var[days];1]]
+$var[winterPoints;$sum[$var[winterPoints];50]]
+$var[cookies;$sum[$var[cookies];3]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];50]]
+$title[📆  __**ADVENT CALENDAR**__  📆]
+$description[** **
+You claimed your day $var[days] calendar rewards!!
+
+**__RECEIVED__**
+
++ 3  🍪
++ 50 winter points
+** **]
+$footer[Claim at least 25 days to get an special reward! Claim 31 days to win all the calendar rewards!!]
+$color[ccffff]
+$setUserVar[winterUserVar;$var[userVar]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[winterCoins]/winterPoints/$var[winterPoints]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/box/$var[box]/tickets/$var[tickets]/days/$var[days]/unlockB/$var[unlockB]/unlockY/$var[unlockY]/unlockR/$var[unlockR]/unlockUp/$var[unlockUp]/unlockNet/$var[unlockNet]]
+
+$elseif[$var[days]==2]
+$var[days;$sum[$var[days];1]]
+$var[winterPoints;$sum[$var[winterPoints];50]]
+$var[cookies;$sum[$var[cookies];2]]
+$var[milk;$sum[$var[milk];2]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];50]]
+$title[📆  __**ADVENT CALENDAR**__  📆]
+$description[** **
+You claimed your day $var[days] calendar rewards!!
+
+**__RECEIVED__**
+
++ 2  🍪
++ 2  🥛
++ 50 winter points
+** **]
+$footer[Claim at least 25 days to get an special reward! Claim 31 days to win all the calendar rewards!!]
+$color[ccffff]
+$setUserVar[winterUserVar;$var[userVar]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[winterCoins]/winterPoints/$var[winterPoints]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/box/$var[box]/tickets/$var[tickets]/days/$var[days]/unlockB/$var[unlockB]/unlockY/$var[unlockY]/unlockR/$var[unlockR]/unlockUp/$var[unlockUp]/unlockNet/$var[unlockNet]]
+
+$elseif[$var[days]==3]
+$var[days;$sum[$var[days];1]]
+$var[winterPoints;$sum[$var[winterPoints];50]]
+$var[pills;$sum[$var[pills];1]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];50]]
+$title[📆  __**ADVENT CALENDAR**__  📆]
+$description[** **
+You claimed your day $var[days] calendar rewards!!
+
+**__RECEIVED__**
+
++ 1  💊
++ 50 winter points
+** **]
+$footer[Claim at least 25 days to get an special reward! Claim 31 days to win all the calendar rewards!!]
+$color[ccffff]
+$setUserVar[winterUserVar;$var[userVar]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[winterCoins]/winterPoints/$var[winterPoints]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/box/$var[box]/tickets/$var[tickets]/days/$var[days]/unlockB/$var[unlockB]/unlockY/$var[unlockY]/unlockR/$var[unlockR]/unlockUp/$var[unlockUp]/unlockNet/$var[unlockNet]]
+
+$elseif[$var[days]==4]
+$var[days;$sum[$var[days];1]]
+$var[winterPoints;$sum[$var[winterPoints];75]]
+$var[unlockB;true]
+$var[box;$sum[$var[box];1]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];75]]
+$title[📆  __**ADVENT CALENDAR**__  📆]
+$description[** **
+You claimed your day $var[days] calendar rewards!!
+
+**__RECEIVED__**
+
++ 1  📦
++ 50 winter points
++ Blue gifts ( 🔷 🎁 ) unlocked!
+
+**__INFO YOU MAY WANT TO KNOW__**
+
+- You can see your mysteriri winter boxes ( 📦 ) opening the mysteriri box menu (`t!mysteriri box`)
+- You can open your mysteriri boxes ( 📦 ) using `t!open box` 
+- You can now buy blue gifts ( 🔷 🎁 ) in the gift shop (`t!gift shop`) !
+** **]
+$footer[Claim at least 25 days to get an special reward! Claim 31 days to win all the calendar rewards!!]
+$color[ccffff]
+$setUserVar[winterUserVar;$var[userVar]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[winterCoins]/winterPoints/$var[winterPoints]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/box/$var[box]/tickets/$var[tickets]/days/$var[days]/unlockB/$var[unlockB]/unlockY/$var[unlockY]/unlockR/$var[unlockR]/unlockUp/$var[unlockUp]/unlockNet/$var[unlockNet]]
+
+$elseif[$var[days]==5]
+$var[days;$sum[$var[days];1]]
+$var[winterPoints;$sum[$var[winterPoints];75]]
+$var[milk;$sum[$var[milk];2]]
+$var[cookies;$sum[$var[cookies];3]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];75]]
+$title[📆  __**ADVENT CALENDAR**__  📆]
+$description[You claimed your day $var[days] calendar rewards!!
+
+**__RECEIVED__**
+
++ 3  🍪
++ 2  🥛
++ 75 winter points
+** **]
+$footer[Claim at least 25 days to get an special reward! Claim 31 days to win all the calendar rewards!!]
+$color[ccffff]
+$setUserVar[winterUserVar;$var[userVar]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[winterCoins]/winterPoints/$var[winterPoints]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/box/$var[box]/tickets/$var[tickets]/days/$var[days]/unlockB/$var[unlockB]/unlockY/$var[unlockY]/unlockR/$var[unlockR]/unlockUp/$var[unlockUp]/unlockNet/$var[unlockNet]]
+
+
+$elseif[$var[days]==6]
+$var[days;$sum[$var[days];1]]
+$var[winterPoints;$sum[$var[winterPoints];75]]
+$var[winterCoins;$sum[$var[winterCoins];300]]
+$var[tickets;$sum[$var[tickets];1]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];75]]
+$title[📆  __**ADVENT CALENDAR**__  📆]
+$description[You claimed your day $var[days] calendar rewards!!
+
+**__RECEIVED__**
+
++ 1  🎟️
++ 300  ❄️
++ 75 winter points
+
+**__INFO YOU MAY WANT TO KNOW__**
+
+- You can use your loTeRiRi tickets ( 🎟️ ) to play TeRiRi's winter lottery 
+- You can open the lottery shop using `t!loteriri`. There you will be able to see all the info you will need to know about the loTeRiRi (prizes, price, commands....)
+** **]
+$footer[Claim at least 25 days to get an special reward! Claim 31 days to win all the calendar rewards!!]
+$color[ccffff]
+$setUserVar[winterUserVar;$var[userVar]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[winterCoins]/winterPoints/$var[winterPoints]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/box/$var[box]/tickets/$var[tickets]/days/$var[days]/unlockB/$var[unlockB]/unlockY/$var[unlockY]/unlockR/$var[unlockR]/unlockUp/$var[unlockUp]/unlockNet/$var[unlockNet]]
+
+$elseif[$var[days]==7]
+$var[days;$sum[$var[days];1]]
+$var[winterPoints;$sum[$var[winterPoints];75]]
+$var[cookies;$sum[$var[cookies];5]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];75]]
+$title[📆  __**ADVENT CALENDAR**__  📆]
+$description[** **
+You claimed your day $var[days] calendar rewards!!
+
+**__RECEIVED__**
+
++ 5  🍪
++ 75 winter points
+** **]
+$color[ccffff]
+$footer[Claim at least 25 days to get an special reward! Claim 31 days to win all the calendar rewards!!]
+$setUserVar[winterUserVar;$var[userVar]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[winterCoins]/winterPoints/$var[winterPoints]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/box/$var[box]/tickets/$var[tickets]/days/$var[days]/unlockB/$var[unlockB]/unlockY/$var[unlockY]/unlockR/$var[unlockR]/unlockUp/$var[unlockUp]/unlockNet/$var[unlockNet]]
+
+$elseif[$var[days]==8]
+$var[days;$sum[$var[days];1]]
+$var[winterPoints;$sum[$var[winterPoints];75]]
+$var[blueG;$sum[$var[blueG];1]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];75]]
+$title[📆  __**ADVENT CALENDAR**__  📆]
+$description[** **
+You claimed your day $var[days] calendar rewards!!
+
+**__RECEIVED__**
+
++ 1  🔷 🎁
++ 75 winter points
+** **]
+$color[ccffff]
+$footer[Claim at least 25 days to get an special reward! Claim 31 days to win all the calendar rewards!!]
+$setUserVar[winterUserVar;$var[userVar]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[winterCoins]/winterPoints/$var[winterPoints]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/box/$var[box]/tickets/$var[tickets]/days/$var[days]/unlockB/$var[unlockB]/unlockY/$var[unlockY]/unlockR/$var[unlockR]/unlockUp/$var[unlockUp]/unlockNet/$var[unlockNet]]
+
+
+$elseif[$var[days]==9]
+$var[days;$sum[$var[days];1]]
+$var[winterPoints;$sum[$var[winterPoints];125]]
+$var[box;$sum[$var[box];1]]
+$var[unlockY;true]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];125]]
+$title[📆  __**ADVENT CALENDAR**__  📆]
+$description[** **
+You claimed your day $var[days] calendar rewards!!
+ 
+**__RECEIVED__**
+
++ 1  📦
++ 125 winter points
++ Yellow gifts ( 💛 🎁 ) unlocked!
+
+**__INFO YOU MAY WANT TO KNOW__**
+
+- Now you can buy yellow gifts (  💛 🎁  ) in the gift shop (`t!gift shop`)
+** **]
+$color[ccffff]
+$footer[Claim at least 25 days to get an special reward! Claim 31 days to win all the calendar rewards!!]
+$setUserVar[winterUserVar;$var[userVar]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[winterCoins]/winterPoints/$var[winterPoints]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/box/$var[box]/tickets/$var[tickets]/days/$var[days]/unlockB/$var[unlockB]/unlockY/$var[unlockY]/unlockR/$var[unlockR]/unlockUp/$var[unlockUp]/unlockNet/$var[unlockNet]]
+
+$elseif[$var[days]==10]
+$var[days;$sum[$var[days];1]]
+$var[winterPoints;$sum[$var[winterPoints];125]]
+$var[winterCoins;$sum[$var[winterCoins];450]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];125]]
+$title[📆  __**ADVENT CALENDAR**__  📆]
+$description[** **
+You claimed your day $var[days] calendar rewards!!
+
+**__RECEIVED__**
+
++ 450  ❄️
++ 125 winter points
+** **]
+$color[ccffff]
+$footer[Claim at least 25 days to get an special reward! Claim 31 days to win all the calendar rewards!!]
+$setUserVar[winterUserVar;$var[userVar]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[winterCoins]/winterPoints/$var[winterPoints]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/box/$var[box]/tickets/$var[tickets]/days/$var[days]/unlockB/$var[unlockB]/unlockY/$var[unlockY]/unlockR/$var[unlockR]/unlockUp/$var[unlockUp]/unlockNet/$var[unlockNet]]
+
+
+$elseif[$var[days]==11]
+$var[days;$sum[$var[days];1]]
+$var[winterPoints;$sum[$var[winterPoints];125]]
+$var[cookies;$sum[$var[cookies];2]]
+$var[milk;$sum[$var[milk];3]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];125]]
+$title[📆  __**ADVENT CALENDAR**__  📆]
+$description[** **
+You claimed your day $var[days] calendar rewards!!
+
+**__RECEIVED__**
+
++ 2  🍪
++ 3  🥛
++ 125 winter points
+** **]
+$color[ccffff]
+$footer[Claim at least 25 days to get an special reward! Claim 31 days to win all the calendar rewards!!]
+$setUserVar[winterUserVar;$var[userVar]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[winterCoins]/winterPoints/$var[winterPoints]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/box/$var[box]/tickets/$var[tickets]/days/$var[days]/unlockB/$var[unlockB]/unlockY/$var[unlockY]/unlockR/$var[unlockR]/unlockUp/$var[unlockUp]/unlockNet/$var[unlockNet]]
+
+$elseif[$var[days]==12]
+$var[days;$sum[$var[days];1]]
+$var[winterPoints;$sum[$var[winterPoints];125]]
+$var[box;$sum[$var[box];1]]
+$var[tickets;$sum[$var[tickets];1]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];125]]
+$title[📆  __**ADVENT CALENDAR**__  📆]
+$description[** **
+You claimed your day $var[days] calendar rewards!!
+
+**__RECEIVED__**
+
++ 1  📦
++ 1  🎟️
++ 125 winter points
+** **]
+$color[ccffff]
+$footer[Claim at least 25 days to get an special reward! Claim 31 days to win all the calendar rewards!!]
+$setUserVar[winterUserVar;$var[userVar]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[winterCoins]/winterPoints/$var[winterPoints]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/box/$var[box]/tickets/$var[tickets]/days/$var[days]/unlockB/$var[unlockB]/unlockY/$var[unlockY]/unlockR/$var[unlockR]/unlockUp/$var[unlockUp]/unlockNet/$var[unlockNet]]
+
+$elseif[$var[days]==13]
+$var[days;$sum[$var[days];1]]
+$var[cookies;$sum[$var[cookies];8]]
+$var[winterPoints;$sum[$var[winterPoints];125]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];125]]
+$title[📆  __**ADVENT CALENDAR**__  📆]
+$description[** **
+You claimed your day $var[days] calendar rewards!!
+
+**__RECEIVED__**
+
++ 8  🍪
++ 125 winter points
+** **]
+$color[ccffff]
+$footer[Claim at least 25 days to get an special reward! Claim 31 days to win all the calendar rewards!!]
+$setUserVar[winterUserVar;$var[userVar]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[winterCoins]/winterPoints/$var[winterPoints]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/box/$var[box]/tickets/$var[tickets]/days/$var[days]/unlockB/$var[unlockB]/unlockY/$var[unlockY]/unlockR/$var[unlockR]/unlockUp/$var[unlockUp]/unlockNet/$var[unlockNet]]
+
+$elseif[$var[days]==14] 
+$var[days;$sum[$var[days];1]]
+$var[winterPoints;$sum[$var[winterPoints];200]]
+$var[yellowG;$sum[$var[yellowG];1]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];200]]
+$title[📆  __**ADVENT CALENDAR**__  📆]
+$description[** **
+You claimed your day $var[days] calendar rewards!!
+
+**__RECEIVED__**
+
++ 1  💛 🎁
++ 200 winter points
+** **]
+$color[ccffff]
+$footer[Claim at least 25 days to get an special reward! Claim 31 days to win all the calendar rewards!!]
+$setUserVar[winterUserVar;$var[userVar]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[winterCoins]/winterPoints/$var[winterPoints]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/box/$var[box]/tickets/$var[tickets]/days/$var[days]/unlockB/$var[unlockB]/unlockY/$var[unlockY]/unlockR/$var[unlockR]/unlockUp/$var[unlockUp]/unlockNet/$var[unlockNet]]
+
+$elseif[$var[days]==15]
+$var[days;$sum[$var[days];1]]
+$var[unlockR;true]
+$var[unlockNet;true]
+$var[winterCoins;$sum[$var[winterCoins];700]] 
+$var[winterPoints;$sum[$var[winterPoints];200]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];200]]
+$title[📆  __**ADVENT CALENDAR**__  📆]
+$description[** **
+You claimed your day $var[days] calendar rewards!!
+
+**__RECEIVED__**
+
++ 700  ❄️
++ 200 winter points
++ Red gifts ( 🔴 🎁 ) unlocked!
++ Secret upgrade unlocked! 
+
+**__INFO YOU MAY WANT TO KNOW__**
+
+- Now you can buy red gifts ( 🔴 🎁 ) in the gifts shop (`t!gift shop`)
+- Now you can buy an extra snowflake hunting net upgrade in the upgrade shop (`t!winter upgrade shop`)
+** **]
+$color[ccffff]
+$footer[Claim at least 25 days to get an special reward! Claim 31 days to win all the calendar rewards!!]
+$setUserVar[winterUserVar;$var[userVar]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[winterCoins]/winterPoints/$var[winterPoints]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/box/$var[box]/tickets/$var[tickets]/days/$var[days]/unlockB/$var[unlockB]/unlockY/$var[unlockY]/unlockR/$var[unlockR]/unlockUp/$var[unlockUp]/unlockNet/$var[unlockNet]]
+
+$elseif[$var[days]==16]
+$var[days;$sum[$var[days];1]]
+$var[winterPoints;$sum[$var[winterPoints];200]]
+$var[box;$sum[$var[box];2]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];200]]
+$title[📆  __**ADVENT CALENDAR**__  📆]
+$description[** **
+You claimed your day $var[days] calendar rewards!!
+
+**__RECEIVED__**
+
++ 2  📦
++ 200 winter points
+** **]
+$color[ccffff]
+$footer[Claim at least 25 days to get an special reward! Claim 31 days to win all the calendar rewards!!]
+$setUserVar[winterUserVar;$var[userVar]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[winterCoins]/winterPoints/$var[winterPoints]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/box/$var[box]/tickets/$var[tickets]/days/$var[days]/unlockB/$var[unlockB]/unlockY/$var[unlockY]/unlockR/$var[unlockR]/unlockUp/$var[unlockUp]/unlockNet/$var[unlockNet]]
+
+$elseif[$var[days]==17]
+$var[days;$sum[$var[days];1]]
+$var[winterPoints;$sum[$var[winterPoints];200]]
+$var[pills;$sum[$var[pills];1]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];200]]
+$title[📆  __**ADVENT CALENDAR**__  📆]
+$description[** **
+You claimed your day $var[days] calendar rewards!!
+
+**__RECEIVED__**
+
++ 1  💊
++ 200 winter points
+** **]
+$color[ccffff]
+$footer[Claim at least 25 days to get an special reward! Claim 31 days to win all the calendar rewards!!]
+$setUserVar[winterUserVar;$var[userVar]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[winterCoins]/winterPoints/$var[winterPoints]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/box/$var[box]/tickets/$var[tickets]/days/$var[days]/unlockB/$var[unlockB]/unlockY/$var[unlockY]/unlockR/$var[unlockR]/unlockUp/$var[unlockUp]/unlockNet/$var[unlockNet]]
+
+$elseif[$var[days]==18]
+$var[days;$sum[$var[days];1]]
+$var[winterPoints;$sum[$var[winterPoints];200]]
+$var[cookies;$sum[$var[cookies];10]]
+$var[milk;$sum[$var[milk];1]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];200]]
+$title[📆  __**ADVENT CALENDAR**__  📆]
+$description[** **
+You claimed your day $var[days] calendar rewards!!
+
+**__RECEIVED__**
+
++ 10  🍪
++ 1  🥛
++ 200 winter points
+** **]
+$color[ccffff]
+$footer[Claim at least 25 days to get an special reward! Claim 31 days to win all the calendar rewards!!]
+$setUserVar[winterUserVar;$var[userVar]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[winterCoins]/winterPoints/$var[winterPoints]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/box/$var[box]/tickets/$var[tickets]/days/$var[days]/unlockB/$var[unlockB]/unlockY/$var[unlockY]/unlockR/$var[unlockR]/unlockUp/$var[unlockUp]/unlockNet/$var[unlockNet]]
+
+$elseif[$var[days]==19]
+$var[days;$sum[$var[days];1]]
+$var[winterPoints;$sum[$var[winterPoints];300]]
+$var[box;$sum[$var[box];2]]
+$var[milk;$sum[$var[milk];2]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];300]]
+$title[📆  __**ADVENT CALENDAR**__  📆]
+$description[** **
+You claimed your day $var[days] calendar rewards!!
+
+**__RECEIVED__**
+
++ 2  🥛
++ 2  📦
++ 300 winter points
+** **]
+$footer[Claim at least 25 days to get an special reward! Claim 31 days to win all the calendar rewards!!]
+$color[ccffff]
+$setUserVar[winterUserVar;$var[userVar]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[winterCoins]/winterPoints/$var[winterPoints]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/box/$var[box]/tickets/$var[tickets]/days/$var[days]/unlockB/$var[unlockB]/unlockY/$var[unlockY]/unlockR/$var[unlockR]/unlockUp/$var[unlockUp]/unlockNet/$var[unlockNet]]
+
+$elseif[$var[days]==20]
+$var[days;$sum[$var[days];1]]
+$var[winterPoints;$sum[$var[winterPoints];300]]
+$var[redG;$sum[$var[redG];1]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];300]]
+$title[📆  __**ADVENT CALENDAR**__  📆]
+$description[** **
+You claimed your day $var[days] calendar rewards!!
+
+**__RECEIVED__**
+
++ 1  🔴 🎁
++ 300 winter points
+** **]
+$footer[Claim at least 25 days to get an special reward! Claim 31 days to win all the calendar rewards!!]
+$color[ccffff]
+$setUserVar[winterUserVar;$var[userVar]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[winterCoins]/winterPoints/$var[winterPoints]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/box/$var[box]/tickets/$var[tickets]/days/$var[days]/unlockB/$var[unlockB]/unlockY/$var[unlockY]/unlockR/$var[unlockR]/unlockUp/$var[unlockUp]/unlockNet/$var[unlockNet]]
+
+$elseif[$var[days]==21]
+$var[days;$sum[$var[days];1]]
+$var[winterPoints;$sum[$var[winterPoints];300]]
+$var[milk;$sum[$var[milk];1]]
+$var[pills;$sum[$var[pills];2]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];300]]
+$title[📆  __**ADVENT CALENDAR**__  📆]
+$description[** **
+You claimed your day $var[days] calendar rewards!!
+
+**__RECEIVED__**
+
++ 1  🥛
++ 2  💊
++ 300 winter points
+** **]
+$footer[Claim at least 25 days to get an special reward! Claim 31 days to win all the calendar rewards!!]
+$color[ccffff]
+$setUserVar[winterUserVar;$var[userVar]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[winterCoins]/winterPoints/$var[winterPoints]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/box/$var[box]/tickets/$var[tickets]/days/$var[days]/unlockB/$var[unlockB]/unlockY/$var[unlockY]/unlockR/$var[unlockR]/unlockUp/$var[unlockUp]/unlockNet/$var[unlockNet]]
+
+$elseif[$var[days]==22]
+$var[days;$sum[$var[days];1]]
+$var[winterPoints;$sum[$var[winterPoints];300]]
+$var[blueG;$sum[$var[blueG];2]]
+$var[box;$sum[$var[box];3]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];300]]
+$title[📆  __**ADVENT CALENDAR**__  📆]
+$description[** **
+You claimed your day $var[days] calendar rewards!!
+
+**__RECEIVED__**
+
++ 3  📦
++ 2  🔷 🎁
++ 300 winter points
+** **]
+$footer[Claim at least 25 days to get an special reward! Claim 31 days to win all the calendar rewards!!]
+$color[ccffff]
+$setUserVar[winterUserVar;$var[userVar]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[winterCoins]/winterPoints/$var[winterPoints]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/box/$var[box]/tickets/$var[tickets]/days/$var[days]/unlockB/$var[unlockB]/unlockY/$var[unlockY]/unlockR/$var[unlockR]/unlockUp/$var[unlockUp]/unlockNet/$var[unlockNet]]
+
+$elseif[$var[days]==23]
+$var[days;$sum[$var[days];1]]
+$var[winterPoints;$sum[$var[winterPoints];300]]
+$var[cookies;$sum[$var[cookies];10]]
+$var[milk;$sum[$var[milk];2]]
+$var[box;$sum[$var[box];1]]
+$var[tickets;$sum[$var[tickets];5]]
+$var[unlockUp;true]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];300]]
+$title[📆  __**ADVENT CALENDAR**__  📆]
+$description[** **
+You claimed your day $var[days] calendar rewards!!
+
+**__RECEIVED__**
+
++ 10  🍪
++ 2  🥛
++ 1  📦
++ 5  🎟️
++ 300 winter points
++ Secret upgrades unlocked!
+
+**__INFO YOU MAY WANT TO KNOW__**
+
+- Now you can buy an extra upgrade for all the "wait for Santa" items!
+** **]
+$footer[Claim at least 25 days to get an special reward! Claim 31 days to win all the calendar rewards!!]
+$color[ccffff]
+$setUserVar[winterUserVar;$var[userVar]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[winterCoins]/winterPoints/$var[winterPoints]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/box/$var[box]/tickets/$var[tickets]/days/$var[days]/unlockB/$var[unlockB]/unlockY/$var[unlockY]/unlockR/$var[unlockR]/unlockUp/$var[unlockUp]/unlockNet/$var[unlockNet]]
+
+$elseif[$var[days]==24]
+$var[days;$sum[$var[days];1]]
+$var[winterPoints;$sum[$var[winterPoints];1000]]
+$var[winterCoins;$sum[$var[winterCoins];1000]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];1000]]
+$title[📆  __**ADVENT CALENDAR**__  📆]
+$description[** **
+You claimed your day $var[days] calendar rewards!!
+
+**__RECEIVED__**
+
++ 1000  ❄️
++ 1000  winter points
++ You received the special 25 days trophy badge! You can see it in your `t!profile`
++ You received a memento role
+** **]
+$footer[Claim at least 25 days to get an special reward! Claim 31 days to win all the calendar rewards!!]
+$color[ccffff]
+$setUserVar[winterUserVar;$var[userVar]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[winterCoins]/winterPoints/$var[winterPoints]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/box/$var[box]/tickets/$var[tickets]/days/$var[days]/unlockB/$var[unlockB]/unlockY/$var[unlockY]/unlockR/$var[unlockR]/unlockUp/$var[unlockUp]/unlockNet/$var[unlockNet]]
+$setUserVar[winter.badge;true]
+$roleGrant[$authorID;+$roleID[Christmas Elf]]
+
+$elseif[$var[days]==25]
+$var[days;$sum[$var[days];1]]
+$var[winterPoints;$sum[$var[winterPoints];400]]
+$var[box;$sum[$var[box];5]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];400]]
+$title[📆  __**ADVENT CALENDAR**__  📆]
+$description[** **
+You claimed your day $var[days] calendar rewards!!
+
+**__RECEIVED__**
+
++ 5  📦
++ 400 winter points
+** **]
+$footer[Claim at least 25 days to get an special reward! Claim 31 days to win all the calendar rewards!!]
+$color[ccffff]
+$setUserVar[winterUserVar;$var[userVar]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[winterCoins]/winterPoints/$var[winterPoints]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/box/$var[box]/tickets/$var[tickets]/days/$var[days]/unlockB/$var[unlockB]/unlockY/$var[unlockY]/unlockR/$var[unlockR]/unlockUp/$var[unlockUp]/unlockNet/$var[unlockNet]]
+
+$elseif[$var[days]==26]
+$var[days;$sum[$var[days];1]]
+$var[winterPoints;$sum[$var[winterPoints];400]]
+$var[redG;$sum[$var[redG];2]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];400]]
+$title[📆  __**ADVENT CALENDAR**__  📆]
+$description[** **
+You claimed your day $var[days] calendar rewards!!
+
+**__RECEIVED__**
+
++ 2  🔴 🎁
++ 400 winter points
+** **]
+$footer[Claim at least 25 days to get an special reward! Claim 31 days to win all the calendar rewards!!]
+$color[ccffff]
+$setUserVar[winterUserVar;$var[userVar]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[winterCoins]/winterPoints/$var[winterPoints]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/box/$var[box]/tickets/$var[tickets]/days/$var[days]/unlockB/$var[unlockB]/unlockY/$var[unlockY]/unlockR/$var[unlockR]/unlockUp/$var[unlockUp]/unlockNet/$var[unlockNet]]
+
+$elseif[$var[days]==27]
+$var[days;$sum[$var[days];1]]
+$var[winterPoints;$sum[$var[winterPoints];400]]
+$var[blueG;$sum[$var[blueG];3]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];400]]
+$title[📆  __**ADVENT CALENDAR**__  📆]
+$description[** **
+You claimed your day $var[days] calendar rewards!!
+
+**__RECEIVED__**
+
++ 3  🔷 🎁
++ 400 winter points
+** **]
+$footer[Claim at least 25 days to get an special reward! Claim 31 days to win all the calendar rewards!!]
+$color[ccffff]
+$setUserVar[winterUserVar;$var[userVar]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[winterCoins]/winterPoints/$var[winterPoints]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/box/$var[box]/tickets/$var[tickets]/days/$var[days]/unlockB/$var[unlockB]/unlockY/$var[unlockY]/unlockR/$var[unlockR]/unlockUp/$var[unlockUp]/unlockNet/$var[unlockNet]]
+
+$elseif[$var[days]==28]
+$var[days;$sum[$var[days];1]]
+$var[winterPoints;$sum[$var[winterPoints];400]]
+$var[yellowG;$sum[$var[yellowG];3]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];400]]
+$title[📆  __**ADVENT CALENDAR**__  📆]
+$description[** **
+You claimed your day $var[days] calendar rewards!!
+
+**__RECEIVED__**
+
++ 3  💛 🎁
++ 400 winter points
+** **]
+$footer[Claim at least 25 days to get an special reward! Claim 31 days to win all the calendar rewards!!]
+$color[ccffff]
+$setUserVar[winterUserVar;$var[userVar]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[winterCoins]/winterPoints/$var[winterPoints]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/box/$var[box]/tickets/$var[tickets]/days/$var[days]/unlockB/$var[unlockB]/unlockY/$var[unlockY]/unlockR/$var[unlockR]/unlockUp/$var[unlockUp]/unlockNet/$var[unlockNet]]
+
+$elseif[$var[days]==29]
+$var[days;$sum[$var[days];1]]
+$var[winterPoints;$sum[$var[winterPoints];400]]
+$var[box;$sum[$var[box];7]]
+$var[tickets;$sum[$var[tickets];3]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];400]]
+$title[📆  __**ADVENT CALENDAR**__  📆]
+$description[** **
+You claimed your day $var[days] calendar rewards!!
+
+**__RECEIVED__**
+
++ 7  📦
++ 3  🎟️
++ 400 winter points
+** **]
+$footer[Claim at least 25 days to get an special reward! Claim 31 days to win all the calendar rewards!!]
+$color[ccffff]
+$setUserVar[winterUserVar;$var[userVar]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[winterCoins]/winterPoints/$var[winterPoints]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/box/$var[box]/tickets/$var[tickets]/days/$var[days]/unlockB/$var[unlockB]/unlockY/$var[unlockY]/unlockR/$var[unlockR]/unlockUp/$var[unlockUp]/unlockNet/$var[unlockNet]]
+
+$elseif[$var[days]==30]
+$var[days;$sum[$var[days];1]]
+$var[winterPoints;$sum[$var[winterPoints];500]]
+$var[cookies;$sum[$var[cookies];25]]
+$var[milk;$sum[$var[milk];15]]
+$var[pills;$sum[$var[pills];5]]
+$var[winterCoins;$sum[$var[winterCoins];10000]]
+$setUserVar[festivePoints;$sum[$getUserVar[festivePoints];500]]
+$title[📆  __**ADVENT CALENDAR**__  📆]
+$description[** **
+You claimed your day $var[days] calendar rewards!!
+
+**__RECEIVED__**
+
++ 25  🍪
++ 15  🥛
++ 5  💊
++ 10.000  ❄️
++ 500 winter points
+** **]
+$footer[waw, you claimed all your advent calendar rewards!! ]
+$color[ccffff]
+$setUserVar[winterUserVar;$var[userVar]/cookies/$var[cookies]/milk/$var[milk]/pills/$var[pills]/winterCoins/$var[winterCoins]/winterPoints/$var[winterPoints]/blueG/$var[blueG]/yellowG/$var[yellowG]/redG/$var[redG]/box/$var[box]/tickets/$var[tickets]/days/$var[days]/unlockB/$var[unlockB]/unlockY/$var[unlockY]/unlockR/$var[unlockR]/unlockUp/$var[unlockUp]/unlockNet/$var[unlockNet]]
+
+$elseif[$var[days]>30]
+❌ TeRiRi can't give you more rewards!!
+$endif

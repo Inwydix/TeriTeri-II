@@ -1,0 +1,38 @@
+$nomention $reply $ignoreTriggerCase
+$onlyIf[$getServerVar[winter.time]==true;]
+
+$textSplit[$getUserVar[winterUserVar];/]
+$var[cookieProbs;$splitText[$sum[$getTextSplitIndex[cookieProbs];1]]]
+$var[milkProbs;$splitText[$sum[$getTextSplitIndex[milkProbs];1]]]
+$var[pillProbs;$splitText[$sum[$getTextSplitIndex[pillProbs];1]]]
+  
+$textSplit[$getServerVar[winterServerVar];/]
+$var[cookiePrice;$optOff[$splitText[$sum[$getTextSplitIndex[cookiePrice];1]]]]
+$var[milkPrice;$optOff[$splitText[$sum[$getTextSplitIndex[milkPrice];1]]]] $var[pillsPrice;$optOff[$splitText[$sum[$getTextSplitIndex[pillsPrice];1]]]]
+$var[cookies;$optOff[$splitText[$sum[$getTextSplitIndex[cookies];1]]]]
+$var[milk;$optOff[$splitText[$sum[$getTextSplitIndex[milk];1]]]]
+$var[pills;$optOff[$splitText[$sum[$getTextSplitIndex[pills];1]]]]
+
+
+$title[☃️  **__WINTER SHOP__**  ☃️]
+$description[
+Welcome to TeRiRi's winter shop! What do you want today?
+
+**1   |   Cookie box:**
+   → Quantity:  🍪 (x$var[cookies])   
+   → Price:  ❄️  (x$var[cookiePrice])     
+   → Probabilities of catching Santa +$var[cookieProbs]%
+
+**2  |   Milk bottle:**
+   → Quantity:  🥛 (x$var[milk])    
+   → Price:  ❄️  (x$var[milkPrice])  
+   → Probabilities of catching Santa +$var[milkProbs]%
+
+**3  |   TeRiRi's special sleepless pills:**
+   → Quantity:  💊 (x$var[pills])    
+   → Price:  ❄️  (x$var[pillsPrice])   
+   → Probabilities of catching Santa +$var[pillProbs]%
+** **
+ ]
+$footer[Use 't!buy winter <number>' to purchase things using your ❄️ !]
+$color[ccffff]

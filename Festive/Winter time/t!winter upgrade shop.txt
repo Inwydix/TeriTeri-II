@@ -1,0 +1,66 @@
+$nomention $reply $ignoreTriggerCase
+$enableDecimals[yes]
+$onlyIf[$getServerVar[winter.time]==true;]
+
+$textSplit[$getUserVar[winterUserVar];/]
+$var[netUps;$splitText[$sum[$getTextSplitIndex[netUps];1]]]
+$var[netPrice;$splitText[$sum[$getTextSplitIndex[netPrice];1]]]
+$var[c&mUp;$splitText[$sum[$getTextSplitIndex[c&mUp];1]]]
+$var[c&mPrice;$splitText[$sum[$getTextSplitIndex[c&mPrice];1]]]
+$var[pillUp;$splitText[$sum[$getTextSplitIndex[pillUp];1]]]
+$var[pillUpPrice;$splitText[$sum[$getTextSplitIndex[pillUpPrice];1]]]
+$var[unlockNet;$splitText[$sum[$getTextSplitIndex[unlockNet];1]]]
+$var[unlockUp;$splitText[$sum[$getTextSplitIndex[unlockUp];1]]]
+
+$textSplit[$getServerVar[winterServerVar];/]
+$var[server.netPrice;$optOff[$splitText[$sum[$getTextSplitIndex[netPrice];1]]]]
+$var[server.c&mPrice;$optOff[$splitText[$sum[$getTextSplitIndex[c&mPrice];1]]]]
+$var[server.pillUpPrice;$optOff[$splitText[$sum[$getTextSplitIndex[pillUpPrice];1]]]]
+
+$if[$var[netPrice]==0]
+$var[netPrice;$var[server.netPrice]]
+$endif
+$if[$var[c&mPrice]==0]
+$var[c&mPrice;$var[server.c&mPrice]]
+$endif
+$if[$var[pillUpPrice]==0]
+$var[pillUpPrice;$var[server.pillUpPrice]]
+$endif
+
+$if[$var[unlockNet]==true]
+$var[maxNet;4]
+$else
+$var[maxNet;3]
+$endif
+
+$if[$var[unlockUp]==true]
+$var[maxcm;4]
+$var[maxpill;4]
+$else
+$var[maxcm;3]
+$var[maxpill;3]
+$endif
+
+$title[☃️  **__WINTER UPGRADE SHOP__**  ☃️]
+$description[What do you want to upgrade today?
+
+**1  |  Snowflake Hunting Net:** $if[$and[$var[netUps]==3;$var[unlockNet]==false]]❌ SOLD OUT ❌$elseif[$var[netUps]==4]❌  SOLD OUT  ❌ $else
+   → Price: $var[netPrice] ❄️
+   → Up: snowflake hunting rewards x2
+   → Times bought: $var[netUps]
+   → Stock: $sub[$var[maxNet];$var[netUps]] $endif
+
+**2  |  Cookies & Milk:** $if[$and[$var[c&mUp]==3;$var[unlockUp]==false]]❌ SOLD OUT ❌$elseif[$var[c&m]==4]❌  SOLD OUT  ❌ $else
+   → Price: $var[c&mPrice] ❄️
+   → Up: probabilities of seeing Santa using cookies and/or milk x1.3
+   → Times bought: $var[c&mUp]
+   → Stock: $sub[$var[maxcm];$var[c&mUp]] $endif
+
+**3  |  Sleepless Pills:** $if[$and[$var[pillUp]==3;$var[unlockUp]==false]]❌ SOLD OUT ❌$elseif[$var[pillUp]==4]❌  SOLD OUT  ❌ $else
+   → Price: $var[pillUpPrice] ❄️
+   → Up: probabilities of seeing Santa using TeRiRi's pills x1.2
+   → Times bought: $var[pillUp]
+   → Stock: $sub[$var[maxpill];$var[pillUp]] $endif
+   ** **]
+$footer[Use 't!upgrade winter <number>' to buy an upgrade]
+$color[ccffff]

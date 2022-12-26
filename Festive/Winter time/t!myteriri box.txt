@@ -1,0 +1,30 @@
+$nomention $reply
+$onlyIf[$getServerVar[winter.time]==true;]
+
+$textSplit[$getUserVar[winterUserVar];/]
+$var[box;$splitText[$sum[$getTextSplitIndex[box];1]]]
+$title[📦  __**WINTER MYSTERIRI BOXES**__  📦]
+$description[** **
+TeRiRi likes surprises... so she prepared this mysterious boxes for her fellow Teris!!!
+
+**__REWARDS YOU CAN GET__**
+
++  ❄️  (50-800)  (100% chances of appeaing)
++  🍪  (1-10)  (100% chances of appearing)
++  🥛  (0-4)  (50% chances of appearing)
++  🎟️  (0-3)  (20% chances of appearing)
++  💊  (0-2)  (15% chances of appearing)
++  📦  (0-1)  (2% chances of appearing)
+
+
+__**OPENING BOXES**__
+
+You can open your boxes using:
+- ```ft!open box:``` (opens 1  📦 )
+
+__**YOUR BOXES**__
+
+You own $var[box]  📦
+** **]
+$footer[Mysteriri boxes don't include bitter melon juice because TeRiRi drank it all while making them... :(]
+$color[ccffff]

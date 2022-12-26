@@ -1,0 +1,371 @@
+$nomention
+$color[ccffff]
+
+$textSplit[$getServerVar[winterServerVar];/]
+$var[cookiePrice;$optOff[$splitText[$sum[$getTextSplitIndex[cookiePrice];1]]]]
+$var[milkPrice;$optOff[$splitText[$sum[$getTextSplitIndex[milkPrice];1]]]]
+$var[pillsPrice;$optOff[$splitText[$sum[$getTextSplitIndex[pillsPrice];1]]]]
+$var[cookies;$optOff[$splitText[$sum[$getTextSplitIndex[cookies];1]]]]
+$var[milk;$optOff[$splitText[$sum[$getTextSplitIndex[milk];1]]]]
+$var[pills;$optOff[$splitText[$sum[$getTextSplitIndex[pills];1]]]]
+$var[yPrice;$optOff[$splitText[$sum[$getTextSplitIndex[yPrice];1]]]]
+$var[bPrice;$optOff[$splitText[$sum[$getTextSplitIndex[bPrice];1]]]]
+$var[rPrice;$optOff[$splitText[$sum[$getTextSplitIndex[rPrice];1]]]]
+$var[ticketPack;$optOff[$splitText[$sum[$getTextSplitIndex[ticketPack];1]]]]
+$var[ticketPrice;$optOff[$splitText[$sum[$getTextSplitIndex[ticketPrice];1]]]]
+$var[bulkBuy;$optOff[$splitText[$sum[$getTextSplitIndex[bulkBuy];1]]]]
+$var[bulkSend;$optOff[$splitText[$sum[$getTextSplitIndex[bulkSend];1]]]]
+$var[netPrice;$optOff[$splitText[$sum[$getTextSplitIndex[netPrice];1]]]]
+$var[c&mPrice;$optOff[$splitText[$sum[$getTextSplitIndex[c&mPrice];1]]]]
+$var[pillUpPrice;$optOff[$splitText[$sum[$getTextSplitIndex[pillUpPrice];1]]]]
+
+
+$if[$message==winTime]
+
+$title[❄️  **__WINTER TIME__**  ❄️]
+$description[** **
+The winter time commands include **typical winter and Christmas** things (like waiting for Santa or giving gifts to others)
+
+All the **commands** of this festivity **revolve around the advent calendar** (which gives items, coins and unlocks more features and upgrades the more days you claim)
+
+The **final objectives** of the winter time is **obtaining all the rewards** of the advent calendar (or, at least, 25 of them), and having fun while doing so!
+** **]
+
+$elseif[$message==winCoins]
+
+$title[❄️  **__WINTER COINS__**  ❄️]
+$description[** **
+The winter currency are the **snowflakes** ( ❄️ )
+
+**__HOW TO GET THEM?__**
+
+You can get winter coins ( ❄️ ) by claiming advent **calendar** rewards, playing **loteriri**, opening **boxes and gifts**, going **snowflake hunting**...
+
+**__WHERE TO SPEND THEM?__**
+
+You can use this coins to buy items from the **winter shops**, like gifts, cookies or pills. They can also be used for purchasing **loteriri tickets** ( 🎟️ ) or **winter upgrades** in the `t!winter upgrade shop`
+** **]
+
+$elseif[$message==snowHunt]
+
+$title[🏹  **__SNOWFLAKE HUNT__**  🏹]
+$description[** **
+You can use **`t!snowflake hunt` to go snowflake hunting** and get some winter coins ( ❄️ )
+
+For hunting, you use one of TeRiRi's special snowflake **hunting nets**, which you **can upgrade** in the upgrade shop ( `t!winter upgrade shop` ) to get more rewards per hunt (**rewards x2** per upgrade, max. 4 upgrades)
+** **]
+
+$elseif[$message==winShop]
+
+$title[❄️  **__TERIRI'S WINTER SHOP__**  ❄️]
+$description[** **
+You can buy some winter items in TeRiRi's winter shop. These will help you **improve** your **chances of catching Santa** on duty while waiting for him ( ```ft!wait for Santa``` )
+
+**__ITEMS__**
+
+**COOKIES** ( 🍪 )
+> Sold in packs of $var[cookies]  🍪
+> Price : $var[cookiePrice]  ❄️
+> Initial probabilities boost : +5%
+
+**MILK** ( 🥛 )
+> Sold in bottles of $var[milk]  🥛
+> Price : $var[milkPrice]  ❄️
+> Initial probabilities boost : +5%
+
+**TERIRI'S SPECIAL SLEEPLESS PILLS** ( 💊 )
+> Sold in boxes of $var[pills]  💊
+> Price : $var[pillsPrice]  ❄️
+> Initial probabilities boost : +15%
+** **]
+
+$elseif[$message==wait]
+
+$title[<:Santa:913832134832173166>  **__WAIT FOR SANTA__**  <:atnaS:913832320904077382>]
+$description[** **
+Wait for Santa and **try to catch him on duty!**
+Will him give you extra gifts if you discover him? 
+
+**__ITEMS__**
+
+**COOKIES**
+> Leave a plate with cookies ( consumes 5  🍪 ) to entertain Santa and make him stay longer
+ 
+**MILK**
+> Leave a glass of milk ( consumes 1  🥛 ) to entertain Santa and make him stay longer
+
+**SLEEPLESS PILLS**
+> Take one of TeRiRi's special slepless pills ( consumes 1  💊 ) to stay awake longer 
+
+**__NOTE__**
+
+TeRiRi will **automatically prepare the items** when you have enough of them, so you don't need to worry about it~
+** **]
+$footer[You can use 't!wait for santa help' to see this menu later]
+
+$elseif[$message==gifts]
+
+$title[🎁  **__GIFTS__**  🎁]
+$description[** **
+There are **3 types** of gifts :
+
+**BLUE GIFTS** ( 🔷 🎁 )
+> Price : $var[bPrice]  ❄️
+> Contents :  🍪  (x0-15)  🥛  (x0-8)  ❄️  (x0-100)
+
+**YELLOW GIFTS** ( 💛 🎁 )
+> Price : $var[yPrice]  ❄️
+> Contents :  🍪  (x10)  🥛  (x5)  ❄️  (x20-200)
+
+**RED GIFTS** ( 🔴 🎁 )
+> Price : $var[rPrice]  ❄️
+> Contents :  💊  (x1-3)  ❄️  (x50-1000)
+
+**__UNLOCKING GIFTS__**
+
+To be able to buy gifts in the gift shop, **you have to unlock them**
+The only way to do so is **by claiming** the advent **calendar** rewards ( `t!calendar` )
+
+**__GETTING GIFTS__**
+
+There are **two ways** of getting gifts to send to others : by **buying** them in the gift shop ( `t!gift shop` ) or by **claiming them** as advent **calendar** rewards
+
+**__SENDING GIFTS__**
+
+You can send the **gifts you obtained** (by buying or claiming them as advent calendar rewards) to others using the sending command ( `t!send <color> gift to <@user>` )
+
+NOTE : once you sent a gift, there is no way you can get it back
+
+**__OPENING GIFTS__**
+
+You can **open** the **gifts someone sent** you using `t!open <color> (gift)`
+
+The **rewards** of the gift are **decided when you open** it. The items and quantities you can get **depend on** the **color** of the gift you opened
+
+NOTE : you can **only open** gifts you **received from someone** else
+** **]
+
+$elseif[$message==calendar]
+
+$title[📆  **__ADVENT CALENDAR__**  📆]
+$description[** **
+Every **20 hours** you can **claim** your advent calendar rewards!
+
+Claim **25 days** to get a **special reward**
+Claim **31 days** to claim **all** the advent calendar **rewards**
+
+**__REWARD LIST__**
+
+> Cookies ( 🍪 )
+> Milk ( 🥛 )
+> Sleepless pills ( 💊 )
+> Winter coins ( ❄️ )
+> Loteriri tickets ( 🎟️ )
+> Mysteriri boxes ( 📦 )
+> Blue gifts ( 🔷 🎁 )
+> Yellow gifts ( 💛 🎁 )
+> Red gifts ( 🔴 🎁 )
+> Unlock blue gifts ( 🔷 🎁 )
+> Unlock yellow gifts ( 💛 🎁 )
+> Unlock red gifts ( 🔴 🎁 )
+> Unlock extra winter upgrades
+> Winter points and festive points
+> Special 2022 Christmas memento role & badge
+** **]
+$footer[The higher the number of days claimed, the better the rewards you get]
+
+$elseif[$message==loteriri]
+
+$title[🎟️  **__WINTER LOTERIRI__**  🎟️]
+$description[** **
+You can **use loteriri tickets** ( 🎟️ ) to **play** loteriri and win some prizes~
+
+**__PRIZE LIST__**
+
+__JACKPOT__
+
+1st prize: 20.000   ❄️
+2nd prize: 10.000   ❄️
+3rd prize: 5.000   ❄️
+
+__OTHER PRIZES__
+
+4th prize: 7   📦
+5th prize: 3   📦
+6th prize: 200  ❄️
+
+__CONSOLATION PRIZES__
+
+7th prize: 1   🍪 
+8th prize: 10   ❄️
+9th prize: a pat from TeRiRi 
+
+**__BUY TICKETS__**
+ 
+You can use  `t!buy ticket` to buy a ticket ( 1  🎟️ ) or `t!buy ticket pack` to buy a ticket pack ( $var[ticketPack]  🎟️ )
+
+**__PLAY LOTERIRI__**
+
+You need, at least, **1** loteriri **ticket** ( 🎟️ ) **to play** loteriri and try your luck!
+The command for playing is `t!play loteriri` (will consume 1  🎟️  to **play once**)
+** **]
+$footer[Fun fact : TeRiRi counts how many times you played and tells you in your winter card]
+
+$elseif[$message==boxes]
+
+$title[📦  **__MYSTERIRI BOXES__**  📦]
+$description[** **
+TeRiRi prepared some **mystery boxes** for winter~
+
+**__HOW TO GET THEM?__**
+
+There are a couple of ways of **obtaining them**:
+> - As advent **calendar** rewards
+> - As **loteriri** prizes
+> - As rewards from **catching Santa** on duty
+> - From **another** mysteriri **box** (low chances)
+
+**__OPENING BOXES__**
+
+You can either **hoard** mysteriri boxes ( 📦 ) **or open** them to get it's rewards. To do the second, you have to use one of this commands:  
+- `t!open box`
+- `t!open mystery box`
+- `t!open mysteriri box`
+
+**__REWARDS__**
+
+The **rewards** of this boxes are **random** and are **decided at** the moment of **opening** a box: 
+
+__List of possible rewards with their chances of appearing__
+
++  ❄️  (50-800)  (100% chances of appeaing)
++  🍪  (1-10)  (100% chances of appearing)
++  🥛  (0-4)  (50% chances of appearing)
++  🎟️  (0-3)  (20% chances of appearing)
++  💊  (0-2)  (15% chances of appearing)
++  📦  (0-1)  (2% chances of appearing)
+** **]
+$footer[You can see your mysteriri boxes, commands and posible rewards (with their chances of appearing) if you use 't!mysteriri box']
+
+$elseif[$message==winUps]
+
+$title[⏫  **__WINTER UPGRADES__**  ⏫]
+$description[** **
+You can use your winter coins ( ❄️ ) to buy some **upgrades** in the winter upgrade shop ( `t!winter upgrade shop` )
+
+**__UPGRADES__**
+
+There are **3** different upgrade **types** :
+
+**SNOWFLAKE HUNTING NET**
+> Boost : doubles the rewards when snowflake hunting ( `t!snowflake hunt` )
+> Initial price : $var[netPrice]  ❄️
+
+**COOKIES & MILK**
+> Boost : multiplies by 1.3 the probabilities of seeing Santa when using cookies ( 🍪 ) and/or milk ( 🥛 )
+> Initial price : $var[c&mPrice]  ❄️
+
+**SLEEPLESS PILLS**
+> Boost : multiplies by 1.2 the probabilities of seeing Santa when using TeRiRi's special sleepless pills ( 💊 )
+> Initial price : $var[pillUpPrice]  ❄️
+
+**__BUYING UPGRADES__**
+
+You can buy upgrades by using `t!buy winter upgrade <number>`
+
+**Initially**, you can **buy each** upgrade **3 times**, but you can **unlock another** chance to buy them by **claiming** advent **calendar** rewards (for a **total of 4** upgrades of each)
+
+**__NOTES__**
+
+- The **price** of each upgrade **goes up** every time **you buy** it
+- The **boosts stacks**, meaning, for example, that the final rewards of snowflake hunting having the 4 upgrades are `(initial rewards)x(2)x(2)x(2)x(2)` making them min. 600 ❄️, max. 1800 ❄️ per hunt
+** **]
+
+$elseif[$message==bulkBuy]
+
+$title[📈  **__BULK BUY AND SEND__**  📈]
+$description[** **
+TeRiRi includes the possibility of **bulk buying and bulk sending** winter items~
+
+**__BULK BUYING__**
+
+When you bulk buy, you **buy $var[bulkBuy] items** in one go. You can **only** bulk buy the **items on** the item **list** :
+
+__ITEM LIST__
+> - Blue gifts ( 🔷 🎁 )
+> - Yellow gifts ( 💛 🎁 )
+> - Red gifts ( 🔴 🎁 )
+> - Loteriri ticket packs ( 🎟️ )
+
+**__BULK SENDING__**
+
+TeRiRi also gives the possibility of **bulk sending gifts** to other users!
+
+For using this, you need to have, at least, **$var[bulkSend] gifts** of the same color
+
+**__COMMANDS__**
+
+You can **see** all the commands if you do  **`t!bulk`**
+** **]
+$footer[TeRiRi offers a little discount when bulk buying items~]
+
+$elseif[$message==winCard]
+
+$title[📇  **__WINTER CARD__**  📇]
+$description[** **
+If you open your winter card ( `t!winter card` ), you will see **all your winter info**:
+
+> - Your winter **inventory** (cookies, milk, pills, gifts, boxes, tickets....)
+> - You winter **upgrades**
+> - **Total counts** of things you did (like total times you went snowflake hunting, timed you catched Santa, or how many gifts you sent)
+** **]
+
+$elseif[$message==commands]
+
+$var[nothing;<:nothing:1004040766236139622>]
+
+$title[🤖  __**WINTER TIME COMMANDS**__  🤖]
+$description[** **
+<:Santa:913832134832173166>  __**ADMIN COMMANDS**__
+
+$var[nothing]  - `t!winter time:` activate/deactivate the winter time commands
+
+<:snowflake3:913838167088590919>  __**WINTER COMMANDS**__
+
+$var[nothing]  - `t!snowflake hunt:` to go hunt snowflakes with your snowflake hunting net (gives you ❄️)
+
+<:atnaS:913832320904077382>  - `t!calendar:` to claim your daily advent calendar rewards
+
+$var[nothing]  - `t!winter coins`: shows your winter money
+
+<:snowflake1:913837945755144242>  - `t!winter shop | t!shop:` opens TeRiRi's winter shop
+$var[nothing]  - `t!buy winter <number>`: to buy the selected winter item
+  
+$var[nothing]  - `t!winter upgrade shop`: opens TeRiRi's winter upgrade shop
+<:Santa:913832134832173166>  - `t!upgrade winter <number>`: to buy the selected winter upgrade
+
+$var[nothing]  - `t!wait for santa:` waits for Santa to come
+$var[nothing]  - `t!wait for santa help:` opens the wait for santa help
+<:snowflake4:913838263532404846>
+$var[nothing]  - `t!gift shop:` opens TeRiRi's gifts shop
+$var[nothing]  - `t!gifts:` opens your gift bag
+$var[nothing]  - `t!open <color> | t!open <color> gift`: to open a received gift
+<:atnaS:913832320904077382>  - `t!send <color> gift to <@user>:` to send a gift to an user
+
+$var[nothing]  - `t!loteriri:` opens TeRiRi's special lottery stall
+$var[nothing]  - `t!play loteriri:` to play loteriri
+<:snowflake2:913838102324326400>
+$var[nothing]  - `t!mysteriri box:` opens the mysteriri box menu
+$var[nothing]  - `t!open box | t!open mysteriri box | t!open mystery box:` to open a mysteriri box
+
+<:Santa:913832134832173166>  - `t!winter card:` shows your winter info
+$var[nothing]  - `t!points:` shows you your winter and festive points    
+☃️]
+$footer[TeRiRi wishes you have a merry Christmas and a happy new year!! \(๑╹◡╹๑)ﾉ♬]
+$color[ccffff]
+
+
+$else
+$description[Coming soon...]
+$color[ffffff]
+$endif

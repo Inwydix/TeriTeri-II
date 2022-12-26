@@ -1,0 +1,23 @@
+$nomention $reply $ignoreTriggerCase
+$onlyIf[$getServerVar[bank.prog]>=10;You need to reach the 10th milestone ! (100M)]
+
+$if[$isAdmin[$authorID]==false]
+
+$title[Woops]
+$description[❌ Only admins can use this command]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1040692874062344382/TeriMad.png]
+$color[ff1a1a]
+
+$elseif[$isAdmin[$authorID]==true]
+
+$if[$getServerVar[winter.time]==false]
+$setServerVar[winter.time;true]
+$description[Christmas themed commands active] 
+$elseif[$getServerVar[winter.time]==true]
+$setServerVar[winter.time;false]
+$description[Christmas themed commands inactive]
+$endif
+$title[❄️ Winter Time 🎁]
+$color[ccffff]
+
+$endif
