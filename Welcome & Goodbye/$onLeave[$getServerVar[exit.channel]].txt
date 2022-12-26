@@ -1,0 +1,24 @@
+$nomention
+$setUserVar[money;300]
+$setUserVar[point;0]
+$setUserVar[level;0]
+$setUserVar[crystal;0]
+$setUserVar[claimed;yes]
+$setUserVar[lv1;0]
+$setUserVar[lv2;0]
+$setUserVar[lv3;0]
+$setUserVar[up1;0]
+$setUserVar[up2;0]
+$setUserVar[up3;0]
+$setUserVar[up4;0]
+$setUserVar[card1;0]
+$setUserVar[card2;0]
+$setUserVar[card3;0]
+$setUserVar[stigma;stig1T/false/stig1M/false/stig1B/false/stig2T/false/stig2M/false/stig2B/false/stig3T/false/stig3M/false/stig3B/false/stig4T/false/stig4M/false/stig4B/false/stig5T/false/stig5M/false/stig5B/false/stig6T/false/stig6M/false/stig6B/false/stig7T/false/stig7M/false/stig7B/false/stig8T/false/stig8M/false/stig8B/false/stig9T/false/stig9M/false/stig9B/false]
+$setUserVar[badges;tc/0/null/ts/0/null/errand/0/null/casino/0/null/streak/0/null/bug/0/null/rank/0/null/badge/0/null/bank/0/null]
+
+<@$authorID>'s info was deleted
+
+$if[$isBot[$authorID]==false]
+$setServerVar[members.count;$sub[$getServerVar[members.count];1]]
+$endif
