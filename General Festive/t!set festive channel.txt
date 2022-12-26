@@ -1,0 +1,42 @@
+$nomention $reply $ignoreTriggerCase
+
+$onlyAdmin[❌ Woops, only administrators can use this command]
+
+$if[$mentionedChannels[1]==]
+
+$title[INVALID CHANNEL]
+$description[❌ Mention at least one channel in your command
+
+**COMMAND**
+```t!set festive channel <#channel> (up to 5 channels)```
+**EXAMPLE**
+```t!set festive channel #general #help```
+Tip: using the command again overwrites the saved festive channels]
+$color[ff1a1a]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1040692874062344382/TeriMad.png]
+
+$else
+$setServerVar[channel1;$mentionedChannels[1]]
+
+$if[$mentionedChannels[2]!=]
+$setServerVar[channel2;$mentionedChannels[2]]
+$endif
+
+$if[$mentionedChannels[3]!=]
+$setServerVar[channel3;$mentionedChannels[3]]
+$endif
+
+$if[$mentionedChannels[4]!=]
+$setServerVar[channel4;$mentionedChannels[4]]
+$endif
+
+$if[$mentionedChannels[5]!=]
+$setServerVar[channel5;$mentionedChannels[5]]
+$endif
+
+$title[✅ FESTIVE CHANNELS SET!]
+$description[Now people will be able to play with special festive commands in: <#$mentionedChannels[1]> $if[$mentionedChannels[2]!=]<#$mentionedChannels[2]>$endif $if[$mentionedChannels[3]!=]<#$mentionedChannels[3]>$endif $if[$mentionedChannels[4]!=]<#$mentionedChannels[4]>$endif $if[$mentionedChannels[5]!=]<#$mentionedChannels[5]>$endif]
+$footer[Use this command again to overwrite the channels]
+$color[00cc00]
+
+$endif
