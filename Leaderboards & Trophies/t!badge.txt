@@ -1,0 +1,94 @@
+$nomention $reply $ignoreTriggerCase
+
+$c[varList]
+
+$textSplit[$getUserVar[badges];/]
+$var[tc.total;$splitText[$sum[$getTextSplitIndex[tc];1]]]
+$var[tc.badge;$splitText[$sum[$getTextSplitIndex[tc];2]]]
+$var[ts.total;$splitText[$sum[$getTextSplitIndex[ts];1]]]
+$var[ts.badge;$splitText[$sum[$getTextSplitIndex[ts];2]]]
+$var[errand.total;$splitText[$sum[$getTextSplitIndex[errand];1]]]
+$var[errand.badge;$splitText[$sum[$getTextSplitIndex[errand];2]]]
+$var[casino.total;$splitText[$sum[$getTextSplitIndex[casino];1]]]
+$var[casino.badge;$splitText[$sum[$getTextSplitIndex[casino];2]]]
+$var[streak.total;$splitText[$sum[$getTextSplitIndex[streak];1]]]
+$var[streak.badge;$splitText[$sum[$getTextSplitIndex[streak];2]]]
+$var[bug.total;$splitText[$sum[$getTextSplitIndex[bug];1]]]
+$var[bug.badge;$splitText[$sum[$getTextSplitIndex[bug];2]]]
+$var[rank.total;$splitText[$sum[$getTextSplitIndex[rank];1]]]
+$var[rank.badge;$splitText[$sum[$getTextSplitIndex[rank];2]]]
+$var[badge.total;$splitText[$sum[$getTextSplitIndex[badge];1]]]
+$var[badge.badge;$splitText[$sum[$getTextSplitIndex[badge];2]]]
+$var[bank.total;$splitText[$sum[$getTextSplitIndex[bank];1]]]
+$var[bank.badge;$splitText[$sum[$getTextSplitIndex[bank];2]]]
+
+
+$c[code]
+
+$var[badge.badge;0]
+
+$c[rank]
+$if[$and[$var[rank.total]!=0;$var[rank.total]<=25]]
+$var[rank.badge;1]
+TOP 25 badge given to you
+$var[badge.badge;$sum[$var[badge.badge];1]]
+$else
+$var[rank.badge;0]
+No rank badges given to you
+$endif
+$if[$and[$var[rank.total]!=0;$var[rank.total]<=10]]
+$var[rank.badge;2]
+TOP 10 badge given to you
+$var[badge.badge;$sum[$var[badge.badge];1]]
+$endif
+$if[$and[$var[rank.total]<=3;$var[rank.total]!=0]]
+$var[rank.badge;3]
+TOP 3 badge given to you
+$var[badge.badge;$sum[$var[badge.badge];1]]
+$endif
+
+$c[casino]
+
+$if[$var[casino.total]>=50]
+$var[casino.badge;1]
+50 casino plays badge given to you
+$var[badge.badge;$sum[$var[badge.badge];1]]
+$else
+$var[casino.badge;0]
+No casino badge given to you
+$endif
+$if[$var[casino.total]>=200]
+$var[casino.badge;2]
+200 casino plays badge given to you
+$var[badge.badge;$sum[$var[badge.badge];1]]
+$endif
+$if[$var[casino.total]>=500]
+$var[casino.badge;3]
+500 casino plays badge given to you
+$var[badge.badge;$sum[$var[badge.badge];1]]
+$endif
+
+$c[streak]
+
+$if[$var[streak.total]>=7]
+$var[streak.badge;1]
+7 days streak badge given to you
+$var[badge.badge;$sum[$var[badge.badge];1]]
+$else
+$var[streak.badge;0]
+No streak badge given to you
+$endif
+$if[$var[streak.total]>=25]
+$var[streak.badge;2]
+25 days streak badge given to you
+$var[badge.badge;$sum[$var[badge.badge];1]]
+$endif
+$if[$var[streak.total]>=50]
+$var[streak.badge;3]
+50 days streak badge given to you
+$var[badge.badge;$sum[$var[badge.badge];1]]
+$endif
+
+$var[errand.badge;0]
+
+$setUserVar[badges;tc/$var[tc.total]/$var[tc.badge]/ts/$var[ts.total]/$var[ts.badge]/errand/$var[errand.total]/$var[errand.badge]/casino/$var[casino.total]/$var[casino.badge]/streak/$var[streak.total]/$var[streak.badge]/bug/$var[bug.total]/$var[bug.badge]/rank/$var[rank.total]/$var[rank.badge]/badge/$var[badge.total]/$var[badge.badge]/bank/$var[bank.total]/$var[bank.badge]]
