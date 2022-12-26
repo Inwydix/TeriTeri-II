@@ -1,0 +1,23 @@
+$nomention $reply $ignoreTriggerCase
+$onlyIf[$getServerVar[bank.prog]>=10;You need to reach the 10th milestone ! (100M)]
+
+$if[$isAdmin[$authorID]==false]
+
+$title[Woops]
+$description[❌ Only admins can use this command]
+$thumbnail[https://media.discordapp.net/attachments/1000927157150814228/1040692874062344382/TeriMad.png]
+$color[ff1a1a]
+
+$elseif[$isAdmin[$authorID]==true]
+
+$if[$getServerVar[spky.time]==false]
+$setServerVar[spky.time;true]
+$description[Halloween themed commands active] 
+$elseif[$getServerVar[spky.time]==true]
+$setServerVar[spky.time;false]
+$description[Halloween themed commands inactive]
+$endif
+$title[🕸️ Spooky Time 🎃]
+$color[$randomText[#FFEFC9;#FFE870;#DEB314;#FE9600;#F56F16;#DE4033;#B14624;#6B330D;#B6B160;#5A7E5A;#265C57;#77477E;#602749;#666666]]
+
+$endif

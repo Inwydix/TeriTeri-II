@@ -1,0 +1,102 @@
+$nomention $ignoreTriggerCase $reply
+$onlyIf[$getServerVar[spky.time]==true;]
+
+$if[$toLowercase[$message[1]]==candy]
+
+$onlyIf[$getUserVar[spky.candy]>=1;❌ You don't have any candy! Buy some in the `t!spooky shop`!]
+
+$setUserVar[spky.candy;$sub[$getUserVar[spky.candy];1]]
+$var[random;$randomText[1;3]]
+
+$if[$var[random]==1]
+$setUserVar[spky.coin;$sum[$getUserVar[spky.coin];50]]
+$var[text.coin;> • You got 50 🎃 !]
+$else
+$var[text.coin]
+$endif
+
+$var[random;$random[1;100]]
+$if[$var[random]>=60]
+$setUserVar[spooked;false]
+$var[text;> • Your spooked debuff was removed!]
+$else
+$var[text;> • You couldn't remove your spooked debuff...]
+$endif
+
+$title[You ate a candy!]
+$description[Now you have $getUserVar[spky.candy] 🍬
+$var[text]
+$var[text.coin]]
+$color[$randomText[#FFEFC9;#FFE870;#DEB314;#FE9600;#F56F16;#DE4033;#B14624;#6B330D;#B6B160;#5A7E5A;#265C57;#77477E;#602749;#666666]]
+
+$httpGet[https://api.waifu.pics/sfw/nom]
+$textSplit[$httpResult;"]
+$image[$splitText[4]]
+
+
+$elseif[$or[$toLowercase[$message[1]]==choco;$toLowercase[$message[1]]==chocolate]]
+
+$onlyIf[$getUserVar[spky.choco]>=1;❌ You don't have any choco! Buy some in the `t!spooky shop`!]
+
+$setUserVar[spky.choco;$sub[$getUserVar[spky.choco];1]]
+$var[random;$randomText[1;3]]
+
+$if[$var[random]==2]
+$setUserVar[spky.coin;$sum[$getUserVar[spky.coin];200]]
+$var[text.coin;> • You got 200 🎃 !]
+$else
+$var[text.coin]
+$endif
+
+$var[random;$random[1;100]]
+$if[$var[random]>=40]
+$setUserVar[spooked;false]
+$var[text;> • Your spooked debuff was removed!]
+$else
+$var[text;> • You couldn't remove your spooked debuff...]
+$endif
+
+$title[You ate a chocolate!]
+$description[Now you have $getUserVar[spky.choco] 🍫
+$var[text]
+$var[text.coin]]
+$color[$randomText[#FFEFC9;#FFE870;#DEB314;#FE9600;#F56F16;#DE4033;#B14624;#6B330D;#B6B160;#5A7E5A;#265C57;#77477E;#602749;#666666]]
+
+$httpGet[https://api.waifu.pics/sfw/nom]
+$textSplit[$httpResult;"]
+$image[$splitText[4]]
+
+$elseif[$or[$toLowercase[$message[1]]==lolli;$toLowercase[$message[1]]==lollipop]]
+
+$onlyIf[$getUserVar[spky.lolli]>=1;❌ You don't have any lollipops! Buy some in the `t!spooky shop`!]
+
+$setUserVar[spky.lolli;$sub[$getUserVar[spky.lolli];1]]
+$var[random;$randomText[1;2;3]]
+
+$if[$var[random]==1]
+$setUserVar[spky.coin;$sum[$getUserVar[spky.coin];100]]
+$var[text.coin;> • You got 100 🎃 !]
+$else
+$var[text.coin]
+$endif
+
+$var[random;$random[1;100]]
+$if[$var[random]>=50]
+$setUserVar[spooked;false]
+$var[text;> • Your spooked debuff was removed!]
+$else
+$var[text;> • You couldn't remove your spooked debuff...]
+$endif
+
+$title[You ate a lollipop!]
+$description[Now you have $getUserVar[spky.lolli] 🍭
+$var[text]
+$var[text.coin]]
+$color[$randomText[#FFEFC9;#FFE870;#DEB314;#FE9600;#F56F16;#DE4033;#B14624;#6B330D;#B6B160;#5A7E5A;#265C57;#77477E;#602749;#666666]]
+
+$httpGet[https://api.waifu.pics/sfw/nom]
+$textSplit[$httpResult;"]
+$image[$splitText[4]]
+
+
+$endif

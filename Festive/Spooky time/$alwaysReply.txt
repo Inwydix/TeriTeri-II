@@ -1,0 +1,110 @@
+$nomention $ignoreTriggerCase $suppressErrors $allowMention $reply
+$onlyIf[$getServerVar[spky.time]==true;]
+
+$if[$sum[$getUserVar[pasiveCooldown];100]<=$getTimestamp]
+
+  $var[random;$random[0;80]]
+
+  $if[$and[$var[random]>=12;$var[random]<=32]==true]
+
+    $addCmdReactions[🎃]
+    $setUserVar[spky.coin;$sum[$getUserVar[spky.coin];10]]
+    $setUserVar[pasiveCooldown;$getTimestamp]
+    $setUserVar[spky.point;$sum[$getUserVar[spky.point];1]]
+  $endif
+  
+$endif
+
+$if[$getUserVar[spky.point]>=10000]
+  $if[$hasRole[$authorID;$findRole[Memento:]]==false]
+    $roleGrant[$authorID;+$findRole[Memento:]]
+  $endif
+  $if[$hasRole[$authorID;$findRole[Spooker]]==false]
+    $roleGrant[$authorID;+$findRole[Spooker]]
+    $description[You got the <@&$findRole[Spooker]> memento role! <:TeriCelebrate:1014124677926490222>]
+    $color[$randomText[#FFEFC9;#FFE870;#DEB314;#FE9600;#F56F16;#DE4033;#B14624;#6B330D;#B6B160;#5A7E5A;#265C57;#77477E;#602749;#666666]]
+  $endif
+$endif
+
+$var[random;$random[0;100]]
+
+$if[$var[random]<=50]
+
+$if[$channelID==$getServerVar[channel1]]
+
+$if[$getServerVar[hid1]!=null]
+$if[$getServerVar[hid1]!=$authorID]
+$setUserVar[spooked;yes]
+$description[<@$getServerVar[hid1]> spooked you!]
+$footer[Now you have a spooked debuff, eat some candy to try remove it]
+$color[ffffff]
+$image[https://media.discordapp.net/attachments/1032014589531005008/1033003082184921098/1083e61c01c2dc0fa0997a2b7d7b78f7.jpg]
+$setUserVar[spky.point;$sum[$getUserVar[spky.point;$getServerVar[hid1]];$random[50;200]];$getServerVar[hid1]]
+$setServerVar[hid1;null]
+$endif
+$endif
+
+$elseif[$channelID==$getServerVar[channel2]]
+
+$if[$getServerVar[hid2]!=null]
+$if[$getServerVar[hid2]!=$authorID]
+$setUserVar[spooked;yes]
+$title[**BOO!!** 👻]
+$description[<@$getServerVar[hid2]> spooked you!]
+$footer[Now you have a spooked debuff, eat some candy to try remove it]
+$color[ffffff]
+$image[https://media.discordapp.net/attachments/1032014589531005008/1033003082184921098/1083e61c01c2dc0fa0997a2b7d7b78f7.jpg]
+$setUserVar[spky.point;$sum[$getUserVar[spky.point;$getServerVar[hid2]];$random[50;200]];$getServerVar[hid2]]
+$setServerVar[hid2;null]
+$endif
+$endif
+
+$elseif[$channelID==$getServerVar[channel3]]
+
+$if[$getServerVar[hid3]!=null]
+$if[$getServerVar[hid3]!=$authorID]
+$setUserVar[spooked;yes]
+$title[**BOO!!** 👻]
+$description[<@$getServerVar[hid3]> spooked you!]
+$footer[Now you have a spooked debuff, eat some candy to try remove it]
+$color[ffffff]
+
+$image[https://media.discordapp.net/attachments/1032014589531005008/1033003082184921098/1083e61c01c2dc0fa0997a2b7d7b78f7.jpg]
+$setUserVar[spky.point;$sum[$getUserVar[spky.point;$getServerVar[hid3]];$random[50;200]];$getServerVar[hid3]]
+$setServerVar[hid3;null]
+$endif
+$endif
+
+$elseif[$channelID==$getServerVar[channel4]]
+
+$if[$getServerVar[hid4]!=null]
+$if[$getServerVar[hid4]!=$authorID]
+$setUserVar[spooked;yes]
+$title[**BOO!!** 👻]
+$description[<@$getServerVar[hid4]> spooked you!]
+$footer[Now you have a spooked debuff, eat some candy to try remove it]
+$color[ffffff]
+$image[https://media.discordapp.net/attachments/1032014589531005008/1033003082184921098/1083e61c01c2dc0fa0997a2b7d7b78f7.jpg]
+$setUserVar[spky.point;$sum[$getUserVar[spky.point;$getServerVar[hid4]];$random[50;200]];$getServerVar[hid4]]
+$setServerVar[hid4;null]
+$endif
+$endif
+
+$elseif[$channelID==$getServerVar[channel5]]
+
+$if[$getServerVar[hid5]!=null]
+$if[$getServerVar[hid5]!=$authorID]
+$setUserVar[spooked;yes]
+$title[**BOO!!** 👻]
+$description[<@$getServerVar[hid5]> spooked you!]
+$footer[Now you have a spooked debuff, eat some candy to try remove it]
+$color[ffffff]
+$image[https://media.discordapp.net/attachments/1032014589531005008/1033003082184921098/1083e61c01c2dc0fa0997a2b7d7b78f7.jpg]
+$setUserVar[spky.point;$sum[$getUserVar[spky.point;$getServerVar[hid5]];$random[50;200]];$getServerVar[hid5]]
+$setServerVar[hid5;null]
+$endif
+$endif
+
+$endif
+
+$endif

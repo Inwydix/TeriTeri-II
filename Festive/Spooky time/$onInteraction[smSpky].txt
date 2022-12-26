@@ -1,0 +1,75 @@
+$nomention
+$color[$randomText[#FFEFC9;#FFE870;#DEB314;#FE9600;#F56F16;#DE4033;#B14624;#6B330D;#B6B160;#5A7E5A;#265C57;#77477E;#602749;#666666]]
+
+$if[$message==commands]
+
+$title[__SPOOKY COMMANDS__]
+$description[:placard: **FOR ADMINS** :placard:
+
+• `t!spooky time` : activate/deactivate the spooky time commands
+
+🌐 **FOR EVERYONE** 🌐
+
+• `t!bag` : shows your spooky bag
+
+• `t!hide` : hides in the current event channel
+
+• `t!eat <candy/lolli/lollipop/choco/chocolate>` : eat the chosen sweet to get removed your spooked debuff
+
+• `t!tot <@user> | t!trick or treat <@user>` : ask someone "trick or treat?"
+
+• `t!spooky leaderboard` : shows the spooky points leaderboard (TOP 10)
+
+• `t!curse` : get cursed by Teri
+
+• `t!curse <@user>` : curse someone with love]
+$footer[Stay spooky~ 👻]
+
+$elseif[$message==coin]
+
+$title[__SPOOKY COINS__]
+$description[** **
+Spooky coins  ( 🎃 )  are the **Spooky Time's currency**. You can only use or get  🎃  while the event is active (admins can activate/deactivate events freely)
+
+There are **two ways of getting** spooky coins: talking in the server and tricking someone
+
+**__TALKING__**
+
+You have **30% chances** of getting **10 spooky coins**  ( 🎃 )  when **sending messages** in the server (100 seconds cooldown)
+
+TeriTeri will react with "🎃" to the messages that made you win coins
+
+**__TRICKING SOMEONE__**
+
+You, and the person you are trick or treating with, obtain a random number **between 50 and 200** 🎃 if "**trick**" is the chosen option
+
+**__USING COINS__**
+
+You can use your 🎃 to **buy sweets** in the spooky shop
+
+** **]
+$footer[Tip: talk a lot and you won't notice how rich you get!]
+
+$elseif[$message==point]
+
+$title[__SPOOKY POINTS__]
+$description[** **
+Every time you play with some of the spooky time commands, you get some points. Get 10k points during the event to win a memento trophy role 👻
+
+**__GETTING POINTS__**
+
+There are two ways of obtaining points: talking in the server (every time you get spooky coins, you win 1 spooky point) and playing with the bot (not all commands give points)
+
+__COMMANDS THAT GIVE POINTS__
+
+`t!hide`
+> Gives 100 points when you hide successfully
+> Gives between 50 and 200 points when you spook someone
+
+`t!trick or treat`]
+$footer[Tip: ]
+$else
+
+Woops, not yet
+
+$endif

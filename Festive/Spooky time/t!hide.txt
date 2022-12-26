@@ -1,0 +1,38 @@
+$nomention $ignoreTriggerCase
+$onlyIf[$getServerVar[spky.time]==true;]
+$onlyIf[$or[$getServerVar[channel1]==$channelID;$getServerVar[channel2]==$channelID;$getServerVar[channel3]==$channelID;$getServerVar[channel4]==$channelID;$getServerVar[channel5]==$channelID]==true;❌ Woops, you cannot hide here!]
+
+$if[$getServerVar[channel1]==$channelID]
+$onlyIf[$getServerVar[hid1]==null;❌ There already is someone hiding here]
+$cooldown[5m;:x: Let others hide too! Time left :  %time%]
+$deletecommand
+$deleteIn[1s]
+$setServerVar[hid1;$authorID]
+$elseif[$getServerVar[channel2]==$channelID]
+$onlyIf[$getServerVar[hid2]==null;❌ There already is someone hiding here]
+$cooldown[5m;:x: Let others hide too! Time left :  %time%]
+$deletecommand
+$deleteIn[1s]
+$setServerVar[hid2;$authorID]
+$elseif[$getServerVar[channel3]==$channelID]
+$onlyIf[$getServerVar[hid3]==null;❌ There already is someone hiding here]
+$cooldown[5m;:x: Let others hide too! Time left :  %time%]
+$deletecommand
+$deleteIn[1s]
+$setServerVar[hid3;$authorID]
+$elseif[$getServerVar[channel4]==$channelID]
+$onlyIf[$getServerVar[hid4]==null;❌ There already is someone hiding here]
+$cooldown[5m;:x: Let others hide too! Time left :  %time%]
+$deletecommand
+$deleteIn[1s]
+$setServerVar[hid4;$authorID]
+$elseif[$getServerVar[channel5]==$channelID]
+$onlyIf[$getServerVar[hid5]==null;❌ There already is someone hiding here]
+$cooldown[5m;:x: Let others hide too! Time left :  %time%]
+$deletecommand
+$deleteIn[1s]
+$setServerVar[hid5;$authorID]
+$endif
+$setUserVar[spky.point;$sum[$getUserVar[spky.point];$random[50;200]]]
+
+$randomText[You found a hiding place!;Let's be spooky~;Hide hide hide!!!;Spooky dooby doo~;Have fun being spooky] 😈

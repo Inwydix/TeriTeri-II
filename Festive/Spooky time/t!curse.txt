@@ -1,0 +1,11 @@
+$reply $ignoreTriggerCase
+$onlyIf[$getServerVar[spky.time]==true;]
+$if[$mentioned[1;no]!=]
+$title[👻 $nickname[$authorID] curses you! 🎃]
+$footer[jk, wuv you]
+$else
+$title[🎃 Teri curses you! 😈]
+$footer[jk, she loves you]
+$endif
+$image[$randomText[https://media.discordapp.net/attachments/1032014589531005008/1033515201330429972/export202209250232501810.png;https://media.discordapp.net/attachments/1032014589531005008/1033515201775013938/export202209241434333660.png;https://media.discordapp.net/attachments/1032014589531005008/1033515202425135215/export202209241415081820.png;https://media.discordapp.net/attachments/1032014589531005008/1033515202769076345/export202209241413505170.png;https://media.discordapp.net/attachments/1032014589531005008/1033515203209470082/export202209241412454050.png;https://media.discordapp.net/attachments/1032014589531005008/1033515203737960448/export202209241410416030.png;https://media.discordapp.net/attachments/1032014589531005008/1033515204375498752/export202209241404586670.png;https://media.discordapp.net/attachments/1032014589531005008/1033515205008830565/export202209241357187560.png]]
+$color[$randomText[#FFEFC9;#FFE870;#DEB314;#FE9600;#F56F16;#DE4033;#B14624;#6B330D;#B6B160;#5A7E5A;#265C57;#77477E;#602749;#666666]]

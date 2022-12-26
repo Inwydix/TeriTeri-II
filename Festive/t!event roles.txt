@@ -1,0 +1,15 @@
+$nomention $ignoreTriggerCase $reply
+
+$if[$roleExists[$findRole[Memento: ]]==false]
+ $createRole[Memento: ;#f2da80;no;no]
+ role Memento: created
+$else
+ role $roleName[$findRole[Memento: ]] already created
+$endif
+
+$if[$roleExists[$findRole[Spooker]]==false]
+ $createRole[Spooker;ff8533;no;no]
+ role Spooker created
+$else
+ role $roleName[$findRole[Spooker]] already created
+$endif

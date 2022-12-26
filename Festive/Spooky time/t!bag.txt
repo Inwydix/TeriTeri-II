@@ -1,0 +1,13 @@
+$nomention $ignoreTriggerCase
+$onlyIf[$getServerVar[spky.time]==true;]
+
+$author[$nickname[$mentioned[1;yes]]'s spooky bag:]
+$description[
+$addField[Sweets;• x$getUserVar[spky.candy;$mentioned[1;yes]] 🍬
+• x$getUserVar[spky.lolli;$mentioned[1;yes]] 🍭
+• x$getUserVar[spky.choco;$mentioned[1;yes]] 🍫;yes;1]
+$addField[Coins;• x$getUserVar[spky.coin;$mentioned[1;yes]] 🎃;yes;1]]
+
+$footer[Spooky points : $getUserVar[spky.point;$mentioned[1;yes]]]
+$authorIcon[$userAvatar[$mentioned[1;yes]]]
+$color[$randomText[#FFEFC9;#FFE870;#DEB314;#FE9600;#F56F16;#DE4033;#B14624;#6B330D;#B6B160;#5A7E5A;#265C57;#77477E;#602749;#666666]]

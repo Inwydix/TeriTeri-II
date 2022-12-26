@@ -1,0 +1,55 @@
+$nomention $ignoreTriggerCase
+$onlyIf[$getServerVar[spky.time]==true;]
+
+$if[$or[$toLowercase[$message[1]]==candy;$message[1]==1;$message[1]==🍬]==true]
+
+$onlyIf[$getUserVar[spky.coin]>=$getServerVar[candy.price];❌ You don't have enough spooky coins ( 🎃 )]
+$setUserVar[spky.coin;$sub[$getUserVar[spky.coin];$getServerVar[candy.price]]]
+$setUserVar[spky.candy;$sum[$getUserVar[spky.candy];1]]
+
+$title[✅ SUCCESS]
+$description[You bought 1 🍬, now you have $getUserVar[spky.candy] 🍬]
+$color[00cc00]
+
+$elseif[$or[$toLowercase[$message[1]]==lolli;$toLowercase[$message[1]]==lollipop;$message[1]==2;$message[1]==🍭]==true]
+
+$onlyIf[$getUserVar[spky.coin]>=$getServerVar[lolli.price];❌ You don't have enough spooky coins ( 🎃 )]
+$setUserVar[spky.coin;$sub[$getUserVar[spky.coin];$getServerVar[lolli.price]]]
+$setUserVar[spky.lolli;$sum[$getUserVar[spky.lolli];1]]
+
+$title[✅ SUCCESS]
+$description[You bought 1 🍭, now you have $getUserVar[spky.lolli] 🍭]
+$color[00cc00]
+
+$elseif[$or[$toLowercase[$message[1]]==choco;$toLowercase[$message[1]]==chocolate;$message[1]==3;$message[1]==🍫]==true]
+
+$onlyIf[$getUserVar[spky.coin]>=$getServerVar[choco.price];❌ You don't have enough spooky coins ( 🎃 )]
+$setUserVar[spky.coin;$sub[$getUserVar[spky.coin];$getServerVar[choco.price]]]
+$setUserVar[spky.choco;$sum[$getUserVar[spky.choco];1]]
+
+$title[✅ SUCCESS]
+$description[You bought 1 🍫, now you have $getUserVar[spky.choco] 🍫]
+$color[00cc00]
+
+$else
+
+$title[SPOOKY BUY HELP]
+$description[
+Commands:
+
+• `t!buy candy`
+• `t!buy 1`
+• `t!buy 🍬`
+
+• `t!buy lollipop`
+• `t!buy lolli`
+• `t!buy 2`
+• `t!buy 🍭`
+
+• `t!buy chocolate`
+• `t!buy choco`
+• `t!buy 3`
+• `t!buy 🍫`
+]
+$color[ffffff]
+$endif

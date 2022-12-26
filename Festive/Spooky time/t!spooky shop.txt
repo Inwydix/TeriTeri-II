@@ -1,0 +1,20 @@
+$nomention $reply $ignoreTriggerCase
+$onlyIf[$getServerVar[spky.time]==true;]
+
+$title[🔔  **SPOOKY SHOP**  🔔]
+$description[Welcome to the spooky shop! Here you can use your coins ( 🎃 ) to buy items:
+
+1. __CANDY ( 🍬 )__
+> Can be eaten or given away
+> • Price: x1 🍬  == x$getServerVar[candy.price] 🎃
+
+2. __LOLLIPOP ( 🍭 )__
+> Can be eaten or given away
+> • Price: x1 🍭  == x$getServerVar[lolli.price]  🎃
+
+3. __CHOCOLATE BAR ( 🍫 )__
+> Can be eaten or given away
+> • Price: x1 🍫  == x$getServerVar[choco.price]  🎃
+** **]
+$footer[Use `t!spooky buy <option>` to buy something, or `t!spooky buy` to see the buying help!]
+$color[$randomText[#FFEFC9;#FFE870;#DEB314;#FE9600;#F56F16;#DE4033;#B14624;#6B330D;#B6B160;#5A7E5A;#265C57;#77477E;#602749;#666666]]

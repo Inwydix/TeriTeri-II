@@ -1,0 +1,61 @@
+$nomention $reply $ignoreTriggerCase
+$onlyIf[$getServerVar[spky.time]==true;]
+
+$c[Checks if the command timeouted or not - timeouts command]
+
+$if[$sum[$getServerVar[totTimeout];300]<=$getTimestamp]
+$setServerVar[totActive;false]
+$setServerVar[totUser;null]
+$setServerVar[totAsker;null]
+$endif
+
+
+$c[Checks if valid user, there is already someone trick or treating]
+
+
+$if[$and[$isBot[$mentioned[1;yes]]==false;$mentioned[1;no]!=;$mentioned[1;yes]!=$authorID]==true]
+
+$if[$getServerVar[totActive]==false]
+
+$var[emote;$randomText[🦇;🧛;🧟;👽;💀;👻;😈;🎃;🤡;🧙;🤪;😇;🧐;🤖]]
+
+$title[$var[emote] TRICK OR TREAT? $var[emote]]
+$description[<@$mentioned[1;no]>, what's your choice?]
+$color[$randomText[#FFEFC9;#FFE870;#DEB314;#FE9600;#F56F16;#DE4033;#B14624;#6B330D;#B6B160;#5A7E5A;#265C57;#77477E;#602749;#666666]]
+$footer[5 minutes until command timeouts]
+
+$addButton[yes;btTrick;Trick!;secondary;no;$randomText[✨;🔮;💫;🤯;🎭];]
+$if[$and[$getUserVar[spooked;$mentioned[1;no]]==false;$or[$getUserVar[spky.candy;$mentioned[1;no]]!=0;$getUserVar[spky.lolli;$mentioned[1;no]]!=0;$getUserVar[spky.choco;$mentioned[1;no]]!=0]==true]]
+$addButton[no;btTreat;Treat!;secondary;no;$randomText[🍬;🍭;🍫];]
+$else
+$addButton[no;btTreat;Treat!;secondary;yes;$randomText[🍬;🍭;🍫];]
+$endif
+
+$setServerVar[totUser;$mentioned[1;no]]
+$setServerVar[totAsker;$authorID]
+$setServerVar[totActive;true]
+$setServerVar[totTimeout;$getTimestamp]
+
+$else
+
+$title[❌ THERE IS ALREADY SOMEONE TRICK OR TREATING! ❌]
+$description[TeRiRi has to concentrate to count all those sweets and tricks, so there can only be **one** person **trick or treating** others **at the same time**!
+
+You will have to **wait** untill they are finished, or untill the command automatically timeouts!
+
+**Timeout : <t:$sum[$getServerVar[totTimeout];300]:R>**]
+$color[ff1a1a]
+
+$endif
+
+$else
+
+$title[❌ ERROR : INVALID USER ❌]
+$description[You have to mention the user (bots don't count) you want to trick or treat!
+
+__Valid commands__
+> `t!trick or treat <@user>`
+> `t!tot <@user>`]
+$color[ff1a1a]
+
+$endif

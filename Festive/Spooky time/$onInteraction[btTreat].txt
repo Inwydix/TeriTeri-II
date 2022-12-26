@@ -1,0 +1,33 @@
+$nomention
+$removeButtons
+$onlyIf[$authorID==$getServerVar[totUser];❌ <@$authorID>, you aren't the one supposed to answer!]
+
+$title[🍭 CHOOSE YOUR TREAT 🍬]
+$description[Use the select menu below to choose what you want to treat with!]
+$color[$randomText[#FFEFC9;#FFE870;#DEB314;#FE9600;#F56F16;#DE4033;#B14624;#6B330D;#B6B160;#5A7E5A;#265C57;#77477E;#602749;#666666]]
+
+$newSelectMenu[smtreat;1;1;Select your treat]
+$if[$getUserVar[spky.candy]>=1]
+$addSelectMenuOption[smtreat;x1;1c;;no;🍬;]
+$endif
+$if[$getUserVar[spky.candy]>=3]
+$addSelectMenuOption[smtreat;x3;3c;;no;🍬;]
+$endif
+$if[$getUserVar[spky.candy]>=5]
+$addSelectMenuOption[smtreat;x5;5c;;no;🍬;]
+$endif
+$if[$getUserVar[spky.lolli]>=1]
+$addSelectMenuOption[smtreat;x1;1l;;no;🍭;]
+$endif
+$if[$getUserVar[spky.lolli]>=2]
+$addSelectMenuOption[smtreat;x2;2l;;no;🍭;]
+$endif
+$if[$getUserVar[spky.lolli]>=3]
+$addSelectMenuOption[smtreat;x3;3l;;no;🍭;]
+$endif
+$if[$getUserVar[spky.choco]>=1]
+$addSelectMenuOption[smtreat;x1;1ch;;no;🍫;]
+$endif
+$if[$getUserVar[spky.choco]>=2]
+$addSelectMenuOption[smtreat;x2;2ch;;no;🍫;]
+$endif

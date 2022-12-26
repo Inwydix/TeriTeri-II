@@ -1,0 +1,69 @@
+$nomention
+$onlyIf[$authorID==$getServerVar[totUser];❌ <@$authorID>, you aren't the one supposed to answer!]
+
+$if[$message==1c]
+$var[chosen;1 🍬]
+$onlyIf[$getUserVar[spky.candy]>=1;❌ You don't have enough 🍬!]
+$setUserVar[spky.candy;$sub[$getUserVar[spky.candy];1]]
+$setUserVar[spky.candy;$sum[$getUserVar[spky.candy;$getServerVar[totAsker]];1];$getServerVar[totAsker]]
+
+$elseif[$message==3c]
+$var[chosen;3 🍬]
+$onlyIf[$getUserVar[spky.candy]>=3;❌ You don't have enough 🍬!]
+$setUserVar[spky.candy;$sub[$getUserVar[spky.candy];3]]
+$setUserVar[spky.candy;$sum[$getUserVar[spky.candy;$getServerVar[totAsker]];3];$getServerVar[totAsker]]
+
+$elseif[$message==5c]
+$var[chosen;5 🍬]
+$onlyIf[$getUserVar[spky.candy]>=5;❌ You don't have enough 🍬!]
+$setUserVar[spky.candy;$sub[$getUserVar[spky.candy];5]]
+$setUserVar[spky.candy;$sum[$getUserVar[spky.candy;$getServerVar[totAsker]];5];$getServerVar[totAsker]]
+
+$elseif[$message==1l]
+$var[chosen;1 🍭]
+$onlyIf[$getUserVar[spky.lolli]>=1;❌ You don't have enough 🍭!]
+$setUserVar[spky.lolli;$sub[$getUserVar[spky.lolli];1]]
+$setUserVar[spky.lolli;$sum[$getUserVar[spky.lolli;$getServerVar[totAsker]];1];$getServerVar[totAsker]]
+
+$elseif[$message==2l]
+$var[chosen;2 🍭]
+$onlyIf[$getUserVar[spky.lolli]>=2;❌ You don't have enough 🍭!]
+$setUserVar[spky.lolli;$sub[$getUserVar[spky.lolli];2]]
+$setUserVar[spky.lolli;$sum[$getUserVar[spky.lolli;$getServerVar[totAsker]];2];$getServerVar[totAsker]]
+
+$elseif[$message==3l]
+$var[chosen;3 🍭]
+$onlyIf[$getUserVar[spky.lolli]>=3;❌ You don't have enough 🍭!]
+$setUserVar[spky.lolli;$sub[$getUserVar[spky.lolli];3]]
+$setUserVar[spky.lolli;$sum[$getUserVar[spky.lolli;$getServerVar[totAsker]];3];$getServerVar[totAsker]]
+
+$elseif[$message==1ch]
+$var[chosen;1 🍫]
+$onlyIf[$getUserVar[spky.choco]>=1;❌ You don't have enough 🍫!]
+$setUserVar[spky.choco;$sub[$getUserVar[spky.choco];1]]
+$setUserVar[spky.choco;$sum[$getUserVar[spky.choco;$getServerVar[totAsker]];1];$getServerVar[totAsker]]
+
+$elseif[$message==2ch]
+$var[chosen;2 🍫]
+$onlyIf[$getUserVar[spky.choco]>=2;❌ You don't have enough 🍫!]
+$setUserVar[spky.choco;$sub[$getUserVar[spky.choco];2]]
+$setUserVar[spky.choco;$sum[$getUserVar[spky.choco;$getServerVar[totAsker]];2];$getServerVar[totAsker]]
+
+$endif
+
+$var[points;$random[50;100]]
+$setUserVar[spky.point;$sum[$getUserVar[spky.point;$getServerVar[totUser]];$var[points]];$getServerVar[totUser]]
+$setUserVar[spky.point;$sum[$getUserVar[spky.point;$getServerVar[totAsker]];$var[points]];$getServerVar[totAsker]]
+
+$title[🍭 TREAT 🍬]
+$description[You gave <@$getServerVar[totAsker]> $var[chosen]!
+
+__RESULTS__
+
+> • Each one of you got $var[points] spooky points]
+$color[$randomText[#FFEFC9;#FFE870;#DEB314;#FE9600;#F56F16;#DE4033;#B14624;#6B330D;#B6B160;#5A7E5A;#265C57;#77477E;#602749;#666666]]
+$removeComponent[smtreat]
+
+$setServerVar[totActive;false]
+
+

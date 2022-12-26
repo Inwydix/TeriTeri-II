@@ -1,0 +1,20 @@
+$nomention $ignoreTriggerCase
+$onlyIf[$getServerVar[spky.time]==true;]
+
+$title[👻 **TOP 10 SPOOKERS** 💀]
+$description[
+1. $nickname[$getLeaderboardValue[user;spky.point;asc;1;id]] -  $getLeaderboardValue[user;spky.point;asc;1;value]
+2. $nickname[$getLeaderboardValue[user;spky.point;asc;2;id]] -  $getLeaderboardValue[user;spky.point;asc;2;value]
+3. $nickname[$getLeaderboardValue[user;spky.point;asc;3;id]] -  $getLeaderboardValue[user;spky.point;asc;3;value]
+4. $nickname[$getLeaderboardValue[user;spky.point;asc;4;id]] -  $getLeaderboardValue[user;spky.point;asc;4;value]
+5. $nickname[$getLeaderboardValue[user;spky.point;asc;5;id]] -  $getLeaderboardValue[user;spky.point;asc;5;value]
+6. $nickname[$getLeaderboardValue[user;spky.point;asc;6;id]] -  $getLeaderboardValue[user;spky.point;asc;6;value]
+7. $nickname[$getLeaderboardValue[user;spky.point;asc;7;id]] -  $getLeaderboardValue[user;spky.point;asc;7;value]
+8. $nickname[$getLeaderboardValue[user;spky.point;asc;8;id]] -  $getLeaderboardValue[user;spky.point;asc;8;value]
+9. $nickname[$getLeaderboardValue[user;spky.point;asc;9;id]] -  $getLeaderboardValue[user;spky.point;asc;9;value]
+10. $nickname[$getLeaderboardValue[user;spky.point;asc;10;id]] -  $getLeaderboardValue[user;spky.point;asc;10;value]]
+
+ $footer[$serverName[$guildID]'s spooky leaderboard]
+ $footerIcon[$serverIcon]
+ 
+ $color[$randomText[#FFEFC9;#FFE870;#DEB314;#FE9600;#F56F16;#DE4033;#B14624;#6B330D;#B6B160;#5A7E5A;#265C57;#77477E;#602749;#666666]]

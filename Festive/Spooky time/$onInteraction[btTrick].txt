@@ -1,0 +1,48 @@
+$nomention
+$onlyIf[$authorID==$getServerVar[totUser];❌ <@$authorID>, you aren't the one supposed to answer!]
+$color[$randomText[#FFEFC9;#FFE870;#DEB314;#FE9600;#F56F16;#DE4033;#B14624;#6B330D;#B6B160;#5A7E5A;#265C57;#77477E;#602749;#666666]]
+
+$title[🎃 TRICK 👻]
+$var[random;$random[1;5]]
+$var[points;$optOff[$random[50;200]]]
+$var[money;$optOff[$random[50;200]]]
+
+$setUserVar[spky.point;$sub[$getUserVar[spky.point];$var[points]]]
+$setUserVar[spky.point;$sum[$getUserVar[spky.point;$getServerVar[totAsker]];$var[points]];$getServerVar[totAsker]]
+$setUserVar[spky.coin;$sum[$getUserVar[spky.coin];$var[money]]]
+$setUserVar[spky.coin;$sum[$getUserVar[spky.coin;$getServerVar[totAsker]];$var[money]];$getServerVar[totAsker]]
+$setUserVar[spooked;false]
+$setServerVar[totActive;false]
+
+$if[$var[random]==1]
+
+$var[trick;Trick trick trick!
+You were tricked without mercy!!]
+
+$elseif[$var[random]==2]
+
+$var[trick;You got back home and everything was covered in 🧻 toilet paper 🧻 :0]
+
+$elseif[$var[random]==3]
+
+$var[trick;You found a coin in the street, but it was glued to the floor 💸]
+
+$elseif[$var[random]==4]
+
+$var[trick;<@$getServerVar[totAsker]> gets some cards and makes you a magic trick! :magic_wand:]
+
+$endif
+
+$description[$var[trick]
+
+__RESULTS__
+
+<@$authorID>
+> • You lost $var[points] spooky points
+> • You won $var[money] 🎃
+
+<@$getServerVar[totAsker]>
+> • You won $var[points] spooky points
+> • You won $var[money] 🎃]
+
+$removeButtons
