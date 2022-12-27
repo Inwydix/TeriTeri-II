@@ -1,4 +1,4 @@
-# 💲Activity Points
+# 💲Activity Points📈
 
 Every 30 seconds, you have the opportunity to win 1 activity point by sending a message into the Discord server
 
@@ -23,19 +23,20 @@ You can accumulate this points to level up in the activity levelling system Teri
 
 # 📦Variables
 
-• `point`
+• `point` [int]
 > User var that saves the user's current activity points
 
-• `level`
+• `level` [int]
 > User var that saves the user's current level
 
-• `level.channel`
+• `level.channel` [int]
 > Server var that saves the level up notifications channel ID
 
-• `pts.cooldown`
-> User var that saves the timestamp of the last time you got an activity point, to compare it to the current one and see if you can get another one or not
+• `pts.cooldown` [int]
+> User var that saves the timestamp of the last time the user got an activity point, to compare it to the current timestamp and see if they can get another point or not
 
-• `lvl.boost`
+• `lvl.boost` [int]
 > Server var that saves the current level up boost. Set it to `0` to deactivate the level up system
 
-• ``
+• `lv.ping` [bool]
+> User var that saves if you have the level up mentions active or not
