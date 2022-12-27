@@ -22,3 +22,20 @@ You can accumulate this points to level up in the activity levelling system Teri
 > Activates/deactives the level up mentions in the level up messages
 
 # 📦Variables
+
+• `point`
+> User var that saves the user's current activity points
+
+• `level`
+> User var that saves the user's current level
+
+• `level.channel`
+> Server var that saves the level up notifications channel ID
+
+• `pts.cooldown`
+> User var that saves the timestamp of the last time you got an activity point, to compare it to the current one and see if you can get another one or not
+
+• `lvl.boost`
+> Server var that saves the current level up boost. Set it to `0` to deactivate the level up system
+
+• ``
