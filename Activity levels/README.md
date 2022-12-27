@@ -1,4 +1,4 @@
-# 💲Activity Points📈
+# 💲Activity Points
 
 Every 30 seconds, you have the opportunity to win 1 activity point by sending a message into the Discord server
 
