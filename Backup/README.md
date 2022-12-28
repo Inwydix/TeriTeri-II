@@ -6,3 +6,12 @@ This messages include everything that's important
 
 # 🤖 Commands
 
+· `t!`
+> Sends a message to the backup user every time someone uses a command
+
+· `t!restore <variables>`
+> Restores the state of the variables you added in the command using the backup messages info
+
+# 📦 Variables
+
+None for now
